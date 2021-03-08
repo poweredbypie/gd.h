@@ -12,6 +12,8 @@ namespace gd {
 	}
 }
 
+#include "gdMacros.h"
+
 #include "GDProtocols.h"
 
 #include "layers_scenes_transitions_nodes/FLAlertLayer.h"

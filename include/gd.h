@@ -22,6 +22,7 @@ namespace gd {
 #include "layers_scenes_transitions_nodes/LoadingLayer.h"
 #include "layers_scenes_transitions_nodes/MenuLayer.h"
 #include "layers_scenes_transitions_nodes/ScrollingLayer.h"
+#include "layers_scenes_transitions_nodes/LoadingCircle.h"
 
 #include "manager_nodes/GManager.h"
 #include "manager_nodes/GameManager.h"
@@ -33,5 +34,7 @@ namespace gd {
 #include "audio_nodes/FMODAudioEngine.h"
 
 #include "sprite_nodes/ButtonSprite.h"
+
+#include "text_input_nodes/CCTextInputNode.h"
 
 #endif

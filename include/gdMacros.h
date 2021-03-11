@@ -15,4 +15,9 @@
 */
 #define PAD(size) char __STR_CAT__(pad, __LINE__)[size] = {};
 
+/** __WARN_DEBUG__
+* Set this macro to 0 to disable warnings when compiling in debug.
+*/
+#define __WARN_DEBUG__ true
+
 #endif 

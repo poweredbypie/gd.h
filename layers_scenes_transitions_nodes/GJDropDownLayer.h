@@ -7,7 +7,6 @@ namespace gd {
 
 	class GJListLayer;
 
-	#pragma runtime_checks("s", off)
 	class GJDropDownLayer : public cocos2d::CCLayerColor {
 	protected:
 		cocos2d::CCPoint m_obEndPosition;
@@ -112,7 +111,6 @@ namespace gd {
 			}
 		}
 	};
-	#pragma runtime_checks("s", restore)
 }
 
 #endif

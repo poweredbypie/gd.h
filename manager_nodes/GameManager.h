@@ -110,7 +110,9 @@ namespace gd {
 				)(this, bSwitch, bFullscreen, bReloadedInSession);
 		}
 		void setQuality(cocos2d::TextureQuality quality) {
-            m_eQuality = quality;
+			*reinterpret_cast<cocos2d::TextureQuality*>(
+				reinterpret_cast<char*>(this) + 0x2E4
+				) = quality;
 		}
         PlayLayer* getPlayLayer() { return m_pPlayLayer; }
 	};

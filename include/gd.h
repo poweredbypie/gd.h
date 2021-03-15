@@ -21,6 +21,8 @@ namespace gd {
 
 #include "GDProtocols.h"
 
+#include "actions/CCCircleWave.h"
+
 #include "layers_scenes_transitions_nodes/FLAlertLayer.h"
 #include "layers_scenes_transitions_nodes/GJDropDownLayer.h"
 #include "layers_scenes_transitions_nodes/GJListLayer.h"
@@ -43,6 +45,7 @@ namespace gd {
 #include "audio_nodes/FMODAudioEngine.h"
 
 #include "sprite_nodes/ButtonSprite.h"
+#include "sprite_nodes/GameObject.h"
 
 #include "text_input_nodes/CCTextInputNode.h"
 

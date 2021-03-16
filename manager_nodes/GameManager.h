@@ -112,6 +112,21 @@ namespace gd {
 		void setQuality(cocos2d::TextureQuality quality) {
 			this->m_eQuality = quality;
 		}
+        bool getGameVariable(const char* key) {
+            return reinterpret_cast<bool(__thiscall*)(GameManager*, const char*)>(
+                base + 0xC9D30
+                )(this, key);
+        }
+        int getIntGameVariable(const char* key) {
+            return reinterpret_cast<int(__thiscall*)(GameManager*, const char*)>(
+                base + 0xCA330
+                )(this, key);
+        }
+        bool getUGV(const char* key) {
+            return reinterpret_cast<bool(__thiscall*)(GameManager*, const char*)>(
+                base + 0xCA0D0
+                )(this, key);
+        }
         PlayLayer* getPlayLayer() { return m_pPlayLayer; }
 	};
 }

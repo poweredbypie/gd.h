@@ -46,6 +46,8 @@ namespace gd {
 
 #include "sprite_nodes/ButtonSprite.h"
 #include "sprite_nodes/GameObject.h"
+#include "sprite_nodes/CCAnimatedSprite.h"
+#include "sprite_nodes/AnimatedShopKeeper.h"
 
 #include "text_input_nodes/CCTextInputNode.h"
 

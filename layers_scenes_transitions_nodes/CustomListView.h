@@ -7,53 +7,63 @@
 
 namespace gd {
 
-    class SongObject : public cocos2d::CCNode {
+    class TableViewDataSource {
+        virtual void tvds_vftable0() = 0;
+        virtual bool tvds_vftable1();
+        virtual void tvds_vftable2();
+        virtual void tvds_vftable3() = 0;
+    };
+
+    class TableViewDelegate {
+        virtual void tvd_vftable0();
+        virtual void tvd_vftable1();
+        virtual void tvd_vftable2();
+        virtual void tvd_vftable3();
+        virtual void tvd_vftable4() = 0;
+        virtual void tvd_vftable5() = 0;
+    };
+
+    class BoomListView : public TableViewDelegate, public TableViewDataSource, public cocos2d::CCLayer {
+        protected:
+            PAD(0xC)
+            float m_fListWidth;
+        
         public:
-            virtual cocos2d::CCObject* destructor() {
-                return reinterpret_cast<cocos2d::CCObject*(__thiscall*)(
-                    cocos2d::CCObject*, bool
-                )>(
-                    base + 0x10380
-                )(
-                    this, true
-                );
+            virtual void tvds_vftable0();
+            virtual void tvds_vftable3();
+            
+            virtual void tvd_vftable4();
+            virtual void tvd_vftable5();
+
+            float getListWidth() {
+                return this->m_fListWidth;
             }
 
-            static SongObject* create(size_t _id) {
-                auto obj = new SongObject();
+            bool init(cocos2d::CCArray* _arr, float _w, float _h, intptr_t _idk, int _n) {
 
-                // what the fuck
-                // this is just obj->0x8 = _id
-                *reinterpret_cast<size_t*>(reinterpret_cast<std::uintptr_t>(obj) + 0x08) = _id;
+                // width and height are stored in xmm registers
+                __asm {
+                    movss xmm2, [_h]
+                    movss xmm3, [_w]
+                }
 
-                return obj;
+                auto ret = reinterpret_cast<bool(__thiscall*)(
+                    cocos2d::CCNode*, cocos2d::CCArray*, intptr_t, int
+                )>(
+                    base + 0x10C20
+                )(
+                    this, _arr, _idk, _n
+                );
+
+                // clean stack
+                __asm add esp, 0xA
+
+                return ret;
             }
     };
 
-    class StatsObject : public cocos2d::CCNode {
-        public:
-            virtual cocos2d::CCObject* destructor() {
-                return reinterpret_cast<cocos2d::CCObject*(__thiscall*)(
-                    cocos2d::CCObject*, bool
-                )>(
-                    base + 0x10380
-                )(
-                    this, true
-                );
-            }
-
-            static StatsObject* create(std::string _text, int _count) {
-                return reinterpret_cast<StatsObject*(__fastcall*)(
-                    std::string, int
-                )>(
-                    base + 0x5daa0
-                )(
-                    _text, _count
-                );
-            }
-    };
-
-    class CustomListView : public cocos2d::CCLayer {
+    class CustomListView : public BoomListView {
+        
         public:
             virtual void destructor() {
                 return reinterpret_cast<void(__thiscall*)(
@@ -72,6 +82,7 @@ namespace gd {
                     base + 0x58870
                 )(this);
             };
+
             virtual cocos2d::CCNode* getListCell(std::string str) {
                 return reinterpret_cast<cocos2d::CCNode*(__thiscall*)(
                     cocos2d::CCNode*, std::string
@@ -79,6 +90,7 @@ namespace gd {
                     base + 0x58050
                 )(this, str);
             };
+
             virtual void loadCell(cocos2d::CCNode* cell, int ix) {
                 reinterpret_cast<void(__thiscall*)(
                     cocos2d::CCNode*, cocos2d::CCNode*, int
@@ -97,21 +109,6 @@ namespace gd {
                 );
             }
 
-            // TableViewDelegate vftable
-            virtual void unknown0() {}
-            virtual void unknown1() {}
-            virtual void unknown2() {}
-            virtual void unknown3() {}
-            virtual void unknown4() {}
-            virtual void unknown5() {}
-            virtual void unknown6() {}
-
-            // TableViewDataSource vftable
-            virtual void unknown0_0() {}
-            virtual bool unknown1_0() { return true; }
-            virtual void unknown2_0() {}
-            virtual bool unknown3_0() { return true; }
-
             static CustomListView* create(cocos2d::CCArray* _arr, float _w, float _h, int _n) {
                 
                 // size of the listview is passed in xmm1 & xmm2
@@ -121,7 +118,7 @@ namespace gd {
                     movss xmm2, [_w]
                 }
 
-                auto ret = reinterpret_cast<CustomListView*(__thiscall*)(cocos2d::CCArray*, intptr_t)>(
+                auto ret = reinterpret_cast<CustomListView*(__thiscall*)(cocos2d::CCArray*, size_t)>(
                     base + 0x57f90
                 )(_arr, _n);
 
@@ -148,32 +145,6 @@ namespace gd {
                 return nullptr;
             }
 
-            bool init(cocos2d::CCArray* _arr, float _w, float _h, intptr_t _idk, int _n) {
-
-                // width and height are stored in xmm registers
-                __asm {
-                    movss xmm2, [_h]
-                    movss xmm3, [_w]
-                }
-                
-                std::cout << "dbg0\n";
-
-                auto ret = reinterpret_cast<bool(__thiscall*)(
-                    cocos2d::CCNode*, cocos2d::CCArray*, intptr_t, int
-                )>(
-                    base + 0x10C20
-                )(
-                    this, _arr, _idk, _n
-                );
-
-                // clean stack
-                __asm add esp, 0xA
-                
-                std::cout << "dbg1\n";
-
-                return ret;
-            }
-
             CustomListView() {
                 reinterpret_cast<void(__thiscall*)(CustomListView*)>(
                     base + 0x57e60
@@ -194,27 +165,6 @@ namespace gd {
             }
     };
     #pragma runtime_checks("s", restore)
-
-    class InheritedView : public CustomListView {
-        public:
-            inline virtual void loadCell(cocos2d::CCNode*, int ix) override {
-                std::cout << ix << "\n";
-            }
-
-            static InheritedView* create(cocos2d::CCArray* _a, float _w, float _h, int _bt) {
-                InheritedView* pRet = new InheritedView();
-                // InheritedView is inherited from CustomListView
-
-                if (pRet && pRet->init(_a, _w, _h, 0x0, _bt)) {
-                    std::cout << "yoot\n";
-                    
-                    pRet->autorelease();
-                    return pRet;
-                }
-                CC_SAFE_DELETE(pRet);
-                return nullptr;
-            }
-    };
 
 }
 

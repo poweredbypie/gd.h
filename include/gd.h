@@ -35,6 +35,7 @@ namespace gd {
 #include "../layers_scenes_transitions_nodes/TextArea.h"
 #include "../layers_scenes_transitions_nodes/CCScrollLayerExt.h"
 #include "../layers_scenes_transitions_nodes/CustomListView.h"
+#include "../layers_scenes_transitions_nodes/TableViewCell.h"
 
 #include "../manager_nodes/GManager.h"
 #include "../manager_nodes/GameManager.h"
@@ -49,5 +50,7 @@ namespace gd {
 #include "../sprite_nodes/GameObject.h"
 
 #include "../text_input_nodes/CCTextInputNode.h"
+
+#include "../xml/DS_Dictionary.h"
 
 #endif

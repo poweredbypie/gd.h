@@ -38,10 +38,12 @@ namespace gd {
 #include "../layers_scenes_transitions_nodes/CCScrollLayerExt.h"
 #include "../layers_scenes_transitions_nodes/TableViewCell.h"
 #include "../layers_scenes_transitions_nodes/TextArea.h"
+#include "../layers_scenes_transitions_nodes/AchievementBar.h"
 
 #include "../manager_nodes/GManager.h"
 #include "../manager_nodes/GameManager.h"
 #include "../manager_nodes/GameSoundManager.h"
+#include "../manager_nodes/AchievementManager.h"
 
 #include "../menu_nodes/CCMenuItemSpriteExtra.h"
 #include "../menu_nodes/CCMenuItemToggler.h"

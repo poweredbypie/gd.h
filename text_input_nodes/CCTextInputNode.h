@@ -54,6 +54,12 @@ namespace gd {
 			m_fMaxLabelScale = scale;
 			this->refreshLabel();
 		}
+		void setLabelString(const char* text) {
+			m_pTextField->setString(text);
+		}
+		const char* getLabelString() {
+			return m_pTextField->getString();
+		}
 		void setMaxLabelLength(int length) { m_nMaxLabelLength = length; }
 		void setAllowedChars(std::string filter) { m_sFilter = filter; }
 		void refreshLabel() {

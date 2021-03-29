@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-	class GameObject : public cocos2d::CCSprite {
+	class GameObject : public cocos2d::CCSpritePlus {
 	public:
 		static GameObject* createWithFrame(const char* frame) {
 			return reinterpret_cast<GameObject* (__fastcall*)(const char*)>(

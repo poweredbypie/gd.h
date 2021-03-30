@@ -110,7 +110,7 @@ namespace gd {
 				)(this, bSwitch, bFullscreen, bReloadedInSession);
 		}
 		void setQuality(cocos2d::TextureQuality quality) {
-			this->m_eQuality = quality;
+            m_eQuality = quality;
 		}
         bool getGameVariable(const char* key) {
             return reinterpret_cast<bool(__thiscall*)(GameManager*, const char*)>(
@@ -126,6 +126,11 @@ namespace gd {
             return reinterpret_cast<bool(__thiscall*)(GameManager*, const char*)>(
                 base + 0xCA0D0
                 )(this, key);
+        }
+        void fadeInMusic(const char* filename) {
+            return reinterpret_cast<void(__thiscall*)(GameManager*, const char*)>(
+                base + 0xC4BD0
+                )(this, filename);
         }
         PlayLayer* getPlayLayer() { return m_pPlayLayer; }
 	};

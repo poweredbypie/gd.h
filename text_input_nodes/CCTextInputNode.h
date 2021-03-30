@@ -42,22 +42,18 @@ namespace gd {
 			__asm add esp, 0x8
 			return pRet;
 		}
-
 		void setLabelPlaceholderColor(cocos2d::ccColor3B color) {
 			m_cPlaceholderColor = color;
 			this->refreshLabel();
 		}
-
 		void setLabelPlaceholerScale(float scale) {
 			m_fPlaceholderScale = scale;
 			this->refreshLabel();
 		}
-
 		void setMaxLabelScale(float scale) {
 			m_fMaxLabelScale = scale;
 			this->refreshLabel();
 		}
-
 		void setMaxLabelLength(int length) { m_nMaxLabelLength = length; }
 		void setAllowedChars(std::string filter) { m_sFilter = filter; }
 		void refreshLabel() {
@@ -65,13 +61,11 @@ namespace gd {
 				base + 0x21330
 				)(this);
 		}
-	
-		cocos2d::CCTextFieldTTF* getTextField() {
-			return this->m_pTextField;
-		}
+		cocos2d::CCTextFieldTTF* getTextField() { return m_pTextField; }
+		void setString(const char* text) { m_pTextField->setString(text); }
+		const char* getString() { return m_pTextField->getString(); }
 	};
 	#pragma runtime_checks("s", restore)
 }
 
 #endif
-

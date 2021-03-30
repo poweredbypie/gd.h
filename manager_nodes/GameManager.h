@@ -110,7 +110,7 @@ namespace gd {
 				)(this, bSwitch, bFullscreen, bReloadedInSession);
 		}
 		void setQuality(cocos2d::TextureQuality quality) {
-            m_eQuality = quality;
+			this->m_eQuality = quality;
 		}
         bool getGameVariable(const char* key) {
             return reinterpret_cast<bool(__thiscall*)(GameManager*, const char*)>(

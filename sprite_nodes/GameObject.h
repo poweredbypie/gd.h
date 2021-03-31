@@ -4,8 +4,8 @@
 #include <gd.h>
 
 namespace gd {
-	#pragma runtime_checks("s", off)
-	class GameObject : public cocos2d::CCSprite {
+  #pragma runtime_checks("s", off)
+	class GameObject : public cocos2d::CCSpritePlus {
 	protected:
 		PAD(0x284);
 

@@ -23,6 +23,9 @@ namespace gd {
 
 #include "actions/CCCircleWave.h"
 
+#include "achievement_nodes/AchievementBar.h"
+#include "achievement_nodes/AchievementNotifier.h"
+
 #include "layers_scenes_transitions_nodes/FLAlertLayer.h"
 #include "layers_scenes_transitions_nodes/GJDropDownLayer.h"
 #include "layers_scenes_transitions_nodes/GJListLayer.h"
@@ -35,9 +38,17 @@ namespace gd {
 #include "layers_scenes_transitions_nodes/GJBaseGameLayer.h"
 #include "layers_scenes_transitions_nodes/PlayLayer.h"
 
+#include "scroll_nodes/CCContentLayer.h"
+#include "scroll_nodes/CCIndexPath.h"
+#include "scroll_nodes/CCScrollLayerExt.h"
+#include "scroll_nodes/TableView.h"
+#include "scroll_nodes/BoomListView.h"
+#include "scroll_nodes/CustomListView.h"
+
 #include "manager_nodes/GManager.h"
 #include "manager_nodes/GameManager.h"
 #include "manager_nodes/GameSoundManager.h"
+#include "manager_nodes/AchievementManager.h"
 
 #include "menu_nodes/CCMenuItemSpriteExtra.h"
 #include "menu_nodes/CCMenuItemToggler.h"
@@ -48,6 +59,7 @@ namespace gd {
 #include "sprite_nodes/GameObject.h"
 #include "sprite_nodes/CCAnimatedSprite.h"
 #include "sprite_nodes/AnimatedShopKeeper.h"
+#include "sprite_nodes/PlayerObject.h"
 
 #include "text_input_nodes/CCTextInputNode.h"
 

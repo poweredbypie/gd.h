@@ -14,11 +14,6 @@ namespace gd {
 				base + 0x190550
 				)();
 		}
-		static void fadeInMusic(const char* filename) {
-			return reinterpret_cast<void(__stdcall*)(const char*)>(
-				base + 0xC4BD0
-				)(filename);
-		}
 	};
 }
 

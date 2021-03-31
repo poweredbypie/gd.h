@@ -17,6 +17,7 @@ namespace gd {
 		cocos2d::CCObject* m_pTarget;
 		bool m_bReverseKeyBack;
 		cocos2d::ccColor3B m_cColor;
+		PAD(4);
 		cocos2d::CCLayer* m_pLayer;
 		int m_nZOrder2;
 		bool m_bNoElasticity;

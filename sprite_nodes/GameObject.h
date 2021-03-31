@@ -4,10 +4,13 @@
 #include <gd.h>
 
 namespace gd {
-  #pragma runtime_checks("s", off)
-	class GameObject : public cocos2d::CCSpritePlus {
+
+	class CCSpritePlus;
+
+	#pragma runtime_checks("s", off)
+	class GameObject : public CCSpritePlus {
 	protected:
-		PAD(0x284);
+		PAD(0x278);
 
 	public:
 		//CCNode vtable
@@ -45,11 +48,6 @@ namespace gd {
 			return reinterpret_cast<bool(__thiscall*)(GameObject*, cocos2d::CCTexture2D*)>(
 				base + 0xCFA80
 				)(this, texture);
-		}
-		virtual bool initWithSpriteFrameName(const char* name) {
-			return reinterpret_cast<bool(__thiscall*)(GameObject*, const char*)>(
-				base + 0x1C1E0
-				)(this, name);
 		}
 		virtual void setChildColor(const cocos2d::ccColor3B& color) {
 			return reinterpret_cast<void(__thiscall*)(GameObject*, const cocos2d::ccColor3B&)>(

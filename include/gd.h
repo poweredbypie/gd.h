@@ -55,6 +55,7 @@ namespace gd {
 
 #include "audio_nodes/FMODAudioEngine.h"
 
+#include "sprite_nodes/CCSpritePlus.h"
 #include "sprite_nodes/ButtonSprite.h"
 #include "sprite_nodes/GameObject.h"
 #include "sprite_nodes/CCAnimatedSprite.h"

@@ -6,7 +6,7 @@
 #include "gdMacros.h"
 
 namespace gd {
-	inline auto base = reinterpret_cast<char*>(GetModuleHandle(0));
+	inline auto base = reinterpret_cast<uintptr_t>(GetModuleHandle(0));
 
 	inline bool init() {
 		//if the base address is valid, all other values should be valid.

@@ -37,6 +37,7 @@ namespace gd {
 #include "layers_scenes_transitions_nodes/PauseLayer.h"
 #include "layers_scenes_transitions_nodes/GJBaseGameLayer.h"
 #include "layers_scenes_transitions_nodes/PlayLayer.h"
+#include "layers_scenes_transitions_nodes/GJSearchObject.h"
 
 #include "scroll_nodes/CCContentLayer.h"
 #include "scroll_nodes/CCIndexPath.h"
@@ -48,12 +49,15 @@ namespace gd {
 #include "manager_nodes/GManager.h"
 #include "manager_nodes/GameManager.h"
 #include "manager_nodes/GameSoundManager.h"
+#include "manager_nodes/GameLevelManager.h"
 #include "manager_nodes/AchievementManager.h"
 
 #include "menu_nodes/CCMenuItemSpriteExtra.h"
 #include "menu_nodes/CCMenuItemToggler.h"
 
 #include "audio_nodes/FMODAudioEngine.h"
+
+#include "level_nodes/GJGameLevel.h"
 
 #include "sprite_nodes/CCSpritePlus.h"
 #include "sprite_nodes/ButtonSprite.h"

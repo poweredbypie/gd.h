@@ -45,6 +45,8 @@ namespace gd {
 #include "../manager_nodes/GameSoundManager.h"
 #include "../manager_nodes/AchievementManager.h"
 
+#include "../level_nodes/GJGameLevel.h"
+
 #include "../menu_nodes/CCMenuItemSpriteExtra.h"
 #include "../menu_nodes/CCMenuItemToggler.h"
 

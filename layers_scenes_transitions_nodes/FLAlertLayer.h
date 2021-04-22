@@ -13,18 +13,19 @@ namespace gd {
 	class FLAlertLayer : public cocos2d::CCLayerColor {
 	protected:
 		cocos2d::CCMenu* m_pButtonMenu;
-		int m_nUnknown;
+		int m_nControlConnected; //?
 		cocos2d::CCObject* m_pTarget;
 		PAD(8);
 		cocos2d::CCLayer* m_pLayer;
 		int m_nZOrder2;
-		bool m_bDontTransition;
+		bool m_bNoElasticity;
+		cocos2d::ccColor3B m_cColor2; //?
 		ButtonSprite* m_pButton1;
 		ButtonSprite* m_pButton2;
 		ScrollingLayer* m_pScrollingLayer;
-		PAD(4);
-		bool m_bAlternateFormat; //?
-		bool m_bSingleButton; //?
+		int m_nJoystickConnected;
+		bool m_bBorder; //?
+		bool m_bNoAction; //?
 
 	public:
 		//CCNode vtable

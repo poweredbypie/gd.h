@@ -61,6 +61,9 @@ namespace gd {
 				base + 0x21330
 				)(this);
 		}
+		cocos2d::CCTextFieldTTF* getTextField() { return m_pTextField; }
+		void setString(const char* text) { m_pTextField->setString(text); }
+		const char* getString() { return m_pTextField->getString(); }
 	};
 	#pragma runtime_checks("s", restore)
 }

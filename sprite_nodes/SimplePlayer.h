@@ -59,7 +59,7 @@ namespace gd {
 		virtual void setColor(const cocos2d::ccColor3B& color) {
 			reinterpret_cast<void (__thiscall*)(SimplePlayer*, const cocos2d::ccColor3B&)>(
 				base + 0x12c410)
-				(reinterpret_cast<SimplePlayer*>(reinterpret_cast<char*>(this) + 0xec), color); // is this even right
+				(reinterpret_cast<SimplePlayer*>(reinterpret_cast<char*>(this) + 0xec), color);
 		}
 
 		void setSecondColor(const cocos2d::ccColor3B& color) {

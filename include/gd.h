@@ -48,6 +48,9 @@ namespace gd {
 #include "sprite_nodes/GameObject.h"
 #include "sprite_nodes/CCAnimatedSprite.h"
 #include "sprite_nodes/AnimatedShopKeeper.h"
+#include "sprite_nodes/GJRobotSprite.h"
+#include "sprite_nodes/GJSpiderSprite.h"
+#include "sprite_nodes/SimplePlayer.h"
 
 #include "text_input_nodes/CCTextInputNode.h"
 

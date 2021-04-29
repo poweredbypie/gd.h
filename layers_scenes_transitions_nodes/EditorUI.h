@@ -3,6 +3,10 @@
 
 #include <gd.h>
 
+namespace gd {
+
 class EditorUI : public cocos2d::CCLayer {
     // todo
 };
+
+}

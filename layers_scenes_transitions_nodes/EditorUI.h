@@ -16,7 +16,7 @@ class EditorUI : public cocos2d::CCLayer {
                 this, _str
             );
 
-            __asm add esp, 0x4
+            __asm add esp, 0x18
 
             return ret;
         }

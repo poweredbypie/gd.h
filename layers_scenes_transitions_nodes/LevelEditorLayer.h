@@ -10,7 +10,7 @@ class EditorUI;
 
 class LevelEditorLayer : public GJBaseGameLayer {
     protected:
-        PAD(0xb4)
+        PAD(0x264)
         EditorUI* m_pEditorUI;
 
     public:

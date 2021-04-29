@@ -3,7 +3,36 @@
 
 #include <gd.h>
 
+#define FUCK_THIS(x) void setPlayer##x(int v) { m_nPlayer##x = v; __STR_CAT__(m_nPlayer##x,Rand1) = v + __STR_CAT__(m_nPlayer##x,Rand2); }
+
 namespace gd {
+	enum IconType {
+		kIconTypeCube           = 0,
+		kIconTypeShip           = 1,
+		kIconTypeBall           = 2,
+		kIconTypeUfo            = 3,
+		kIconTypeWave           = 4,
+		kIconTypeRobot          = 5,
+		kIconTypeSpider         = 6,
+		kIconTypeDeathEffect    = 98,
+		kIconTypeSpecial        = 99,
+	};
+	
+	enum UnlockType {
+		kUnlockTypeUnknown = 0,
+		kUnlockTypeCube = 1,
+		kUnlockTypeColor1 = 2,
+		kUnlockTypeColor2 = 3,
+		kUnlockTypeShip = 4,
+		kUnlockTypeBall = 5,
+		kUnlockTypeUfo = 6,
+		kUnlockTypeWave = 7,
+		kUnlockTypeRobot = 8,
+		kUnlockTypeSpider = 9,
+		kUnlockTypeSpecial = 10,
+		kUnlockTypeDeathEffect = 11,
+		kUnlockTypeGlow = 12,
+	};
 
 	class PlayLayer;
 
@@ -73,7 +102,7 @@ namespace gd {
 		int m_nSecretNumberRand1; //? may be named differently
 		int m_nSecretNumberRand2;
 		bool m_bPlayerGlow;
-		int m_nPlayerIconType;
+		IconType m_nPlayerIconType;
 		bool m_bUnknown2;
 		bool m_bShowSongMarkers;
 		bool m_bShowBPMMarkers;
@@ -99,6 +128,64 @@ namespace gd {
 		cocos2d::TextureQuality m_eQuality; //more after that i havent re'd
 
 	public:
+		int getPlayerFrame() { return m_nPlayerFrame; }
+		int getPlayerShip() { return m_nPlayerShip; }
+		int getPlayerBall() { return m_nPlayerBall; }
+		int getPlayerBird() { return m_nPlayerBird; }
+		int getPlayerDart() { return m_nPlayerDart; }
+		int getPlayerRobot() { return m_nPlayerRobot; }
+		int getPlayerSpider() { return m_nPlayerSpider; }
+		int getPlayerStreak() { return m_nPlayerStreak; }
+		int getPlayerDeathEffect() { return m_nPlayerDeathEffect; }
+		bool getPlayerGlow() { return m_bPlayerGlow; }
+		int getPlayerColor() { return m_nPlayerColor; }
+		int getPlayerColor2() { return m_nPlayerColor2; }
+		IconType getPlayerIconType() { return m_nPlayerIconType; }
+
+		FUCK_THIS(Frame)
+		FUCK_THIS(Ship)
+		FUCK_THIS(Ball)
+		FUCK_THIS(Bird)
+		FUCK_THIS(Dart)
+		FUCK_THIS(Robot)
+		FUCK_THIS(Spider)
+		FUCK_THIS(Streak)
+		FUCK_THIS(DeathEffect)
+		FUCK_THIS(Color)
+		FUCK_THIS(Color2)
+		void setPlayerGlow(bool v) { m_bPlayerGlow = v; }
+		void setPlayerIconType(IconType v) { m_nPlayerIconType = v; }
+
+		#undef FUCK_THIS
+		
+		bool isColorUnlocked(int _id, bool _type) {
+			return reinterpret_cast<bool(__thiscall*)(
+				GameManager*, int, bool
+			)>(
+				base + 0xc53f0
+			)(
+				this, _id, _type
+			);
+		}
+
+		bool isIconUnlocked(int _id, IconType _type) {
+			return reinterpret_cast<bool(__thiscall*)(
+				GameManager*, int, IconType
+			)>(
+				base + 0xc4fc0
+			)(
+				this, _id, _type
+			);
+		}
+
+		cocos2d::ccColor3B colorForIdx(int _id) {
+			auto ret = reinterpret_cast<cocos2d::ccColor3B(__stdcall*)(
+				int
+			)>(base + 0xc8d10)(_id);
+
+			return ret;
+		}
+
 		static GameManager* sharedState() {
 			return reinterpret_cast<GameManager* (__stdcall*)()>(
 				base + 0xC4A50

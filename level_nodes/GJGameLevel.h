@@ -6,7 +6,11 @@
 
 namespace gd {
 
-enum GJLevelType { Local = 1, Editor = 2, Saved = 3 };
+enum GJLevelType {
+  kGJLevelTypeLocal = 1,
+  kGJLevelTypeEditor = 2,
+  kGJLevelTypeSaved = 3
+};
 
 class GJGameLevel : public cocos2d::CCNode {
 public:

@@ -54,7 +54,8 @@ namespace gd {
 		bool m_bLoaded; //?
 		std::string m_sUnknown;
 		PlayLayer* m_pPlayLayer;
-		PAD(24);
+		LevelEditorLayer* m_pLevelEditorLayer;
+		PAD(20);
 		std::string m_sPlayerUDID;
 		std::string m_sPlayerName;
 		bool m_bCommentsEnabled;
@@ -225,6 +226,7 @@ namespace gd {
 				)(this, filename);
 		}
 		PlayLayer* getPlayLayer() { return m_pPlayLayer; }
+		LevelEditorLayer* getEditorLayer( return m_pLevelEditorLayer; )
 	};
 }
 

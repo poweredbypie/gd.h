@@ -37,6 +37,8 @@ namespace gd {
 #include "layers_scenes_transitions_nodes/PauseLayer.h"
 #include "layers_scenes_transitions_nodes/GJBaseGameLayer.h"
 #include "layers_scenes_transitions_nodes/PlayLayer.h"
+#include "layers_scenes_transitions_nodes/LevelEditorLayer.h"
+#include "layers_scenes_transitions_nodes/EditorUI.h"
 #include "layers_scenes_transitions_nodes/GJSearchObject.h"
 
 #include "scroll_nodes/CCContentLayer.h"

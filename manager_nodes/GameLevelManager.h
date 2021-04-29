@@ -5,6 +5,8 @@
 
 namespace gd {
 
+class GJGameLevel;
+
 class GameLevelManager : public cocos2d::CCNode {
     protected:
 

@@ -19,3 +19,5 @@ class EditorUI : public cocos2d::CCLayer {
 };
 
 }
+
+#endif

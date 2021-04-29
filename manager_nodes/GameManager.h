@@ -226,7 +226,7 @@ namespace gd {
 				)(this, filename);
 		}
 		PlayLayer* getPlayLayer() { return m_pPlayLayer; }
-		LevelEditorLayer* getEditorLayer( return m_pLevelEditorLayer; )
+		LevelEditorLayer* getEditorLayer() { return m_pLevelEditorLayer; }
 	};
 }
 

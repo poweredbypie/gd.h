@@ -3,7 +3,7 @@
 
 #include <gd.h>
 
-#define FUCK_THIS(x) void setPlayer##x(int v) { m_nPlayer##x = v; __STR_CAT__(m_nPlayer##x,Rand1) = v + __STR_CAT__(m_nPlayer##x,Rand2); }
+#define PLAYER_ICON_FUNC(x) void setPlayer##x(int v) { m_nPlayer##x = v; __STR_CAT__(m_nPlayer##x,Rand1) = v + __STR_CAT__(m_nPlayer##x,Rand2); }
 
 namespace gd {
 	enum IconType {
@@ -142,17 +142,17 @@ namespace gd {
 		int getPlayerColor2() { return m_nPlayerColor2; }
 		IconType getPlayerIconType() { return m_nPlayerIconType; }
 
-		FUCK_THIS(Frame)
-		FUCK_THIS(Ship)
-		FUCK_THIS(Ball)
-		FUCK_THIS(Bird)
-		FUCK_THIS(Dart)
-		FUCK_THIS(Robot)
-		FUCK_THIS(Spider)
-		FUCK_THIS(Streak)
-		FUCK_THIS(DeathEffect)
-		FUCK_THIS(Color)
-		FUCK_THIS(Color2)
+		PLAYER_ICON_FUNC(Frame)
+		PLAYER_ICON_FUNC(Ship)
+		PLAYER_ICON_FUNC(Ball)
+		PLAYER_ICON_FUNC(Bird)
+		PLAYER_ICON_FUNC(Dart)
+		PLAYER_ICON_FUNC(Robot)
+		PLAYER_ICON_FUNC(Spider)
+		PLAYER_ICON_FUNC(Streak)
+		PLAYER_ICON_FUNC(DeathEffect)
+		PLAYER_ICON_FUNC(Color)
+		PLAYER_ICON_FUNC(Color2)
 		void setPlayerGlow(bool v) { m_bPlayerGlow = v; }
 		void setPlayerIconType(IconType v) { m_nPlayerIconType = v; }
 

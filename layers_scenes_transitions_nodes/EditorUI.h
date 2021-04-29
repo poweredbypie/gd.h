@@ -20,6 +20,11 @@ class EditorUI : public cocos2d::CCLayer {
 
             return ret;
         }
+        cocos2d::CCArray* getSelectedObjects() {
+            return reinterpret_cast<cocos2d::CCArray*(__thiscall*)(EditorUI*)>(
+                base + 0x86900
+            )(this);
+        }
 };
 
 }

@@ -20,6 +20,15 @@ namespace gd {
 				base + 0x24800
 				)();
 		}
+		static void playSound(std::string sName) {
+			reinterpret_cast<void(__stdcall*)(
+				std::string
+			)>(
+				base + 0x25450
+			)(
+				sName
+			);
+		}
 	};
 }
 

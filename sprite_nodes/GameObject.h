@@ -10,7 +10,9 @@ namespace gd {
 	#pragma runtime_checks("s", off)
 	class GameObject : public CCSpritePlus {
 	protected:
-		PAD(0x278);
+		PAD(0x1EA);
+		bool m_isSelected;
+		PAD(0x8D);
 
 	public:
 		//CCNode vtable
@@ -73,6 +75,29 @@ namespace gd {
 				)(str, unknown);
 			__asm add esp, 0x18
 			return pRet;
+		}
+
+		void deselectObject() {
+			this->m_isSelected = false;
+
+			return reinterpret_cast<void(__fastcall*)(GameObject*)>(
+				base + 0xeee50
+			)(this);
+		}
+		void getSaveString(std::string* sString) {
+			reinterpret_cast<void(__thiscall*)(GameObject*, std::string*)>(
+				base + 0xed0c0
+			)(
+				this, sString
+			);
+		}
+		// custom function to use return value instead of pointer
+		std::string getString() {
+			std::string str;
+			
+			this->getSaveString(&str);
+
+			return str;
 		}
 	};
 	#pragma runtime_checks("s", restore)

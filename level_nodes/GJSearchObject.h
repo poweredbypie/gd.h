@@ -25,12 +25,11 @@ enum SearchType {
 };
 
 class GJSearchObject : public cocos2d::CCNode {
-    protected:
-        SearchType m_nScreenID;
-
-        // havent checked if there are more members
-
     public:
+        SearchType m_nScreenID;
+        PAD(96);
+        int currentFolder; // might be unsigned, but then again its robtop
+
         static GJSearchObject* create(SearchType nID) {
             return reinterpret_cast<GJSearchObject*(__fastcall*)(
                 SearchType

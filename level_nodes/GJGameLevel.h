@@ -172,7 +172,7 @@ public:
   std::string rateUser;
 
   bool dontSave;
-  bool levelDownloaded;
+  bool levelNotDownloaded;
 
   int requiredCoins;
   bool isUnlocked;

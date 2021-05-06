@@ -54,6 +54,7 @@ namespace gd {
 #include "manager_nodes/AchievementManager.h"
 #include "manager_nodes/GJUserScore.h"
 #include "manager_nodes/GJAccountManager.h"
+#include "manager_nodes/GJEffectManager.h"
 
 #include "menu_nodes/CCMenuItemSpriteExtra.h"
 #include "menu_nodes/CCMenuItemToggler.h"
@@ -64,6 +65,7 @@ namespace gd {
 #include "level_nodes/GJSearchObject.h"
 
 #include "sprite_nodes/CCSpritePlus.h"
+#include "sprite_nodes/ColorActionSprite.h"
 #include "sprite_nodes/ButtonSprite.h"
 #include "sprite_nodes/GameObject.h"
 #include "sprite_nodes/CCAnimatedSprite.h"
@@ -73,6 +75,7 @@ namespace gd {
 #include "sprite_nodes/GJItemIcon.h"
 #include "sprite_nodes/GJRobotSprite.h"
 #include "sprite_nodes/GJSpiderSprite.h"
+#include "sprite_nodes/GJSpriteColor.h"
 #include "sprite_nodes/SimplePlayer.h"
 
 #include "text_input_nodes/CCTextInputNode.h"

@@ -76,6 +76,5 @@ namespace gd {
 #include "sprite_nodes/SimplePlayer.h"
 
 #include "text_input_nodes/CCTextInputNode.h"
-#include "text_input_nodes/TextInputDelegate.h"
 
 #endif

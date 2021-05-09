@@ -8,7 +8,7 @@ namespace gd {
 	class GJBaseGameLayer;
 	class GameObject;
 	// class EndPortalObject;
-	using EndPortalOject = GameObject;
+	using EndPortalObject = GameObject;
 	// class AudioEffectsLayer;
 	using AudioEffectsLayer = cocos2d::CCLayerColor;
 	// class GJGroundLayer;

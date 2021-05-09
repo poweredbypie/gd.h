@@ -5,15 +5,7 @@
 
 namespace gd {
 
-	typedef enum {
-		kIconTypePlayer,
-		kIconTypeShip,
-		kIconTypeBall,
-		kIconTypeBird,
-		kIconTypeDart,
-		kIconTypeRobot,
-		kIconTypeSpider
-	} IconType;
+	enum IconType;
 
 	class GJRobotSprite;
 	class GJSpiderSprite;
@@ -84,8 +76,4 @@ namespace gd {
 	};
 }
 
-<<<<<<< HEAD
 #endif
-=======
-#endif 
->>>>>>> 2efed940c1b1f609a597dddd3f7658c97fda2813

@@ -20,7 +20,7 @@ namespace gd {
         float unk_10C;
         bool unk_110;
         PAD(3);
-    }
+    };
 }
 
 #endif

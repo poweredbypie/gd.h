@@ -6,6 +6,9 @@
 namespace gd {
 
 	class GameObject;
+	class GJRobotSprite;
+	class GJSpiderSprite;
+	using HardStreak = cocos2d::CCDrawNode;
 
 	class PlayerObject : public GameObject {
 	public:

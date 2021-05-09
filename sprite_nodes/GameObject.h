@@ -8,8 +8,8 @@ namespace gd {
 	class CCSpritePlus;
 
 	enum GameObjectType {
-		Solid = 0;
-		Hazard = 2;
+		Solid = 0,
+		Hazard = 2
 		// too lazy to add the rest, theyre all here https://gist.github.com/absoIute/c8fa23c9b2cb39252755465345bc6e35#file-blocks-h-L1615
 	};
 
@@ -87,7 +87,7 @@ namespace gd {
 		PAD(24);
 		bool unk_3D8;
 		bool unk_3D9;
-		bool isSelected; //0x03DA
+		bool m_bIsSelected; //0x03DA
 		PAD(1);
 		int globalClickCounter; //0x03DC // this is rly weird
 		PAD(12);

@@ -5,7 +5,7 @@
 
 namespace gd {
     class GJEffectManager : public cocos2d::CCNode {
-    }
+    };
 }
 
 #endif

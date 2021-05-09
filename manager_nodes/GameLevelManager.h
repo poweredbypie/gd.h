@@ -41,7 +41,7 @@ class GameLevelManager : public cocos2d::CCNode {
         cocos2d::CCDictionary* unkDict27;
         cocos2d::CCDictionary* unkDict28;
         PAD(168);
-        CCString* unkStr;
+        cocos2d::CCString* unkStr;
         
         inline static GameLevelManager* sharedState() {
             return reinterpret_cast<GameLevelManager*(__stdcall*)()>( gd::base + 0x9f860 )();

@@ -107,7 +107,7 @@ namespace gd {
 		ColorActionSprite* unk_44C;
 		ColorActionSprite* unk_450;
 		GJEffectManager* unk_454;
-		PAD(12);
+		PAD(16);
 
 		//CCNode vtable
 		virtual void setScaleX(float scale) {

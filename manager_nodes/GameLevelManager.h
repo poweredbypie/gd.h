@@ -7,30 +7,40 @@ namespace gd {
 
 class GJGameLevel;
 
-class GameLevelManager : public cocos2d::CCNode {
+    class GameLevelManager : public cocos2d::CCNode {
     public:
-        cocos2d::CCDictionary* unkDict1;
-        cocos2d::CCDictionary* unkDict2;
-        cocos2d::CCDictionary* savedLevelsDict;
+        // thanks to wylie for most of these!
+
+        cocos2d::CCDictionary* m_mainLevels; // the values are GJGameLevel
+        cocos2d::CCDictionary* m_searchFilters; // the level search filters
+        cocos2d::CCDictionary* m_onlineLevels;
+        PAD(4);
+        cocos2d::CCDictionary* m_followedCreators; // key is the account id
+        cocos2d::CCDictionary* m_downloadedLevels;
+        // dear robtop, have you heard of a set
+        // all of these just have the value of CCString("1")
+        cocos2d::CCDictionary* m_likedLevels; // https://github.com/Wyliemaster/gddocs/blob/client/docs/resources/client/gamesave/GLM.md#glm_12
+        cocos2d::CCDictionary* m_ratedLevels;
+        cocos2d::CCDictionary* m_reportedLevels;
+        // the names of the folders
+        cocos2d::CCDictionary* m_onlineFolders;
+        cocos2d::CCDictionary* m_localLevelsFolders;
+        cocos2d::CCDictionary* m_dailyLevels;
+        int m_dailyTimeLeft; // i cant figure out the unit
+        int m_dailyID;
+        int m_dailyID_;
+        PAD(4);
+        int m_weeklyTimeLeft;
+        int m_weeklyID;
+        int m_weeklyID_; // ? (this was 2 lower than the other weekly id)
+        cocos2d::CCDictionary* m_gauntletLevels;
         PAD(8);
-        cocos2d::CCDictionary* unkDict4;
-        cocos2d::CCDictionary* unkDict5;
-        cocos2d::CCDictionary* unkDict6;
-        cocos2d::CCDictionary* unkDict7;
-        cocos2d::CCDictionary* unkDict8;
-        cocos2d::CCDictionary* unkDict9;
-        cocos2d::CCDictionary* unkDict10;
-        cocos2d::CCDictionary* unkDict11;
-        cocos2d::CCDictionary* unkDict12;
-        PAD(32);
-        cocos2d::CCDictionary* unkDict13;
-        PAD(12);
-        cocos2d::CCDictionary* unkDict14;
-        cocos2d::CCDictionary* unkDict15;
-        cocos2d::CCDictionary* unkDict16;
-        cocos2d::CCDictionary* unkDict17;
-        cocos2d::CCDictionary* unkDict18;
-        cocos2d::CCDictionary* unkDict19;
+        cocos2d::CCDictionary* unkDict14; // some cache thing it seems (values are strings)
+        cocos2d::CCDictionary* m_knownUsers; // ? not sure 14C
+        cocos2d::CCDictionary* m_accountIDtoUserIDDict; // 150
+        cocos2d::CCDictionary* m_userIDtoAccountIDDict; // 154
+        cocos2d::CCDictionary* unkDict18; // cached lvls?? (values are arrays)
+        cocos2d::CCDictionary* unkDict19; // more cache stuff (values are strings)
         cocos2d::CCDictionary* unkDict20;
         cocos2d::CCDictionary* unkDict21;
         cocos2d::CCDictionary* unkDict22;
@@ -40,8 +50,11 @@ class GameLevelManager : public cocos2d::CCNode {
         cocos2d::CCDictionary* unkDict26;
         cocos2d::CCDictionary* unkDict27;
         cocos2d::CCDictionary* unkDict28;
-        PAD(168);
-        cocos2d::CCString* unkStr;
+        std::string unkStr1;
+        std::string unkStr2; // im not sure if this is actually is a std::string, although it looks like one
+        PAD(92);
+        std::string unkStr3;
+        cocos2d::CCString* unkStr4;
         
         inline static GameLevelManager* sharedState() {
             return reinterpret_cast<GameLevelManager*(__stdcall*)()>( gd::base + 0x9f860 )();
@@ -50,7 +63,7 @@ class GameLevelManager : public cocos2d::CCNode {
         inline static gd::GJGameLevel* createNewLevel() {
             return reinterpret_cast<gd::GJGameLevel*(__stdcall*)()>( gd::base + 0xa0db0 )();
         }
-};
+    };
 
 }
 

@@ -102,6 +102,12 @@ namespace gd {
 				base + 0x1FA860
 				)(this, visible);
 		}
+		void pushButton(int button) {
+			reinterpret_cast<void(__thiscall*)(PlayerObject*, int)>(base + 0x1F4E40)(this, button);
+		}
+		void releaseButton(int button) {
+			reinterpret_cast<void(__thiscall*)(PlayerObject*, int)>(base + 0x1F4F70)(this, button);
+		}
 	};
 }
 

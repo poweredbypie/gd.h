@@ -5,6 +5,8 @@
 
 namespace gd {
     class GJGameLevel;
+    class NumberInputLayer;
+    class SetIDPopup;
 
     class TextInputDelegate {
         virtual void textChanged(void) {};

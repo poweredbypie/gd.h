@@ -21,6 +21,8 @@ namespace gd {
 
 #include "GDProtocols.h"
 
+#include "delegates/delegates.h"
+
 #include "actions/CCCircleWave.h"
 
 #include "achievement_nodes/AchievementBar.h"
@@ -77,8 +79,6 @@ namespace gd {
 #include "sprite_nodes/GJRobotSprite.h"
 #include "sprite_nodes/GJSpiderSprite.h"
 #include "sprite_nodes/SimplePlayer.h"
-
-#include "delegates/delegates.h"
 
 #include "text_input_nodes/CCTextInputNode.h"
 

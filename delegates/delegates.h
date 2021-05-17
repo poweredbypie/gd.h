@@ -5,6 +5,8 @@
 
 namespace gd {
     class GJGameLevel;
+    class NumberInputLayer;
+    class SetIDPopup;
 
     class TextInputDelegate {
         virtual void textChanged(void) {};
@@ -16,18 +18,18 @@ namespace gd {
     };
 
     enum UpdateResponse {
-        kUpdateResponseUnknown = 0x0,
-        kUpdateResponseUpToDate = 0x1,
-        kUpdateResponseGameVerOutOfDate = 0x2,
-        kUpdateResponseUpdateSuccess = 0x3,
+        kUpdateResponseUnknown,
+        kUpdateResponseUpToDate,
+        kUpdateResponseGameVerOutOfDate,
+        kUpdateResponseUpdateSuccess,
     };
 
     enum LikeItemType {
-        kLikeItemTypeUnknown = 0x0,
+        kLikeItemTypeUnknown,
     };
 
     class LevelDownloadDelegate {
-        virtual void levelDownloadFinished(GJGameLevel *);
+        virtual void levelDownloadFinished(GJGameLevel*);
         virtual void levelDownloadFailed(int);
     };
 
@@ -37,7 +39,7 @@ namespace gd {
     };
 
     class LevelUpdateDelegate {
-        virtual void levelUpdateFinished(GJGameLevel *,UpdateResponse);
+        virtual void levelUpdateFinished(GJGameLevel*, UpdateResponse);
         virtual void levelUpdateFailed(int);
     };
 
@@ -59,11 +61,11 @@ namespace gd {
     };
 
     class NumberInputDelegate {
-        virtual void numberInputClosed(NumberInputLayer *);
+        virtual void numberInputClosed(NumberInputLayer*);
     };
 
     class SetIDPopupDelegate {
-        virtual void setIDPopupClosed(SetIDPopup *,int);
+        virtual void setIDPopupClosed(SetIDPopup*, int);
     };
 }
 

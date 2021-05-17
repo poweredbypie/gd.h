@@ -5,43 +5,41 @@
 
 namespace gd {
 
-enum SearchType {
-    MyLevels        = 0x62,
-    SavedLevels     = 0x63,
-    Featured        = 0x6,
-    HallOfFame      = 0x10,
-    MapPacks        = 0x9,
-    Search          = 0x0,
-    MostDownloaded  = 0x1,
-    MostLiked       = 0x2,
-    Trending        = 0x3,
-    Recent          = 0x4,
-    Magic           = 0x7,
-    Awarded         = 0xB,
-    Followed        = 0xC,
-    Friends         = 0xD,
-    FindUsers       = 0xE,
-    UsersLevels     = 0x5
-};
+    enum SearchType {
+        kSearchTypeSearch         = 0,
+        kSearchTypeMostDownloaded = 1,
+        kSearchTypeMostLiked      = 2,
+        kSearchTypeTrending       = 3,
+        kSearchTypeRecent         = 4,
+        kSearchTypeUsersLevels    = 5,
+        kSearchTypeFeatured       = 6,
+        kSearchTypeMagic          = 7,
+        kSearchTypeMapPacks       = 9,
+        kSearchTypeAwarded        = 11,
+        kSearchTypeFollowed       = 12,
+        kSearchTypeFriends        = 13,
+        kSearchTypeFindUsers      = 14,
+        kSearchTypeHallOfFame     = 16,
+        kSearchTypeMyLevels       = 98,
+        kSearchTypeSavedLevels    = 99,
+    };
 
-class GJSearchObject : public cocos2d::CCNode {
+    class GJSearchObject : public cocos2d::CCNode {
     public:
         SearchType m_nScreenID;
         PAD(96);
         int currentFolder; // might be unsigned, but then again its robtop
 
         static GJSearchObject* create(SearchType nID) {
-            return reinterpret_cast<GJSearchObject*(__fastcall*)(
-                SearchType
-            )>(
+            return reinterpret_cast<GJSearchObject*(__fastcall*)(SearchType)>(
                 gd::base + 0xc2b90
-            )( nID );
+            )(nID);
         }
 
         SearchType getType() {
             return this->m_nScreenID;
         }
-};
+    };
 
 }
 

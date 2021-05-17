@@ -40,6 +40,8 @@ namespace gd {
 #include "layers_scenes_transitions_nodes/LevelEditorLayer.h"
 #include "layers_scenes_transitions_nodes/EditorUI.h"
 #include "layers_scenes_transitions_nodes/GJSearchObject.h"
+#include "layers_scenes_transitions_nodes/NumberInputLayer.h"
+#include "layers_scenes_transitions_nodes/SetIDPopup.h"
 
 #include "scroll_nodes/CCContentLayer.h"
 #include "scroll_nodes/CCIndexPath.h"
@@ -55,6 +57,7 @@ namespace gd {
 #include "manager_nodes/AchievementManager.h"
 #include "manager_nodes/GJUserScore.h"
 #include "manager_nodes/GJAccountManager.h"
+#include "manager_nodes/MusicDownloadManager.h"
 
 #include "menu_nodes/CCMenuItemSpriteExtra.h"
 #include "menu_nodes/CCMenuItemToggler.h"
@@ -74,6 +77,8 @@ namespace gd {
 #include "sprite_nodes/GJRobotSprite.h"
 #include "sprite_nodes/GJSpiderSprite.h"
 #include "sprite_nodes/SimplePlayer.h"
+
+#include "delegates/delegates.h"
 
 #include "text_input_nodes/CCTextInputNode.h"
 

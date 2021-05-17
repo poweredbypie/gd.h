@@ -69,6 +69,7 @@ namespace gd {
 #include "level_nodes/GJGameLevel.h"
 #include "level_nodes/GJSearchObject.h"
 #include "level_nodes/LevelSettingsObject.h"
+#include "level_nodes/SongInfoObject.h"
 
 #include "sprite_nodes/CCSpritePlus.h"
 #include "sprite_nodes/ColorActionSprite.h"

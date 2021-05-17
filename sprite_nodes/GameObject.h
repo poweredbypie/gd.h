@@ -7,145 +7,145 @@ namespace gd {
 
 	class CCSpritePlus;
 
+	// jesus fucking christ
 	enum GameObjectType {
-		// dunno
+		kGameObjectTypeSolid = 0,
+		kGameObjectTypeHazard = 2,
+		kGameObjectTypeInverseGravityPortal = 3,
+		kGameObjectTypeNormalGravityPortal = 4,
+		kGameObjectTypeShipPortal = 5,
+		kGameObjectTypeCubePortal = 6,
+		kGameObjectTypeDecoration = 7,
+		kGameObjectTypeYellowJumpPad = 8,
+		kGameObjectTypePinkJumpPad = 9,
+		kGameObjectTypeGravityPad = 10,
+		kGameObjectTypeYellowJumpRing = 11,
+		kGameObjectTypePinkJumpRing = 12,
+		kGameObjectTypeGravityRing = 13,
+		kGameObjectTypeInverseMirrorPortal = 14,
+		kGameObjectTypeNormalMirrorPortal = 15,
+		kGameObjectTypeBallPortal = 16,
+		kGameObjectTypeRegularSizePortal = 17,
+		kGameObjectTypeMiniSizePortal = 18,
+		kGameObjectTypeUfoPortal = 19,
+		kGameObjectTypeModifier = 20,
+		kGameObjectTypeSecretCoin = 22,
+		kGameObjectTypeDualPortal = 23,
+		kGameObjectTypeSoloPortal = 24,
+		kGameObjectTypeSlope = 25,
+		kGameObjectTypeWavePortal = 26,
+		kGameObjectTypeRobotPortal = 27,
+		kGameObjectTypeTeleportPortal = 28,
+		kGameObjectTypeCollectible = 30,
+		kGameObjectTypeUserCoin = 31,
+		kGameObjectTypeDropRing = 32,
+		kGameObjectTypeSpiderPortal = 33,
+		kGameObjectTypeRedJumpPad = 34,
+		kGameObjectTypeRedJumpRing = 35,
+		kGameObjectTypeCustomRing = 36,
+		kGameObjectTypeDashRing = 37,
+		kGameObjectTypeGravityDashRing = 38,
+		kGameObjectTypeCollisionObject = 39,
+		kGameObjectTypeSpecial = 40,
 	};
 
 	enum GJCustomColorMode {};
 
+	class GJSpriteColor;
+	class ColorActionSprite;
+	class GJEffectManager;
+
 	#pragma runtime_checks("s", off)
 	class GameObject : public CCSpritePlus {
 	protected:
-		// from zmx
-		// huge thank you!!!
-
-		bool m_bFlipX;
-		bool m_bFlipY;
-
-		cocos2d::CCPoint m_obUnknown_0x1C4;
-		cocos2d::CCObject* m_pOrientedBox;
-		bool m_bIsOriented;
-
-		cocos2d::CCObject* m_pObjectGlow;
-		bool m_bIsSpeedPortal;
-		bool m_bIsRingObject;
-
-		cocos2d::CCAction* m_pAction;
-		bool m_bIsRotatingObject;
-		bool m_bPoweredOn;
-		bool m_bHideObject;
-
-		float m_fUnknown_0x1E4;
-		float m_fUnknown_0x1E8;
-
-		bool m_bIsActive;
-		bool m_bUnknown_0x1ED;
-		bool m_bIsDestroyed;
-
-		cocos2d::CCParticleSystemQuad* m_pIbjectParticleSystem;
-		std::string m_sVisibilityString;
-		bool m_bIsVisible;
-
-		cocos2d::CCPoint m_obUnknown_0x1FC;
-		cocos2d::CCRect m_obUnknown_0x204;
-
-		float m_fFadeInPosOffset;
-		cocos2d::CCRect m_obUnknown_0x21C;
-
-		bool m_bObjectRectDirty;
-		bool m_bIsStartPos;
-		bool m_bHasBeenActivatedByPlayer;
-		bool m_bHasBeenActivated;
-		bool m_bCanChangeCustomColor;
-		bool m_bHasCustomChildren;
-		bool m_bHasColorSprite;
-
-		cocos2d::CCObject* m_pColorSprite;
-		bool m_bIgnoreScreenCheck;
-
-		float m_fRadius;
-		bool m_bIsRotated;
-
-		float m_fScaleModX;
-		float m_fScaleModY;
-
-		int m_nID;
-
-		GameObjectType m_tGameObjectType;
-		int m_nSectionIdx;
-		bool m_bShouldSpawn;
-		bool m_bTouchTriggered;
-
-		cocos2d::CCPoint m_obRealPosition;
-		std::string m_sRealTextureName;
-
-		bool m_bIsDisabled;
-		bool m_bUseAudioScale;
-		bool m_bIsSleeping;
-
-		float m_fStartRotation;
-		float m_fStartScaleX;
-		float m_fStartScaleY;
-		bool m_bStartFlipX;
-		bool m_bStartFlipY;
-		bool m_bShouldHide;
-
-		float m_fSpawnXPos;
-		bool m_bIsInvisible;
-
-		float m_fEnterAngle;
-		int m_fEnterEffect;
-
-		cocos2d::ccColor3B m_cTintColor;
-		float m_fTintDuration;
-		bool m_bTintGround;
-
-		int m_nObjectKey;
-		bool m_bDontTransform;
-		bool m_bDontFade;
-		bool m_bDontFadeTinted;
-		bool m_bIsTintObject;
-		bool m_bStateVar;
-
-		int m_nObjectZ;
-		cocos2d::CCNode* m_pParentObject;
-
-		bool m_bCustomAudioScale;
-		float m_fMinAudioScale;
-		float m_fMaxAudioScale;
-
-		int m_nUniqueID;
-		bool m_bInvisibleMode;
-
-		bool m_bGlowUseBGColor;
-		bool m_bUseSpecialLight;
-		bool m_bGlowUseReverseColor;
-		bool m_bIsColorObject;
-
-		float m_fOpacityMod;
-		float m_fGlowOpacityMod;
-
-		bool m_bDontShow;
-		bool m_bUpSlope;
-
-		int m_nSlopeType;
-		float m_fSlopeAngle;
-
-		bool m_bIsDangerousObject;
-		GJCustomColorMode m_tCustomColorMode;
-		GJCustomColorMode m_tColorMode;
-
-		bool m_bForceBottomLayer;
-		bool m_bEditorSelected;
-		bool m_bCopyPlayerColor1;
-		bool m_bCopyPlayerColor2;
-		bool m_bCustomColorBlend;
-		bool m_bWasSelected;
-		bool m_bIsSelected;
-
-		int m_bEditorSelectIdx;
-		cocos2d::CCPoint m_obStoredPosition;
-		int m_ngroupID;
+		PAD(44);
+		bool unk_21C;
+		bool unk_21D;
+		bool unk_21E;
+		PAD(13);
+		cocos2d::CCPoint realPositionOffset; //0x022C
+		PAD(4);
+		bool unk_238;
+		bool isFlippedX; //0x0239
+		bool isFlippedY; //0x023A
+		PAD(9);
+		bool isOriented; //0x0244 // what
+		PAD(35);
+		float objectRectWidth; //0x0268
+		float objectRectHeight; //0x026C
+		bool unk_270;
+		bool unk_271;
+		bool unk_272;
+		PAD(1);
+		cocos2d::CCParticleSystemQuad* unk_274;
+		std::string effectPlistName; //0x0278
+		PAD(32);
+		bool unk_2B0;
+		PAD(23);
+		bool unk_2C8;
+		bool unk_2C9;
+		bool hasBeenActivated; //0x02CA
+		PAD(25);
+		cocos2d::CCSprite* unk_2E4;
+		PAD(8);
+		bool isRotatedSide; //0x02F0 // what
+		PAD(3);
+		float unk_2F4;
+		float unk_2F8;
+		unsigned int uniqueID; //0x02FC
+		GameObjectType objectType; //0x0300
+		int section; //0x0304
+		PAD(4);
+		cocos2d::CCPoint realPosition; //0x030C
+		std::string textureName; //0x0314
+		bool unk_32C;
+		bool unk_32D;
+		PAD(14);
+		float unk_33C;
+		float unk_340;
+		PAD(16);
+		bool hasGlowDisabled; //0x0354
+		PAD(7);
+		float scale; //0x035C
+		int objectID; //0x0360
+		PAD(4);
+		bool unk_368;
+		bool unk_369;
+		bool unk_36A;
+		bool dontEnter; //0x036B
+		bool dontFade; //0x036C
+		PAD(35);
+		float unk_390;
+		PAD(20);
+		GJSpriteColor* baseColor; //0x03A8
+		GJSpriteColor* detailColor; //0x03AC
+		PAD(8);
+		int zLayer; //0x03B8
+		int zOrder; //0x03BC
+		PAD(24);
+		bool unk_3D8;
+		bool unk_3D9;
+		bool m_bIsSelected; //0x03DA
+		PAD(1);
+		int globalClickCounter; //0x03DC // this is rly weird
+		PAD(12);
+		float unk_3EC;
+		bool groupParent; //0x03F0
+		PAD(3);
+		short** groups; //0x03F4
+		short groupCount; //0x03F8
+		PAD(18);
+		int editorLayer; //0x040C
+		int editorLayer2; //0x0410
+		PAD(16);
+		cocos2d::CCPoint startPos; //0x0424 // maybe
+		PAD(28);
+		bool highDetail; //0x0448
+		PAD(3);
+		ColorActionSprite* unk_44C;
+		ColorActionSprite* unk_450;
+		GJEffectManager* unk_454;
+		PAD(16);
 
 	public:
 		//CCNode vtable
@@ -217,20 +217,17 @@ namespace gd {
 				base + 0xeee50
 			)(this);
 		}
-		void getSaveString(std::string* sString) {
+
+		std::string getSaveString() {
+			std::string ret;
+
 			reinterpret_cast<void(__thiscall*)(GameObject*, std::string*)>(
 				base + 0xed0c0
 			)(
-				this, sString
+				this, &ret
 			);
-		}
-		// custom function to use return value instead of pointer
-		std::string getString() {
-			std::string str;
-			
-			this->getSaveString(&str);
 
-			return str;
+			return ret;
 		}
 	};
 	#pragma runtime_checks("s", restore)

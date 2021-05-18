@@ -7,14 +7,15 @@ namespace gd {
     class GJGameLevel;
     class NumberInputLayer;
     class SetIDPopup;
+    class CCTextInputNode;
 
     class TextInputDelegate {
-        virtual void textChanged(void) {};
-        virtual void textInputOpened(void) {};
-        virtual void textInputClosed(void) {};
-        virtual void textInputShouldOffset(float) {};
-        virtual void textInputReturn(void) {};
-        virtual bool allowTextInput(void) {return true;};
+        virtual void textChanged(CCTextInputNode*) {}
+        virtual void textInputOpened(CCTextInputNode*) {}
+        virtual void textInputClosed(CCTextInputNode*) {}
+        virtual void textInputShouldOffset(CCTextInputNode*, float) {}
+        virtual void textInputReturn(CCTextInputNode*) {}
+        virtual bool allowTextInput(CCTextInputNode*) {return true;}
     };
 
     enum UpdateResponse {

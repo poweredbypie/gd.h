@@ -4,6 +4,8 @@
 #include <gd.h>
 
 namespace gd {
+	class TextInputDelegate;
+
 	#pragma runtime_checks("s", off)
 	class CCTextInputNode : public cocos2d::CCLayer, public cocos2d::CCIMEDelegate, public cocos2d::CCTextFieldDelegate {
 	protected:
@@ -18,7 +20,7 @@ namespace gd {
 		cocos2d::ccColor3B m_cNormalColor;
 		cocos2d::CCLabelBMFont* m_pCursor;
 		cocos2d::CCTextFieldTTF* m_pTextField;
-		PAD(0x4);
+		TextInputDelegate* m_delegate;
 		int m_nMaxLabelLength;
 		cocos2d::CCLabelBMFont* m_pPlaceholderLabel;
 		bool m_bUnknown;
@@ -65,6 +67,7 @@ namespace gd {
 		void setString(const char* text) { m_pTextField->setString(text); }
 		const char* getString() { return m_pTextField->getString(); }
 		cocos2d::CCLabelBMFont* getPlaceholderLabel() { return m_pPlaceholderLabel; }
+		void setDelegate(TextInputDelegate* delegate) { m_delegate = delegate; }
 	};
 	#pragma runtime_checks("s", restore)
 }

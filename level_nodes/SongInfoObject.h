@@ -12,12 +12,12 @@ namespace gd {
         int m_songID;
         std::string m_songName;
         std::string m_artistName;
-        std::string m_unknownStr; // might be youtube video
+        std::string m_youtubeVideo; // unsure
         std::string m_youtubeChannel;
         std::string m_songURL;
         int m_artistID;
         float m_fileSize;
-        PAD(4);
+        bool m_unknownSong;
         int m_priority;
         LevelSettingsObject* m_levelSettings;
     };

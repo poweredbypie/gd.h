@@ -43,6 +43,8 @@ namespace gd {
 #include "layers_scenes_transitions_nodes/EditorUI.h"
 #include "layers_scenes_transitions_nodes/NumberInputLayer.h"
 #include "layers_scenes_transitions_nodes/SetIDPopup.h"
+#include "layers_scenes_transitions_nodes/CustomSongWidget.h"
+#include "layers_scenes_transitions_nodes/CustomSongLayer.h"
 
 #include "scroll_nodes/CCContentLayer.h"
 #include "scroll_nodes/CCIndexPath.h"

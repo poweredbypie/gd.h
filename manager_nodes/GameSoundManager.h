@@ -29,6 +29,16 @@ namespace gd {
 				sName
 			);
 		}
+		void playBackgroundMusic(std::string path, bool idk, bool idk2) {
+			reinterpret_cast<void(__thiscall*)(GameSoundManager*, std::string, bool, bool)>(base + 0x252b0)(this, path, idk, idk2);
+		}
+		// penis
+		void playBackgroundMusic(bool idk, std::string path) {
+			reinterpret_cast<void(__thiscall*)(GameSoundManager*, bool, std::string)>(base + 0x4bf00)(this, idk, path);
+		}
+		void stopBackgroundMusic() {
+			reinterpret_cast<void(__thiscall*)(GameSoundManager*)>(base + 0x253a0)(this);
+		}
 	};
 }
 

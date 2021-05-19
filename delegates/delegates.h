@@ -8,6 +8,8 @@ namespace gd {
     class NumberInputLayer;
     class SetIDPopup;
     class CCTextInputNode;
+    class GJDropDownLayer;
+    class SongInfoObject;
 
     class TextInputDelegate {
         virtual void textChanged(CCTextInputNode*) {}
@@ -67,6 +69,20 @@ namespace gd {
 
     class SetIDPopupDelegate {
         virtual void setIDPopupClosed(SetIDPopup*, int);
+    };
+
+    class GJDropDownLayerDelegate {
+        virtual void dropDownLayerWillClose(GJDropDownLayer*);
+    };
+
+    enum GJSongError;
+
+    class MusicDownloadDelegate {
+        virtual void loadSongInfoFinished(SongInfoObject*) {}
+        virtual void loadSongInfoFailed(int, GJSongError) {}
+        virtual void downloadSongFinished(SongInfoObject*) {}
+        virtual void downloadSongFailed(int, GJSongError) {}
+        virtual void songStateChanged() {}
     };
 }
 

@@ -28,6 +28,8 @@ namespace gd {
 #include "achievement_nodes/AchievementBar.h"
 #include "achievement_nodes/AchievementNotifier.h"
 
+#include "other_nodes/GJSearchObject.h"
+
 #include "layers_scenes_transitions_nodes/FLAlertLayer.h"
 #include "layers_scenes_transitions_nodes/GJDropDownLayer.h"
 #include "layers_scenes_transitions_nodes/GJListLayer.h"
@@ -41,7 +43,6 @@ namespace gd {
 #include "layers_scenes_transitions_nodes/PlayLayer.h"
 #include "layers_scenes_transitions_nodes/LevelEditorLayer.h"
 #include "layers_scenes_transitions_nodes/EditorUI.h"
-#include "layers_scenes_transitions_nodes/GJSearchObject.h"
 #include "layers_scenes_transitions_nodes/NumberInputLayer.h"
 #include "layers_scenes_transitions_nodes/SetIDPopup.h"
 

@@ -25,7 +25,7 @@ namespace gd {
         }
 
         cocos2d::CCArray* getDownloadedSongs() {
-            return reinterpret_cast<CCArray*(__thiscall*)(MusicDownloadManager*)>(base + 0x195640)(this);
+            return reinterpret_cast<cocos2d::CCArray*(__thiscall*)(MusicDownloadManager*)>(base + 0x195640)(this);
         }
 
         void songStateChanged() {

@@ -45,6 +45,7 @@ namespace gd {
 #include "layers_scenes_transitions_nodes/SetIDPopup.h"
 #include "layers_scenes_transitions_nodes/CustomSongWidget.h"
 #include "layers_scenes_transitions_nodes/CustomSongLayer.h"
+#include "layers_scenes_transitions_nodes/SongInfoLayer.h"
 
 #include "scroll_nodes/CCContentLayer.h"
 #include "scroll_nodes/CCIndexPath.h"

@@ -64,6 +64,7 @@ namespace gd {
 
 #include "menu_nodes/CCMenuItemSpriteExtra.h"
 #include "menu_nodes/CCMenuItemToggler.h"
+#include "menu_nodes/Slider.h"
 
 #include "audio_nodes/FMODAudioEngine.h"
 

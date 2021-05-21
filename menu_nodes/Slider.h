@@ -63,6 +63,14 @@ namespace gd {
                 );
             }
 
+            static Slider* create(
+                cocos2d::CCNode* target,
+                cocos2d::SEL_MenuHandler click,
+                float scale
+            ) {
+                return create(target, click, "slidergroove.png", "sliderthumb.png", "sliderthumbsel.png", scale);
+            }
+
         // todo
     };
 

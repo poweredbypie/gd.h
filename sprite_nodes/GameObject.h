@@ -63,88 +63,88 @@ namespace gd {
 		bool unk_21D;
 		bool unk_21E;
 		PAD(13);
-		cocos2d::CCPoint realPositionOffset; //0x022C
+		cocos2d::CCPoint m_obRealPositionOffset; //0x022C
 		PAD(4);
 		bool unk_238;
-		bool isFlippedX; //0x0239
-		bool isFlippedY; //0x023A
+		bool m_bIsFlippedX; //0x0239
+		bool m_bIsFlippedY; //0x023A
 		PAD(9);
-		bool isOriented; //0x0244 // what
+		bool m_bIsOriented; //0x0244 // what
 		PAD(35);
-		float objectRectWidth; //0x0268
-		float objectRectHeight; //0x026C
+		float m_fObjectRectWidth; //0x0268
+		float m_fObjectRectHeight; //0x026C
 		bool unk_270;
 		bool unk_271;
 		bool unk_272;
 		PAD(1);
-		cocos2d::CCParticleSystemQuad* unk_274;
-		std::string effectPlistName; //0x0278
+		cocos2d::CCParticleSystemQuad* m_pParticleSystemQuad;
+		std::string m_sEffectPlistName; //0x0278
 		PAD(32);
 		bool unk_2B0;
 		PAD(23);
 		bool unk_2C8;
 		bool unk_2C9;
-		bool hasBeenActivated; //0x02CA
+		bool m_bHasBeenActivated; //0x02CA
 		PAD(25);
-		cocos2d::CCSprite* unk_2E4;
+		cocos2d::CCSprite* m_pUnk_2E4;
 		PAD(8);
-		bool isRotatedSide; //0x02F0 // what
+		bool m_bIsRotatedSide; //0x02F0 // what
 		PAD(3);
 		float unk_2F4;
 		float unk_2F8;
-		unsigned int uniqueID; //0x02FC
-		GameObjectType objectType; //0x0300
-		int section; //0x0304
+		unsigned int m_nUniqueID; //0x02FC
+		GameObjectType m_nObjectType; //0x0300
+		int m_nSection; //0x0304
 		PAD(4);
-		cocos2d::CCPoint realPosition; //0x030C
-		std::string textureName; //0x0314
+		cocos2d::CCPoint m_obRealPosition; //0x030C
+		std::string m_sTextureName; //0x0314
 		bool unk_32C;
 		bool unk_32D;
 		PAD(14);
 		float unk_33C;
 		float unk_340;
 		PAD(16);
-		bool hasGlowDisabled; //0x0354
+		bool m_bHasGlowDisabled; //0x0354
 		PAD(7);
-		float scale; //0x035C
-		int objectID; //0x0360
+		float m_fScale; //0x035C
+		int m_nObjectID; //0x0360
 		PAD(4);
 		bool unk_368;
 		bool unk_369;
 		bool unk_36A;
-		bool dontEnter; //0x036B
-		bool dontFade; //0x036C
+		bool m_bDontEnter; //0x036B
+		bool m_bDontFade; //0x036C
 		PAD(35);
 		float unk_390;
 		PAD(20);
-		GJSpriteColor* baseColor; //0x03A8
-		GJSpriteColor* detailColor; //0x03AC
+		GJSpriteColor* m_pBaseColor; //0x03A8
+		GJSpriteColor* m_pDetailColor; //0x03AC
 		PAD(8);
-		int zLayer; //0x03B8
-		int zOrder; //0x03BC
+		int m_nZLayer; //0x03B8
+		int m_nZOrder; //0x03BC
 		PAD(24);
 		bool unk_3D8;
 		bool unk_3D9;
 		bool m_bIsSelected; //0x03DA
 		PAD(1);
-		int globalClickCounter; //0x03DC // this is rly weird
+		int m_nGlobalClickCounter; //0x03DC // this is rly weird
 		PAD(12);
 		float unk_3EC;
-		bool groupParent; //0x03F0
+		bool m_bGroupParent; //0x03F0
 		PAD(3);
-		short** groups; //0x03F4
-		short groupCount; //0x03F8
+		short** m_pGroups; //0x03F4
+		short m_nGroupCount; //0x03F8
 		PAD(18);
-		int editorLayer; //0x040C
-		int editorLayer2; //0x0410
+		int m_nEditorLayer; //0x040C
+		int m_nEditorLayer2; //0x0410
 		PAD(16);
-		cocos2d::CCPoint startPos; //0x0424 // maybe
+		cocos2d::CCPoint m_obStartPos; //0x0424 // maybe
 		PAD(28);
-		bool highDetail; //0x0448
+		bool m_bHighDetail; //0x0448
 		PAD(3);
 		ColorActionSprite* unk_44C;
 		ColorActionSprite* unk_450;
-		GJEffectManager* unk_454;
+		GJEffectManager* m_pEffectManager;
 		PAD(16);
 
 	public:
@@ -229,6 +229,8 @@ namespace gd {
 
 			return ret;
 		}
+
+		unsigned int getUniqueID() { return m_nUniqueID; }
 	};
 	#pragma runtime_checks("s", restore)
 }

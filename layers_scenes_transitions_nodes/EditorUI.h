@@ -17,9 +17,23 @@ class EditorUI : public cocos2d::CCLayer {
                 this, _str
             );
 
-            __asm add esp, 0x18
-
             return ret;
+        }
+
+        void deselectAll() {
+            reinterpret_cast<void(__fastcall*)(EditorUI*)>(
+                base + 0x86af0
+            )(this);
+        }
+
+        void selectObjects(cocos2d::CCArray* objs, bool idk) {
+            reinterpret_cast<void(__thiscall*)(
+                EditorUI*, cocos2d::CCArray*, bool
+            )>(
+                base + 0x864a0
+            )(
+                this, objs, idk
+            );
         }
 
         cocos2d::CCArray* getSelectedObjects() {

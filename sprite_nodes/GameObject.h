@@ -132,7 +132,7 @@ namespace gd {
 		float unk_3EC;
 		bool m_bGroupParent; //0x03F0
 		PAD(3);
-		short** m_pGroups; //0x03F4
+		short* m_pGroups; //0x03F4
 		short m_nGroupCount; //0x03F8
 		PAD(18);
 		int m_nEditorLayer; //0x040C
@@ -230,7 +230,22 @@ namespace gd {
 			return ret;
 		}
 
+		void addToGroup(int id) {
+			reinterpret_cast<void(__thiscall*)(
+				GameObject*, int
+			)>(
+				base + 0xeb8d0
+			)(
+				this, id
+			);
+		}
+
 		unsigned int getUniqueID() { return m_nUniqueID; }
+		short getGroupID(int ix) { return m_pGroups[ix]; }
+		short getGroupIDCount() { return m_nGroupCount; }
+		int getGameZOrder() { return m_nZOrder; }
+		void setGameZOrder(int z) { m_nZOrder = z; }
+		void setGameObjType(GameObjectType t) { m_nObjectType = t; }
 	};
 	#pragma runtime_checks("s", restore)
 }

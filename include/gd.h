@@ -30,6 +30,8 @@ namespace gd {
 
 #include "other_nodes/GJSearchObject.h"
 
+#include "layers_scenes_transitions_nodes/CCNodeContainer.h"
+#include "layers_scenes_transitions_nodes/OBB2D.h"
 #include "layers_scenes_transitions_nodes/FLAlertLayer.h"
 #include "layers_scenes_transitions_nodes/GJDropDownLayer.h"
 #include "layers_scenes_transitions_nodes/GJListLayer.h"
@@ -69,6 +71,7 @@ namespace gd {
 #include "audio_nodes/FMODAudioEngine.h"
 
 #include "level_nodes/GJGameLevel.h"
+#include "level_nodes/LevelSettingsObject.h"
 
 #include "sprite_nodes/CCSpritePlus.h"
 #include "sprite_nodes/ButtonSprite.h"

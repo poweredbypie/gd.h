@@ -35,10 +35,10 @@ namespace gd {
         }
 
         static float gridNodeSizeForKey(int key) {
-            float ret;
+            float fRet;
             reinterpret_cast<void(__stdcall*)(int)>(base + 0x1dc920)(key);
-            __asm movss ret, xmm0
-            return ret;
+            __asm movss fRet, xmm0
+            return fRet;
         }
 
         static const char* perspectiveBlockFrame(int key) {
@@ -48,8 +48,8 @@ namespace gd {
         // custom funcs
 
         void addObject(int id, const char* frame) {
-            m_frameToKey->setObject(CCString::createWithFormat("%i", id), frame);
-            m_keyToFrame->setObject(CCString::create(frame), id);
+            m_frameToKey->setObject(cocos2d::CCString::createWithFormat("%i", id), frame);
+            m_keyToFrame->setObject(cocos2d::CCString::create(frame), id);
         }
     };
 }

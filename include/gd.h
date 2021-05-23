@@ -63,6 +63,7 @@ namespace gd {
 #include "manager_nodes/GJAccountManager.h"
 #include "manager_nodes/GJEffectManager.h"
 #include "manager_nodes/MusicDownloadManager.h"
+#include "manager_nodes/ObjectToolbox.h"
 
 #include "menu_nodes/CCMenuItemSpriteExtra.h"
 #include "menu_nodes/CCMenuItemToggler.h"

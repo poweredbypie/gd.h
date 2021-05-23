@@ -15,8 +15,8 @@ namespace gd {
         }
 
         // do these functions exist on windows? idk
-        // theyre small enough where its easier to recreate than to
-        // try to find their addresses
+        // theyre small enough where its easier to recreate them
+        // than to try to find their addresses
 
         cocos2d::CCArray* allKeys() {
             return m_frameToKey->allKeys();

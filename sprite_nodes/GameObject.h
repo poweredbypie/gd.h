@@ -148,7 +148,7 @@ namespace gd {
 		int m_editorLayer; //0x40C
 		int m_editorLayer2; //0x410
 		PAD(16);
-		cocos2d::CCPoint m_startPos; //0x424 uh oh
+		cocos2d::CCPoint m_firstPosition; //0x424 first position from when its placed in the editor
 		PAD(28);
 		bool m_isHighDetail; //0x448
 		PAD(3);

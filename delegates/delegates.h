@@ -84,6 +84,10 @@ namespace gd {
         virtual void downloadSongFailed(int, GJSongError) {}
         virtual void songStateChanged() {}
     };
+
+    class GooglePlayDelegate {
+        virtual void googlePlaySignedIn() {}
+    };
 }
 
 #endif

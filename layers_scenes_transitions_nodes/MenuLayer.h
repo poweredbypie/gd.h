@@ -20,8 +20,8 @@ namespace gd {
 		virtual void keyBackClicked() {
 			reinterpret_cast<void(__thiscall*)(void*)>(base + 0x191f90)(this);
 		}
-		virtual void keyDown(enumKeyCodes key) {
-			reinterpret_cast<void(__thiscall*)(void*, enumKeyCodes)>(base + 0x1922c0)(this, key);
+		virtual void keyDown(cocos2d::enumKeyCodes key) {
+			reinterpret_cast<void(__thiscall*)(void*, cocos2d::enumKeyCodes)>(base + 0x1922c0)(this, key);
 		}
 		virtual void googlePlaySignedIn() {
 			reinterpret_cast<void(__thiscall*)(void*)>(base + 0x191b20)(this);

@@ -54,6 +54,7 @@ namespace gd {
 #include "scroll_nodes/TableView.h"
 #include "scroll_nodes/BoomListView.h"
 #include "scroll_nodes/CustomListView.h"
+#include "scroll_nodes/ScrollingLayer.h"
 
 #include "manager_nodes/GManager.h"
 #include "manager_nodes/GameManager.h"

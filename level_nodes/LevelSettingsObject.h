@@ -4,7 +4,6 @@
 #include <gd.h>
 
 namespace gd {
-<<<<<<< HEAD
     class GJEffectManager;
     class GJGameLevel;
 
@@ -20,11 +19,3 @@ namespace gd {
 }
 
 #endif
-=======
-    class LevelSettingsObject : public cocos2d::CCNode {
-        // tood
-    };
-}
-
-#endif
->>>>>>> 194fd801988f76fb9d7d8f213b33658561775070

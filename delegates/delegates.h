@@ -9,6 +9,7 @@ namespace gd {
     class SetIDPopup;
     class CCTextInputNode;
     class SongInfoObject;
+    class GJSpecialColorSelect;
 
     enum GJSongError {
         kGJSongErrorUnknown = 0,
@@ -26,6 +27,10 @@ namespace gd {
 
     class ColorSelectDelegate {
         virtual void colorSelectClosed(cocos2d::CCNode*);
+    };
+
+    class GJSpecialColorSelectDelegate {
+        virtual void colorSelectClosed(GJSpecialColorSelect*, int);
     };
 
     class GJRotationControlDelegate {

@@ -21,7 +21,6 @@ class EditorUI : public cocos2d::CCLayer,
     public gd::MusicDownloadDelegate {
 
     public:
-        PAD(0x4)
         EditButtonBar* m_pEditButtonBar;
         PAD(0x4)
         cocos2d::CCArray* m_pUnknownArray;

@@ -12,10 +12,8 @@ class GameObject;
 class LevelEditorLayer : public GJBaseGameLayer {
     public:
         PAD(0x84)
-        int m_nCurrentLayere;
         int m_nCurrentLayer;
-        int m_nCurrentLayers;
-        PAD(0x24)
+        PAD(0x2c)
         EditorUI* m_pEditorUI;
 
     public:

@@ -54,6 +54,7 @@ class LevelEditorLayer : public GJBaseGameLayer {
         }
     
         int getCurrentLayer() { return m_nCurrentLayer; }
+        void setCurrentLayer() { m_nCurrentLayer += 1; }
     };
 
 }

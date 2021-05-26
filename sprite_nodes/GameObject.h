@@ -53,6 +53,10 @@ namespace gd {
 	class ColorActionSprite;
 	class GJEffectManager;
 
+	class GJSpriteColor;
+	class ColorActionSprite;
+	class GJEffectManager;
+
 	#pragma runtime_checks("s", off)
 	class GameObject : public CCSpritePlus {
 	public:
@@ -226,21 +230,35 @@ namespace gd {
 				base + 0xeee50
 			)(this);
 		}
-		void getSaveString(std::string* sString) {
+
+		std::string getSaveString() {
+			std::string ret;
+
 			reinterpret_cast<void(__thiscall*)(GameObject*, std::string*)>(
 				base + 0xed0c0
 			)(
-				this, sString
+				this, &ret
+			);
+
+			return ret;
+		}
+
+		void addToGroup(int id) {
+			reinterpret_cast<void(__thiscall*)(
+				GameObject*, int
+			)>(
+				base + 0xeb8d0
+			)(
+				this, id
 			);
 		}
-		// custom function to use return value instead of pointer
-		std::string getString() {
-			std::string str;
-			
-			this->getSaveString(&str);
 
-			return str;
-		}
+		unsigned int getUniqueID() { return m_nUniqueID; }
+		short getGroupID(int ix) { return m_pGroups[ix]; }
+		short getGroupIDCount() { return m_nGroupCount; }
+		int getGameZOrder() { return m_nZOrder; }
+		void setGameZOrder(int z) { m_nZOrder = z; }
+		void setGameObjType(GameObjectType t) { m_nObjectType = t; }
 	};
 	#pragma runtime_checks("s", restore)
 }

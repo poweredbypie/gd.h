@@ -10,6 +10,7 @@ class GJRotationControl : public cocos2d::CCLayer {};
 class GJScaleControl : public cocos2d::CCLayer {};
 
 class CCMenuItemSpriteExtra;
+class CCMenuItemToggler;
 class Slider;
 
 class EditorUI : public cocos2d::CCLayer,

@@ -19,6 +19,15 @@ namespace gd {
 	}
 }
 
+namespace FMOD {
+	class System;
+	class Sound;
+	class Channel;
+	class DSP;
+}
+enum FMOD_RESULT;
+
+
 #include "GDProtocols.h"
 
 #include "delegates/delegates.h"
@@ -68,6 +77,7 @@ namespace gd {
 #include "menu_nodes/CCMenuItemToggler.h"
 
 #include "audio_nodes/FMODAudioEngine.h"
+#include "audio_nodes/FMODSound.h"
 
 #include "level_nodes/GJGameLevel.h"
 #include "level_nodes/GJSearchObject.h"

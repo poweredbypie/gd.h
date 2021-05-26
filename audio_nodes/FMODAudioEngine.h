@@ -5,7 +5,7 @@
 
 namespace gd {
 	class FMODAudioEngine : public cocos2d::CCNode {
-	protected:
+	public:
 		cocos2d::CCDictionary* m_pDictionary;
 		std::string m_sFilePath;
 		float m_fBackgroundMusicVolume;
@@ -18,12 +18,12 @@ namespace gd {
 		bool m_bFading;
 		bool m_bFadeIn;
 		float m_fFadeInDuration;
-		void* /*FMOD::System*/ m_pSystem;
-		void* /*FMOD::Sound*/ m_pSound;
-		void* /*FMOD::Channel*/ m_pCurrentSoundChannel;
-		void* /*FMOD::Channel*/ m_pGlobalChannel;
-		void* /*FMOD::DSP*/ m_pDSP;
-		int /* FMOD_RESULT */ m_eLastResult;
+		FMOD::System* m_pSystem;
+		FMOD::Sound* m_pSound;
+		FMOD::Channel* m_pCurrentSoundChannel;
+		FMOD::Channel* m_pGlobalChannel;
+		FMOD::DSP* m_pDSP;
+		FMOD_RESULT m_eLastResult;
 		int m_nVersion;
 		void* m_pExtraDriverData;
 		int m_nMusicOffset;

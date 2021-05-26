@@ -29,6 +29,7 @@ namespace gd {
 #include "achievement_nodes/AchievementNotifier.h"
 
 #include "other_nodes/GJSearchObject.h"
+#include "other_nodes/SongInfoObject.h"
 
 #include "layers_scenes_transitions_nodes/CCNodeContainer.h"
 #include "layers_scenes_transitions_nodes/OBB2D.h"

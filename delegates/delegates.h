@@ -8,6 +8,12 @@ namespace gd {
     class NumberInputLayer;
     class SetIDPopup;
     class CCTextInputNode;
+    class SongInfoObject;
+
+    enum GJSongError {
+        kGJSongErrorUnknown = 0,
+        // dunno, didnt bother to RE
+    };
 
     class TextInputDelegate {
         virtual void textChanged(CCTextInputNode*) {}
@@ -16,6 +22,30 @@ namespace gd {
         virtual void textInputShouldOffset(CCTextInputNode*, float) {}
         virtual void textInputReturn(CCTextInputNode*) {}
         virtual bool allowTextInput(CCTextInputNode*) { return true; }
+    };
+
+    class ColorSelectDelegate {
+        virtual void colorSelectClosed(cocos2d::CCNode*);
+    };
+
+    class GJRotationControlDelegate {
+        virtual void angleChangeBegin(void);
+        virtual void angleChangeEnded(void);
+        virtual void angleChanged(float);
+    };
+
+    class GJScaleControlDelegate {
+        virtual void scaleChangeBegin(void);
+        virtual void scaleChangeEnded(void);
+        virtual void scaleChanged(float);
+    };
+
+    class MusicDownloadDelegate {
+        virtual void downloadSongFailed(int, GJSongError);
+        virtual void downloadSongFinished(SongInfoObject*);
+        virtual void loadSongInfoFailed(int, GJSongError);
+        virtual void loadSongInfoFinished(SongInfoObject*);
+        virtual void songStateChanged(void);
     };
 
     enum UpdateResponse {

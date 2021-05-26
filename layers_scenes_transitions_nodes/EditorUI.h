@@ -5,8 +5,12 @@
 
 namespace gd {
 
+class EditButtonBar : public cocos2d::CCLayer {};
+
 class EditorUI : public cocos2d::CCLayer {
-        
+    protected:
+        EditButtonBar* m_pEditButtonBar;
+    
     public:
         cocos2d::CCArray* pasteObjects(std::string const& _str) {
             auto ret = reinterpret_cast<cocos2d::CCArray*(__thiscall*)(

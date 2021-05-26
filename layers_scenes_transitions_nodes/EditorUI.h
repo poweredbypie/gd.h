@@ -16,7 +16,7 @@ class EditorUI : public cocos2d::CCLayer,
     public gd::GJScaleControlDelegate,
     public gd::MusicDownloadDelegate {
 
-    protected:
+    public:
         PAD(0x4)
         EditButtonBar* m_pEditButtonBar;
         PAD(0x4)

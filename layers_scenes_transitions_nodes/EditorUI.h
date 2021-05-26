@@ -9,6 +9,9 @@ class EditButtonBar : public cocos2d::CCNode {};
 class GJRotationControl : public cocos2d::CCLayer {};
 class GJScaleControl : public cocos2d::CCLayer {};
 
+class CCMenuItemSpriteExtra;
+class Slider;
+
 class EditorUI : public cocos2d::CCLayer,
     public gd::FLAlertLayerProtocol,
     public gd::ColorSelectDelegate,

@@ -86,6 +86,7 @@ class EditorUI : public cocos2d::CCLayer,
         cocos2d::CCArray* m_pUnknownArray7;
         cocos2d::CCArray* m_pUnknownArray8;
         cocos2d::CCArray* m_pUnknownArray9;
+        PAD(0x4)
         LevelEditorLayer* m_pEditorLayer;
     
     public:

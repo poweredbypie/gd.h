@@ -10,7 +10,7 @@ class EditorUI;
 class GameObject;
 
 class LevelEditorLayer : public GJBaseGameLayer {
-    protected:
+    public:
         PAD(0x28)
         int m_nCurrentLayere;
         int m_nCurrentLayer;

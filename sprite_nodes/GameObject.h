@@ -252,13 +252,6 @@ namespace gd {
 				this, id
 			);
 		}
-
-		unsigned int getUniqueID() { return m_nUniqueID; }
-		short getGroupID(int ix) { return m_pGroups[ix]; }
-		short getGroupIDCount() { return m_nGroupCount; }
-		int getGameZOrder() { return m_nZOrder; }
-		void setGameZOrder(int z) { m_nZOrder = z; }
-		void setGameObjType(GameObjectType t) { m_nObjectType = t; }
 	};
 	#pragma runtime_checks("s", restore)
 }

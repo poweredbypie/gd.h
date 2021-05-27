@@ -109,16 +109,6 @@ namespace gd {
         virtual void dropDownLayerWillClose(GJDropDownLayer*);
     };
 
-    enum GJSongError;
-
-    class MusicDownloadDelegate {
-        virtual void loadSongInfoFinished(SongInfoObject*) {}
-        virtual void loadSongInfoFailed(int, GJSongError) {}
-        virtual void downloadSongFinished(SongInfoObject*) {}
-        virtual void downloadSongFailed(int, GJSongError) {}
-        virtual void songStateChanged() {}
-    };
-
     class GooglePlayDelegate {
         virtual void googlePlaySignedIn() {}
     };

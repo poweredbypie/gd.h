@@ -37,21 +37,8 @@ namespace gd {
         }
 
         GameObject* addObjectFromString(std::string const& str) {
-            auto ret = reinterpret_cast<GameObject*(__thiscall*)(
-                LevelEditorLayer*, std::string
-            )>(
-                base + 0x160c80
-            )(
-                this, str
-            );
-
-            // no stack fix required... apparently
-
-            return ret;
+            return reinterpret_cast<GameObject*(__thiscall*)(LevelEditorLayer*, std::string)>(base + 0x160c80)(this, str);
         }
-    
-        int getCurrentLayer() { return m_nCurrentLayer; }
-        void setCurrentLayer(int n) { m_nCurrentLayer = n; }
     };
 
 }

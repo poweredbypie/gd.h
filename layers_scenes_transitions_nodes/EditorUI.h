@@ -123,6 +123,18 @@ class EditorUI : public cocos2d::CCLayer,
                 base + 0x86900
             )(this);
         }
+
+        cocos2d::CCPoint getTouchPoint(cocos2d::CCTouch* touch, cocos2d::CCEvent* event) {
+            cocos2d::CCPoint res;
+
+            reinterpret_cast<cocos2d::CCPoint*(__thiscall*)(
+                EditorUI*, cocos2d::CCPoint*, cocos2d::CCTouch*, cocos2d::CCEvent*
+            )>(
+                base + 0x90620
+            )(this, &res, touch, event);
+
+            return res;
+        }
 };
 
 }

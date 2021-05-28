@@ -40,15 +40,15 @@ namespace gd {
     };
 
     class GJRotationControlDelegate {
+        virtual void angleChanged(float);
         virtual void angleChangeBegin(void);
         virtual void angleChangeEnded(void);
-        virtual void angleChanged(float);
     };
 
     class GJScaleControlDelegate {
+        virtual void scaleChanged(float);
         virtual void scaleChangeBegin(void);
         virtual void scaleChangeEnded(void);
-        virtual void scaleChanged(float);
     };
 
     class MusicDownloadDelegate {

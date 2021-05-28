@@ -134,12 +134,6 @@ class EditorUI : public cocos2d::CCLayer,
 
             return res;
         }
-
-        void scaleChanged(float value) {
-            reinterpret_cast<void(__thiscall*)(
-                EditorUI*, float
-            )>( base + 0x90000 )(this, value);
-        }
 };
 
 }

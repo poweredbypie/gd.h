@@ -18,45 +18,52 @@ namespace gd {
     };
 
     class TextInputDelegate {
-        virtual void textChanged(CCTextInputNode*) {}
-        virtual void textInputOpened(CCTextInputNode*) {}
-        virtual void textInputClosed(CCTextInputNode*) {}
-        virtual void textInputShouldOffset(CCTextInputNode*, float) {}
-        virtual void textInputReturn(CCTextInputNode*) {}
-        virtual bool allowTextInput(CCTextInputNode*) { return true; }
+        public:
+            virtual void textChanged(CCTextInputNode*) {}
+            virtual void textInputOpened(CCTextInputNode*) {}
+            virtual void textInputClosed(CCTextInputNode*) {}
+            virtual void textInputShouldOffset(CCTextInputNode*, float) {}
+            virtual void textInputReturn(CCTextInputNode*) {}
+            virtual bool allowTextInput(CCTextInputNode*) { return true; }
     };
 
     class ColorSelectDelegate {
-        virtual void colorSelectClosed(cocos2d::CCNode*);
+        public:
+            virtual void colorSelectClosed(cocos2d::CCNode*);
     };
 
     class GJSpecialColorSelectDelegate {
-        virtual void colorSelectClosed(GJSpecialColorSelect*, int);
+        public:
+            virtual void colorSelectClosed(GJSpecialColorSelect*, int);
     };
 
     
     class HSVWidgetPopupDelegate {
-        virtual void hsvPopupClosed(HSVWidgetPopup *, cocos2d::ccHSVValue);
+        public:
+            virtual void hsvPopupClosed(HSVWidgetPopup *, cocos2d::ccHSVValue);
     };
 
     class GJRotationControlDelegate {
-        virtual void angleChanged(float);
-        virtual void angleChangeBegin(void);
-        virtual void angleChangeEnded(void);
+        public:
+            virtual void angleChanged(float);
+            virtual void angleChangeBegin(void);
+            virtual void angleChangeEnded(void);
     };
 
     class GJScaleControlDelegate {
-        virtual void scaleChanged(float);
-        virtual void scaleChangeBegin(void);
-        virtual void scaleChangeEnded(void);
+        public:
+            virtual void scaleChanged(float);
+            virtual void scaleChangeBegin(void);
+            virtual void scaleChangeEnded(void);
     };
 
     class MusicDownloadDelegate {
-        virtual void downloadSongFailed(int, GJSongError);
-        virtual void downloadSongFinished(SongInfoObject*);
-        virtual void loadSongInfoFailed(int, GJSongError);
-        virtual void loadSongInfoFinished(SongInfoObject*);
-        virtual void songStateChanged(void);
+        public:
+            virtual void downloadSongFailed(int, GJSongError);
+            virtual void downloadSongFinished(SongInfoObject*);
+            virtual void loadSongInfoFailed(int, GJSongError);
+            virtual void loadSongInfoFinished(SongInfoObject*);
+            virtual void songStateChanged(void);
     };
 
     enum UpdateResponse {
@@ -71,43 +78,52 @@ namespace gd {
     };
 
     class LevelDownloadDelegate {
-        virtual void levelDownloadFinished(GJGameLevel *);
-        virtual void levelDownloadFailed(int);
+        public:
+            virtual void levelDownloadFinished(GJGameLevel *);
+            virtual void levelDownloadFailed(int);
     };
 
     class LevelDeleteDelegate {
-        virtual void levelDeleteFinished(int);
-        virtual void levelDeleteFailed(int);
+        public:
+            virtual void levelDeleteFinished(int);
+            virtual void levelDeleteFailed(int);
     };
 
     class LevelUpdateDelegate {
-        virtual void levelUpdateFinished(GJGameLevel *,UpdateResponse);
-        virtual void levelUpdateFailed(int);
+        public:
+            virtual void levelUpdateFinished(GJGameLevel *,UpdateResponse);
+            virtual void levelUpdateFailed(int);
     };
 
     class UploadActionDelegate {
-        virtual void uploadActionFinished(int, int) {};
-        virtual void uploadActionFailed(int, int) {};
+        public:
+            virtual void uploadActionFinished(int, int) {};
+            virtual void uploadActionFailed(int, int) {};
     };
 
     class UploadPopupDelegate {
-        virtual void onClosePopup(void) {};
+        public:
+            virtual void onClosePopup(void) {};
     };
     
     class LikeItemDelegate {
-        virtual void likedItem(LikeItemType, int, bool);
+        public:
+            virtual void likedItem(LikeItemType, int, bool);
     };
 
     class RateLevelDelegate {
-        virtual void rateLevelClosed(void);
+        public:
+            virtual void rateLevelClosed(void);
     };
 
     class NumberInputDelegate {
-        virtual void numberInputClosed(NumberInputLayer *);
+        public:
+            virtual void numberInputClosed(NumberInputLayer *);
     };
 
     class SetIDPopupDelegate {
-        virtual void setIDPopupClosed(SetIDPopup *,int);
+        public:
+            virtual void setIDPopupClosed(SetIDPopup *,int);
     };
 }
 

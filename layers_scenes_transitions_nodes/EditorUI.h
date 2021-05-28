@@ -6,7 +6,6 @@
 namespace gd {
 
 class EditButtonBar : public cocos2d::CCNode {};
-class GJRotationControl : public cocos2d::CCLayer {};
 
 class GJScaleControl;
 class CCMenuItemSpriteExtra;

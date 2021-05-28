@@ -13,6 +13,14 @@ namespace gd {
             float m_fValue;
             PAD(0x4)
             cocos2d::CCLabelBMFont* m_pLabel;
+
+            void updateLabel(float value) {
+                __asm movss xmm0, value
+
+                reinterpret_cast<void(__fastcall*)(GJScaleControl*)>(
+                    base + 0x94990
+                )(this);
+            }
     };
 
 }

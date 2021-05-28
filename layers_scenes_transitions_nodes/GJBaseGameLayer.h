@@ -98,7 +98,7 @@ namespace gd {
 			cocos2d::CCArray* m_pArray7;
 			cocos2d::CCDictionary* m_pDict4;
 			cocos2d::CCDictionary* m_pDict5;
-			PAD(0x20)
+			PAD(0x1c)
 		
 		public:
 			cocos2d::CCLayer* getObjectLayer() { return m_pObjectLayer; }

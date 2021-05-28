@@ -8,6 +8,7 @@ namespace gd {
 class EditButtonBar : public cocos2d::CCNode {};
 
 class GJScaleControl;
+class GJRotationControl;
 class CCMenuItemSpriteExtra;
 class CCMenuItemToggler;
 class Slider;

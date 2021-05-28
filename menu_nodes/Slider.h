@@ -60,7 +60,15 @@ namespace gd {
             }
 
             float getValue() {
-                return this->m_pTouchLogic->getThumb()->getValue();
+                float res;
+
+                reinterpret_cast<void(__fastcall*)(Slider*)>(
+                    base + 0x2e970
+                )(this);
+
+                __asm movss res, xmm0
+
+                return res;
             }
 
             void setBarVisibility(bool v) {

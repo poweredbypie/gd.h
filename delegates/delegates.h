@@ -10,6 +10,7 @@ namespace gd {
     class CCTextInputNode;
     class SongInfoObject;
     class GJSpecialColorSelect;
+    class HSVWidgetPopup;
 
     enum GJSongError {
         kGJSongErrorUnknown = 0,
@@ -31,6 +32,11 @@ namespace gd {
 
     class GJSpecialColorSelectDelegate {
         virtual void colorSelectClosed(GJSpecialColorSelect*, int);
+    };
+
+    
+    class HSVWidgetPopupDelegate {
+        virtual void hsvPopupClosed(HSVWidgetPopup *, cocos2d::ccHSVValue);
     };
 
     class GJRotationControlDelegate {

@@ -49,6 +49,8 @@ namespace gd {
 #include "layers_scenes_transitions_nodes/NumberInputLayer.h"
 #include "layers_scenes_transitions_nodes/SetIDPopup.h"
 #include "layers_scenes_transitions_nodes/GJSpecialColorSelect.h"
+#include "layers_scenes_transitions_nodes/HSVWidgetPopup.h"
+#include "layers_scenes_transitions_nodes/GJScaleControl.h"
 
 #include "scroll_nodes/CCContentLayer.h"
 #include "scroll_nodes/CCIndexPath.h"

@@ -19,6 +19,11 @@ namespace gd {
 				base + 0x190720
 				)(options);
 		}
+		void onPlay(cocos2d::CCObject* pSender) {
+			reinterpret_cast<void (__stdcall*)(CCObject*)>(
+				base + 0x191B50
+				)(pSender);
+		}
 	};
 }
 

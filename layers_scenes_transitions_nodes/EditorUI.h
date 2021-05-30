@@ -5,7 +5,63 @@
 
 namespace gd {
 
-class EditButtonBar : public cocos2d::CCNode {};
+class BoomScrollLayer : public cocos2d::CCLayer {
+    // todo
+};
+
+class EditButtonBar : public cocos2d::CCNode {
+    protected:
+        cocos2d::CCPoint m_obPosition;
+        int m_nUnknown;
+        bool m_bUnknown;
+        cocos2d::CCArray* m_pButtonArray;
+        BoomScrollLayer* m_pScrollLayer;
+        cocos2d::CCArray* m_pPagesArray;
+
+        virtual EditButtonBar* release(bool rel) {
+            return reinterpret_cast<EditButtonBar*(__thiscall*)(
+                EditButtonBar*, bool
+            )>(
+                base + 0x6e3c0
+            )(this, rel);
+        }
+
+        bool init(cocos2d::CCArray* buttons, int idk, bool idkb, int rowCount, int columnCount, cocos2d::CCPoint pos) {
+            auto ret = reinterpret_cast<bool(__thiscall*)(
+                EditButtonBar*, cocos2d::CCArray*, int, bool, int, int, cocos2d::CCPoint
+            )>(
+                base + 0x6e550
+            )(
+                this, buttons, idk, idkb, rowCount, columnCount, pos
+            );
+
+            return ret;
+        }
+
+    public:
+        static EditButtonBar* create(
+            cocos2d::CCArray* buttons,
+            cocos2d::CCPoint point,
+            int idk,
+            bool idk0,
+            int rowCount,
+            int columnCount
+        ) {
+            auto ret = reinterpret_cast<EditButtonBar*(__fastcall*)(
+                cocos2d::CCArray*, int, bool, int, int, cocos2d::CCPoint
+            )>(
+                base + 0x6e450
+            )(
+                buttons, idk, idk0, rowCount, columnCount, point
+            );
+
+            __asm add esp, 0x14
+
+            return ret;
+        }
+};
+
+class CreateMenuItem : public CCMenuItemSpriteExtra {};
 
 class GJScaleControl;
 class GJRotationControl;
@@ -24,13 +80,13 @@ class EditorUI : public cocos2d::CCLayer,
         EditButtonBar* m_pEditButtonBar;
         PAD(0x4)
         cocos2d::CCArray* m_pUnknownArray;
-        PAD(0x28)
+        PAD(0x2c)
         cocos2d::CCLabelBMFont* m_pUnknownLabel;
         GJRotationControl* m_pRotationControl;
-        PAD(0x10)
+        PAD(0xc)
         GJScaleControl* m_pScaleControl;
         cocos2d::CCDictionary* m_pUnknownDict;
-        EditButtonBar* m_pEditButtonBar2;
+        EditButtonBar* m_pCreateButtonBar;
         EditButtonBar* m_pEditButtonBar3;
         Slider* m_pPositionSlider;
         PAD(0x20)
@@ -67,9 +123,9 @@ class EditorUI : public cocos2d::CCLayer,
         CCMenuItemSpriteExtra* m_pButton25;
         CCMenuItemSpriteExtra* m_pButton26;
         CCMenuItemToggler* m_pUnknownToggler;
-        cocos2d::CCArray* m_pUnknownArray5;
-        cocos2d::CCMenu* m_pUnknownMenu2;
-        cocos2d::CCArray* m_pUnknownArray6;
+        cocos2d::CCArray* m_pCreateButtonBars;
+        cocos2d::CCMenu* m_pTabsMenu;
+        cocos2d::CCArray* m_pTabsArray;
         cocos2d::CCSprite* m_pIdkSprite0;
         cocos2d::CCSprite* m_pIdkSprite1;
         CCMenuItemSpriteExtra* m_pButton27;
@@ -88,6 +144,9 @@ class EditorUI : public cocos2d::CCLayer,
         cocos2d::CCArray* m_pUnknownArray9;
         PAD(0x4)
         LevelEditorLayer* m_pEditorLayer;
+        int m_nSelectedMode;
+        PAD(0x60)
+        int m_nSelectedTab;
     
     public:
         cocos2d::CCArray* pasteObjects(std::string const& _str) {
@@ -134,6 +193,24 @@ class EditorUI : public cocos2d::CCLayer,
             )(this, &res, touch, event);
 
             return res;
+        }
+
+        void onSelectBuildTab(cocos2d::CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x887f0
+            )(this, pSender);
+        }
+
+        CreateMenuItem* getCreateBtn(int id, int bg) {
+            auto ret = reinterpret_cast<CreateMenuItem*(__thiscall*)(
+                EditorUI*, int, int
+            )>(
+                base + 0x85120
+            )(
+                this, id, bg
+            );
+
+            return ret;
         }
 };
 

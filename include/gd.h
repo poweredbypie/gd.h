@@ -31,6 +31,10 @@ namespace gd {
 #include "other_nodes/GJSearchObject.h"
 #include "other_nodes/SongInfoObject.h"
 
+#include "menu_nodes/CCMenuItemSpriteExtra.h"
+#include "menu_nodes/CCMenuItemToggler.h"
+#include "menu_nodes/Slider.h"
+
 #include "layers_scenes_transitions_nodes/CCNodeContainer.h"
 #include "layers_scenes_transitions_nodes/OBB2D.h"
 #include "layers_scenes_transitions_nodes/FLAlertLayer.h"
@@ -70,10 +74,6 @@ namespace gd {
 #include "manager_nodes/GJUserScore.h"
 #include "manager_nodes/GJAccountManager.h"
 #include "manager_nodes/MusicDownloadManager.h"
-
-#include "menu_nodes/CCMenuItemSpriteExtra.h"
-#include "menu_nodes/CCMenuItemToggler.h"
-#include "menu_nodes/Slider.h"
 
 #include "audio_nodes/FMODAudioEngine.h"
 

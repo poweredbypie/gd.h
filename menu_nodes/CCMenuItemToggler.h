@@ -13,7 +13,7 @@ namespace gd {
 		CCMenuItemSpriteExtra* m_pOnButton;
 		CCMenuItemSpriteExtra* m_pOffButton;
 		bool m_bOn;
-		bool m_bUnknown;
+		bool m_bNotClickable;
 
 	public:
 		static CCMenuItemToggler* create(cocos2d::CCNode* off, cocos2d::CCNode* on,
@@ -33,10 +33,19 @@ namespace gd {
 		}
 		//my own function
 		inline bool isOn() { return m_bOn; }
+		inline bool isToggled() { return m_bOn; }
+		
+		void setClickable(bool on) { m_bNotClickable = !on; }
 		void toggle(bool on) {
 			return reinterpret_cast<void(__thiscall*)(CCMenuItemToggler*, bool)>(
 				base + 0x199B0
 				)(this, on);
+		}
+		// actual GD function
+		void setEnabled(bool on) {
+			return reinterpret_cast<void(__thiscall*)(CCMenuItemToggler*, bool)>(
+				base + 0x199B0
+			)(this, on);
 		}
 	};
 	#pragma runtime_checks("s", restore)

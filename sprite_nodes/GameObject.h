@@ -240,6 +240,9 @@ namespace gd {
 			);
 		}
 
+		cocos2d::CCPoint getRealPosition() { return m_obRealPosition; }
+		void setRealPosition(cocos2d::CCPoint const& p) { m_obRealPosition = p; }
+		
 		unsigned int getUniqueID() { return m_nUniqueID; }
 		short getGroupID(int ix) { return m_pGroups[ix]; }
 		short getGroupIDCount() { return m_nGroupCount; }

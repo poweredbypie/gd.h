@@ -212,6 +212,20 @@ class EditorUI : public cocos2d::CCLayer,
 
             return ret;
         }
+
+        cocos2d::CCPoint getGroupCenter(cocos2d::CCArray* objs, bool idk) {
+            cocos2d::CCPoint res;
+
+            reinterpret_cast<cocos2d::CCPoint*(__thiscall*)(
+                EditorUI*, cocos2d::CCPoint*, cocos2d::CCArray*, bool
+            )>(
+                base + 0x8fc30
+            )(
+                this, &res, objs, idk
+            );
+
+            return res;
+        }
 };
 
 }

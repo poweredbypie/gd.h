@@ -98,7 +98,7 @@ namespace gd {
 		cocos2d::CCArray* m_array7;
 		cocos2d::CCDictionary* m_dict5;
 		cocos2d::CCDictionary* m_dict6;
-		PAD(0x20)
+		PAD(28)
 	};
 }
 

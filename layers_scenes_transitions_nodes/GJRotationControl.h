@@ -7,15 +7,27 @@ namespace gd {
 
     class GJRotationControl : public cocos2d::CCLayer {
         public:
-            PAD(0x8)
+            float m_nUnknown0;
+            float m_nUnknown1;
             cocos2d::CCPoint m_obSliderPosition;
-            PAD(0x8)
+            cocos2d::CCSprite* m_pSliderThumb;
+            float m_fObjAngle;
             float m_fAngle;
             int m_nTouchID;
 
             void setAngle(float angle) {
-                this->m_obSliderPosition = cocos2d::CCPoint { cosf(angle) * 60.0f, sinf(angle) * 60.0f };
+                this->m_obSliderPosition = cocos2d::CCPoint { sinf(angle) * 60.0f, cosf(angle) * 60.0f };
                 this->m_fAngle = angle;
+
+                this->m_pSliderThumb->setPosition(this->m_obSliderPosition);
+            }
+
+            void updateSliderPosition(cocos2d::CCPoint const& pos) {
+                reinterpret_cast<void(__thiscall*)(
+                    GJRotationControl*, cocos2d::CCPoint
+                )>(
+                    base + 0x94020
+                )(this, pos);
             }
     };
     

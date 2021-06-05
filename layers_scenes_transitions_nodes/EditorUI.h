@@ -77,7 +77,7 @@ class EditorUI : public cocos2d::CCLayer,
     public gd::MusicDownloadDelegate {
 
     public:
-        EditButtonBar* m_pEditButtonBar;
+        EditButtonBar* m_pButtonBar;
         PAD(0x4)
         cocos2d::CCArray* m_pUnknownArray;
         PAD(0x2c)
@@ -87,12 +87,12 @@ class EditorUI : public cocos2d::CCLayer,
         GJScaleControl* m_pScaleControl;
         cocos2d::CCDictionary* m_pUnknownDict;
         EditButtonBar* m_pCreateButtonBar;
-        EditButtonBar* m_pEditButtonBar3;
+        EditButtonBar* m_pEditButtonBar;
         Slider* m_pPositionSlider;
         PAD(0x20)
         cocos2d::CCArray* m_pUnknownArray2;
         PAD(0x8)
-        cocos2d::CCArray* m_pUnknownArray3;
+        cocos2d::CCArray* m_pSelectedObjects;
         cocos2d::CCMenu* m_pUnknownMenu;
         cocos2d::CCArray* m_pUnknownArray4;
         CCMenuItemSpriteExtra* m_pButton0;
@@ -145,7 +145,9 @@ class EditorUI : public cocos2d::CCLayer,
         PAD(0x4)
         LevelEditorLayer* m_pEditorLayer;
         int m_nSelectedMode;
-        PAD(0x60)
+        PAD(0x30)
+        GameObject* m_pSelectedObject;
+        PAD(0x2c)
         int m_nSelectedTab;
     
     public:
@@ -225,6 +227,12 @@ class EditorUI : public cocos2d::CCLayer,
             );
 
             return res;
+        }
+
+        void updateButtons() {
+            reinterpret_cast<void(__fastcall*)(
+                EditorUI*
+            )>( base + 0x78280 )(this);
         }
 };
 

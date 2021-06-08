@@ -37,6 +37,8 @@ enum FMOD_RESULT;
 #include "achievement_nodes/AchievementBar.h"
 #include "achievement_nodes/AchievementNotifier.h"
 
+#include "layers_scenes_transitions_nodes/CCNodeContainer.h"
+#include "layers_scenes_transitions_nodes/OBB2D.h"
 #include "layers_scenes_transitions_nodes/FLAlertLayer.h"
 #include "layers_scenes_transitions_nodes/GJDropDownLayer.h"
 #include "layers_scenes_transitions_nodes/GJListLayer.h"
@@ -55,6 +57,7 @@ enum FMOD_RESULT;
 #include "layers_scenes_transitions_nodes/CustomSongWidget.h"
 #include "layers_scenes_transitions_nodes/CustomSongLayer.h"
 #include "layers_scenes_transitions_nodes/SongInfoLayer.h"
+#include "layers_scenes_transitions_nodes/GJSpecialColorSelect.h"
 
 #include "scroll_nodes/CCContentLayer.h"
 #include "scroll_nodes/CCIndexPath.h"
@@ -62,6 +65,7 @@ enum FMOD_RESULT;
 #include "scroll_nodes/TableView.h"
 #include "scroll_nodes/BoomListView.h"
 #include "scroll_nodes/CustomListView.h"
+#include "scroll_nodes/ScrollingLayer.h"
 
 #include "manager_nodes/GManager.h"
 #include "manager_nodes/GameManager.h"
@@ -76,6 +80,7 @@ enum FMOD_RESULT;
 
 #include "menu_nodes/CCMenuItemSpriteExtra.h"
 #include "menu_nodes/CCMenuItemToggler.h"
+#include "menu_nodes/Slider.h"
 
 #include "audio_nodes/FMODAudioEngine.h"
 #include "audio_nodes/FMODSound.h"
@@ -101,5 +106,8 @@ enum FMOD_RESULT;
 #include "sprite_nodes/SimplePlayer.h"
 
 #include "text_input_nodes/CCTextInputNode.h"
+
+#include "other_nodes/CheckpointObject.h"
+#include "other_nodes/PlayerCheckpoint.h"
 
 #endif

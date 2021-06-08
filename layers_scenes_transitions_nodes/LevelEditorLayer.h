@@ -7,18 +7,14 @@ namespace gd {
 
     class GJBaseGameLayer;
     class EditorUI;
+    class GameObject;
 
     class LevelEditorLayer : public GJBaseGameLayer {
-    protected:
-        PAD(0x118)
-        cocos2d::CCArray* m_pObjects;
-        PAD(0X148)
-        EditorUI* m_pEditorUI;
-
     public:
-        EditorUI* getEditorUI() { return this->m_pEditorUI; }
-
-        cocos2d::CCArray* getAllObjects() { return this->m_pObjects; }
+        PAD(0x84)
+        int m_currentLayer;
+        PAD(0x2c)
+        EditorUI* m_editorUI;
 
         void removeObject(GameObject * obj, bool idk) {
             reinterpret_cast<void(__thiscall*)(
@@ -28,7 +24,21 @@ namespace gd {
             )(
                 this, obj, idk
             );
-        } 
+        }
+
+        int getNextFreeGroupID(cocos2d::CCArray* objs) {
+            return reinterpret_cast<int(__thiscall*)(
+                LevelEditorLayer*, cocos2d::CCArray*
+            )>(
+                base + 0x164ae0
+            )(
+                this, objs
+            );
+        }
+
+        GameObject* addObjectFromString(std::string const& str) {
+            return reinterpret_cast<GameObject*(__thiscall*)(LevelEditorLayer*, std::string)>(base + 0x160c80)(this, str);
+        }
     };
 
 }

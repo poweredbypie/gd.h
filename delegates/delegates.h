@@ -10,6 +10,12 @@ namespace gd {
     class CCTextInputNode;
     class GJDropDownLayer;
     class SongInfoObject;
+    class GJSpecialColorSelect;
+
+    enum GJSongError {
+        kGJSongErrorUnknown = 0,
+        // dunno, didnt bother to RE
+    };
 
     class TextInputDelegate {
         virtual void textChanged(CCTextInputNode*) {}
@@ -17,7 +23,35 @@ namespace gd {
         virtual void textInputClosed(CCTextInputNode*) {}
         virtual void textInputShouldOffset(CCTextInputNode*, float) {}
         virtual void textInputReturn(CCTextInputNode*) {}
-        virtual bool allowTextInput(CCTextInputNode*) {return true;}
+        virtual bool allowTextInput(CCTextInputNode*) { return true; }
+    };
+
+    class ColorSelectDelegate {
+        virtual void colorSelectClosed(cocos2d::CCNode*);
+    };
+
+    class GJSpecialColorSelectDelegate {
+        virtual void colorSelectClosed(GJSpecialColorSelect*, int);
+    };
+
+    class GJRotationControlDelegate {
+        virtual void angleChangeBegin(void);
+        virtual void angleChangeEnded(void);
+        virtual void angleChanged(float);
+    };
+
+    class GJScaleControlDelegate {
+        virtual void scaleChangeBegin(void);
+        virtual void scaleChangeEnded(void);
+        virtual void scaleChanged(float);
+    };
+
+    class MusicDownloadDelegate {
+        virtual void downloadSongFailed(int, GJSongError);
+        virtual void downloadSongFinished(SongInfoObject*);
+        virtual void loadSongInfoFailed(int, GJSongError);
+        virtual void loadSongInfoFinished(SongInfoObject*);
+        virtual void songStateChanged(void);
     };
 
     enum UpdateResponse {
@@ -73,16 +107,6 @@ namespace gd {
 
     class GJDropDownLayerDelegate {
         virtual void dropDownLayerWillClose(GJDropDownLayer*);
-    };
-
-    enum GJSongError;
-
-    class MusicDownloadDelegate {
-        virtual void loadSongInfoFinished(SongInfoObject*) {}
-        virtual void loadSongInfoFailed(int, GJSongError) {}
-        virtual void downloadSongFinished(SongInfoObject*) {}
-        virtual void downloadSongFailed(int, GJSongError) {}
-        virtual void songStateChanged() {}
     };
 
     class GooglePlayDelegate {

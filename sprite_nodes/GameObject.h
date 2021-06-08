@@ -139,7 +139,7 @@ namespace gd {
 		PAD(1);
 		int m_globalClickCounter; //0x3DC i have no idea what this is for
 		PAD(12);
-		float m_unk3EC;
+		float m_multiScaleMultiplier;
 		bool m_isGroupParent; //0x3F0
 		PAD(3);
 		short* m_groups; //0x3F4
@@ -240,6 +240,15 @@ namespace gd {
 			this->getSaveString(&str);
 
 			return str;
+		}
+
+		void updateCustomScale(float scale) {
+			__asm movss xmm1, scale;
+			reinterpret_cast<void(__thiscall*)(GameObject*)>(base + 0xe5340)(this);
+		}
+		// this is actually a virtual but i cant be bothered to get it in the right place
+		void setRScale(float scale) {
+			reinterpret_cast<void(__thiscall*)(GameObject*, float)>(base + 0xe5280)(this, scale);
 		}
 	};
 	#pragma runtime_checks("s", restore)

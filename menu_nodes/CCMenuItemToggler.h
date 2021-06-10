@@ -25,6 +25,13 @@ namespace gd {
 			__asm add esp, 0x8
 			return pRet;
 		}
+		static CCMenuItemToggler* createWithStandardSprites(cocos2d::CCObject* target, cocos2d::SEL_MenuHandler callback) {
+			return create(
+				cocos2d::CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png"),
+				cocos2d::CCSprite::createWithSpriteFrameName("GJ_checkOn_001.png"),
+				target, callback
+			);
+		}
 		void setSizeMult(float mult) {
 			__asm movss xmm1, mult
 			return reinterpret_cast<void(__thiscall*)(CCMenuItemToggler*)>(

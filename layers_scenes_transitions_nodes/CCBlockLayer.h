@@ -5,9 +5,9 @@
 
 namespace gd {
 	class CCBlockLayer : public cocos2d::CCLayerColor {
-	protected:
-		bool m_bUnknown;
-		bool m_bUnknown2;
+		protected:
+			bool m_bUnknown;
+			bool m_bUnknown2;
 	};
 }
 

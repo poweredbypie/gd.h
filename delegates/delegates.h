@@ -27,6 +27,10 @@ namespace gd {
             virtual bool allowTextInput(CCTextInputNode*) { return true; }
     };
 
+    class GooglePlayDelegate {
+        virtual void googlePlaySignedIn(void);
+    };
+
     class ColorSelectDelegate {
         public:
             virtual void colorSelectClosed(cocos2d::CCNode*);

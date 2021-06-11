@@ -93,7 +93,7 @@ class EditorUI : public cocos2d::CCLayer,
         cocos2d::CCArray* m_pUnknownArray2;
         PAD(0x8)
         cocos2d::CCArray* m_pSelectedObjects;
-        cocos2d::CCMenu* m_pUnknownMenu;
+        cocos2d::CCMenu* m_pDeleteMenu;
         cocos2d::CCArray* m_pUnknownArray4;
         CCMenuItemSpriteExtra* m_pButton0;
         CCMenuItemSpriteExtra* m_pButton1;
@@ -117,8 +117,8 @@ class EditorUI : public cocos2d::CCLayer,
         CCMenuItemSpriteExtra* m_pButton19;
         CCMenuItemSpriteExtra* m_pButton20;
         CCMenuItemSpriteExtra* m_pButton21;
-        CCMenuItemSpriteExtra* m_pButton22;
-        CCMenuItemSpriteExtra* m_pButton23;
+        CCMenuItemSpriteExtra* m_pCopyBtn;
+        CCMenuItemSpriteExtra* m_pPasteBtn;
         CCMenuItemSpriteExtra* m_pButton24;
         CCMenuItemSpriteExtra* m_pButton25;
         CCMenuItemSpriteExtra* m_pButton26;

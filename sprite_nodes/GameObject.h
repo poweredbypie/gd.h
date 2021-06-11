@@ -246,9 +246,18 @@ namespace gd {
 		unsigned int getUniqueID() { return m_nUniqueID; }
 		short getGroupID(int ix) { return m_pGroups[ix]; }
 		short getGroupIDCount() { return m_nGroupCount; }
+		std::vector<short> getGroupIDs() {
+			if (m_pGroups && m_pGroups[0])
+				return std::vector<short>(m_pGroups, m_pGroups + sizeof m_pGroups / sizeof m_pGroups[0]);
+		
+			return std::vector<short>();
+		}
 		int getGameZOrder() { return m_nZOrder; }
 		void setGameZOrder(int z) { m_nZOrder = z; }
 		void setGameObjType(GameObjectType t) { m_nObjectType = t; }
+
+		GJSpriteColor* getBaseColor() { return m_pBaseColor; }
+		GJSpriteColor* getDetailColor() { return m_pDetailColor; }
 	};
 	#pragma runtime_checks("s", restore)
 }

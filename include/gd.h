@@ -91,6 +91,7 @@ namespace gd {
 #include "sprite_nodes/GJItemIcon.h"
 #include "sprite_nodes/GJRobotSprite.h"
 #include "sprite_nodes/GJSpiderSprite.h"
+#include "sprite_nodes/GJSpriteColor.h"
 #include "sprite_nodes/SimplePlayer.h"
 
 #include "cell_nodes/GJComment.h"

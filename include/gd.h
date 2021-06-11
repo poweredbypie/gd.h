@@ -30,7 +30,6 @@ namespace gd {
 
 #include "other_nodes/GJSearchObject.h"
 #include "other_nodes/SongInfoObject.h"
-#include "other_nodes/GJComment.h"
 
 #include "menu_nodes/CCMenuItemSpriteExtra.h"
 #include "menu_nodes/CCMenuItemToggler.h"
@@ -93,6 +92,8 @@ namespace gd {
 #include "sprite_nodes/GJRobotSprite.h"
 #include "sprite_nodes/GJSpiderSprite.h"
 #include "sprite_nodes/SimplePlayer.h"
+
+#include "cell_nodes/GJComment.h"
 
 #include "text_input_nodes/CCTextInputNode.h"
 

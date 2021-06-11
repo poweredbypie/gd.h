@@ -127,6 +127,8 @@ namespace gd {
 			__asm add esp, 0x24
 			return pRet;
 		}
+		cocos2d::CCLayer* getLayer() { return m_pLayer; }
+		cocos2d::CCLayer* getButtonMenu() { return m_pButtonMenu; }
 	};
 	#pragma runtime_checks("s", restore)
 }

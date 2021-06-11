@@ -16,6 +16,10 @@ namespace gd {
         LeaderboardManagerDelegate
     {
         public:
+            PAD(4);
+            int m_nAccountID;
+
+        public:
             static ProfilePage* create(int accountID, bool idk) {
                 return reinterpret_cast<ProfilePage*(__fastcall*)(
                     int, bool

@@ -30,6 +30,7 @@ namespace gd {
 
 #include "other_nodes/GJSearchObject.h"
 #include "other_nodes/SongInfoObject.h"
+#include "other_nodes/GJComment.h"
 
 #include "menu_nodes/CCMenuItemSpriteExtra.h"
 #include "menu_nodes/CCMenuItemToggler.h"

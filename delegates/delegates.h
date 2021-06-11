@@ -11,9 +11,10 @@ namespace gd {
     class SongInfoObject;
     class GJSpecialColorSelect;
     class HSVWidgetPopup;
+    class GJUserScore;
 
     enum GJSongError {
-        kGJSongErrorUnknown = 0,
+        kGJSongErrorUnknown_not_REd = 0,
         // dunno, didnt bother to RE
     };
 
@@ -40,7 +41,6 @@ namespace gd {
         public:
             virtual void colorSelectClosed(GJSpecialColorSelect*, int);
     };
-
     
     class HSVWidgetPopupDelegate {
         public:
@@ -77,8 +77,38 @@ namespace gd {
         kUpdateResponseUpdateSuccess = 0x3,
     };
 
+    enum CommentError {
+        kCommentErrorUnknown_not_REd = 0x0,
+    };
+
     enum LikeItemType {
-        kLikeItemTypeUnknown = 0x0,
+        kLikeItemTypeUnknown_not_REd = 0x0,
+    };
+
+    class LeaderboardManagerDelegate {
+        virtual void updateUserScoreFinished(void);
+        virtual void updateUserScoreFailed(void);
+        virtual void loadLeaderboardFinished(cocos2d::CCArray *,char const*);
+        virtual void loadLeaderboardFailed(char const*);
+    };
+
+    class UserInfoDelegate {
+        virtual void getUserInfoFailed(int);
+        virtual void getUserInfoFinished(GJUserScore *);
+        virtual void userInfoChanged(GJUserScore *);
+    };
+
+    class CommentUploadDelegate {
+        virtual void commentUploadFinished(int);
+        virtual void commentUploadFailed(int, CommentError);
+        virtual void commentDeleteFailed(int, int);
+    };
+
+    class LevelCommentDelegate {
+        virtual void loadCommentsFinished(cocos2d::CCArray *, const char*);
+        virtual void loadCommentsFailed(const char*);
+        virtual void updateUserScoreFinished(void);
+        virtual void setupPageInfo(std::string, const char*);
     };
 
     class LevelDownloadDelegate {

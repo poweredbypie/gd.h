@@ -34,7 +34,10 @@ namespace gd {
 		cocos2d::CCSprite* unk_050C;
 		cocos2d::CCMotionStreak* regularTrail; //0x0510
 		HardStreak* waveStreak; //0x0514
-		PAD(32);
+		double m_xAccel; //0x518
+		double m_jumpAccel; //0x520 unsure about the name
+		double m_gravity; //0x528
+		PAD(8);
 		bool unk_0538;
 		bool unk_0539;
 		bool unk_053A;
@@ -59,30 +62,32 @@ namespace gd {
 		cocos2d::CCParticleSystemQuad* unk_05D8;
 		PAD(52);
 		bool unk_0610;
-		bool isActuallyHolding; //0x0611
-		bool canBufferOrb; //0x0612
-		bool isHolding; //0x0613
+		bool m_isHolding; //0x0611
+		bool m_hasJustHeld; //0x0612
+		bool m_isHolding2; //0x0613
 		bool canBufferOrb2; //0x0614
-		PAD(19);
-		double yAccel; //0x0628
+		PAD(15);
+		bool m_canRobotJump; //0x624
+		double m_yAccel; //0x0628
 		PAD(8);
-		bool isShip; //0x0638
-		bool isUFO; //0x0639
-		bool isBall; //0x063A
-		bool isWave; //0x063B
-		bool isRobot; //0x063C
-		bool isSpider; //0x063D
-		bool isUpsideDown; //0x063E
+		bool m_isShip; //0x0638
+		bool m_isUFO; //0x0639
+		bool m_isBall; //0x063A
+		bool m_isWave; //0x063B
+		bool m_isRobot; //0x063C
+		bool m_isSpider; //0x063D
+		bool m_isUpsideDown; //0x063E
 		PAD(1);
-		bool isOnGroundOrCanClickToDoAnythingIDK; //0x0640
-		bool isDashing; //0x0641
-		PAD(6);
-		float playerSpeed; //0x0648
+		bool m_isOnGround; //0x0640
+		bool m_isDashing; //0x0641
+		PAD(2);
+		float m_vehicleSize; //0x644
+		float m_playerSpeed; //0x0648
 		cocos2d::CCPoint lastPosIDK; //0x064C
 		cocos2d::CCPoint lastPortalPos; //0x0654
 		cocos2d::CCLayer* unk_065C;
-		bool isOnGround; //0x0660
-		bool isAcceleratingUpOnJumpIDK; //0x0661
+		bool m_isSliding; //0x0660 // this might be isSliding
+		bool m_isRising; //0x0661
 		PAD(2);
 		cocos2d::CCPoint lastGroundedPos; //0x0664
 		cocos2d::CCArray* unk_066C;
@@ -107,6 +112,24 @@ namespace gd {
 		}
 		void releaseButton(int button) {
 			reinterpret_cast<void(__thiscall*)(PlayerObject*, int)>(base + 0x1F4F70)(this, button);
+		}
+		bool playerIsFalling() {
+			return reinterpret_cast<bool(__thiscall*)(PlayerObject*)>(base + 0x1f5d60)(this);
+		}
+		void runRotateAction() {
+			reinterpret_cast<void(__thiscall*)(PlayerObject*)>(base + 0x1e9bf0)(this);
+		}
+		void playBurstEffect() {
+			reinterpret_cast<void(__thiscall*)(PlayerObject*)>(base + 0x1f6790)(this);
+		}
+		void spiderTestJump(bool param1) {
+			reinterpret_cast<void(__thiscall*)(PlayerObject*, bool)>(base + 0x1ed360)(this, param1);
+		}
+		void incrementJumps() {
+			reinterpret_cast<void(__thiscall*)(PlayerObject*)>(base + 0x1e9a20)(this);
+		}
+		void flipGravity(bool param1, bool param2) {
+			reinterpret_cast<void(__thiscall*)(PlayerObject*, bool, bool)>(base + 0x1f59d0)(this, param1, param2);
 		}
 	};
 }

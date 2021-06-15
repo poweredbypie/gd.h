@@ -12,6 +12,7 @@ class GJScaleControl : public cocos2d::CCLayer {};
 class CCMenuItemSpriteExtra;
 class CCMenuItemToggler;
 class Slider;
+class GameObject;
 
 class EditorUI : public cocos2d::CCLayer,
     public gd::FLAlertLayerProtocol,
@@ -123,7 +124,11 @@ class EditorUI : public cocos2d::CCLayer,
                 base + 0x86900
             )(this);
         }
-};
+
+        void moveObject(GameObject* obj, cocos2d::CCPoint position) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, GameObject*, cocos2d::CCPoint)>(base + 0x8ddb0)(this, obj, position);
+        }
+    };
 
 }
 

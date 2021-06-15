@@ -37,9 +37,6 @@ enum FMOD_RESULT;
 #include "achievement_nodes/AchievementBar.h"
 #include "achievement_nodes/AchievementNotifier.h"
 
-#include "other_nodes/GJSearchObject.h"
-#include "other_nodes/SongInfoObject.h"
-
 #include "layers_scenes_transitions_nodes/CCNodeContainer.h"
 #include "layers_scenes_transitions_nodes/OBB2D.h"
 #include "layers_scenes_transitions_nodes/FLAlertLayer.h"
@@ -109,5 +106,8 @@ enum FMOD_RESULT;
 #include "sprite_nodes/SimplePlayer.h"
 
 #include "text_input_nodes/CCTextInputNode.h"
+
+#include "other_nodes/CheckpointObject.h"
+#include "other_nodes/PlayerCheckpoint.h"
 
 #endif

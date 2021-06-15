@@ -35,6 +35,15 @@ namespace gd {
 #include "menu_nodes/CCMenuItemToggler.h"
 #include "menu_nodes/Slider.h"
 
+#include "manager_nodes/GManager.h"
+#include "manager_nodes/GameManager.h"
+#include "manager_nodes/GameSoundManager.h"
+#include "manager_nodes/GameLevelManager.h"
+#include "manager_nodes/AchievementManager.h"
+#include "manager_nodes/GJUserScore.h"
+#include "manager_nodes/GJAccountManager.h"
+#include "manager_nodes/MusicDownloadManager.h"
+
 #include "layers_scenes_transitions_nodes/CCNodeContainer.h"
 #include "layers_scenes_transitions_nodes/OBB2D.h"
 #include "layers_scenes_transitions_nodes/FLAlertLayer.h"
@@ -66,15 +75,6 @@ namespace gd {
 #include "scroll_nodes/BoomListView.h"
 #include "scroll_nodes/CustomListView.h"
 #include "scroll_nodes/ScrollingLayer.h"
-
-#include "manager_nodes/GManager.h"
-#include "manager_nodes/GameManager.h"
-#include "manager_nodes/GameSoundManager.h"
-#include "manager_nodes/GameLevelManager.h"
-#include "manager_nodes/AchievementManager.h"
-#include "manager_nodes/GJUserScore.h"
-#include "manager_nodes/GJAccountManager.h"
-#include "manager_nodes/MusicDownloadManager.h"
 
 #include "audio_nodes/FMODAudioEngine.h"
 

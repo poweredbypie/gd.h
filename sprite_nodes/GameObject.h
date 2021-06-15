@@ -57,7 +57,7 @@ namespace gd {
 
 	#pragma runtime_checks("s", off)
 	class GameObject : public CCSpritePlus {
-	protected:
+	public:
 		PAD(44);
 		bool unk_21C;
 		bool unk_21D;

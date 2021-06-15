@@ -9,6 +9,8 @@ class BoomScrollLayer : public cocos2d::CCLayer {
     // todo
 };
 
+class GameManager;
+
 class EditButtonBar : public cocos2d::CCNode {
     protected:
         cocos2d::CCPoint m_obPosition;
@@ -58,6 +60,33 @@ class EditButtonBar : public cocos2d::CCNode {
             __asm add esp, 0x14
 
             return ret;
+        }
+
+        void loadFromItems(cocos2d::CCArray* buttons, int rowCount, int columnCount, bool idk) {
+            reinterpret_cast<void(__thiscall*)(
+                EditButtonBar*, cocos2d::CCArray*, int, int, bool
+            )>(
+                base + 0x6e5e0
+            )(
+                this, buttons, rowCount, columnCount, idk
+            );
+        }
+
+        void reloadItems(int rowCount, int columnCount) {
+            if (this->m_pButtonArray)
+                this->loadFromItems(this->m_pButtonArray, rowCount, columnCount, this->m_bUnknown);
+        }
+        void reloadItemsInNormalSize() {
+            this->reloadItems(
+                GameManager::sharedState()->getIntGameVariable("0049"),
+                GameManager::sharedState()->getIntGameVariable("0050")
+            );
+        }
+
+        void addButton(CCMenuItemSpriteExtra* btn) {
+            if (this->m_pButtonArray)
+                this->m_pButtonArray->insertObject(btn, 0u);
+            this->reloadItemsInNormalSize();
         }
 };
 

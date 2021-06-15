@@ -35,6 +35,7 @@ namespace gd {
 	};
 
 	class PlayLayer;
+	class LevelEditorLayer;
 
 	class GameManager : public GManager {
 	protected:

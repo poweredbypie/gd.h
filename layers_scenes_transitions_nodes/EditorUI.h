@@ -128,6 +128,32 @@ class EditorUI : public cocos2d::CCLayer,
         void moveObject(GameObject* obj, cocos2d::CCPoint position) {
             reinterpret_cast<void(__thiscall*)(EditorUI*, GameObject*, cocos2d::CCPoint)>(base + 0x8ddb0)(this, obj, position);
         }
+
+        // i cant get these to not crash
+
+        // void zoomIn() {
+        //     reinterpret_cast<void(__thiscall*)(EditorUI*)>(base + 0x877c0)(this);
+        // }
+
+        // void zoomOut() {
+        //     reinterpret_cast<void(__thiscall*)(EditorUI*)>(base + 0x87830)(this);
+        // }
+
+        void updateZoom(float amt) {
+            __asm movss xmm1, amt
+            reinterpret_cast<void(__thiscall*)(EditorUI*)>(base + 0x878a0)(this);
+        }
+
+        cocos2d::CCPoint getGroupCenter(cocos2d::CCArray* objects, bool idk) {
+            cocos2d::CCPoint result;
+            reinterpret_cast<void*(__thiscall*)(EditorUI*, cocos2d::CCPoint*, cocos2d::CCArray*, bool)>(base + 0x8fc30)(this, &result, objects, idk);
+            return result;
+        }
+
+        void scaleObjects(cocos2d::CCArray* objects, float scale, cocos2d::CCPoint center) {
+            __asm movss xmm2, scale;
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCArray*, cocos2d::CCPoint)>(base + 0x8f150)(this, objects, center);
+        }
     };
 
 }

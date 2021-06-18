@@ -167,7 +167,8 @@ class EditorUI : public cocos2d::CCLayer,
         CCMenuItemSpriteExtra* m_pButton33;
         CCMenuItemSpriteExtra* m_pButton34;
         CCMenuItemSpriteExtra* m_pButton35;
-        PAD(0xc)
+        PAD(0x8)
+        int m_nSelectedCreateObject;
         cocos2d::CCArray* m_pUnknownArray7;
         cocos2d::CCArray* m_pUnknownArray8;
         cocos2d::CCArray* m_pUnknownArray9;

@@ -247,10 +247,13 @@ namespace gd {
 		short getGroupID(int ix) { return m_pGroups[ix]; }
 		short getGroupIDCount() { return m_nGroupCount; }
 		std::vector<short> getGroupIDs() {
+			std::vector<short> res;
+
 			if (m_pGroups && m_pGroups[0])
-				return std::vector<short>(m_pGroups, m_pGroups + sizeof m_pGroups / sizeof m_pGroups[0]);
+				for (auto i = 0; i < m_nGroupCount; i++)
+					res.push_back(m_pGroups[i]);
 		
-			return std::vector<short>();
+			return res;
 		}
 		int getGameZOrder() { return m_nZOrder; }
 		void setGameZOrder(int z) { m_nZOrder = z; }

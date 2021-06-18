@@ -4,12 +4,22 @@
 #include <gd.h>
 
 namespace gd {
+	enum MenuAnimationType {
+		kMenuAnimationTypeScale	= 0,
+		kMenuAnimationTypeMove 	= 1,
+	};
+
 	#pragma runtime_checks("s", off)
 	class CCMenuItemSpriteExtra : public cocos2d::CCMenuItemSprite {
 	protected:
 		float m_fUnknown;
 		float m_fUnknown2;
-		PAD(0x6c)
+		PAD(0x3c)
+		cocos2d::CCPoint m_obDestPosition;
+		cocos2d::CCPoint m_obOffset;
+		MenuAnimationType m_nAnimationType = kMenuAnimationTypeScale;
+		cocos2d::CCPoint m_obStartPosition;
+		PAD(0x14)
 
 		bool init(cocos2d::CCNode* spr) {
 			return reinterpret_cast<bool(__thiscall*)(
@@ -65,6 +75,16 @@ namespace gd {
 			return reinterpret_cast<void(__thiscall*)(CCMenuItemSpriteExtra*)>(
 				base + 0x19080
 				)(this);
+		}
+		void useAnimationType(MenuAnimationType type) {
+			this->m_obStartPosition = this->getNormalImage()->getPosition();
+			this->m_nAnimationType = type;
+		}
+		void setDestination(cocos2d::CCPoint const& pos) {
+			this->m_obDestPosition = pos;
+		}
+		void setOffset(cocos2d::CCPoint const& pos) {
+			this->m_obOffset = pos;
 		}
 	};
 	#pragma runtime_checks("s", restore)

@@ -68,6 +68,7 @@ namespace gd {
 #include "layers_scenes_transitions_nodes/SetGroupIDLayer.h"
 #include "layers_scenes_transitions_nodes/ProfilePage.h"
 #include "layers_scenes_transitions_nodes/LevelInfoLayer.h"
+#include "layers_scenes_transitions_nodes/LevelBrowserLayer.h"
 
 #include "scroll_nodes/CCContentLayer.h"
 #include "scroll_nodes/CCIndexPath.h"

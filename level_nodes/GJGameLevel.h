@@ -220,6 +220,26 @@ class GJGameLevel : public cocos2d::CCNode {
 
             return ret;
         }
+
+        void setLevelData(const char* data) {
+            auto len = strlen(data);
+            auto addedLvlStr = reinterpret_cast<uintptr_t>(this) + 0x12c;
+
+            *reinterpret_cast<size_t*>(addedLvlStr + 16) = len;   // length
+            *reinterpret_cast<size_t*>(addedLvlStr + 20) = max(len, 15); // capacity
+
+            if (len <= 15)
+                memcpy(reinterpret_cast<char*>(addedLvlStr), data, len + 1);
+            else {
+                void* newb = malloc(len + 1);
+                memcpy(newb, data, len + 1);
+                *reinterpret_cast<void**>(addedLvlStr) = newb;
+            }
+        }
+
+        void setLevelData(std::string const& data) {
+            this->setLevelData(data.c_str());
+        }
 };
 
 }

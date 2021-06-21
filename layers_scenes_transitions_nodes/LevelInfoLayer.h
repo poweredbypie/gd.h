@@ -23,6 +23,22 @@ namespace gd {
             TextArea* m_pDescriptionInput;
             cocos2d::CCArray* m_pSomeArray;
             cocos2d::CCLabelBMFont* m_pSomeFont;
+
+            static EditLevelLayer* create(gd::GJGameLevel* level) {
+                return reinterpret_cast<EditLevelLayer*(__fastcall*)(gd::GJGameLevel*)>(
+                    base + 0x6f530
+                )(level);
+            }
+
+            static void scene(gd::GJGameLevel* level) {
+                auto pScene = cocos2d::CCScene::create();
+
+                pScene->addChild(gd::EditLevelLayer::create(level));
+
+                cocos2d::CCDirector::sharedDirector()->replaceScene(
+                    cocos2d::CCTransitionFade::create(.5f, pScene)
+                );
+            }
     };
 
     class LevelInfoLayer : public cocos2d::CCLayer,

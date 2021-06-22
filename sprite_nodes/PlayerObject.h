@@ -9,7 +9,7 @@ namespace gd {
 	class AnimatedSpriteDelegate;
 	class GJRobotSprite;
 	class GJSpiderSprite;
-	using HardStreak = cocos2d::CCDrawNode;
+	class HardStreak;
 
 	class PlayerObject : public GameObject, public AnimatedSpriteDelegate {
 	public:

@@ -159,10 +159,10 @@ class EditorUI : public cocos2d::CCLayer,
         cocos2d::CCSprite* m_pIdkSprite1;
         CCMenuItemSpriteExtra* m_pButton27;
         CCMenuItemSpriteExtra* m_pButton28;
-        CCMenuItemSpriteExtra* m_pButton29;
-        CCMenuItemSpriteExtra* m_pButton30;
-        CCMenuItemSpriteExtra* m_pButton31;
-        CCMenuItemSpriteExtra* m_pButton32;
+        CCMenuItemSpriteExtra* m_pDeleteFilterNone;
+        CCMenuItemSpriteExtra* m_pDeleteFilterStatic;
+        CCMenuItemSpriteExtra* m_pDeleteFilterDetails;
+        CCMenuItemSpriteExtra* m_pDeleteFilterCustom;
         cocos2d::CCLabelBMFont* m_pCurrentLayerLabel;
         CCMenuItemSpriteExtra* m_pButton33;
         CCMenuItemSpriteExtra* m_pButton34;

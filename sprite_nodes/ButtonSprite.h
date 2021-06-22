@@ -29,6 +29,29 @@ namespace gd {
 			__asm add esp, 0x14
 			return pRet;
 		}
+
+		static ButtonSprite* create(
+			CCSprite* subSpr, int width, bool absolute, float scale,
+			int idk0, const char* texBG, bool idk1, float height
+		) {
+			__asm movss xmm3, height
+
+			auto pRet = reinterpret_cast<ButtonSprite*(__fastcall*)(
+				CCSprite*, int, bool, float, int, const char*, bool
+			)>(
+				base + 0x134b0
+			)(subSpr, width, absolute, scale, idk0, texBG, idk1);
+
+			__asm add esp, 0x14
+
+			return pRet;
+		}
+
+		void updateBGImage(const char* spr) {
+			reinterpret_cast<void(__thiscall*)(ButtonSprite*, const char*)>(
+				base + 0x13af0
+			)(this, spr);
+		}
 	};
 	#pragma runtime_checks("s", restore)
 }

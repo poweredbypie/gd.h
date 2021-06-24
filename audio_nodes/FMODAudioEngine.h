@@ -38,6 +38,8 @@ namespace gd {
 				base + 0x24240
 				)(this, filename);
 		}
+		float getMusicVolume() { return m_fBackgroundMusicVolume; }
+		float getSFXVolume() { return m_fEffectsVolume; }
 		//my own function
 		void reloadEffects() {
 			using namespace std::filesystem;

@@ -4,8 +4,17 @@
 #include <gd.h>
 
 namespace gd {
+    class GJEffectManager;
+    class GJGameLevel;
+
     class LevelSettingsObject : public cocos2d::CCNode {
-        // tood
+    public:
+        GJEffectManager* m_effectManager;
+        PAD(9);
+        bool m_twoPlayerMode;
+        PAD(26);
+        GJGameLevel* m_level;
+        std::string m_unknownStr1;
     };
 }
 

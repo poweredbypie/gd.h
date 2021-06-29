@@ -4,6 +4,9 @@
 #include <gd.h>
 
 namespace gd {
+
+	enum IconType;
+
 	class GJRobotSprite;
 	class GJSpiderSprite;
 
@@ -73,4 +76,4 @@ namespace gd {
 	};
 }
 
-#endif 
+#endif

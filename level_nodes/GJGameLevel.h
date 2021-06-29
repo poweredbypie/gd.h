@@ -6,13 +6,13 @@
 
 namespace gd {
 
-enum GJLevelType {
-    kGJLevelTypeLocal = 1,
-    kGJLevelTypeEditor = 2,
-    kGJLevelTypeSaved = 3
-};
+    enum GJLevelType {
+        kGJLevelTypeLocal = 1,
+        kGJLevelTypeEditor = 2,
+        kGJLevelTypeSaved = 3
+    };
 
-class GJGameLevel : public cocos2d::CCNode {
+    class GJGameLevel : public cocos2d::CCNode {
     public:
         cocos2d::CCDictionary *lastBuildSave;
 
@@ -172,7 +172,7 @@ class GJGameLevel : public cocos2d::CCNode {
         std::string rateUser;
 
         bool dontSave;
-        bool levelDownloaded;
+        bool levelNotDownloaded;
 
         int requiredCoins;
         bool isUnlocked;

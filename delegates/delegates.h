@@ -8,6 +8,7 @@ namespace gd {
     class NumberInputLayer;
     class SetIDPopup;
     class CCTextInputNode;
+    class GJDropDownLayer;
     class SongInfoObject;
     class GJSpecialColorSelect;
     class HSVWidgetPopup;
@@ -71,10 +72,10 @@ namespace gd {
     };
 
     enum UpdateResponse {
-        kUpdateResponseUnknown = 0x0,
-        kUpdateResponseUpToDate = 0x1,
-        kUpdateResponseGameVerOutOfDate = 0x2,
-        kUpdateResponseUpdateSuccess = 0x3,
+        kUpdateResponseUnknown,
+        kUpdateResponseUpToDate,
+        kUpdateResponseGameVerOutOfDate,
+        kUpdateResponseUpdateSuccess,
     };
 
     enum CommentError {
@@ -125,7 +126,7 @@ namespace gd {
 
     class LevelUpdateDelegate {
         public:
-            virtual void levelUpdateFinished(GJGameLevel *,UpdateResponse);
+            virtual void levelUpdateFinished(GJGameLevel*, UpdateResponse);
             virtual void levelUpdateFailed(int);
     };
 
@@ -152,12 +153,17 @@ namespace gd {
 
     class NumberInputDelegate {
         public:
-            virtual void numberInputClosed(NumberInputLayer *);
+            virtual void numberInputClosed(NumberInputLayer*);
     };
 
     class SetIDPopupDelegate {
         public:
-            virtual void setIDPopupClosed(SetIDPopup *,int);
+            virtual void setIDPopupClosed(SetIDPopup*, int);
+    };
+
+    class GJDropDownLayerDelegate {
+        public:
+            virtual void dropDownLayerWillClose(GJDropDownLayer*);
     };
 }
 

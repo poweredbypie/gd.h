@@ -19,6 +19,15 @@ namespace gd {
 	}
 }
 
+namespace FMOD {
+	class System;
+	class Sound;
+	class Channel;
+	class DSP;
+}
+enum FMOD_RESULT;
+
+
 #include "GDProtocols.h"
 
 #include "delegates/delegates.h"
@@ -27,9 +36,6 @@ namespace gd {
 
 #include "achievement_nodes/AchievementBar.h"
 #include "achievement_nodes/AchievementNotifier.h"
-
-#include "other_nodes/GJSearchObject.h"
-#include "other_nodes/SongInfoObject.h"
 
 #include "menu_nodes/CCMenuItemSpriteExtra.h"
 #include "menu_nodes/CCMenuItemToggler.h"
@@ -42,7 +48,9 @@ namespace gd {
 #include "manager_nodes/AchievementManager.h"
 #include "manager_nodes/GJUserScore.h"
 #include "manager_nodes/GJAccountManager.h"
+#include "manager_nodes/GJEffectManager.h"
 #include "manager_nodes/MusicDownloadManager.h"
+#include "manager_nodes/ObjectToolbox.h"
 
 #include "layers_scenes_transitions_nodes/CCNodeContainer.h"
 #include "layers_scenes_transitions_nodes/OBB2D.h"
@@ -61,6 +69,9 @@ namespace gd {
 #include "layers_scenes_transitions_nodes/EditorUI.h"
 #include "layers_scenes_transitions_nodes/NumberInputLayer.h"
 #include "layers_scenes_transitions_nodes/SetIDPopup.h"
+#include "layers_scenes_transitions_nodes/CustomSongWidget.h"
+#include "layers_scenes_transitions_nodes/CustomSongLayer.h"
+#include "layers_scenes_transitions_nodes/SongInfoLayer.h"
 #include "layers_scenes_transitions_nodes/GJSpecialColorSelect.h"
 #include "layers_scenes_transitions_nodes/HSVWidgetPopup.h"
 #include "layers_scenes_transitions_nodes/GJScaleControl.h"
@@ -79,11 +90,16 @@ namespace gd {
 #include "scroll_nodes/ScrollingLayer.h"
 
 #include "audio_nodes/FMODAudioEngine.h"
+#include "audio_nodes/FMODSound.h"
 
 #include "level_nodes/GJGameLevel.h"
+#include "level_nodes/GJSearchObject.h"
 #include "level_nodes/LevelSettingsObject.h"
+#include "level_nodes/SongInfoObject.h"
+#include "level_nodes/ColorAction.h"
 
 #include "sprite_nodes/CCSpritePlus.h"
+#include "sprite_nodes/ColorActionSprite.h"
 #include "sprite_nodes/ButtonSprite.h"
 #include "sprite_nodes/GameObject.h"
 #include "sprite_nodes/CCAnimatedSprite.h"
@@ -95,9 +111,14 @@ namespace gd {
 #include "sprite_nodes/GJSpiderSprite.h"
 #include "sprite_nodes/GJSpriteColor.h"
 #include "sprite_nodes/SimplePlayer.h"
+#include "sprite_nodes/HardStreak.h"
 
 #include "cell_nodes/GJComment.h"
 
 #include "text_input_nodes/CCTextInputNode.h"
+
+#include "other_nodes/CheckpointObject.h"
+#include "other_nodes/PlayerCheckpoint.h"
+#include "other_nodes/PointNode.h"
 
 #endif

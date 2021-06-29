@@ -66,6 +66,7 @@ namespace gd {
 		cocos2d::CCTextFieldTTF* getTextField() { return m_pTextField; }
 		void setString(const char* text) { m_pTextField->setString(text); }
 		const char* getString() { return m_pTextField->getString(); }
+		cocos2d::CCLabelBMFont* getPlaceholderLabel() { return m_pPlaceholderLabel; }
 		void setDelegate(TextInputDelegate* delegate) { m_delegate = delegate; }
 	};
 	#pragma runtime_checks("s", restore)

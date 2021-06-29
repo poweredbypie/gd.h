@@ -23,6 +23,10 @@ namespace gd {
 		virtual void animationFinished(const char*) {}
 		virtual void animationFinishedO(cocos2d::CCObject*) {}
 	};
+
+	class AnimatedSpriteDelegate {
+		virtual void animationFinished(const char*);
+	};
 }
 
 #endif

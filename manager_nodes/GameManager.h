@@ -38,7 +38,7 @@ namespace gd {
 	class LevelEditorLayer;
 
 	class GameManager : public GManager {
-	protected:
+	public:
 		bool m_bSwitchModes;
 		bool m_bToFullscreen;
 		bool m_bReloading;
@@ -129,7 +129,6 @@ namespace gd {
 		int m_nResolution;
 		cocos2d::TextureQuality m_eQuality; //more after that i havent re'd
 
-	public:
 		int getPlayerFrame() { return m_nPlayerFrame; }
 		int getPlayerShip() { return m_nPlayerShip; }
 		int getPlayerBall() { return m_nPlayerBall; }
@@ -216,6 +215,9 @@ namespace gd {
 				base + 0xCA330
 				)(this, key);
 		}
+		void setIntGameVariable(const char* key, int value) {
+			reinterpret_cast<void(__thiscall*)(GameManager*, const char*, int)>(base + 0xCA230)(this, key, value);
+		}
 		bool getUGV(const char* key) {
 			return reinterpret_cast<bool(__thiscall*)(GameManager*, const char*)>(
 				base + 0xCA0D0
@@ -228,6 +230,20 @@ namespace gd {
 		}
 		PlayLayer* getPlayLayer() { return m_pPlayLayer; }
 		LevelEditorLayer* getEditorLayer() { return m_pLevelEditorLayer; }
+
+		bool getGameVariableDefault(const char* key, bool defaultValue) {
+			auto object = reinterpret_cast<cocos2d::CCString*>(m_pValueKeeper->objectForKey(std::string("gv_") + key));
+			if (object == nullptr)
+				return defaultValue;
+			return object->boolValue();
+		}
+
+		int getIntGameVariableDefault(const char* key, int defaultValue) {
+			auto object = reinterpret_cast<cocos2d::CCString*>(m_pValueKeeper->objectForKey(std::string("gv_") + key));
+			if (object == nullptr)
+				return defaultValue;
+			return object->intValue();
+		}
 	};
 }
 

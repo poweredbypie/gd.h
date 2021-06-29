@@ -238,7 +238,6 @@ class EditorUI : public cocos2d::CCLayer,
             )(this);
         }
 
-<<<<<<< HEAD
         cocos2d::CCPoint getTouchPoint(cocos2d::CCTouch* touch, cocos2d::CCEvent* event) {
             cocos2d::CCPoint res;
 
@@ -306,8 +305,7 @@ class EditorUI : public cocos2d::CCLayer,
                 EditorUI*
             )>( base + 0x78280 )(this);
         }
-};
-=======
+        
         void moveObject(GameObject* obj, cocos2d::CCPoint position) {
             reinterpret_cast<void(__thiscall*)(EditorUI*, GameObject*, cocos2d::CCPoint)>(base + 0x8ddb0)(this, obj, position);
         }
@@ -327,18 +325,11 @@ class EditorUI : public cocos2d::CCLayer,
             reinterpret_cast<void(__thiscall*)(EditorUI*)>(base + 0x878a0)(this);
         }
 
-        cocos2d::CCPoint getGroupCenter(cocos2d::CCArray* objects, bool idk) {
-            cocos2d::CCPoint result;
-            reinterpret_cast<void*(__thiscall*)(EditorUI*, cocos2d::CCPoint*, cocos2d::CCArray*, bool)>(base + 0x8fc30)(this, &result, objects, idk);
-            return result;
-        }
-
         void scaleObjects(cocos2d::CCArray* objects, float scale, cocos2d::CCPoint center) {
             __asm movss xmm2, scale;
             reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCArray*, cocos2d::CCPoint)>(base + 0x8f150)(this, objects, center);
         }
     };
->>>>>>> 8008deeeba5a62da9e307c4ced3819849035104f
 
 }
 

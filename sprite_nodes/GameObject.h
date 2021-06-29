@@ -65,65 +65,65 @@ namespace gd {
 		bool m_unk21D;
 		bool m_unk21E;
 		PAD(13);
-		cocos2d::CCPoint m_startPosOffset; //0x22C
+		cocos2d::CCPoint m_obStartPosOffset; //0x22C
 		PAD(4);
 		bool m_unk238;
 		bool m_isFlippedX; //0x239
 		bool m_isFlippedY; //0x23A
 		PAD(1);
-		cocos2d::CCPoint m_boxOffset; //0x23C
+		cocos2d::CCPoint m_obBoxOffset; //0x23C
 		bool m_isOriented; //0x244 idek what this is
 		PAD(3);
 		cocos2d::CCPoint m_unk248; // related to box offset
 		PAD(4);
 		bool m_unk254;
 		PAD(11);
-		cocos2d::CCAction* m_action; //0x260
+		cocos2d::CCAction* m_pAction; //0x260
 		PAD(4);
-		cocos2d::CCSize m_objectSize; //0x268
+		cocos2d::CCSize m_obObjectSize; //0x268
 		bool m_unk270;
 		bool m_unk271;
 		bool m_unk272;
 		PAD(1);
-		cocos2d::CCParticleSystemQuad* m_particleSystem;
-		std::string m_effectPlistName; //0x278
+		cocos2d::CCParticleSystemQuad* m_pParticleSystem;
+		std::string m_sEffectPlistName; //0x278
 		PAD(32);
 		bool m_unk2B0; // has custom scale or moved idfk
 		PAD(7);
 		cocos2d::CCRect m_objectRect2; //0x2B8
-		bool m_isObjectRectDirty; //0x2C8
-		bool m_isOrientedRectDirty; //0x2C9
-		bool m_hasBeenActivated; //0x2CA
-		bool m_hasBeenActivatedP2; //0x2CB
+		bool m_bIsObjectRectDirty; //0x2C8
+		bool m_bIsOrientedRectDirty; //0x2C9
+		bool m_bHasBeenActivated; //0x2CA
+		bool m_bHasBeenActivatedP2; //0x2CB
 		PAD(24);
-		cocos2d::CCSprite* m_unkSprite; //0x2E4
+		cocos2d::CCSprite* m_pUnkSprite; //0x2E4
 		PAD(8);
-		bool m_isRotatedSide; //0x2F0 for 90 and 270 degrees rotations
+		bool m_bIsRotatedSide; //0x2F0 for 90 and 270 degrees rotations
 		PAD(3);
 		float m_unk2F4;
 		float m_unk2F8;
-		int m_uniqueID; //0x2FC
-		GameObjectType m_objectType; //0x300
-		int m_section; //0x304
+		int m_nUniqueID; //0x2FC
+		GameObjectType m_nObjectType; //0x300
+		int m_nSection; //0x304
 		PAD(4);
-		cocos2d::CCPoint m_startPosition; //0x30C
-		std::string m_textureName; //0x314
+		cocos2d::CCPoint m_obStartPosition; //0x30C
+		std::string m_sTextureName; //0x314
 		bool m_unk32C;
 		bool m_unk32D;
 		PAD(14);
 		float m_unk33C;
 		float m_unk340;
 		PAD(16);
-		bool m_isGlowDisabled; //0x354
+		bool m_bIsGlowDisabled; //0x354
 		PAD(7);
-		float m_scale; //0x35C
-		int m_objectID; //0x360
+		float m_fScale; //0x35C
+		int m_nObjectID; //0x360
 		PAD(4);
 		bool m_unk368;
 		bool m_unk369;
 		bool m_unk36A;
-		bool m_isDontEnter; //0x36B
-		bool m_isDontFade; //0x36C
+		bool m_bIsDontEnter; //0x36B
+		bool m_bIsDontFade; //0x36C
 		PAD(31);
 		bool m_unk38C;
 		bool m_unk38D;
@@ -131,35 +131,35 @@ namespace gd {
 		PAD(1);
 		float m_unk390;
 		PAD(20);
-		GJSpriteColor* m_baseColor; //0x3A8
-		GJSpriteColor* m_detailColor; //0x3AC
+		GJSpriteColor* m_pBaseColor; //0x3A8
+		GJSpriteColor* m_pDetailColor; //0x3AC
 		PAD(4);
 		int m_nDefaultZLayer; // 0x03B4
-		int m_zLayer; //0x3B8
-		int m_zOrder; //0x3BC
+		int m_nZLayer; //0x3B8
+		int m_nZOrder; //0x3BC
 		std::string m_unk3C0;
 		bool m_unk3D8;
 		bool m_unk3D9;
-		bool m_isSelected; //0x3DA
+		bool m_bIsSelected; //0x3DA
 		PAD(1);
-		int m_globalClickCounter; //0x3DC i have no idea what this is for
+		int m_nGlobalClickCounter; //0x3DC i have no idea what this is for
 		PAD(12);
-		float m_multiScaleMultiplier;
-		bool m_isGroupParent; //0x3F0
+		float m_fMultiScaleMultiplier;
+		bool m_bIsGroupParent; //0x3F0
 		PAD(3);
-		short* m_groups; //0x3F4
-		short m_groupCount; //0x3F8
+		short* m_pGroups; //0x3F4
+		short m_nGroupCount; //0x3F8
 		PAD(18);
-		int m_editorLayer; //0x40C
-		int m_editorLayer2; //0x410
+		int m_nEditorLayer; //0x40C
+		int m_nEditorLayer2; //0x410
 		PAD(16);
-		cocos2d::CCPoint m_firstPosition; //0x424 first position from when its placed in the editor
+		cocos2d::CCPoint m_obFirstPosition; //0x424 first position from when its placed in the editor
 		PAD(28);
-		bool m_isHighDetail; //0x448
+		bool m_bHighDetail; //0x448
 		PAD(3);
-		ColorActionSprite* m_colorActionSprite1; //0x44C
-		ColorActionSprite* m_colorActionSprite2; //0x450
-		GJEffectManager* m_effectManager; //0x454
+		ColorActionSprite* m_pColorActionSprite1; //0x44C
+		ColorActionSprite* m_pColorActionSprite2; //0x450
+		GJEffectManager* m_pEffectManager; //0x454
 		PAD(16);
 
 		//CCNode vtable
@@ -225,7 +225,7 @@ namespace gd {
 		}
 
 		void deselectObject() {
-			this->m_isSelected = false;
+			this->m_bIsSelected = false;
 
 			return reinterpret_cast<void(__fastcall*)(GameObject*)>(
 				base + 0xeee50
@@ -254,8 +254,8 @@ namespace gd {
 			);
 		}
 
-		cocos2d::CCPoint getRealPosition() { return m_obRealPosition; }
-		void setRealPosition(cocos2d::CCPoint const& p) { m_obRealPosition = p; }
+		cocos2d::CCPoint getStartPosition() { return m_obStartPosition; }
+		void setStartPosition(cocos2d::CCPoint const& p) { m_obStartPosition = p; }
 		
 		unsigned int getUniqueID() { return m_nUniqueID; }
 		short getGroupID(int ix) { return m_pGroups[ix]; }

@@ -119,7 +119,8 @@ namespace gd {
 		PAD(20);
 		GJSpriteColor* m_pBaseColor; //0x03A8
 		GJSpriteColor* m_pDetailColor; //0x03AC
-		PAD(8);
+		PAD(4);
+		int m_nDefaultZLayer; // 0x03B4
 		int m_nZLayer; //0x03B8
 		int m_nZOrder; //0x03BC
 		PAD(24);

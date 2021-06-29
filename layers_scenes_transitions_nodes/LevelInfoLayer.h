@@ -18,7 +18,7 @@ namespace gd {
         public SetIDPopupDelegate
     {
         public:
-            cocos2d::CCMenu* m_pSomeMenu;
+            cocos2d::CCMenu* m_pButtonMenu;
             GJGameLevel* m_pLevel;
             TextArea* m_pDescriptionInput;
             cocos2d::CCArray* m_pSomeArray;

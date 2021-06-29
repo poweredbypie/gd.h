@@ -72,6 +72,14 @@ class EditButtonBar : public cocos2d::CCNode {
             );
         }
 
+        cocos2d::CCArray* getItems() { return this->m_pButtonArray; }
+
+        void removeAllItems() {
+            this->m_pButtonArray->removeAllObjects();
+
+            this->reloadItemsInNormalSize();
+        }
+
         void reloadItems(int rowCount, int columnCount) {
             if (this->m_pButtonArray)
                 this->loadFromItems(this->m_pButtonArray, rowCount, columnCount, this->m_bUnknown);
@@ -83,14 +91,28 @@ class EditButtonBar : public cocos2d::CCNode {
             );
         }
 
-        void addButton(CCMenuItemSpriteExtra* btn) {
+        void insertButton(CCMenuItemSpriteExtra* btn, unsigned int index, bool reload = true) {
             if (this->m_pButtonArray)
-                this->m_pButtonArray->insertObject(btn, 0u);
-            this->reloadItemsInNormalSize();
+                this->m_pButtonArray->insertObject(btn, index);
+            if (reload)
+                this->reloadItemsInNormalSize();
+        }
+
+        void addButton(CCMenuItemSpriteExtra* btn, bool reload = true) {
+            if (this->m_pButtonArray)
+                this->m_pButtonArray->addObject(btn);
+            if (reload)
+                this->reloadItemsInNormalSize();
         }
 };
 
-class CreateMenuItem : public CCMenuItemSpriteExtra {};
+class CreateMenuItem : public CCMenuItemSpriteExtra {
+    public:
+        PAD(0x18)
+        int m_nObjectID;
+        int m_nBuildTabPage;
+        int m_nBuildTab;
+};
 
 class GJScaleControl;
 class GJRotationControl;
@@ -168,9 +190,9 @@ class EditorUI : public cocos2d::CCLayer,
         CCMenuItemSpriteExtra* m_pButton34;
         CCMenuItemSpriteExtra* m_pButton35;
         PAD(0x8)
-        int m_nSelectedCreateObject;
-        cocos2d::CCArray* m_pUnknownArray7;
-        cocos2d::CCArray* m_pUnknownArray8;
+        int m_nSelectedCreateObjectID;
+        cocos2d::CCArray* m_pCreateButtonArray;
+        cocos2d::CCArray* m_pCustomObjectButtonArray;
         cocos2d::CCArray* m_pUnknownArray9;
         PAD(0x4)
         LevelEditorLayer* m_pEditorLayer;
@@ -231,6 +253,24 @@ class EditorUI : public cocos2d::CCLayer,
             reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
                 base + 0x887f0
             )(this, pSender);
+        }
+
+        void onCreateButton(cocos2d::CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x854f0
+            )(this, pSender);
+        }
+
+        void enableButton(CreateMenuItem* btn) {
+            reinterpret_cast<void(__stdcall*)(CreateMenuItem*)>(
+                base + 0x78990
+            )(btn);
+        }
+
+        void disableButton(CreateMenuItem* btn) {
+            reinterpret_cast<void(__stdcall*)(CreateMenuItem*)>(
+                base + 0x78af0
+            )(btn);
         }
 
         CreateMenuItem* getCreateBtn(int id, int bg) {

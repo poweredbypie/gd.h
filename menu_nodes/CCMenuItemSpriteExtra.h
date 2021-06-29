@@ -19,7 +19,7 @@ namespace gd {
 		cocos2d::CCPoint m_obOffset;
 		MenuAnimationType m_nAnimationType = kMenuAnimationTypeScale;
 		cocos2d::CCPoint m_obStartPosition;
-		PAD(0x14)
+		PAD(0xc)
 
 		bool init(cocos2d::CCNode* spr) {
 			return reinterpret_cast<bool(__thiscall*)(

@@ -114,6 +114,14 @@ class CreateMenuItem : public CCMenuItemSpriteExtra {
         int m_nBuildTab;
 };
 
+class EditorPauseLayer : public gd::CCBlockLayer {
+    public:
+        PAD(0x8)
+        gd::CCMenuItemSpriteExtra* m_pButton0;
+        gd::CCMenuItemSpriteExtra* m_pButton1;
+        gd::LevelEditorLayer* m_pEditorLayer;
+};
+
 class GJScaleControl;
 class GJRotationControl;
 class CCMenuItemSpriteExtra;

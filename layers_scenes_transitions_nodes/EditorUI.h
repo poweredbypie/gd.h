@@ -203,10 +203,9 @@ class EditorUI : public cocos2d::CCLayer,
         cocos2d::CCArray* m_pCreateButtonArray;
         cocos2d::CCArray* m_pCustomObjectButtonArray;
         cocos2d::CCArray* m_pUnknownArray9;
-        PAD(0x4)
-        LevelEditorLayer* m_pEditorLayer;
         int m_nSelectedMode;
-        PAD(0x30)
+        LevelEditorLayer* m_pEditorLayer;
+        PAD(0x34)
         GameObject* m_pSelectedObject;
         PAD(0x2c)
         int m_nSelectedTab;
@@ -336,6 +335,12 @@ class EditorUI : public cocos2d::CCLayer,
         void scaleObjects(cocos2d::CCArray* objects, float scale, cocos2d::CCPoint center) {
             __asm movss xmm2, scale;
             reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCArray*, cocos2d::CCPoint)>(base + 0x8f150)(this, objects, center);
+        }
+    
+        void updateGridNodeSize() {
+            reinterpret_cast<void(__fastcall*)(EditorUI*)>(
+                base + 0x78f60
+            )(this);
         }
     };
 

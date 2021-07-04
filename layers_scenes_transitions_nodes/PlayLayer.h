@@ -12,7 +12,14 @@ namespace gd {
 	// class AudioEffectsLayer;
 	using AudioEffectsLayer = cocos2d::CCLayerColor;
 	// class GJGroundLayer;
-	using GJGroundLayer = cocos2d::CCLayer;
+	class GJGroundLayer : public cocos2d::CCLayer {
+		public:
+			void updateGroundWidth() {
+				reinterpret_cast<void(__thiscall*)(GJGroundLayer*)>(
+					base + 0x12dda0
+				)(this);
+			}
+	};
 	class GJGameLevel;
 	// class UILayer;
 	using UILayer = cocos2d::CCLayerColor;

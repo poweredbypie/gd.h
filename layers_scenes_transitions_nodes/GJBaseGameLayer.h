@@ -11,7 +11,7 @@ namespace gd {
 	class PlayerObject;
 
 	class GJBaseGameLayer : public cocos2d::CCLayer {
-		protected:
+		public:
 			PAD(0x4)
 			OBB2D* m_pOBB2D;
 			GJEffectManager* m_pEffectManager;

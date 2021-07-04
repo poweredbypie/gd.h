@@ -8,6 +8,7 @@ namespace gd {
     class GJBaseGameLayer;
     class EditorUI;
     class GameObject;
+    class GJGroundLayer;
 
     class LevelEditorLayer : public GJBaseGameLayer {
     public:
@@ -17,6 +18,8 @@ namespace gd {
         int m_nCurrentLayer;
         PAD(0x28)
         EditorUI* m_pEditorUI;
+        PAD(0x40)
+        GJGroundLayer* m_pGroundLayer;
 
     public:
         static LevelEditorLayer* get() { return gd::GameManager::sharedState()->getEditorLayer(); }

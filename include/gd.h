@@ -2,6 +2,7 @@
 #define __GD_H__
 
 #include <cocos2d.h>
+#include <cocos-ext.h>
 
 #include "gdMacros.h"
 

@@ -58,6 +58,8 @@ enum FMOD_RESULT;
 #include "layers_scenes_transitions_nodes/CustomSongLayer.h"
 #include "layers_scenes_transitions_nodes/SongInfoLayer.h"
 #include "layers_scenes_transitions_nodes/GJSpecialColorSelect.h"
+#include "layers_scenes_transitions_nodes/SetupPulsePopup.h"
+#include "layers_scenes_transitions_nodes/ColorSelectPopup.h"
 
 #include "scroll_nodes/CCContentLayer.h"
 #include "scroll_nodes/CCIndexPath.h"

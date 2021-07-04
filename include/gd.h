@@ -104,10 +104,12 @@ enum FMOD_RESULT;
 #include "sprite_nodes/GJSpiderSprite.h"
 #include "sprite_nodes/GJSpriteColor.h"
 #include "sprite_nodes/SimplePlayer.h"
+#include "sprite_nodes/HardStreak.h"
 
 #include "text_input_nodes/CCTextInputNode.h"
 
 #include "other_nodes/CheckpointObject.h"
 #include "other_nodes/PlayerCheckpoint.h"
+#include "other_nodes/PointNode.h"
 
 #endif

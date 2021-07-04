@@ -141,7 +141,7 @@ class EditorUI : public cocos2d::CCLayer,
         PAD(0x4)
         cocos2d::CCArray* m_pUnknownArray;
         PAD(0x2c)
-        cocos2d::CCLabelBMFont* m_pUnknownLabel;
+        cocos2d::CCLabelBMFont* m_pObjectInfoLabel;
         GJRotationControl* m_pRotationControl;
         PAD(0xc)
         GJScaleControl* m_pScaleControl;
@@ -155,7 +155,7 @@ class EditorUI : public cocos2d::CCLayer,
         cocos2d::CCArray* m_pSelectedObjects;
         cocos2d::CCMenu* m_pDeleteMenu;
         cocos2d::CCArray* m_pUnknownArray4;
-        CCMenuItemSpriteExtra* m_pButton0;
+        CCMenuItemSpriteExtra* m_pDeleteModeButton;
         CCMenuItemSpriteExtra* m_pButton1;
         CCMenuItemSpriteExtra* m_pButton2;
         CCMenuItemSpriteExtra* m_pButton3;
@@ -205,10 +205,14 @@ class EditorUI : public cocos2d::CCLayer,
         cocos2d::CCArray* m_pUnknownArray9;
         int m_nSelectedMode;
         LevelEditorLayer* m_pEditorLayer;
-        PAD(0x34)
+        PAD(0x30)
         GameObject* m_pSelectedObject;
-        PAD(0x2c)
+        PAD(0x30)
         int m_nSelectedTab;
+
+        static constexpr const int Mode_Create = 2;
+        static constexpr const int Mode_Delete = 1;
+        static constexpr const int Mode_Edit = 3;
     
     public:
         cocos2d::CCArray* pasteObjects(std::string const& _str) {
@@ -340,6 +344,12 @@ class EditorUI : public cocos2d::CCLayer,
         void updateGridNodeSize() {
             reinterpret_cast<void(__fastcall*)(EditorUI*)>(
                 base + 0x78f60
+            )(this);
+        }
+
+        void updateObjectInfoLabel() {
+            reinterpret_cast<void(__fastcall*)(EditorUI*)>(
+                base + 0x793b0
             )(this);
         }
     };

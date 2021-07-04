@@ -25,6 +25,7 @@ namespace gd {
     class HSVWidgetPopup : public gd::FLAlertLayer {
         public:
             ConfigureHSVWidget* m_pConfigureWidget;
+            HSVWidgetPopupDelegate* m_pDelegate;
     };
 }
 

@@ -124,7 +124,8 @@ namespace gd {
 		bool m_unk36A;
 		bool m_bIsDontEnter; //0x36B
 		bool m_bIsDontFade; //0x36C
-		PAD(31);
+		int m_nDefaultZOrder; // 0x370
+		PAD(23);
 		bool m_unk38C;
 		bool m_unk38D;
 		bool m_unk38E;
@@ -152,7 +153,8 @@ namespace gd {
 		PAD(18);
 		int m_nEditorLayer; //0x40C
 		int m_nEditorLayer2; //0x410
-		PAD(16);
+		int m_unk414;
+		PAD(12);
 		cocos2d::CCPoint m_obFirstPosition; //0x424 first position from when its placed in the editor
 		PAD(28);
 		bool m_bHighDetail; //0x448

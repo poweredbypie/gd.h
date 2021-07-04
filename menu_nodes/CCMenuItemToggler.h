@@ -50,6 +50,10 @@ namespace gd {
 				base + 0x199B0
 				)(this, on);
 		}
+		void toggleWithCallback(bool on) {
+			this->activate();
+			this->toggle(on);
+		}
 		// actual GD function
 		void setEnabled(bool on) {
 			return reinterpret_cast<void(__thiscall*)(CCMenuItemToggler*, bool)>(

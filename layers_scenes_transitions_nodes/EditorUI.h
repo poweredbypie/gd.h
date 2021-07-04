@@ -120,6 +120,12 @@ class EditorPauseLayer : public gd::CCBlockLayer {
         gd::CCMenuItemSpriteExtra* m_pButton0;
         gd::CCMenuItemSpriteExtra* m_pButton1;
         gd::LevelEditorLayer* m_pEditorLayer;
+
+        void onResume(cocos2d::CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorPauseLayer*, cocos2d::CCObject*)>(
+                base + 0x74fe0
+            )(this, pSender);
+        }
 };
 
 class GJScaleControl;

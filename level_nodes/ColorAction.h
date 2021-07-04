@@ -18,7 +18,15 @@ namespace gd {
         int m_unk10C;
         float m_opacity; //0x0110
         float m_unk114;
-        PAD(28);
+        float m_copyHue;
+        float m_copySaturation;
+        float m_copyBrightness;
+        bool m_saturationChecked;
+        bool m_brightnessChecked;
+        int m_copyID; // 0x128 color that youre copying
+        PAD(1);
+        bool m_copyOpacity;
+        PAD(4);
         ColorActionSprite* m_colorSprite; //0x0134
         PAD(12);
     };

@@ -36,6 +36,12 @@ namespace gd {
                     gd::base + 0x22e3d0
                 )( this );
             }
+            
+            void updateGroupIDLabel() {
+                reinterpret_cast<void(__fastcall*)(SetGroupIDLayer*)>(
+                    gd::base + 0x22e450
+                )( this );
+            }
     };
 }
 

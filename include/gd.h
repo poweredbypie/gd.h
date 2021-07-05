@@ -40,6 +40,7 @@ enum FMOD_RESULT;
 #include "menu_nodes/CCMenuItemSpriteExtra.h"
 #include "menu_nodes/CCMenuItemToggler.h"
 #include "menu_nodes/Slider.h"
+#include "menu_nodes/InfoAlertButton.h"
 
 #include "manager_nodes/GManager.h"
 #include "manager_nodes/GameManager.h"
@@ -80,6 +81,7 @@ enum FMOD_RESULT;
 #include "layers_scenes_transitions_nodes/ProfilePage.h"
 #include "layers_scenes_transitions_nodes/LevelInfoLayer.h"
 #include "layers_scenes_transitions_nodes/LevelBrowserLayer.h"
+#include "layers_scenes_transitions_nodes/CustomizeObjectLayer.h"
 
 #include "scroll_nodes/CCContentLayer.h"
 #include "scroll_nodes/CCIndexPath.h"
@@ -112,6 +114,8 @@ enum FMOD_RESULT;
 #include "sprite_nodes/GJSpriteColor.h"
 #include "sprite_nodes/SimplePlayer.h"
 #include "sprite_nodes/HardStreak.h"
+
+#include "trigger_popups/SetupPickupTriggerPopup.h"
 
 #include "cell_nodes/GJComment.h"
 

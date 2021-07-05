@@ -38,6 +38,11 @@ namespace gd {
             virtual void colorSelectClosed(cocos2d::CCNode*);
     };
 
+    class ColorSetupDelegate {
+        public:
+            virtual void colorSetupClosed(int);
+    };
+
     class GJSpecialColorSelectDelegate {
         public:
             virtual void colorSelectClosed(GJSpecialColorSelect*, int);

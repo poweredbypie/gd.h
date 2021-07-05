@@ -52,6 +52,12 @@ namespace gd {
 				base + 0x13af0
 			)(this, spr);
 		}
+
+		void setString(const char* txt) {
+			reinterpret_cast<void(__thiscall*)(ButtonSprite*, const char*)>(
+				base + 0x14030
+			)(this, txt);
+		}
 	};
 	#pragma runtime_checks("s", restore)
 }

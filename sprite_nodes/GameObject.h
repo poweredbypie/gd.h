@@ -287,6 +287,9 @@ namespace gd {
 			reinterpret_cast<void(__thiscall*)(GameObject*, float)>(base + 0xe5280)(this, scale);
 		}
 	};
+
+	using EffectGameObject = GameObject;
+
 	#pragma runtime_checks("s", restore)
 }
 

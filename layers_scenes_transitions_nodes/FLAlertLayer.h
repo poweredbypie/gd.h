@@ -11,7 +11,7 @@ namespace gd {
 
 	#pragma runtime_checks("s", off)
 	class FLAlertLayer : public cocos2d::CCLayerColor {
-	protected:
+	public:
 		cocos2d::CCMenu* m_pButtonMenu;
 		int m_nControlConnected; //?
 		cocos2d::CCObject* m_pTarget;

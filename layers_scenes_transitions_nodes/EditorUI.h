@@ -121,6 +121,12 @@ class EditorPauseLayer : public gd::CCBlockLayer {
         gd::CCMenuItemSpriteExtra* m_pButton1;
         gd::LevelEditorLayer* m_pEditorLayer;
 
+        virtual void keyBackClicked() {
+            reinterpret_cast<void(__fastcall*)(EditorPauseLayer*)>(
+                base + 0x758d0
+            )(this);
+        }
+
         void onResume(cocos2d::CCObject* pSender) {
             reinterpret_cast<void(__thiscall*)(EditorPauseLayer*, cocos2d::CCObject*)>(
                 base + 0x74fe0
@@ -249,6 +255,12 @@ class EditorUI : public cocos2d::CCLayer,
             );
         }
 
+        void selectAll() {
+            reinterpret_cast<void(__fastcall*)(EditorUI*)>(
+                base + 0x86c40
+            )(this);
+        }
+
         cocos2d::CCArray* getSelectedObjects() {
             return reinterpret_cast<cocos2d::CCArray*(__thiscall*)(EditorUI*)>(
                 base + 0x86900
@@ -365,6 +377,12 @@ class EditorUI : public cocos2d::CCLayer,
             )(this);
         }
     
+        void updateSpecialUIElements() {
+            reinterpret_cast<void(__fastcall*)(EditorUI*)>(
+                base + 0x87030
+            )(this);
+        }
+
         void constrainGameLayerPosition(float x = -3.0f, float y = -6.0f) {
             __asm {
                 movss xmm1, x

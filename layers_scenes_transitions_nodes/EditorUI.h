@@ -342,6 +342,12 @@ class EditorUI : public cocos2d::CCLayer,
             reinterpret_cast<void(__thiscall*)(EditorUI*)>(base + 0x878a0)(this);
         }
 
+        void updateSlider() {
+            reinterpret_cast<void(__fastcall*)(EditorUI*)>(
+                base + 0x78f10
+            )(this);
+        }
+
         void scaleObjects(cocos2d::CCArray* objects, float scale, cocos2d::CCPoint center) {
             __asm movss xmm2, scale;
             reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCArray*, cocos2d::CCPoint)>(base + 0x8f150)(this, objects, center);
@@ -357,6 +363,23 @@ class EditorUI : public cocos2d::CCLayer,
             reinterpret_cast<void(__fastcall*)(EditorUI*)>(
                 base + 0x793b0
             )(this);
+        }
+    
+        void constrainGameLayerPosition(float x = -3.0f, float y = -6.0f) {
+            __asm {
+                movss xmm1, x
+                movss xmm2, y
+            }
+
+            reinterpret_cast<void(__fastcall*)(EditorUI*)>(
+                base + 0x8f920
+            )(this);
+        }
+    
+        void moveGameLayer(cocos2d::CCPoint const& pos) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCPoint)>(
+                base + 0x79290
+            )(this, pos);
         }
     };
 

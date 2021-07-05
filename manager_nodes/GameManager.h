@@ -218,6 +218,9 @@ namespace gd {
 		void setIntGameVariable(const char* key, int value) {
 			reinterpret_cast<void(__thiscall*)(GameManager*, const char*, int)>(base + 0xCA230)(this, key, value);
 		}
+		static void toggleGameVariable(const char* key) {
+			reinterpret_cast<void(__stdcall*)(const char*)>(base + 0xc9e90)(key);
+		}
 		bool getUGV(const char* key) {
 			return reinterpret_cast<bool(__thiscall*)(GameManager*, const char*)>(
 				base + 0xCA0D0

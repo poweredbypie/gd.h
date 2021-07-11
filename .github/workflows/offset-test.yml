@@ -28,7 +28,9 @@ jobs:
         
     - name: test
       run: |
-        curl -o ${{github.workspace}}/test/test.zip ${{secrets.COCOS_DLLS}}
+        cd ${{github.workspace}}/test
+        curl -o test.zip ${{secrets.COCOS_DLLS}}
+        tar -xf test.zip
         
     - uses: actions/setup-python@v2
 

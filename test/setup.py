@@ -14,8 +14,10 @@ members = [] # (name, expected offset)
 generated_code = f'\tstd::cout << std::hex;\n\tauto test = new gd::{target_class};\n'
 
 with open(Path('..') / match.group(1), 'r') as file:
-    for match in re.finditer(r'^\s*[a-zA-Z0-9:_\-]+\s*\*?\s*([0-9a-zA-Z_]+);\s*\/\/\s*(0x[0-9a-fA-F]+)', file.read(), re.MULTILINE):
-        name, offset = match.groups()
+    for match in re.finditer(r'^\s*[a-zA-Z0-9:_\-]+\s*\*?\s*(?:([0-9a-zA-Z_]+);\s*\/\/\s*(0x[0-9a-fA-F]+)|(unk([0-9a-fA-F]+));)', file.read(), re.MULTILINE):
+        name, offset, *rest = match.groups()
+        if name is None:
+            name, offset = rest
         members.append((name, int(offset, 16)))
         generated_code += f'\tstd::cout << "{name} 0x" << offset_of(test, {name}) << std::endl;\n'
 
@@ -25,7 +27,11 @@ with open('template.cpp', 'r') as file:
 with open('generated.cpp', 'w') as file:
     file.write(source.replace('// {INJECT CODE}', generated_code))
 
-subprocess.run(['cmake','--build','build','--config','Release','--target','ALL_BUILD','-j','10'], stdout=subprocess.PIPE)
+proc = subprocess.run(['cmake','--build','build','--config','Release','--target','ALL_BUILD','-j','10'], stdout=subprocess.PIPE)
+if proc.returncode:
+    print('Build failed')
+    print(proc.stdout.decode())
+    exit(proc.returncode)
 
 proc = subprocess.run([str(Path('./build/release/offset-test.exe').absolute())], stdout=subprocess.PIPE)
 output = proc.stdout.decode()

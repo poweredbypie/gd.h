@@ -3,8 +3,17 @@ import re
 from pathlib import Path
 import subprocess
 
-with open('../include/gd.h', 'r') as file:
-    files = re.findall(r'#include "(.+?\/([^/]+?)\.h)"', file.read())
+if len(sys.argv) > 1:
+    target_class = sys.argv[1]
+    with open('../include/gd.h', 'r') as file:
+        match = re.search(fr'#include "(.+?{target_class}.h)"', file.read())
+        if not match:
+            print(f'{target_class} not found')
+            exit()
+        files = [(match.group(1), target_class)]
+else:
+    with open('../include/gd.h', 'r') as file:
+        files = re.findall(r'#include "(.+?\/([^/]+?)\.h)"', file.read())
 
 classes = {}
 generated_code = '\tstd::cout << std::hex;\n'

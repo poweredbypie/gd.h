@@ -37,5 +37,6 @@ jobs:
     - name: Run Test
       run: |
         cd ${{github.workspace}}/test
-        python setup.py PlayLayer
+        python nuke-ctors.py
+        python setup.py
       

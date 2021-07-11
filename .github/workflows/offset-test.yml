@@ -26,6 +26,10 @@ jobs:
         echo shut up windows > generated.cpp
         cmake -G "Visual Studio 16 2019" -B ${{github.workspace}}/test/build -T host=x86 -A win32
         
+    - name: test
+      run: |
+        curl -o ${{github.workspace}}/test/test.zip ${{secrets.COCOS_DLLS}}
+        
     - uses: actions/setup-python@v2
 
     - name: Run test

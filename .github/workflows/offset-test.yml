@@ -20,21 +20,21 @@ jobs:
       with:
         arch: x86
 
+    - uses: actions/setup-python@v2
+
     - name: Configure CMake
       run: |
         cd ${{github.workspace}}/test
         echo shut up windows > generated.cpp
         cmake -G "Visual Studio 16 2019" -B ${{github.workspace}}/test/build -T host=x86 -A win32
         
-    - name: test
+    - name: Download Cocos DLLs
       run: |
         cd ${{github.workspace}}/test
         curl -o test.zip ${{secrets.COCOS_DLLS}}
         tar -xf test.zip
-        
-    - uses: actions/setup-python@v2
 
-    - name: Run test
+    - name: Run Test
       run: |
         cd ${{github.workspace}}/test
         python setup.py PlayLayer

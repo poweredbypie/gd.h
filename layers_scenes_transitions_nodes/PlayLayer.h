@@ -19,7 +19,7 @@ namespace gd {
 
 	class PlayLayer : public GJBaseGameLayer {
 	public:
-		PAD(8); // stupid vtables i cant be bothered
+		PAD(12); // stupid vtables i cant be bothered
 		unsigned int unk_2D8;
 		bool unk_2DC;
 		bool has_cheated; //0x02DD // by taking less than 30s to beat lvl

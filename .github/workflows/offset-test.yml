@@ -1,0 +1,35 @@
+name: CMake
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - uses: actions/checkout@v2
+      with:
+        repository: 'https://github.com/HJfod/cocos-headers.git'
+        path: ${{github.workspace}}/test/cocos-headers
+        
+    - uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: x86
+
+    - name: Configure CMake
+      run: 
+        cd ${{github.workspace}}/test
+        mkdir build
+        cmake -G "Visual Studio 16 2019" -B ${{github.workspace}}/test/build -T host=x86 -A win32
+        
+    - uses: actions/setup-python@v2
+
+    - name: Run test
+      run: 
+        cd ${{github.workspace}}/test
+        python setup.py PlayLayer
+      

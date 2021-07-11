@@ -29,11 +29,22 @@ subprocess.run(['cmake','--build','build','--config','Release','--target','ALL_B
 
 proc = subprocess.run([str(Path('./build/release/offset-test.exe').absolute())], stdout=subprocess.PIPE)
 output = proc.stdout.decode()
+
+ESCAPE = '\x1b'
+RED = ESCAPE + '[0;31m'
+GREEN = ESCAPE + '[0;32m'
+BLUE = ESCAPE + '[0;34m'
+RESET = ESCAPE + '[0m'
+has_failed = False
 for line, (name, expected_offset) in zip(output.splitlines(), members):
     name_, offset = line.split(' ')
     assert name == name_
     offset = int(offset, 16)
     if offset == expected_offset:
-        print(f'[blue][[0x{offset:X}]][/blue] [green]{name} matches[/green]')
+        print(f'{BLUE}[0x{offset:X}]{RESET} {GREEN}{name} matches{RESET}')
     else:
-        print(f'[blue][[0x{offset:X}]][/blue] [red]{name} doesnt match[/red] (expected [blue]0x{expected_offset:X}[/blue])')
+        print(f'{BLUE}[0x{offset:X}]{RESET} {RED}{name} doesnt match{RESET} (expected {BLUE}0x{expected_offset:X}{RESET})')
+        has_failed = True
+
+if has_failed:
+    exit(1)

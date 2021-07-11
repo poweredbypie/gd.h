@@ -3,3 +3,4 @@
 test/generated.cpp
 test/cocos-headers
 test/build
+test/*.dll

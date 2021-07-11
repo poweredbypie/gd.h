@@ -23,7 +23,7 @@ jobs:
     - name: Configure CMake
       run: |
         cd ${{github.workspace}}/test
-        . >> generated.cpp
+        copy NUL generated.cpp
         cmake -G "Visual Studio 16 2019" -B ${{github.workspace}}/test/build -T host=x86 -A win32
         
     - uses: actions/setup-python@v2

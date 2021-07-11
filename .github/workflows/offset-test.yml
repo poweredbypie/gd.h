@@ -21,7 +21,7 @@ jobs:
         arch: x86
 
     - name: Configure CMake
-      run: 
+      run: |
         cd ${{github.workspace}}/test
         mkdir build
         cmake -G "Visual Studio 16 2019" -B ${{github.workspace}}/test/build -T host=x86 -A win32
@@ -29,7 +29,7 @@ jobs:
     - uses: actions/setup-python@v2
 
     - name: Run test
-      run: 
+      run: |
         cd ${{github.workspace}}/test
         python setup.py PlayLayer
       

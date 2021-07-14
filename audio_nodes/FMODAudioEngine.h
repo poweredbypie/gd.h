@@ -58,10 +58,15 @@ namespace gd {
 		}
 		// inlined on windows
 		bool isBackgroundMusicPlaying() {
-			const auto addr = GetProcAddress(GetModuleHandle("fmod.dll"), "?isPlaying@ChannelControl@FMOD@@QAG?AW4FMOD_RESULT@@PA_N@Z");
+			const auto addr = GetProcAddress(GetModuleHandleA("fmod.dll"), "?isPlaying@ChannelControl@FMOD@@QAG?AW4FMOD_RESULT@@PA_N@Z");
 			bool ret;
 			reinterpret_cast<int(__stdcall*)(void*, bool*)>(addr)(this->m_pGlobalChannel, &ret);
 			return ret;
+		}
+		void playBackgroundMusic(std::string const& path, bool idk0, bool idk1) {
+			reinterpret_cast<void(__thiscall*)(FMODAudioEngine*, bool, bool, std::string)>(
+				base + 0x23d80
+			)(this, idk0, idk1, path);
 		}
 		bool isBackgroundMusicPlaying(const std::string& path) {
 			return path == m_sFilePath && isBackgroundMusicPlaying();

@@ -30,7 +30,9 @@ namespace gd {
         int m_nCurrentLayer;    // 0x354
         PAD(0x28)
         EditorUI* m_pEditorUI;  // 0x380
-        PAD(0x40)
+        PAD(0x28)
+        bool m_bIsPlaybackMode;
+        PAD(0x17)
         GJGroundLayer* m_pGroundLayer;  // 0x3c4
 
     public:

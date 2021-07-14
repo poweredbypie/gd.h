@@ -149,78 +149,78 @@ class EditorUI : public cocos2d::CCLayer,
     public gd::MusicDownloadDelegate {
 
     public:
-        EditButtonBar* m_pButtonBar;
+        EditButtonBar* m_pButtonBar; // 0x134
         PAD(0x4)
-        cocos2d::CCArray* m_pUnknownArray;
+        cocos2d::CCArray* m_pUnknownArray; // 0x13c
         PAD(0x2c)
-        cocos2d::CCLabelBMFont* m_pObjectInfoLabel;
-        GJRotationControl* m_pRotationControl;
+        cocos2d::CCLabelBMFont* m_pObjectInfoLabel; // 0x168
+        GJRotationControl* m_pRotationControl; // 0x16c
         PAD(0xc)
-        GJScaleControl* m_pScaleControl;
-        cocos2d::CCDictionary* m_pUnknownDict;
-        EditButtonBar* m_pCreateButtonBar;
-        EditButtonBar* m_pEditButtonBar;
-        Slider* m_pPositionSlider;
+        GJScaleControl* m_pScaleControl; // 0x17c
+        cocos2d::CCDictionary* m_pUnknownDict; // 0x180
+        EditButtonBar* m_pCreateButtonBar; // 0x184
+        EditButtonBar* m_pEditButtonBar; // 0x188
+        Slider* m_pPositionSlider; // 0x18c
         PAD(0x20)
-        cocos2d::CCArray* m_pUnknownArray2;
+        cocos2d::CCArray* m_pUnknownArray2; // 0x1b0
         PAD(0x8)
-        cocos2d::CCArray* m_pSelectedObjects;
-        cocos2d::CCMenu* m_pDeleteMenu;
-        cocos2d::CCArray* m_pUnknownArray4;
-        CCMenuItemSpriteExtra* m_pDeleteModeButton;
-        CCMenuItemSpriteExtra* m_pButton1;
-        CCMenuItemSpriteExtra* m_pButton2;
-        CCMenuItemSpriteExtra* m_pButton3;
-        CCMenuItemSpriteExtra* m_pButton4;
-        CCMenuItemSpriteExtra* m_pButton5;
-        CCMenuItemSpriteExtra* m_pButton6;
-        CCMenuItemSpriteExtra* m_pButton7;
-        CCMenuItemSpriteExtra* m_pButton8;
-        CCMenuItemSpriteExtra* m_pButton9;
-        CCMenuItemSpriteExtra* m_pButton10;
-        CCMenuItemSpriteExtra* m_pButton11;
-        CCMenuItemSpriteExtra* m_pButton12;
-        CCMenuItemSpriteExtra* m_pButton13;
-        CCMenuItemSpriteExtra* m_pButton14;
-        CCMenuItemSpriteExtra* m_pButton15;
-        CCMenuItemSpriteExtra* m_pButton16;
-        CCMenuItemSpriteExtra* m_pButton17;
-        CCMenuItemSpriteExtra* m_pButton18;
-        CCMenuItemSpriteExtra* m_pButton19;
-        CCMenuItemSpriteExtra* m_pButton20;
-        CCMenuItemSpriteExtra* m_pButton21;
-        CCMenuItemSpriteExtra* m_pCopyBtn;
-        CCMenuItemSpriteExtra* m_pPasteBtn;
-        CCMenuItemSpriteExtra* m_pButton24;
-        CCMenuItemSpriteExtra* m_pButton25;
-        CCMenuItemSpriteExtra* m_pButton26;
-        CCMenuItemToggler* m_pUnknownToggler;
-        cocos2d::CCArray* m_pCreateButtonBars;
-        cocos2d::CCMenu* m_pTabsMenu;
-        cocos2d::CCArray* m_pTabsArray;
-        cocos2d::CCSprite* m_pIdkSprite0;
-        cocos2d::CCSprite* m_pIdkSprite1;
-        CCMenuItemSpriteExtra* m_pButton27;
-        CCMenuItemSpriteExtra* m_pButton28;
-        CCMenuItemSpriteExtra* m_pDeleteFilterNone;
-        CCMenuItemSpriteExtra* m_pDeleteFilterStatic;
-        CCMenuItemSpriteExtra* m_pDeleteFilterDetails;
-        CCMenuItemSpriteExtra* m_pDeleteFilterCustom;
-        cocos2d::CCLabelBMFont* m_pCurrentLayerLabel;
-        CCMenuItemSpriteExtra* m_pButton33;
-        CCMenuItemSpriteExtra* m_pButton34;
-        CCMenuItemSpriteExtra* m_pButton35;
+        cocos2d::CCArray* m_pSelectedObjects; // 0x1bc
+        cocos2d::CCMenu* m_pDeleteMenu; // 0x1c0
+        cocos2d::CCArray* m_pUnknownArray4; // 0x1c4
+        CCMenuItemSpriteExtra* m_pDeleteModeButton; // 0x1c8
+        CCMenuItemSpriteExtra* m_pButton1; // 0x1cc
+        CCMenuItemSpriteExtra* m_pButton2; // 0x1d0
+        CCMenuItemSpriteExtra* m_pButton3; // 0x1d4
+        CCMenuItemSpriteExtra* m_pButton4; // 0x1d8
+        CCMenuItemSpriteExtra* m_pButton5; // 0x1dc
+        CCMenuItemSpriteExtra* m_pButton6; // 0x1e0
+        CCMenuItemSpriteExtra* m_pButton7; // 0x1e4
+        CCMenuItemSpriteExtra* m_pButton8; // 0x1e8
+        CCMenuItemSpriteExtra* m_pButton9; // 0x1ec
+        CCMenuItemSpriteExtra* m_pButton10; // 0x1f0
+        CCMenuItemSpriteExtra* m_pButton11; // 0x1f4
+        CCMenuItemSpriteExtra* m_pButton12; // 0x1f8
+        CCMenuItemSpriteExtra* m_pButton13; // 0x1fc
+        CCMenuItemSpriteExtra* m_pButton14; // 0x200
+        CCMenuItemSpriteExtra* m_pButton15; // 0x204
+        CCMenuItemSpriteExtra* m_pButton16; // 0x208
+        CCMenuItemSpriteExtra* m_pButton17; // 0x20c
+        CCMenuItemSpriteExtra* m_pButton18; // 0x210
+        CCMenuItemSpriteExtra* m_pButton19; // 0x214
+        CCMenuItemSpriteExtra* m_pButton20; // 0x218
+        CCMenuItemSpriteExtra* m_pButton21; // 0x21c
+        CCMenuItemSpriteExtra* m_pCopyBtn; // 0x220
+        CCMenuItemSpriteExtra* m_pPasteBtn; // 0x224
+        CCMenuItemSpriteExtra* m_pButton24; // 0x228
+        CCMenuItemSpriteExtra* m_pButton25; // 0x22c
+        CCMenuItemSpriteExtra* m_pButton26; // 0x230
+        CCMenuItemToggler* m_pUnknownToggler; // 0x234
+        cocos2d::CCArray* m_pCreateButtonBars; // 0x238
+        cocos2d::CCMenu* m_pTabsMenu; // 0x23c
+        cocos2d::CCArray* m_pTabsArray; // 0x240
+        cocos2d::CCSprite* m_pIdkSprite0; // 0x244
+        cocos2d::CCSprite* m_pIdkSprite1; // 0x248
+        CCMenuItemSpriteExtra* m_pButton27; // 0x24c
+        CCMenuItemSpriteExtra* m_pButton28; // 0x250
+        CCMenuItemSpriteExtra* m_pDeleteFilterNone; // 0x254
+        CCMenuItemSpriteExtra* m_pDeleteFilterStatic; // 0x258
+        CCMenuItemSpriteExtra* m_pDeleteFilterDetails; // 0x25c
+        CCMenuItemSpriteExtra* m_pDeleteFilterCustom; // 0x260
+        cocos2d::CCLabelBMFont* m_pCurrentLayerLabel; // 0x264
+        CCMenuItemSpriteExtra* m_pButton33; // 0x268
+        CCMenuItemSpriteExtra* m_pButton34; // 0x26c
+        CCMenuItemSpriteExtra* m_pButton35; // 0x270
         PAD(0x8)
-        int m_nSelectedCreateObjectID;
-        cocos2d::CCArray* m_pCreateButtonArray;
-        cocos2d::CCArray* m_pCustomObjectButtonArray;
-        cocos2d::CCArray* m_pUnknownArray9;
-        int m_nSelectedMode;
-        LevelEditorLayer* m_pEditorLayer;
+        int m_nSelectedCreateObjectID; // 0x278
+        cocos2d::CCArray* m_pCreateButtonArray;  // 0x280
+        cocos2d::CCArray* m_pCustomObjectButtonArray; // 0x284
+        cocos2d::CCArray* m_pUnknownArray9; // 0x288
+        int m_nSelectedMode; // 0x28c
+        LevelEditorLayer* m_pEditorLayer;  // 0x290
         PAD(0x30)
-        GameObject* m_pSelectedObject;
+        GameObject* m_pSelectedObject;  // 0x2c0
         PAD(0x30)
-        int m_nSelectedTab;
+        int m_nSelectedTab; // 0x2f4
 
         static constexpr const int Mode_Create = 2;
         static constexpr const int Mode_Delete = 1;

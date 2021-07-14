@@ -55,6 +55,7 @@ namespace gd {
             float m_fHeight;
 
         public:
+            /* from 0-1 */
             void setValue(float val) {
                 this->m_pTouchLogic->getThumb()->setValue(val);
             }

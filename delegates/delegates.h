@@ -13,6 +13,8 @@ namespace gd {
     class GJSpecialColorSelect;
     class HSVWidgetPopup;
     class GJUserScore;
+    class ListButtonBar;
+    class DialogLayer;
 
     enum GJSongError {
         kGJSongErrorUnknown_not_REd = 0,
@@ -29,51 +31,66 @@ namespace gd {
             virtual bool allowTextInput(CCTextInputNode*) { return true; }
     };
 
+    class GameRateDelegate {
+        public:
+            virtual void updateRate(void) {}
+    };
+
+    class ListButtonBarDelegate {
+        public:
+            virtual void listButtonBarSwitchedPage(ListButtonBar *, int) {}
+    };
+
+    class DialogDelegate {
+        public:
+            virtual void dialogClosed(DialogLayer *) {}
+    };
+
     class GooglePlayDelegate {
-        virtual void googlePlaySignedIn(void);
+        virtual void googlePlaySignedIn(void) {}
     };
 
     class ColorSelectDelegate {
         public:
-            virtual void colorSelectClosed(cocos2d::CCNode*);
+            virtual void colorSelectClosed(cocos2d::CCNode*)  {}
     };
 
     class ColorSetupDelegate {
         public:
-            virtual void colorSetupClosed(int);
+            virtual void colorSetupClosed(int)  {}
     };
 
     class GJSpecialColorSelectDelegate {
         public:
-            virtual void colorSelectClosed(GJSpecialColorSelect*, int);
+            virtual void colorSelectClosed(GJSpecialColorSelect*, int)  {}
     };
     
     class HSVWidgetPopupDelegate {
         public:
-            virtual void hsvPopupClosed(HSVWidgetPopup *, cocos2d::ccHSVValue);
+            virtual void hsvPopupClosed(HSVWidgetPopup *, cocos2d::ccHSVValue)  {}
     };
 
     class GJRotationControlDelegate {
         public:
-            virtual void angleChanged(float);
-            virtual void angleChangeBegin(void);
-            virtual void angleChangeEnded(void);
+            virtual void angleChanged(float)  {}
+            virtual void angleChangeBegin(void)  {}
+            virtual void angleChangeEnded(void)  {}
     };
 
     class GJScaleControlDelegate {
         public:
-            virtual void scaleChanged(float);
-            virtual void scaleChangeBegin(void);
-            virtual void scaleChangeEnded(void);
+            virtual void scaleChanged(float)  {}
+            virtual void scaleChangeBegin(void)  {}
+            virtual void scaleChangeEnded(void)  {}
     };
 
     class MusicDownloadDelegate {
         public:
-            virtual void downloadSongFailed(int, GJSongError);
-            virtual void downloadSongFinished(SongInfoObject*);
-            virtual void loadSongInfoFailed(int, GJSongError);
-            virtual void loadSongInfoFinished(SongInfoObject*);
-            virtual void songStateChanged(void);
+            virtual void downloadSongFailed(int, GJSongError)  {}
+            virtual void downloadSongFinished(SongInfoObject*)  {}
+            virtual void loadSongInfoFailed(int, GJSongError)  {}
+            virtual void loadSongInfoFinished(SongInfoObject*)  {}
+            virtual void songStateChanged(void)  {}
     };
 
     enum UpdateResponse {
@@ -92,47 +109,47 @@ namespace gd {
     };
 
     class LeaderboardManagerDelegate {
-        virtual void updateUserScoreFinished(void);
-        virtual void updateUserScoreFailed(void);
-        virtual void loadLeaderboardFinished(cocos2d::CCArray *,char const*);
-        virtual void loadLeaderboardFailed(char const*);
+        virtual void updateUserScoreFinished(void)  {}
+        virtual void updateUserScoreFailed(void)  {}
+        virtual void loadLeaderboardFinished(cocos2d::CCArray *,char const*)  {}
+        virtual void loadLeaderboardFailed(char const*)  {}
     };
 
     class UserInfoDelegate {
-        virtual void getUserInfoFailed(int);
-        virtual void getUserInfoFinished(GJUserScore *);
-        virtual void userInfoChanged(GJUserScore *);
+        virtual void getUserInfoFailed(int)  {}
+        virtual void getUserInfoFinished(GJUserScore *)  {}
+        virtual void userInfoChanged(GJUserScore *)  {}
     };
 
     class CommentUploadDelegate {
-        virtual void commentUploadFinished(int);
-        virtual void commentUploadFailed(int, CommentError);
-        virtual void commentDeleteFailed(int, int);
+        virtual void commentUploadFinished(int)  {}
+        virtual void commentUploadFailed(int, CommentError)  {}
+        virtual void commentDeleteFailed(int, int)  {}
     };
 
     class LevelCommentDelegate {
-        virtual void loadCommentsFinished(cocos2d::CCArray *, const char*);
-        virtual void loadCommentsFailed(const char*);
-        virtual void updateUserScoreFinished(void);
-        virtual void setupPageInfo(std::string, const char*);
+        virtual void loadCommentsFinished(cocos2d::CCArray *, const char*)  {}
+        virtual void loadCommentsFailed(const char*)  {}
+        virtual void updateUserScoreFinished(void)  {}
+        virtual void setupPageInfo(std::string, const char*)  {}
     };
 
     class LevelDownloadDelegate {
         public:
-            virtual void levelDownloadFinished(GJGameLevel *);
-            virtual void levelDownloadFailed(int);
+            virtual void levelDownloadFinished(GJGameLevel *)  {}
+            virtual void levelDownloadFailed(int)  {}
     };
 
     class LevelDeleteDelegate {
         public:
-            virtual void levelDeleteFinished(int);
-            virtual void levelDeleteFailed(int);
+            virtual void levelDeleteFinished(int)  {}
+            virtual void levelDeleteFailed(int)  {}
     };
 
     class LevelUpdateDelegate {
         public:
-            virtual void levelUpdateFinished(GJGameLevel*, UpdateResponse);
-            virtual void levelUpdateFailed(int);
+            virtual void levelUpdateFinished(GJGameLevel*, UpdateResponse)  {}
+            virtual void levelUpdateFailed(int)  {}
     };
 
     class UploadActionDelegate {
@@ -148,27 +165,27 @@ namespace gd {
     
     class LikeItemDelegate {
         public:
-            virtual void likedItem(LikeItemType, int, bool);
+            virtual void likedItem(LikeItemType, int, bool)  {}
     };
 
     class RateLevelDelegate {
         public:
-            virtual void rateLevelClosed(void);
+            virtual void rateLevelClosed(void)  {}
     };
 
     class NumberInputDelegate {
         public:
-            virtual void numberInputClosed(NumberInputLayer*);
+            virtual void numberInputClosed(NumberInputLayer*)  {}
     };
 
     class SetIDPopupDelegate {
         public:
-            virtual void setIDPopupClosed(SetIDPopup*, int);
+            virtual void setIDPopupClosed(SetIDPopup*, int)  {}
     };
 
     class GJDropDownLayerDelegate {
         public:
-            virtual void dropDownLayerWillClose(GJDropDownLayer*);
+            virtual void dropDownLayerWillClose(GJDropDownLayer*)  {}
     };
 }
 

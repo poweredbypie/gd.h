@@ -60,7 +60,10 @@ namespace gd {
 		PAD(4);
 		cocos2d::CCParticleSystemQuad* unk_05D4;
 		cocos2d::CCParticleSystemQuad* unk_05D8;
-		PAD(52);
+		PAD(8);
+		int m_nStreakID;	// 0x5e4
+		float m_fWellIdk;	// 0x5e8
+		PAD(36);
 		bool unk_0610;
 		bool m_isHolding; //0x0611
 		bool m_hasJustHeld; //0x0612

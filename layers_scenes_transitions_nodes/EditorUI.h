@@ -184,7 +184,7 @@ class EditorUI : public cocos2d::CCLayer,
         CCMenuItemSpriteExtra* m_pButton14; // 0x200
         CCMenuItemSpriteExtra* m_pButton15; // 0x204
         CCMenuItemSpriteExtra* m_pButton16; // 0x208
-        CCMenuItemSpriteExtra* m_pButton17; // 0x20c
+        CCMenuItemSpriteExtra* m_pEditGroupBtn; // 0x20c
         CCMenuItemSpriteExtra* m_pButton18; // 0x210
         CCMenuItemSpriteExtra* m_pButton19; // 0x214
         CCMenuItemSpriteExtra* m_pButton20; // 0x218
@@ -398,6 +398,12 @@ class EditorUI : public cocos2d::CCLayer,
             reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCPoint)>(
                 base + 0x79290
             )(this, pos);
+        }
+    
+        void showUI(bool show) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, bool)>(
+                base + 0x87180
+            )(this, show);
         }
     };
 

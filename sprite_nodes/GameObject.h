@@ -96,7 +96,7 @@ namespace gd {
 		bool m_bHasBeenActivated; //0x2CA
 		bool m_bHasBeenActivatedP2; //0x2CB
 		PAD(24);
-		cocos2d::CCSprite* m_pUnkSprite; //0x2E4
+		cocos2d::CCSprite* m_pDetailSprite; //0x2E4
 		PAD(8);
 		bool m_bIsRotatedSide; //0x2F0 for 90 and 270 degrees rotations
 		PAD(3);

@@ -37,6 +37,5 @@ jobs:
     - name: Run Test
       run: |
         cd ${{github.workspace}}/test
-        python nuke-ctors.py
         python setup.py
       

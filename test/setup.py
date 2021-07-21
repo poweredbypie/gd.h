@@ -30,10 +30,8 @@ for item in files:
             classes[target_class] = classes.get(target_class, {})
             classes[target_class][name] = int(offset, 16)
     if classes.get(target_class):
-        generated_code += f'\t{{\n\tauto test = new gd::{target_class};\n'
         for name in classes[target_class].keys():
-            generated_code += f'\tstd::cout << "{target_class} {name} 0x" << offset_of(test, {name}) << std::endl;\n'
-        generated_code += '\t}\n'
+            generated_code += f'\tstd::cout << "{target_class} {name} 0x" << offset_of(gd::{target_class}, {name}) << std::endl;\n'
 
 with open('template.cpp', 'r') as file:
     source = file.read()

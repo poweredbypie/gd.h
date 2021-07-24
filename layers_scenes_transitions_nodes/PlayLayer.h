@@ -6,6 +6,7 @@
 namespace gd {
 
 	class GJBaseGameLayer;
+	class CCCircleWaveDelegate;
 	class GameObject;
 	// class EndPortalObject;
 	using EndPortalObject = GameObject;
@@ -17,9 +18,9 @@ namespace gd {
 	// class UILayer;
 	using UILayer = cocos2d::CCLayerColor;
 
-	class PlayLayer : public GJBaseGameLayer {
+	class PlayLayer : public GJBaseGameLayer, public CCCircleWaveDelegate {
 	public:
-		PAD(12); // stupid vtables i cant be bothered
+		PAD(8); // stupid vtables i cant be bothered
 		unsigned int unk_2D8;
 		bool unk_2DC;
 		bool has_cheated; //0x02DD // by taking less than 30s to beat lvl

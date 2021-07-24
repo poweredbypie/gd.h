@@ -42,7 +42,7 @@ namespace gd {
 		bool unk_0539;
 		bool unk_053A;
 		bool unk_053B;
-		bool unk_053C;
+		bool m_isInPlayLayer;
 		bool unk_053D;
 		bool isHoldingShipIDK; //0x053E
 		bool unk_053F;
@@ -88,7 +88,8 @@ namespace gd {
 		cocos2d::CCLayer* unk_065C;
 		bool m_isSliding; //0x0660 // this might be isSliding
 		bool m_isRising; //0x0661
-		PAD(2);
+		bool unk_662;
+		PAD(1);
 		cocos2d::CCPoint lastGroundedPos; //0x0664
 		cocos2d::CCArray* unk_066C;
 		GameObject* lastTouchedPortalMaybe; //0x0670
@@ -130,6 +131,15 @@ namespace gd {
 		}
 		void flipGravity(bool param1, bool param2) {
 			reinterpret_cast<void(__thiscall*)(PlayerObject*, bool, bool)>(base + 0x1f59d0)(this, param1, param2);
+		}
+		void runNormalRotation() {
+			reinterpret_cast<void(__thiscall*)(PlayerObject*)>(base + 0x1e9c50)(this);
+		}
+		void runBallRotation() {
+			reinterpret_cast<void(__thiscall*)(PlayerObject*)>(base + 0x1e9d10)(this);
+		}
+		void activateStreak() {
+			reinterpret_cast<void(__thiscall*)(PlayerObject*)>(base + 0x1f9080)(this);
 		}
 	};
 }

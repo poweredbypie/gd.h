@@ -154,6 +154,15 @@ namespace gd {
 		void flipGravity(bool param1, bool param2) {
 			reinterpret_cast<void(__thiscall*)(PlayerObject*, bool, bool)>(base + 0x1f59d0)(this, param1, param2);
 		}
+		void runNormalRotation() {
+			reinterpret_cast<void(__thiscall*)(PlayerObject*)>(base + 0x1e9c50)(this);
+		}
+		void runBallRotation() {
+			reinterpret_cast<void(__thiscall*)(PlayerObject*)>(base + 0x1e9d10)(this);
+		}
+		void activateStreak() {
+			reinterpret_cast<void(__thiscall*)(PlayerObject*)>(base + 0x1f9080)(this);
+		}
 	};
 }
 

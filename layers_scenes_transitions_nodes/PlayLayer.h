@@ -6,6 +6,7 @@
 namespace gd {
 
 	class GJBaseGameLayer;
+	class CCCircleWaveDelegate;
 	class GameObject;
 	// class EndPortalObject;
 	using EndPortalObject = GameObject;
@@ -19,9 +20,9 @@ namespace gd {
 	using StartPosObject = gd::GameObject;
 	class CheckpointObject;
 
-	class PlayLayer : public GJBaseGameLayer {
+	class PlayLayer : public GJBaseGameLayer, public CCCircleWaveDelegate {
 	public:
-		PAD(12)
+		PAD(8);
 		unsigned int unk2D8;
 		bool unk2DC;
 		bool m_hasCheated; // 0x2DD by taking less than 30s to beat lvl

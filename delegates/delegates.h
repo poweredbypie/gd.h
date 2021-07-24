@@ -11,6 +11,7 @@ namespace gd {
     class GJDropDownLayer;
     class SongInfoObject;
     class GJSpecialColorSelect;
+    class CCCircleWave;
 
     enum GJSongError {
         kGJSongErrorUnknown = 0,
@@ -115,6 +116,10 @@ namespace gd {
 
     class GooglePlayDelegate {
         virtual void googlePlaySignedIn() {}
+    };
+
+    class CCCircleWaveDelegate {
+        void circleWaveWillBeRemoved(CCCircleWave*) {}
     };
 }
 

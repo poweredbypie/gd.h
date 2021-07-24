@@ -10,12 +10,10 @@ namespace gd {
 	inline auto base = reinterpret_cast<uintptr_t>(GetModuleHandle(0));
 
 	inline bool init() {
-		//if the base address is valid, all other values should be valid.
-		#if (__WARN_DEBUG__ == true)
 		static_assert(sizeof(std::string) == 24,
-			"Any classes containing member strings or using strings in functions will break!\n"
-			"");
-		#endif
+			"\n[GD.H] std::string is not 24 bytes\n" \
+			"[GD.H] Any classes containing member strings or using strings in functions will break!\n" \
+			"[GD.H] this is caused by building in Debug mode, to fix switch to Release\n");
 		return base;
 	}
 }

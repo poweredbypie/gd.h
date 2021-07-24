@@ -10,97 +10,119 @@ namespace gd {
 	class GJRobotSprite;
 	class GJSpiderSprite;
 	class HardStreak;
+	class GhostTrailEffect;
 
 	class PlayerObject : public GameObject, public AnimatedSpriteDelegate {
 	public:
-		PAD(24);
-		cocos2d::CCNode* unk_0484;
-		cocos2d::CCDictionary* unk_0488;
-		cocos2d::CCDictionary* unk_048C;
-		PAD(36);
-		cocos2d::CCSprite* unk_04B4;
+		PAD(20);
+		bool unk480;
+		cocos2d::CCNode* unk484;
+		cocos2d::CCDictionary* unk488;
+		cocos2d::CCDictionary* unk48C;
 		PAD(32);
-		cocos2d::CCArray* unk_04D8;
-		PAD(12);
-		cocos2d::CCSprite* unk_04E8;
-		cocos2d::CCSprite* unk_04EC;
-		cocos2d::CCSprite* unk_04F0;
-		cocos2d::CCSprite* unk_04F4;
-		cocos2d::CCSprite* unk_04F8;
-		cocos2d::CCSprite* unk_04FC;
-		cocos2d::CCSprite* unk_0500;
-		cocos2d::CCSprite* unk_0504;
-		cocos2d::CCSprite* unk_0508;
-		cocos2d::CCSprite* unk_050C;
-		cocos2d::CCMotionStreak* regularTrail; //0x0510
-		HardStreak* waveStreak; //0x0514
-		double m_xAccel; //0x518
-		double m_jumpAccel; //0x520 unsure about the name
-		double m_gravity; //0x528
+		bool unk4B0;
+		cocos2d::CCSprite* unk4B4;
+		PAD(28);
+		bool unk4D4;
+		cocos2d::CCArray* m_particleSystems; // 0x4D8
+		bool unk4DC;
+		bool m_isHidden; // 0x4DD
+		int m_hasGhostTrail; // 0x4E0
+		GhostTrailEffect* m_ghostTrail; // 0x4E4
+		cocos2d::CCSprite* unk4E8;
+		cocos2d::CCSprite* unk4EC;
+		cocos2d::CCSprite* unk4F0;
+		cocos2d::CCSprite* unk4F4;
+		cocos2d::CCSprite* unk4F8;
+		cocos2d::CCSprite* unk4FC;
+		cocos2d::CCSprite* unk500;
+		cocos2d::CCSprite* unk504;
+		cocos2d::CCSprite* unk508;
+		cocos2d::CCSprite* unk50C;
+		cocos2d::CCMotionStreak* m_regularTrail; // 0x510
+		HardStreak* m_waveTrail; // 0x514
+		double m_xAccel; // 0x518
+		double m_jumpAccel; // 0x520
+		double m_gravity; // 0x528
 		PAD(8);
-		bool unk_0538;
-		bool unk_0539;
-		bool unk_053A;
-		bool unk_053B;
-		bool m_isInPlayLayer;
-		bool unk_053D;
-		bool isHoldingShipIDK; //0x053E
-		bool unk_053F;
-		PAD(104);
-		GJRobotSprite* robotSprite;
-		GJSpiderSprite* spiderSprite;
-		PAD(4);
-		cocos2d::CCParticleSystemQuad* unk_05B4;
-		cocos2d::CCParticleSystemQuad* unk_05B8;
-		cocos2d::CCParticleSystemQuad* unk_05BC;
-		cocos2d::CCParticleSystemQuad* unk_05C0;
-		cocos2d::CCParticleSystemQuad* unk_05C4;
-		cocos2d::CCParticleSystemQuad* unk_05C8;
-		cocos2d::CCParticleSystemQuad* unk_05CC;
-		PAD(4);
-		cocos2d::CCParticleSystemQuad* unk_05D4;
-		cocos2d::CCParticleSystemQuad* unk_05D8;
-		PAD(52);
-		bool unk_0610;
-		bool m_isHolding; //0x0611
-		bool m_hasJustHeld; //0x0612
-		bool m_isHolding2; //0x0613
-		bool canBufferOrb2; //0x0614
-		PAD(15);
-		bool m_canRobotJump; //0x624
-		double m_yAccel; //0x0628
+		bool unk538;
+		bool unk539;
+		bool unk53A;
+		bool unk53B;
+		bool m_isInPlayLayer; // 0x53C
+		bool unk53D;
+		bool unk53E; // is holding on ship idk
+		bool unk53F;
+		PAD(16);
+		double m_lastJumpTime; // 0x550
+		double unk558;
+		PAD(36);
+		float unk584;
+		PAD(20);
+		GameObject* unk59C;
 		PAD(8);
-		bool m_isShip; //0x0638
-		bool m_isUFO; //0x0639
-		bool m_isBall; //0x063A
-		bool m_isWave; //0x063B
-		bool m_isRobot; //0x063C
-		bool m_isSpider; //0x063D
-		bool m_isUpsideDown; //0x063E
+		GJRobotSprite* unk5A8;
+		GJSpiderSprite* unk5AC;
+		bool unk5B0;
+		cocos2d::CCParticleSystemQuad* unk5B4;
+		cocos2d::CCParticleSystemQuad* unk5B8;
+		cocos2d::CCParticleSystemQuad* unk5BC;
+		cocos2d::CCParticleSystemQuad* unk5C0;
+		cocos2d::CCParticleSystemQuad* unk5C4;
+		cocos2d::CCParticleSystemQuad* unk5C8;
+		cocos2d::CCParticleSystemQuad* unk5CC;
+		PAD(4);
+		cocos2d::CCParticleSystemQuad* unk5D4;
+		cocos2d::CCParticleSystemQuad* unk5D8;
+		PAD(32);
+		bool unk5FC;
+		bool unk5FD;
+		bool unk5FE;
+		PAD(17);
+		bool unk610;
+		bool m_isHolding; // 0x611
+		bool m_hasJustHeld; // 0x612
+		bool m_isHolding2; // 0x613 why are there 2 mr robert
+		bool m_hasJustHeld2; // 0x614
+		int unk618;
+		float unk61C;
+		int unk620; // always 213
+		bool m_canRobotJump; // 0x624
+		double m_yAccel; // 0x628
+		bool unk630;
+		bool unk631;
+		float unk634;
+		bool m_isShip; // 0x638
+		bool m_isBird; // 0x639 ufo
+		bool m_isBall; // 0x63A
+		bool m_isDart; // 0x63B wave
+		bool m_isRobot; // 0x63C
+		bool m_isSpider; // 0x63D
+		bool m_isUpsideDown; // 0x63E
 		PAD(1);
-		bool m_isOnGround; //0x0640
-		bool m_isDashing; //0x0641
-		PAD(2);
-		float m_vehicleSize; //0x644
-		float m_playerSpeed; //0x0648
-		cocos2d::CCPoint lastPosIDK; //0x064C
-		cocos2d::CCPoint lastPortalPos; //0x0654
-		cocos2d::CCLayer* unk_065C;
-		bool m_isSliding; //0x0660 // this might be isSliding
-		bool m_isRising; //0x0661
-		bool unk_662;
-		PAD(1);
-		cocos2d::CCPoint lastGroundedPos; //0x0664
-		cocos2d::CCArray* unk_066C;
-		GameObject* lastTouchedPortalMaybe; //0x0670
+		bool m_isOnGround; // 0x640
+		bool m_isDashing; // 0x641
+		float m_vehicleSize; // 0x644
+		float m_playerSpeed; // 0x648
+		cocos2d::CCPoint unk64C; // last pos idk
+		cocos2d::CCPoint m_lastPortalPos; // 0x654
+		cocos2d::CCLayer* unk65C;
+		bool m_isSliding; // 0x660
+		bool m_isRising; // 0x661
+		cocos2d::CCPoint m_lastGroundedPos; // 0x664
+		cocos2d::CCArray* m_touchingRings; // 0x66C
+		GameObject* m_lastActivatedPortal; // 0x670
+		bool unk674;
+		PAD(7);
+		cocos2d::CCPoint m_position; // 0x67C
+		bool unk684;
+		bool unk685;
+		double unk688;
 		PAD(8);
-		cocos2d::CCPoint position; //0x067C
+		float m_groundHeight; // 0x698
+		float unk69C; // seems to be y vel, cant directly change it though
 		PAD(4);
-		double unk_0688;
-		PAD(12);
-		float yVelMaybeCantChangeItThough; //0x069C
-		PAD(4);
-		float last200YPositions[200]; //0x06A4
+		float unk6A4[200]; // last 200 Y positions, tf
 		PAD(28);
 
 		virtual void setVisible(bool visible) {

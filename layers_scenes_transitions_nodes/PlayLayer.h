@@ -22,7 +22,7 @@ namespace gd {
 
 	class PlayLayer : public GJBaseGameLayer, public CCCircleWaveDelegate {
 	public:
-		PAD(8);
+		PAD(12);
 		unsigned int unk2D8;
 		bool unk2DC;
 		bool m_hasCheated; // 0x2DD by taking less than 30s to beat lvl

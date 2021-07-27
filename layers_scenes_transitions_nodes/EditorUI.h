@@ -161,7 +161,10 @@ class EditorUI : public cocos2d::CCLayer,
         EditButtonBar* m_pCreateButtonBar; // 0x184
         EditButtonBar* m_pEditButtonBar; // 0x188
         Slider* m_pPositionSlider; // 0x18c
-        PAD(0x20)
+        float m_fUnknown0;      // 0x190
+        float m_fMinYLimit;     // 0x194 (tf is this)
+        float m_fUnknown2;      // 0x198
+        PAD(0x14)
         cocos2d::CCArray* m_pUnknownArray2; // 0x1b0
         PAD(0x8)
         cocos2d::CCArray* m_pSelectedObjects; // 0x1bc

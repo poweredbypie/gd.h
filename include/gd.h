@@ -108,6 +108,7 @@ enum FMOD_RESULT;
 #include "sprite_nodes/ColorActionSprite.h"
 #include "sprite_nodes/ButtonSprite.h"
 #include "sprite_nodes/GameObject.h"
+#include "sprite_nodes/EffectGameObject.h"
 #include "sprite_nodes/CCAnimatedSprite.h"
 #include "sprite_nodes/AnimatedShopKeeper.h"
 #include "sprite_nodes/PlayerObject.h"

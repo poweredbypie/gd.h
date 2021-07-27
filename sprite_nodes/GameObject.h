@@ -288,8 +288,6 @@ namespace gd {
 		}
 	};
 
-	using EffectGameObject = GameObject;
-
 	#pragma runtime_checks("s", restore)
 }
 

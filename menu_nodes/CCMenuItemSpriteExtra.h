@@ -12,8 +12,8 @@ namespace gd {
 	#pragma runtime_checks("s", off)
 	class CCMenuItemSpriteExtra : public cocos2d::CCMenuItemSprite {
 	protected:
-		float m_fUnknown;
-		float m_fUnknown2;
+		float m_fScaleMultiplier;	// 0x118
+		float m_fBaseScale;			// 0x11c
 		PAD(0x3c)
 		cocos2d::CCPoint m_obDestPosition;
 		cocos2d::CCPoint m_obOffset;
@@ -85,6 +85,10 @@ namespace gd {
 		}
 		void setOffset(cocos2d::CCPoint const& pos) {
 			this->m_obOffset = pos;
+		}
+		void setScale(float scale) override {
+			this->CCMenuItemSprite::setScale(scale);
+			this->m_fBaseScale = scale;
 		}
 	};
 	#pragma runtime_checks("s", restore)

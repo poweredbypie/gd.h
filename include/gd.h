@@ -73,7 +73,6 @@ enum FMOD_RESULT;
 #include "layers_scenes_transitions_nodes/CustomSongLayer.h"
 #include "layers_scenes_transitions_nodes/SongInfoLayer.h"
 #include "layers_scenes_transitions_nodes/GJSpecialColorSelect.h"
-<<<<<<< HEAD
 #include "layers_scenes_transitions_nodes/HSVWidgetPopup.h"
 #include "layers_scenes_transitions_nodes/GJScaleControl.h"
 #include "layers_scenes_transitions_nodes/GJRotationControl.h"
@@ -88,11 +87,9 @@ enum FMOD_RESULT;
 #include "layers_scenes_transitions_nodes/GJGarageLayer.h"
 #include "layers_scenes_transitions_nodes/CreateGuidelinesLayer.h"
 #include "layers_scenes_transitions_nodes/VideoOptionsLayer.h"
-=======
 #include "layers_scenes_transitions_nodes/SetupPulsePopup.h"
 #include "layers_scenes_transitions_nodes/ColorSelectPopup.h"
 #include "layers_scenes_transitions_nodes/MoreOptionsLayer.h"
->>>>>>> mat/main
 
 #include "scroll_nodes/CCContentLayer.h"
 #include "scroll_nodes/CCIndexPath.h"

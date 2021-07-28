@@ -11,14 +11,11 @@ namespace gd {
     class GJDropDownLayer;
     class SongInfoObject;
     class GJSpecialColorSelect;
-<<<<<<< HEAD
     class HSVWidgetPopup;
     class GJUserScore;
     class ListButtonBar;
     class DialogLayer;
-=======
     class CCCircleWave;
->>>>>>> mat/main
 
     enum GJSongError {
         kGJSongErrorUnknown_not_REd = 0,

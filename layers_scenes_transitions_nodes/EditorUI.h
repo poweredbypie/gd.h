@@ -178,14 +178,14 @@ class EditorUI : public cocos2d::CCLayer,
         CCMenuItemSpriteExtra* m_pButton5; // 0x1dc
         CCMenuItemSpriteExtra* m_pButton6; // 0x1e0
         CCMenuItemSpriteExtra* m_pButton7; // 0x1e4
-        CCMenuItemSpriteExtra* m_pButton8; // 0x1e8
-        CCMenuItemSpriteExtra* m_pButton9; // 0x1ec
-        CCMenuItemSpriteExtra* m_pButton10; // 0x1f0
-        CCMenuItemSpriteExtra* m_pButton11; // 0x1f4
-        CCMenuItemSpriteExtra* m_pButton12; // 0x1f8
-        CCMenuItemSpriteExtra* m_pButton13; // 0x1fc
-        CCMenuItemSpriteExtra* m_pButton14; // 0x200
-        CCMenuItemSpriteExtra* m_pButton15; // 0x204
+        CCMenuItemSpriteExtra* m_pPlaybackBtn; // 0x1e8
+        CCMenuItemSpriteExtra* m_pPlaytestBtn; // 0x1ec
+        CCMenuItemSpriteExtra* m_pPlaytestStopBtn; // 0x1f0
+        CCMenuItemSpriteExtra* m_pTrashBtn; // 0x1f4
+        CCMenuItemSpriteExtra* m_pLinkBtn; // 0x1f8
+        CCMenuItemSpriteExtra* m_pUnlinkBtn; // 0x1fc
+        CCMenuItemSpriteExtra* m_pUndoBtn; // 0x200
+        CCMenuItemSpriteExtra* m_pRedoBtn; // 0x204
         CCMenuItemSpriteExtra* m_pButton16; // 0x208
         CCMenuItemSpriteExtra* m_pEditGroupBtn; // 0x20c
         CCMenuItemSpriteExtra* m_pButton18; // 0x210

@@ -8,7 +8,7 @@ namespace gd {
 	class ButtonSprite : public cocos2d::CCSprite {
 		public:
 			PAD(48)
-			cocos2d::CCPoint m_obPosition;
+			cocos2d::CCPoint m_obSpritePosition;
 			
 			/*PARAMS:
 			* caption - the button's caption.

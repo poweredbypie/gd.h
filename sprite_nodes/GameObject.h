@@ -115,7 +115,8 @@ namespace gd {
 		float m_unk340;
 		PAD(16);
 		bool m_bIsGlowDisabled; //0x354
-		PAD(7);
+		PAD(3);
+		int m_nTargetColorID;	// 0x358 (for color triggers)
 		float m_fScale; //0x35C
 		int m_nObjectID; //0x360
 		PAD(4);
@@ -137,7 +138,7 @@ namespace gd {
 		PAD(4);
 		int m_nDefaultZLayer; // 0x03B4
 		int m_nZLayer; //0x3B8
-		int m_nZOrder; //0x3BC
+		int m_nGameZOrder; //0x3BC
 		std::string m_unk3C0;
 		bool m_unk3D8;
 		bool m_unk3D9;
@@ -271,8 +272,8 @@ namespace gd {
 		
 			return res;
 		}
-		int getGameZOrder() { return m_nZOrder; }
-		void setGameZOrder(int z) { m_nZOrder = z; }
+		int getGameZOrder() { return m_nGameZOrder; }
+		void setGameZOrder(int z) { m_nGameZOrder = z; }
 		void setGameObjType(GameObjectType t) { m_nObjectType = t; }
 
 		GJSpriteColor* getBaseColor() { return m_pBaseColor; }

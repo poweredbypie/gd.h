@@ -6,7 +6,7 @@
 namespace gd {
     class EffectGameObject : public GameObject {
         public:
-            PAD(8)
+            PAD(12)
             int m_nTargetGroupID; // 0x0474
             int m_nCenterGroupID; // 0x0478
             PAD(0x98)

@@ -14,10 +14,10 @@ namespace gd {
             cocos2d::CCLabelBMFont* m_pEditorLayer2Text;
             cocos2d::CCLabelBMFont* m_pZOrderText;
             gd::CCTextInputNode* m_pGroupIDInput;
-            int m_nGroupID;
-            int m_nEditorLayer;
-            int m_nEditorLayer2;
-            int m_nZOrder;
+            int m_nGroupIDValue;
+            int m_nEditorLayerValue;
+            int m_nEditorLayer2Value;
+            int m_nZOrderValue;
 
             void updateEditorLayerID() {
                 reinterpret_cast<void(__fastcall*)(SetGroupIDLayer*)>(

@@ -86,6 +86,8 @@ enum FMOD_RESULT;
 #include "layers_scenes_transitions_nodes/DialogLayer.h"
 #include "layers_scenes_transitions_nodes/GaragePage.h"
 #include "layers_scenes_transitions_nodes/GJGarageLayer.h"
+#include "layers_scenes_transitions_nodes/CreateGuidelinesLayer.h"
+#include "layers_scenes_transitions_nodes/VideoOptionsLayer.h"
 
 #include "scroll_nodes/CCContentLayer.h"
 #include "scroll_nodes/CCIndexPath.h"

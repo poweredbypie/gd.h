@@ -11,10 +11,14 @@ namespace gd {
     class GJDropDownLayer;
     class SongInfoObject;
     class GJSpecialColorSelect;
+<<<<<<< HEAD
     class HSVWidgetPopup;
     class GJUserScore;
     class ListButtonBar;
     class DialogLayer;
+=======
+    class CCCircleWave;
+>>>>>>> mat/main
 
     enum GJSongError {
         kGJSongErrorUnknown_not_REd = 0,
@@ -58,6 +62,10 @@ namespace gd {
     class ColorSetupDelegate {
         public:
             virtual void colorSetupClosed(int)  {}
+    };
+
+    class ColorPickerDelegate {
+        virtual void colorValueChanged(cocos2d::ccColor3B color);
     };
 
     class GJSpecialColorSelectDelegate {
@@ -186,6 +194,10 @@ namespace gd {
     class GJDropDownLayerDelegate {
         public:
             virtual void dropDownLayerWillClose(GJDropDownLayer*)  {}
+    };
+
+    class CCCircleWaveDelegate {
+        void circleWaveWillBeRemoved(CCCircleWave*) {}
     };
 }
 

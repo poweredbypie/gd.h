@@ -6,6 +6,7 @@
 namespace gd {
 
 	class GJBaseGameLayer;
+	class CCCircleWaveDelegate;
 	class GameObject;
 	// class EndPortalObject;
 	using EndPortalObject = GameObject;
@@ -23,140 +24,139 @@ namespace gd {
 	class GJGameLevel;
 	// class UILayer;
 	using UILayer = cocos2d::CCLayerColor;
+	using StartPosObject = gd::GameObject;
+	class CheckpointObject;
 
-	class PlayLayer : public GJBaseGameLayer {
+	class PlayLayer : public GJBaseGameLayer, public CCCircleWaveDelegate {
 		public:
-			PAD(8); // stupid vtables i cant be bothered
-			unsigned int unk_2D8;
-			bool unk_2DC;
-			bool has_cheated; //0x02DD // by taking less than 30s to beat lvl
-			PAD(2);
-			int rand_0_100_plus_2E8; //0x02E0
-			int rand_0_100; //0x02E4
-			int unk_2E8;
-			bool opposite_is_frozen; //0x02EC
-			bool unk_2ED;
-			PAD(10);
-			cocos2d::CCDrawNode* draw_node; //0x02F8
-			float camera_y_again_maybe; //0x02FC
-			float unk_300;
-			float unk_304;
-			float bottom_ground_y_maybe; //0x0308
-			float unk_30C; //0x030C // last y or smth idk
-			bool unk_310;
-			bool unk_311;
-			bool unk_312;
-			PAD(33);
-			EndPortalObject* end_portal; //0x0334
-			cocos2d::CCArray* checkpoint_array; //0x0338
-			cocos2d::CCArray* unk_33C; //0x033C
-			cocos2d::CCArray* unk_340; //0x0340
-			cocos2d::CCArray* unk_344; //0x0344
-			cocos2d::CCSprite* unk_348;
-			PAD(8);
-			cocos2d::CCArray* unk_354;
-			cocos2d::CCArray* unk_358;
-			cocos2d::CCArray* unk_35C;
-			cocos2d::CCArray* unk_360;
-			bool is_mute; //0x0364 // maybe
-			PAD(7);
-			cocos2d::CCArray* ringObjectsOnScreen; //0x036C
-			cocos2d::CCParticleSystemQuad* unk_370;
-			cocos2d::CCDictionary* unk_374;
-			cocos2d::CCArray* circleWaves; //0x0378
-			cocos2d::CCArray* unk_37C;
-			AudioEffectsLayer* audio_effects_layer; //0x0380
-			PAD(8);
-			GJGroundLayer* ground1; //0x038C
-			GJGroundLayer* ground2; //0x0390
-			PAD(8);
-			bool is_dead; //0x039C
-			bool unk_39D; //0x039D // smth to do with the camera
-			bool cameraMoveX_called; //0x039E
-			bool cameraMoveY_called; //0x039F
-			PAD(4);
-			int unk_3A4;
 			PAD(12);
-			float level_length; //0x03B4
-			float unk_3B8;
-			cocos2d::CCLabelBMFont* attempt_label; //0x03BC
-			cocos2d::CCLabelBMFont* percent_label; //0x03C0
-			bool is_camera_shaking; //0x03C4
-			PAD(3);
-			float current_shake_strength; //0x03C8
-			float current_shake_interval; //0x03CC
-			double last_shake_time; //0x03D0
-			cocos2d::CCPoint unk_3D8;
+			unsigned int unk2D8;
+			bool unk2DC;
+			bool m_hasCheated; // 0x2DD by taking less than 30s to beat lvl
+			int unk2E0; // random value between 0 and 100 + unk2E8
+			int unk2E4; // random value between 0 and 100
+			int unk2E8;
+			bool unk2EC; // opposite of isFrozen
+			bool unk2ED;
+			PAD(10);
+			cocos2d::CCDrawNode* unk2F8;
+			float unk2FC; // seems to be camera y
+			float unk300;
+			float unk304;
+			float unk308; // bottom ground y maybe
+			float unk30C; // last y or smth idk
+			bool unk310;
+			bool unk311;
+			bool unk312;
+			PAD(25);
+			StartPosObject* m_startPos; // 0x32C
+			CheckpointObject* unk330;
+			EndPortalObject* m_endPortal; // 0x334
+			cocos2d::CCArray* m_checkpoints; // 0x338
+			cocos2d::CCArray* unk33C;
+			cocos2d::CCArray* unk340;
+			cocos2d::CCArray* unk344;
+			cocos2d::CCSprite* unk348;
+			PAD(8);
+			cocos2d::CCArray* unk354;
+			cocos2d::CCArray* unk358;
+			cocos2d::CCArray* unk35C;
+			cocos2d::CCArray* unk360;
+			bool m_isMute; // 0x364 has to do with fmod
+			PAD(7);
+			cocos2d::CCArray* m_screenRingObjects; // 0x36C ring objects that are on screen, yes this is weird
+			cocos2d::CCParticleSystemQuad* unk370;
+			cocos2d::CCDictionary* unk374;
+			cocos2d::CCArray* m_circleWaves; // 0x378
+			cocos2d::CCArray* unk37C;
+			AudioEffectsLayer* m_audioEffectsLayer; // 0x380
+			PAD(8);
+			GJGroundLayer* m_bottomGround; // 0x38C
+			GJGroundLayer* m_topGround; // 0x390
+			PAD(8);
+			bool m_isDead; // 0x39C
+			bool unk39D; // smth to do with the camera
+			bool unk39E; // set to true when cameraMoveX is called
+			bool unk39F; // set to true when cameraMoveY is called
+			PAD(4);
+			int unk3A4;
+			PAD(12);
+			float m_levelLength; // 0x3B4
+			float unk3B8;
+			cocos2d::CCLabelBMFont* m_attemptLabel; // 0x3BC
+			cocos2d::CCLabelBMFont* m_percentLabel; // 0x3C0
+			bool m_isCameraShaking; // 0x3C4
+			float m_currentShakeStrength; // 0x3C8
+			float m_currentShakeInterval; // 0x3CC
+			double m_lastShakeTime; // 0x3D0
+			cocos2d::CCPoint unk3D8;
 			PAD(16);
-			int unk_always_40; //0x03F0
-			cocos2d::CCDictionary* particleSystemPlistEffectDict; //0x03F4
-			cocos2d::CCDictionary* unk_3F8;
-			cocos2d::CCArray* particleSystemArr; //0x03FC
-			cocos2d::CCNode* unk_400;
-			cocos2d::CCSprite* spr_slidergroove2; //0x0404
-			cocos2d::CCSprite* spr_sliderBar2; //0x0408
-			float slider_width; //0x040C //sliderbar2 width (?) minus 4
-			float unk_always_8; //0x0410
+			int unk3F0; // always 40
+			cocos2d::CCDictionary* m_particleSystemsPlist; // 0x3F4 i really need a better name	 
+			cocos2d::CCDictionary* unk3F8;
+			cocos2d::CCArray* m_particleSystems; // 0x3FC
+			cocos2d::CCNode* unk400;
+			cocos2d::CCSprite* m_sliderGrooveSprite; // 0x404
+			cocos2d::CCSprite* m_sliderBarSprite; // 0x408
+			float m_sliderWidth; // 0x40C sliderbar2 width (?) minus 4
+			float unk410; // always 8
 			PAD(4);
-			int unk_always_4; //0x0418
+			int unk418; // always 4
 			PAD(8);
-			cocos2d::CCArray* arr_GravityEffectSprite; //0x0424
-			bool unk_428;
-			bool do_record_actions; //0x0429
-			bool unk_42A;
-			bool is_paused; //0x042B
-			bool unk_42C;
-			bool is_player_2_frozen; //0x042D // wtf
-			PAD(2);
-			std::string record_string; //0x0430
+			cocos2d::CCArray* m_gravityEffectSprites; // 0x424 contains GravityEffectSprite s	   
+			bool unk428;
+			bool m_shouldRecordActions; // 0x429 for the hidden rob bot
+			bool unk42A;
+			bool m_isPaused; // 0x42B
+			bool unk42C;
+			bool m_isPlayer2Frozen; // 0x42D wat
+			std::string m_previousRecords; // 0x430
 			PAD(8);
-			double time; //0x0450
+			double m_time; // 0x450
 			PAD(9);
-			bool unk_461;
-			PAD(2);
-			cocos2d::CCDictionary* unk_464;
+			bool unk461;
+			cocos2d::CCDictionary* unk464;
 			PAD(8);
-			bool playback_mode; //0x0470
-			PAD(19);
-			UILayer* ui_layer; //0x0484
-			GJGameLevel* level; //0x0488
-			float camera_x; //0x048C
-			float camera_y; //0x0490
-			bool is_test_mode; //0x0494
-			bool is_practice_mode; //0x0495
-			bool unk_496;
-			bool unk_497;
-			cocos2d::CCArray* animationsArrMaybe; //0x0498
-			bool unk_49C;
+			bool m_isPlaybackMode; // 0x470
 			PAD(11);
-			int current_attempt; //0x04A8
-			int jump_count; //0x04AC
-			bool unk_4B0;
-			PAD(3);
-			float total_time; //0x04B4
-			int jump_count_resets_when_you_die; //0x04B8
-			bool unk_4BC;
-			bool has_lvl_complete_menu; //0x04BD
-			bool has_completed_lvl; //0x04BE
-			PAD(1);
-			int last_death_percent; //0x04C0
-			bool unk_4C4;
+			bool m_isFlipped; // 0x47C
+			PAD(7);
+			UILayer* m_uiLayer; // 0x484
+			GJGameLevel* m_level; // 0x488
+			float m_cameraX; // 0x48C
+			float m_cameraY; // 0x490
+			bool m_isTestMode; // 0x494
+			bool m_isPracticeMode; // 0x495
+			bool unk496;
+			bool unk497;
+			cocos2d::CCArray* unk498; // animations array maybe
+			bool unk49C;
 			PAD(11);
-			bool unk_4D0;
-			PAD(3);
-			cocos2d::CCArray* unk_4d4; //0x04D4
-			cocos2d::CCDictionary* unk_4d8; //0x04D8
+			int m_currentAttempt; // 0x4A8
+			int m_jumpCount; // 0x4AC
+			bool unk4B0;
+			float m_totalTime; // 0x4B4
+			int m_attemptJumpCount; // 0x4B8 resets when you die
+			bool unk4BC;
+			bool m_hasLevelCompleteMenu; // 0x4BD true when the level complete menu shows up, so slightly after completing the lvl
+			bool m_hasCompletedLevel; // 0x4BE
+			int m_lastDeathPercent; // 0x4C0
+			bool unk4C4;
+			PAD(11);
+			bool unk4D0;
+			cocos2d::CCArray* unk4D4;
+			cocos2d::CCDictionary* unk4D8;
 			PAD(4);
-			double unk_4E0;
-			double unk_4e8; //0x04E8 // seems to be time modulo 2 for some reason
+			double unk4E0;
+			double unk4E8; // seems to be time modulo 2 for some reason
 			PAD(24);
-			double time_again; //0x0508
+			double unk508; // time again?
 			PAD(31);
-			bool is_paused_again; //0x052F
-			GameObject* unk_game_object; //0x0530
-			bool unk_534; //0x0534
-			bool unk_535;
-			bool gv_value_0072; //0x0536
+			bool unk52F; // is paused again?
+			GameObject* unk530;
+			bool unk534;
+			bool unk535; // gets set to false when you cheat
+			bool m_disableGravityEffect; // 0x536 comes from gv_0072
 			PAD(1);
 
 			static PlayLayer* get() { return GameManager::sharedState()->getPlayLayer(); }

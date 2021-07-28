@@ -22,6 +22,10 @@ namespace gd {
 		//own vtable
 		virtual void animationFinished(const char*) {}
 		virtual void animationFinishedO(cocos2d::CCObject*) {}
+
+		void runAnimation(std::string name) {
+			reinterpret_cast<void(__thiscall*)(CCAnimatedSprite*, std::string)>(base + 0x14f60)(this, name);
+		}
 	};
 
 	class AnimatedSpriteDelegate {

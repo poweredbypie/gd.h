@@ -287,6 +287,12 @@ namespace gd {
 		void setRScale(float scale) {
 			reinterpret_cast<void(__thiscall*)(GameObject*, float)>(base + 0xe5280)(this, scale);
 		}
+		void setObjectColor(const cocos2d::ccColor3B& color) {
+			reinterpret_cast<void(__thiscall*)(GameObject*, const cocos2d::ccColor3B&)>(base + 0xee620)(this, color);
+		}
+		void selectObject(const cocos2d::ccColor3B color) {
+			reinterpret_cast<void(__thiscall*)(GameObject*, const cocos2d::ccColor3B)>(base + 0xee960)(this, color);
+		}
 	};
 
 	#pragma runtime_checks("s", restore)

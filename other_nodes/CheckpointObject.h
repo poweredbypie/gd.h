@@ -8,6 +8,10 @@ namespace gd {
     class PlayerCheckpoint;
     
     class CheckpointObject : public cocos2d::CCNode {
+    protected:
+        CheckpointObject() {
+            reinterpret_cast<void*(__thiscall*)(CheckpointObject*)>(base + 0x1fb0c0)(this);
+        }
     public:
         GameObject* m_gameObject; // 0x0EC 
         PlayerCheckpoint* m_player1; // 0x0F0 

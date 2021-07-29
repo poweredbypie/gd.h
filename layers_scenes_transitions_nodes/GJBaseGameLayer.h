@@ -114,7 +114,7 @@ namespace gd {
 		int unk2BC; // probably what section gd has loaded up to
 		bool unk2C0;
 		bool unk2C1;
-		PAD(10);
+		PAD(6); // this should be 10 but im too lazy to fix playlayer rn
 	};
 }
 

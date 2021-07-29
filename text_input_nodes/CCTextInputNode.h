@@ -28,10 +28,50 @@ namespace gd {
 			bool m_bUnknown2;
 			bool m_bForceOffset;
 
-		public:
-			//own vtable
-			void onClickTrackNode(bool) {}
+			void visit() override {
+				reinterpret_cast<void(__thiscall*)(CCTextInputNode*)>(
+					base + 0x21000
+				)(this);
+			}
 
+			void registerWithTouchDispatcher() override {
+				reinterpret_cast<void(__thiscall*)(CCTextInputNode*)>(
+					base + 0x220e0
+				)(this);
+			}
+
+			virtual void onClickTrackNode(bool idk) {
+				reinterpret_cast<void(__thiscall*)(CCTextInputNode*, bool)>(
+					base + 0x216b0
+				)(this, idk);
+			}
+
+			virtual bool ccTouchBegan(cocos2d::CCTouch* pTouch, cocos2d::CCEvent* pEvent) override {
+				return reinterpret_cast<bool(__thiscall*)(
+					CCTextInputNode*, cocos2d::CCTouch*, cocos2d::CCEvent*
+				)>(
+					base + 0x1f20
+				)(this, pTouch, pEvent);
+			}
+
+			bool init(
+				const char* sCaption, cocos2d::CCObject* pTarget,
+				const char* sFontFile, float fWidth, float fHeight
+			) {
+				__asm {
+					movss xmm1, fWidth
+					movss xmm2, fHeight
+				}
+
+				auto bRet = reinterpret_cast<CCTextInputNode* (__thiscall*)
+					(CCTextInputNode*, const char*, cocos2d::CCObject*, const char*, const char*)>(
+					base + 0x20e50
+				)(this, sCaption, pTarget, "", sFontFile);
+
+				return bRet;
+			}
+
+		public:
 			static CCTextInputNode* create(const char* caption, cocos2d::CCObject* target, 
 				const char* fntFile, float width, float height) {
 				__asm {

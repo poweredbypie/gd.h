@@ -134,4 +134,6 @@ enum FMOD_RESULT;
 #include "other_nodes/PlayerCheckpoint.h"
 #include "other_nodes/PointNode.h"
 
+#include "GameToolbox.h"
+
 #endif

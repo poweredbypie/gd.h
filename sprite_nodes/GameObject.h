@@ -62,7 +62,7 @@ namespace gd {
 	public:
 		PAD(44);
 		bool m_unk21C;
-		bool m_unk21D;
+		bool m_bSomethingSawRelated; // 0x21D
 		bool m_unk21E;
 		PAD(13);
 		cocos2d::CCPoint m_obStartPosOffset; //0x22C
@@ -78,7 +78,7 @@ namespace gd {
 		PAD(4);
 		bool m_unk254;
 		PAD(11);
-		cocos2d::CCAction* m_pAction; //0x260
+		cocos2d::CCAction* m_pMyAction; //0x260
 		PAD(4);
 		cocos2d::CCSize m_obObjectSize; //0x268
 		bool m_unk270;
@@ -95,7 +95,9 @@ namespace gd {
 		bool m_bIsOrientedRectDirty; //0x2C9
 		bool m_bHasBeenActivated; //0x2CA
 		bool m_bHasBeenActivatedP2; //0x2CB
-		PAD(24);
+		PAD(16);
+		bool m_bSawIsDisabled; // 0x2dc
+		PAD(7);
 		cocos2d::CCSprite* m_pDetailSprite; //0x2E4
 		PAD(8);
 		bool m_bIsRotatedSide; //0x2F0 for 90 and 270 degrees rotations
@@ -292,6 +294,22 @@ namespace gd {
 		}
 		void selectObject(const cocos2d::ccColor3B color) {
 			reinterpret_cast<void(__thiscall*)(GameObject*, const cocos2d::ccColor3B)>(base + 0xee960)(this, color);
+		}
+
+		cocos2d::CCRepeatForever* createRotateAction(float f, int n) {
+			__asm movss xmm1, f
+
+			auto pRet = reinterpret_cast<cocos2d::CCRepeatForever*(__thiscall*)(GameObject*, int)>(
+				base + 0xe49b0
+			)(this, n);
+
+			return pRet;
+		}
+
+		void setMyAction(cocos2d::CCAction* pAction) {
+			return reinterpret_cast<void(__thiscall*)(GameObject*, cocos2d::CCAction*)>(
+				base + 0xd1b90
+			)(this, pAction);
 		}
 	};
 

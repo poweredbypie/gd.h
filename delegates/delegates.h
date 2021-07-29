@@ -11,6 +11,7 @@ namespace gd {
     class GJDropDownLayer;
     class SongInfoObject;
     class GJSpecialColorSelect;
+    class CCCircleWave;
 
     enum GJSongError {
         kGJSongErrorUnknown = 0,
@@ -28,6 +29,10 @@ namespace gd {
 
     class ColorSelectDelegate {
         virtual void colorSelectClosed(cocos2d::CCNode*);
+    };
+
+    class ColorPickerDelegate {
+        virtual void colorValueChanged(cocos2d::ccColor3B color);
     };
 
     class GJSpecialColorSelectDelegate {
@@ -111,6 +116,10 @@ namespace gd {
 
     class GooglePlayDelegate {
         virtual void googlePlaySignedIn() {}
+    };
+
+    class CCCircleWaveDelegate {
+        void circleWaveWillBeRemoved(CCCircleWave*) {}
     };
 }
 

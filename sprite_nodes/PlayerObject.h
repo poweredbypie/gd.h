@@ -109,6 +109,7 @@ namespace gd {
 		cocos2d::CCLayer* unk65C;
 		bool m_isSliding; // 0x660
 		bool m_isRising; // 0x661
+		bool unk662;
 		cocos2d::CCPoint m_lastGroundedPos; // 0x664
 		cocos2d::CCArray* m_touchingRings; // 0x66C
 		GameObject* m_lastActivatedPortal; // 0x670

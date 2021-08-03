@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class FLAlertlayer;
+    class FLAlertLayer;
     class ColorPickerDelegate;
     class TextInputDelegate;
     class GJSpecialColorSelectDelegate;

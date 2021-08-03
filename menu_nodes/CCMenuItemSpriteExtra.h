@@ -9,7 +9,10 @@ namespace gd {
 	protected:
 		float m_fUnknown;
 		float m_fUnknown2;
-
+		PAD(96);
+		CCMenuItemSpriteExtra() {
+			reinterpret_cast<void*(__thiscall*)(CCMenuItemSpriteExtra*)>(base + 0x18db0)(this);
+		}
 	public:
 		static CCMenuItemSpriteExtra* create(cocos2d::CCNode* sprite,
 			cocos2d::CCObject* target, cocos2d::SEL_MenuHandler callback) {

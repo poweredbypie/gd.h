@@ -18,8 +18,8 @@ namespace gd {
             CCTextInputNode* m_pNameInput;  // 0x130
             SimplePlayer* m_pPlayerPreview; // 0x134
             PAD(8)
-            cocso2d::CCSprite* m_pUnkSprite0x140; // 0x140
-            cocso2d::CCSprite* m_pUnkSprite0x144; // 0x144
+            cocos2d::CCSprite* m_pUnkSprite0x140; // 0x140
+            cocos2d::CCSprite* m_pUnkSprite0x144; // 0x144
             CCMenuItemSpriteExtra* m_pUnkButton0x148; // 0x148
             CCMenuItemSpriteExtra* m_pUnkButton0x14c; // 0x14c
             PAD(8)

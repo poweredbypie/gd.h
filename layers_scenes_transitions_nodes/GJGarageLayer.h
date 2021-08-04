@@ -4,6 +4,8 @@
 #include <gd.h>
 
 namespace gd {
+    class CCTextInputNode;
+    
     class GJGarageLayer : public cocos2d::CCLayer,
         TextInputDelegate,
         FLAlertLayerProtocol,

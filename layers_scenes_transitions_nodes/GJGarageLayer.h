@@ -5,6 +5,7 @@
 
 namespace gd {
     class CCTextInputNode;
+    class SimplePlayer;
     
     class GJGarageLayer : public cocos2d::CCLayer,
         TextInputDelegate,

@@ -152,7 +152,8 @@ class EditorUI : public cocos2d::CCLayer,
         EditButtonBar* m_pButtonBar; // 0x134
         PAD(0x4)
         cocos2d::CCArray* m_pUnknownArray; // 0x13c
-        PAD(0x2c)
+        PAD(0x28)
+        int m_nTouchID; // 0x164
         cocos2d::CCLabelBMFont* m_pObjectInfoLabel; // 0x168
         GJRotationControl* m_pRotationControl; // 0x16c
         PAD(0xc)
@@ -164,7 +165,10 @@ class EditorUI : public cocos2d::CCLayer,
         float m_fUnknown0;      // 0x190
         float m_fMinYLimit;     // 0x194 (tf is this)
         float m_fUnknown2;      // 0x198
-        PAD(0x14)
+        bool m_bSwipeEnabled; // 0x19c
+        PAD(3)
+        bool m_bFreeMoveEnabled;  // 0x1a0
+        PAD(15)
         cocos2d::CCArray* m_pUnknownArray2; // 0x1b0
         PAD(0x8)
         cocos2d::CCArray* m_pSelectedObjects; // 0x1bc
@@ -220,8 +224,10 @@ class EditorUI : public cocos2d::CCLayer,
         cocos2d::CCArray* m_pUnknownArray9; // 0x288
         int m_nSelectedMode; // 0x28c
         LevelEditorLayer* m_pEditorLayer;  // 0x290
-        PAD(0x30)
-        GameObject* m_pSelectedObject;  // 0x2c0
+        cocos2d::CCPoint m_obSwipeStart;    // 0x294
+        cocos2d::CCPoint m_obSwipeEnd;      // 0x29c
+        PAD(0x20)
+        GameObject* m_pSelectedObject;  // 0x2c4
         PAD(0x30)
         int m_nSelectedTab; // 0x2f4
 
@@ -246,6 +252,16 @@ class EditorUI : public cocos2d::CCLayer,
             reinterpret_cast<void(__fastcall*)(EditorUI*)>(
                 base + 0x86af0
             )(this);
+        }
+
+        void selectObject(GameObject* obj, bool idk) {
+            reinterpret_cast<void(__thiscall*)(
+                EditorUI*, GameObject*, bool
+            )>(
+                base + 0x86250
+            )(
+                this, obj, idk
+            );
         }
 
         void selectObjects(cocos2d::CCArray* objs, bool idk) {

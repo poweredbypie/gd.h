@@ -30,7 +30,10 @@ namespace gd {
         int m_nCurrentLayer;    // 0x354
         PAD(0x28)
         EditorUI* m_pEditorUI;  // 0x380
-        PAD(0x28)
+        PAD(4)
+        cocos2d::CCArray* m_pUndoObjects;   // 0x388
+        cocos2d::CCArray* m_pSomeArray; // 0x38c
+        PAD(0x1c)
         bool m_bIsPlaybackMode;
         PAD(0x17)
         GJGroundLayer* m_pGroundLayer;  // 0x3c4
@@ -88,6 +91,12 @@ namespace gd {
             reinterpret_cast<void(__thiscall*)(LevelEditorLayer*)>(
                 base + 0x15fcc0
             )(this);
+        }
+    
+        void addSpecial(GameObject* obj) {
+            reinterpret_cast<void(__thiscall*)(LevelEditorLayer*, GameObject*)>(
+                base + 0x162650
+            )(this, obj);
         }
     };
 

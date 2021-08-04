@@ -12,18 +12,25 @@ namespace gd {
         DialogDelegate
     {
         public:
-            PAD(0x28)
-            cocos2d::CCArray* m_pPagesArray;
+            CCTextInputNode* m_pNameInput;  // 0x130
+            SimplePlayer* m_pPlayerPreview; // 0x134
+            PAD(8)
+            cocso2d::CCSprite* m_pUnkSprite0x140; // 0x140
+            cocso2d::CCSprite* m_pUnkSprite0x144; // 0x144
+            CCMenuItemSpriteExtra* m_pUnkButton0x148; // 0x148
+            CCMenuItemSpriteExtra* m_pUnkButton0x14c; // 0x14c
+            PAD(8)
+            cocos2d::CCArray* m_pPagesArray;    // 0x158
             PAD(0x8)
-            CCMenuItemToggler* m_pTabToggleCube;
-            CCMenuItemToggler* m_pTabToggleShip;
-            CCMenuItemToggler* m_pTabToggleBall;
-            CCMenuItemToggler* m_pTabToggleUfo;
-            CCMenuItemToggler* m_pTabToggleWave;
-            CCMenuItemToggler* m_pTabToggleRobot;
-            CCMenuItemToggler* m_pTabToggleSpider;
-            CCMenuItemToggler* m_pTabToggleSpecial;
-            CCMenuItemToggler* m_pTabToggleDeathEffect;
+            CCMenuItemToggler* m_pTabToggleCube;    // 0x164
+            CCMenuItemToggler* m_pTabToggleShip;    // 0x168
+            CCMenuItemToggler* m_pTabToggleBall;    // 0x16c
+            CCMenuItemToggler* m_pTabToggleUfo;     // 0x170
+            CCMenuItemToggler* m_pTabToggleWave;    // 0x174
+            CCMenuItemToggler* m_pTabToggleRobot;   // 0x178
+            CCMenuItemToggler* m_pTabToggleSpider;  // 0x17c
+            CCMenuItemToggler* m_pTabToggleSpecial; // 0x180
+            CCMenuItemToggler* m_pTabToggleDeathEffect; // 0x184
             PAD(4)
             bool m_bUpdateSelector;
 

@@ -107,7 +107,9 @@ namespace gd {
 		int m_nUniqueID; //0x2FC
 		GameObjectType m_nObjectType; //0x300
 		int m_nSection; //0x304
-		PAD(4);
+		bool m_bTouchTriggered; //0x308
+		bool m_bSpawnTriggered; //0x309
+		PAD(2)
 		cocos2d::CCPoint m_obStartPosition; //0x30C
 		std::string m_sTextureName; //0x314
 		bool m_unk32C;
@@ -216,6 +218,11 @@ namespace gd {
 				)(this, opacity);
 		}
 
+		static GameObject* createWithKey(int key) {
+			return reinterpret_cast<GameObject* (__fastcall*)(int)>(
+				base + 0xcf4f0
+				)(key);
+		}
 		static GameObject* createWithFrame(const char* frame) {
 			return reinterpret_cast<GameObject* (__fastcall*)(const char*)>(
 				base + 0xCF8F0

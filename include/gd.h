@@ -123,6 +123,7 @@ enum FMOD_RESULT;
 #include "sprite_nodes/GJSpriteColor.h"
 #include "sprite_nodes/SimplePlayer.h"
 #include "sprite_nodes/HardStreak.h"
+#include "sprite_nodes/ColorChannelSprite.h"
 
 #include "trigger_popups/SetupPickupTriggerPopup.h"
 

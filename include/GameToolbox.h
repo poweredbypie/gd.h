@@ -38,6 +38,18 @@ namespace gd {
 
             return pRet;
         }
+
+        static void transformColor(cocos2d::ccColor3B const& src, cocos2d::ccColor3B & dest, cocos2d::ccHSVValue hsv) {
+            reinterpret_cast<void(__thiscall*)(
+                cocos2d::ccColor3B const*, cocos2d::ccColor3B*, cocos2d::ccHSVValue
+            )>(
+                base + 0x26a60
+            )(
+                &src, &dest, hsv
+            );
+
+            __asm add esp, 0x14
+        }
     }
 }
 

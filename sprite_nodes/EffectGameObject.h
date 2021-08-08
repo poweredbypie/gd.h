@@ -126,6 +126,40 @@ namespace gd {
                     base + 0x253c30
                 )(sprName);
             }
+
+            void updateLabel() {
+                auto label = reinterpret_cast<cocos2d::CCLabelBMFont*>(this->getChildByTag(999));
+
+                if (label) {
+                    switch (this->m_nObjectID) {
+                        // instant count
+                        case 0x713:
+                            label->setString(
+                                cocos2d::CCString::createWithFormat("%i", this->m_nTargetItemID)->getCString()
+                            );
+                            break;
+                        
+                        //   color,    pulse
+                        case 899: case 1006: {
+                            int target = this->m_nObjectID == 1006 ? m_nTargetGroupID : m_nTargetColorID;
+                            if (target > 999) {
+                                label->setString(GJSpecialColorSelect::textForColorIdx(target));
+                            } else {
+                                label->setString(
+                                    cocos2d::CCString::createWithFormat("%i", target)->getCString()
+                                );
+                            }
+                            label->limitLabelWidth(30.0f, 0.5f, 0.0f);
+                            } break;
+                        
+
+                        default:
+                            label->setString(
+                                cocos2d::CCString::createWithFormat("%i", this->m_nTargetGroupID)->getCString()
+                            );
+                    }
+                }
+            }
     };
 }
 

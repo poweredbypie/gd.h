@@ -15,6 +15,7 @@ namespace gd {
     class CCTextInputNode;
     class ConfigureHSVWidget;
     class CCMenuItemToggler;
+
     class ColorSelectPopup : public FLAlertLayer, ColorPickerDelegate, TextInputDelegate, GJSpecialColorSelectDelegate {
     public:
         // TODO: actually figure out most of this stuff, this is a mess

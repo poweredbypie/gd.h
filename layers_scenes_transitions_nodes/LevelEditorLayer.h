@@ -42,6 +42,17 @@ namespace gd {
         static LevelEditorLayer* get() { return gd::GameManager::sharedState()->getEditorLayer(); }
         EditorUI* getEditorUI() { return this->m_pEditorUI; }
 
+        GameObject* createObject(int id, cocos2d::CCPoint const& position, bool undo) {
+            return reinterpret_cast<GameObject*(__thiscall*)(
+                LevelEditorLayer*, int, cocos2d::CCPoint, bool
+            )>(
+                base + 0x160d70
+            )(
+                this, id, position, undo
+            );
+            
+        }
+
         void removeObject(GameObject * obj, bool idk) {
             reinterpret_cast<void(__thiscall*)(
                 LevelEditorLayer *,GameObject *,bool

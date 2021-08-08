@@ -3,12 +3,22 @@
 
 #include <gd.h>
 
+namespace cocos2d {
+	namespace extension {
+		class CCScale9Sprite;
+	}
+}
+
 namespace gd {
 	#pragma runtime_checks("s", off)
 	class ButtonSprite : public cocos2d::CCSprite {
 		public:
-			PAD(48)
-			cocos2d::CCPoint m_obSpritePosition;
+			PAD(24)
+			cocos2d::CCLabelBMFont* m_pLabel; // 0x1fc
+			PAD(8)
+			cocos2d::extension::CCScale9Sprite* m_pBGSprite;	// 0x208
+			PAD(8)
+			cocos2d::CCPoint m_obSpritePosition;	// 0x214
 			
 			/*PARAMS:
 			* caption - the button's caption.

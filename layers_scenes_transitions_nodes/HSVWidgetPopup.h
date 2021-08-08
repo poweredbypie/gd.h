@@ -14,12 +14,7 @@ namespace gd {
             gd::Slider* m_pSaturationSlider;
             gd::Slider* m_pBrightnessSlider;
 
-            float m_fHueValue;
-            float m_fSaturationValue;
-            float m_fBrightnessValue;
-
-            bool m_bAbsoluteSaturation;
-            bool m_bAbsoluteBrightness;
+            cocos2d::ccHSVValue m_obValue;
     };
 
     class HSVWidgetPopup : public gd::FLAlertLayer {

@@ -43,6 +43,7 @@ enum FMOD_RESULT;
 
 #include "manager_nodes/GManager.h"
 #include "manager_nodes/GameManager.h"
+#include "manager_nodes/GameStatsManager.h"
 #include "manager_nodes/GameSoundManager.h"
 #include "manager_nodes/GameLevelManager.h"
 #include "manager_nodes/AchievementManager.h"

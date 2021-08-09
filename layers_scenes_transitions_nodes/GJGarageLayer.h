@@ -43,10 +43,64 @@ namespace gd {
                 )>( base + 0x127c30 )(this, pSender);
             }
 
+            void onPlayerIcon(cocos2d::CCObject* pSender) {
+                reinterpret_cast<void(__thiscall*)(
+                    GJGarageLayer*, cocos2d::CCObject*
+                    )>(base + 0x127F30)(this, pSender);
+            }
+
+            void onShipIcon(cocos2d::CCObject* pSender) {
+                reinterpret_cast<void(__thiscall*)(
+                    GJGarageLayer*, cocos2d::CCObject*
+                    )>(base + 0x1281E0)(this, pSender);
+            }
+
             void onBallIcon(cocos2d::CCObject* pSender) {
                 reinterpret_cast<void(__thiscall*)(
                     GJGarageLayer*, cocos2d::CCObject*
                 )>( base + 0x1282a0 )(this, pSender);
+            }
+
+            void onBirdIcon(cocos2d::CCObject* pSender) {
+                reinterpret_cast<void(__thiscall*)(
+                    GJGarageLayer*, cocos2d::CCObject*
+                    )>(base + 0x128360)(this, pSender);
+            }
+
+            void onDartIcon(cocos2d::CCObject* pSender) {
+                reinterpret_cast<void(__thiscall*)(
+                    GJGarageLayer*, cocos2d::CCObject*
+                    )>(base + 0x128420)(this, pSender);
+            }
+
+            void onRobotIcon(cocos2d::CCObject* pSender) {
+                reinterpret_cast<void(__thiscall*)(
+                    GJGarageLayer*, cocos2d::CCObject*
+                    )>(base + 0x1286D0)(this, pSender);
+            }
+
+            void onSpiderIcon(cocos2d::CCObject* pSender) {
+                reinterpret_cast<void(__thiscall*)(
+                    GJGarageLayer*, cocos2d::CCObject*
+                    )>(base + 0x128890)(this, pSender);
+            }
+
+            void onShards(cocos2d::CCObject* pSender) {
+                reinterpret_cast<void(__thiscall*)(
+                    GJGarageLayer*, cocos2d::CCObject*
+                    )>(base + 0x12AD70)(this, pSender);
+            }
+
+            void onBack(cocos2d::CCObject* pSender) {
+                reinterpret_cast<void(__thiscall*)(
+                    GJGarageLayer*, cocos2d::CCObject*
+                    )>(base + 0x12ADF0)(this, pSender);
+            }
+
+            void onShop(cocos2d::CCObject* pSender) {
+                reinterpret_cast<void(__thiscall*)(
+                    GJGarageLayer*, cocos2d::CCObject*
+                    )>(base + 0x12AD90)(this, pSender);
             }
     };  
 }

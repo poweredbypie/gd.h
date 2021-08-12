@@ -4,8 +4,15 @@
 #include <gd.h>
 
 namespace gd {
+    class BoomScrollLayer;
+
+    class ListButtonPage : public cocos2d::CCLayer {
+        // todo
+    };
+
     class ListButtonBar : public cocos2d::CCNode {
-        // TODO
+        public:
+            BoomScrollLayer* m_pScrollLayer;    // 0xec
     };
 }
 

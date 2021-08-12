@@ -5,8 +5,14 @@
 
 namespace gd {
 
-class BoomScrollLayer : public cocos2d::CCLayer {
+class ExtendedLayer : public cocos2d::CCLayer {
     // todo
+};
+
+class BoomScrollLayer : public cocos2d::CCLayer {
+    public:
+        PAD(68)
+        ExtendedLayer* m_pLayer;    // 0x160
 };
 
 class GameManager;
@@ -117,9 +123,37 @@ class CreateMenuItem : public CCMenuItemSpriteExtra {
 class EditorPauseLayer : public gd::CCBlockLayer {
     public:
         PAD(0x8)
-        gd::CCMenuItemSpriteExtra* m_pButton0;
-        gd::CCMenuItemSpriteExtra* m_pButton1;
-        gd::LevelEditorLayer* m_pEditorLayer;
+        gd::CCMenuItemSpriteExtra* m_pButton0;  // 0x1a4
+        gd::CCMenuItemSpriteExtra* m_pButton1;  // 0x1a8
+        gd::LevelEditorLayer* m_pEditorLayer;   // 0x1ac
+
+        EditorPauseLayer* constructor() {
+            return reinterpret_cast<EditorPauseLayer*(__fastcall*)(EditorPauseLayer*)>(
+                base + 0x72f10
+            )(this);
+        }
+
+        EditorPauseLayer() {
+            constructor();
+        }
+
+        bool init(LevelEditorLayer* editor) {
+            return reinterpret_cast<bool(__thiscall*)(EditorPauseLayer*, LevelEditorLayer*)>(
+                base + 0x730e0
+            )(this, editor);
+        }
+
+        static EditorPauseLayer* create(LevelEditorLayer* editor) {
+            auto pRet = new EditorPauseLayer;
+
+            if (pRet && pRet->init(editor)) {
+                pRet->autorelease();
+                return pRet;
+            }
+
+            CC_SAFE_DELETE(pRet);
+            return nullptr;
+        }
 
         virtual void keyBackClicked() {
             reinterpret_cast<void(__fastcall*)(EditorPauseLayer*)>(
@@ -131,6 +165,12 @@ class EditorPauseLayer : public gd::CCBlockLayer {
             reinterpret_cast<void(__thiscall*)(EditorPauseLayer*, cocos2d::CCObject*)>(
                 base + 0x74fe0
             )(this, pSender);
+        }
+
+        void saveLevel() {
+            reinterpret_cast<void(__fastcall*)(EditorPauseLayer*)>(
+                base + 0x75010
+            )(this);
         }
 };
 

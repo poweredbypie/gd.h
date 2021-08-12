@@ -83,7 +83,7 @@ namespace gd {
 			LevelSettingsObject* m_pLevelSettings;	// 0x22c
 			cocos2d::CCDictionary* m_pDict0;	// 0x230
 			cocos2d::CCArray* m_pObjects;	// 0x234
-			cocos2d::CCArray* m_pArray1;	// 0x238
+			cocos2d::CCArray* m_pObjectContainerArrays;	// 0x238
 			cocos2d::CCArray* m_pArray2;	// 0x23c
 			cocos2d::CCArray* m_pArray3;	// 0x240
 			cocos2d::CCArray* m_pArray4;	// 0x244

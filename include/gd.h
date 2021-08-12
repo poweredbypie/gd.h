@@ -53,6 +53,14 @@ enum FMOD_RESULT;
 #include "manager_nodes/MusicDownloadManager.h"
 #include "manager_nodes/ObjectToolbox.h"
 
+#include "scroll_nodes/CCContentLayer.h"
+#include "scroll_nodes/CCIndexPath.h"
+#include "scroll_nodes/CCScrollLayerExt.h"
+#include "scroll_nodes/TableView.h"
+#include "scroll_nodes/BoomListView.h"
+#include "scroll_nodes/CustomListView.h"
+#include "scroll_nodes/ScrollingLayer.h"
+
 #include "layers_scenes_transitions_nodes/CCNodeContainer.h"
 #include "layers_scenes_transitions_nodes/OBB2D.h"
 #include "layers_scenes_transitions_nodes/FLAlertLayer.h"
@@ -91,14 +99,6 @@ enum FMOD_RESULT;
 #include "layers_scenes_transitions_nodes/SetupPulsePopup.h"
 #include "layers_scenes_transitions_nodes/ColorSelectPopup.h"
 #include "layers_scenes_transitions_nodes/MoreOptionsLayer.h"
-
-#include "scroll_nodes/CCContentLayer.h"
-#include "scroll_nodes/CCIndexPath.h"
-#include "scroll_nodes/CCScrollLayerExt.h"
-#include "scroll_nodes/TableView.h"
-#include "scroll_nodes/BoomListView.h"
-#include "scroll_nodes/CustomListView.h"
-#include "scroll_nodes/ScrollingLayer.h"
 
 #include "audio_nodes/FMODAudioEngine.h"
 #include "audio_nodes/FMODSound.h"

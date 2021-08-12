@@ -24,7 +24,9 @@ namespace gd {
         bool m_unk2d8;   // 0x2d8
         bool m_bMoreUndo;   // 0x2d9
         bool m_unk2da;   // 0x2da
-        PAD(0x35)
+        bool m_unk2db;   // 0x2db
+        bool m_bHighDetail;   // 0x2dc
+        PAD(0x33)
         GameObject* m_pCopyStateObject; // 0x310
         PAD(0x40)
         int m_nCurrentLayer;    // 0x354

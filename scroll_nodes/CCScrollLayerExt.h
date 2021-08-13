@@ -14,17 +14,18 @@ namespace gd {
 			PAD(3)
 			TableView* m_pTableView; 	// 0x120
 			CCIndexPath m_iIndexPath;	// 0x124
+			std::string m_sUnknownString;	// 0x14c
 			PAD(4)
-			std::string m_sUnknown;	// 0x12c
-			PAD(44)
+			float m_fWidth;		// 0x168
+			float m_fHeight;	// 0x16c
 			cocos2d::CCLayerColor* m_pBGLayer;	// 0x170
 			cocos2d::CCLayer* m_pLayer;	// 0x174
 			PAD(4)
 
 			TableViewCell(const char* name, float width, float height) {
 				__asm {
-					movss xmm2, height
-					movss xmm3, width
+					movss xmm2, width
+					movss xmm3, height
 				}
 				reinterpret_cast<void(__thiscall*)(TableViewCell*, const char*)>(
 					base + 0x32E70
@@ -41,6 +42,15 @@ namespace gd {
 
 				CC_SAFE_DELETE(pRet);
 				return nullptr;
+			}
+	};
+
+	class StatsCell : public TableViewCell {
+		public:
+			void updateBGColor(unsigned int index) {
+				reinterpret_cast<void(__thiscall*)(StatsCell*, unsigned int)>(
+					base + 0x59cf0
+				)(this, index);
 			}
 	};
 

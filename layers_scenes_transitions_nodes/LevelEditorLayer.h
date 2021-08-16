@@ -44,6 +44,24 @@ namespace gd {
         static LevelEditorLayer* get() { return gd::GameManager::sharedState()->getEditorLayer(); }
         EditorUI* getEditorUI() { return this->m_pEditorUI; }
 
+        static LevelEditorLayer* create(GJGameLevel* level) {
+            return reinterpret_cast<LevelEditorLayer*(__fastcall*)(GJGameLevel*)>(
+                base + 0x15ed60
+            )(level);
+        }
+
+        static cocos2d::CCScene* scene(GJGameLevel* level) {
+            auto scene = cocos2d::CCScene::create();
+
+            scene->addChild(LevelEditorLayer::create(level));
+            scene->setObjType(cocos2d::kCCObjectTypeLevelEditorLayer);
+
+            cocos2d::CCDirector::sharedDirector()->replaceScene(
+                cocos2d::CCTransitionFade::create(0.5f, scene)
+            );
+            return scene;
+        }
+
         GameObject* createObject(int id, cocos2d::CCPoint const& position, bool undo) {
             return reinterpret_cast<GameObject*(__thiscall*)(
                 LevelEditorLayer*, int, cocos2d::CCPoint, bool

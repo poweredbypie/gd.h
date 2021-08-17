@@ -14,36 +14,36 @@ namespace gd {
 
     class GJGameLevel : public cocos2d::CCNode {
     public:
-        cocos2d::CCDictionary *lastBuildSave;
+        cocos2d::CCDictionary *lastBuildSave;   // 0xec
 
-        int levelID_rand; // levelID + seed = levelID_rand
-        int levelID_seed;
-        int levelID;
+        int levelID_rand; // 0xf0
+        int levelID_seed; // 0xf4 
+        int levelID;      // 0xf8
 
-        std::string levelName;
-        std::string levelDesc;
-        std::string levelString;
-        std::string userName;
-        std::string recordString;
+        std::string levelName;  // 0xfc
+        std::string levelDesc;  // 0x114
+        std::string levelString; // 0x12c
+        std::string userName;   // 0x144
+        std::string recordString;   // 0x15c
 
-        std::string uploadDate;
-        std::string updateDate;
+        std::string uploadDate; // 0x174
+        std::string updateDate; // 0x18c
 
-        int userID_rand;
-        int userID_seed;
-        int userID;
+        int userID_rand;    // 0x1a4
+        int userID_seed;    // 0x1a8
+        int userID;         // 0x1ac
 
-        int accountID_rand;
-        int accountID_seed;
-        int accountID;
+        int accountID_rand; // 0x1b0
+        int accountID_seed; // 0x1b4
+        int accountID;      // 0x1b8
 
-        int difficulty;
-        int audioTrack;
-        int songID;
+        int difficulty; // 0x1bc
+        int audioTrack; // 0x1c0
+        int songID;     // 0x1c4
 
-        int levelRev;
+        int levelRev;   // 0x1c8
 
-        bool unlisted;
+        bool unlisted;  // 0x1c9
 
         int objectCount_rand;
         int objectCount_seed;
@@ -195,16 +195,9 @@ namespace gd {
 
         // this function is inlined on pc builds
         static GJGameLevel *create() {
-            auto pRet = new GJGameLevel();
-
-            if (pRet && pRet->init()) {
-                pRet->autorelease();
-                return pRet;
-            } else {
-                delete pRet;
-                pRet = nullptr;
-                return nullptr;
-            }
+            return reinterpret_cast<GJGameLevel*(__stdcall*)()>(
+                base + 0xbd2b0
+            )();
         }
 
         std::string getAudioFileName() {

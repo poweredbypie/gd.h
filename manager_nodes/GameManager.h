@@ -247,6 +247,12 @@ namespace gd {
 				return defaultValue;
 			return object->intValue();
 		}
+
+		void returnToLastScene(GJGameLevel* level) {
+			reinterpret_cast<void(__thiscall*)(GameManager*, GJGameLevel*)>(
+				base + 0xce6a0
+			)(this, level);
+		}
 	};
 }
 

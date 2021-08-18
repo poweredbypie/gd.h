@@ -214,9 +214,9 @@ class EditorUI : public cocos2d::CCLayer,
         cocos2d::CCArray* m_pSelectedObjects; // 0x1bc
         cocos2d::CCMenu* m_pDeleteMenu; // 0x1c0
         cocos2d::CCArray* m_pUnknownArray4; // 0x1c4
-        CCMenuItemSpriteExtra* m_pDeleteModeButton; // 0x1c8
-        CCMenuItemSpriteExtra* m_pButton1; // 0x1cc
-        CCMenuItemSpriteExtra* m_pButton2; // 0x1d0
+        CCMenuItemSpriteExtra* m_pDeleteModeBtn; // 0x1c8
+        CCMenuItemSpriteExtra* m_pBuildModeBtn; // 0x1cc
+        CCMenuItemSpriteExtra* m_pEditModeBtn; // 0x1d0
         CCMenuItemSpriteExtra* m_pButton3; // 0x1d4
         CCMenuItemSpriteExtra* m_pButton4; // 0x1d8
         CCMenuItemSpriteExtra* m_pButton5; // 0x1dc
@@ -392,6 +392,24 @@ class EditorUI : public cocos2d::CCLayer,
             reinterpret_cast<void(__fastcall*)(
                 EditorUI*
             )>( base + 0x78280 )(this);
+        }
+
+        void updateDeleteMenu() {
+            reinterpret_cast<void(__fastcall*)(
+                EditorUI*
+            )>( base + 0x7c5d0 )(this);
+        }
+        
+        void updateCreateMenu(bool updateTab) {
+            reinterpret_cast<void(__thiscall*)(
+                EditorUI*, bool
+            )>( base + 0x85530 )(this, updateTab);
+        }
+
+        void toggleMode(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x7ad20
+            )(this, pSender);
         }
         
         void moveObject(GameObject* obj, cocos2d::CCPoint position) {

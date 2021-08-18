@@ -374,6 +374,22 @@ class EditorUI : public cocos2d::CCLayer,
             return ret;
         }
 
+        CCMenuItemSpriteExtra* getSpriteButton(
+            const char* sprite,
+            cocos2d::SEL_MenuHandler callback,
+            cocos2d::CCMenu* menu,
+            float scale
+        ) {
+            return reinterpret_cast<CCMenuItemSpriteExtra*(__thiscall*)(
+                EditorUI*, const char*, cocos2d::SEL_MenuHandler,
+                cocos2d::CCMenu*, float
+            )>(
+                base + 0x78bf0
+            )(
+                this, sprite, callback, menu, scale
+            );
+        }
+
         cocos2d::CCPoint getGroupCenter(cocos2d::CCArray* objs, bool idk) {
             cocos2d::CCPoint res;
 

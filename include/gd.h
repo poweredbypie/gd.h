@@ -107,6 +107,7 @@ enum FMOD_RESULT;
 #include "sprite_nodes/GJSpriteColor.h"
 #include "sprite_nodes/SimplePlayer.h"
 #include "sprite_nodes/HardStreak.h"
+#include "sprite_nodes/TeleportPortalObject.h"
 
 #include "text_input_nodes/CCTextInputNode.h"
 

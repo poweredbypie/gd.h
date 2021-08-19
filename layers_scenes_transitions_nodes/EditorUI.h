@@ -18,7 +18,7 @@ class BoomScrollLayer : public cocos2d::CCLayer {
 class GameManager;
 
 class EditButtonBar : public cocos2d::CCNode {
-    protected:
+    public:
         cocos2d::CCPoint m_obPosition;
         int m_nUnknown;
         bool m_bUnknown;

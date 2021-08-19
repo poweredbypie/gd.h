@@ -15,7 +15,8 @@ namespace gd {
 		public:
 			PAD(24)
 			cocos2d::CCLabelBMFont* m_pLabel; // 0x1fc
-			PAD(8)
+			cocos2d::CCSprite* m_pSubSprite;	// 0x200
+			PAD(4)
 			cocos2d::extension::CCScale9Sprite* m_pBGSprite;	// 0x208
 			PAD(8)
 			cocos2d::CCPoint m_obSpritePosition;	// 0x214

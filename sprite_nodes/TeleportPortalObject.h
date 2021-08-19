@@ -8,7 +8,7 @@ namespace gd {
     class TeleportPortalObject : public GameObject {
     public:
         PAD(4); // i have no idea what this is, its not even set to 0 in the ctor
-        TeleportPortalObject* m_orangePortal; // 0x46c
+        TeleportPortalObject* m_pOrangePortal; // 0x46c
         bool unk470;
         float unk474;
         bool unk478;

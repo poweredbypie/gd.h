@@ -86,8 +86,8 @@ namespace gd {
 		PlayerObject* m_pPlayer2; // 0x228 
 		LevelSettingsObject* m_pLevelSettings; // 0x22C 
 		cocos2d::CCDictionary* unk230;
-		cocos2d::CCArray* m_objects; // 0x234 
-		cocos2d::CCArray* unk238;
+		cocos2d::CCArray* m_pObjects; // 0x234 
+		cocos2d::CCArray* m_pObjectContainerArrays;	// 0x238
 		cocos2d::CCArray* unk23C;
 		cocos2d::CCArray* unk240;
 		cocos2d::CCArray* m_pSpawnObjects; // 0x244 

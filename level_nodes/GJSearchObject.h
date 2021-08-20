@@ -5,30 +5,70 @@
 
 namespace gd {
 
-    enum SearchType {
-        kSearchTypeSearch         = 0,
-        kSearchTypeMostDownloaded = 1,
-        kSearchTypeMostLiked      = 2,
-        kSearchTypeTrending       = 3,
-        kSearchTypeRecent         = 4,
-        kSearchTypeUsersLevels    = 5,
-        kSearchTypeFeatured       = 6,
-        kSearchTypeMagic          = 7,
-        kSearchTypeMapPacks       = 9,
-        kSearchTypeAwarded        = 11,
-        kSearchTypeFollowed       = 12,
-        kSearchTypeFriends        = 13,
-        kSearchTypeFindUsers      = 14,
-        kSearchTypeHallOfFame     = 16,
-        kSearchTypeMyLevels       = 98,
-        kSearchTypeSavedLevels    = 99,
-    };
+ enum SearchType {
+    kGJSearchTypeLiked = 0,
+    kGJSearchTypeDownloaded = 1,
+    kGJSearchTypeSearch = 2,
+    kGJSearchTypeTrending = 3,
+    kGJSearchTypeRecent = 4,
+    kGJSearchTypeUsersLevels = 5,
+    kGJSearchTypeFeatured = 6,
+    kGJSearchTypeMagic = 7,
+    kGJSearchTypeSends = 8,
+    kGJSearchTypeMapPack = 9,
+    kGJSearchTypeMapPackOnClick = 10,
+    kGJSearchTypeAwarded = 11,
+    kGJSearchTypeFollowed = 12,
+    kGJSearchTypeFriends = 13,
+    kGJSearchTypeUsers = 14,
+    kGJSearchTypeLikedGDW = 15,
+    kGJSearchTypeHallOfFame = 16,
+    kGJSearchTypeFeaturedGDW = 17,
+    kGJSearchTypeSimilar = 18,
+    kGJSearchTypeMyLevels = 98,
+    kGJSearchTypeSavedLevels = 99,
+    kGJSearchTypeFavouriteLevels = 100
+};
+    
+    enum GJDifficulty {
+    kGJDifficultyAuto = 0,
+    kGJDifficultyEasy = 1,
+    kGJDifficultyNormal = 2,
+    kGJDifficultyHard = 3,
+    kGJDifficultyHarder = 4,
+    kGJDifficultyInsane = 5,
+    kGJDifficultyDemon = 6,
+    kGJDifficultyDemonEasy = 7,
+    kGJDifficultyDemonMedium = 8,
+    kGJDifficultyDemonInsane = 9,
+    kGJDifficultyDemonExtreme = 10
+};
 
     class GJSearchObject : public cocos2d::CCNode {
     public:
-        SearchType m_nScreenID;
-        PAD(96);
-        int currentFolder; // might be unsigned, but then again its robtop
+            SearchType m_nScreenID;
+            std::string m_sSearchQuery;
+            std::string m_sDifficulty;
+            std::string m_sLength;
+            int m_nPage;
+            bool m_bStarFilter;
+            bool m_bNoStarFilter;
+            char PAD1[2];
+            int unknownMember;
+            bool m_bUncompletedFilter;
+            bool m_bCompletedFilter;
+            bool m_bFeaturedFilter;
+            bool m_bOriginalFilter;
+            bool m_bTwoPlayerFilter;
+            bool m_bCoinsFilter;
+            bool m_bEpicFilter;
+            char PAD2;
+            GJDifficulty m_eDemonFilter;
+            int m_nUnk;
+            int m_nSongID;
+            bool m_bCustomSongFilter;
+            bool m_bSongFilter;
+            char PAD3[2];
 
         static GJSearchObject* create(SearchType nID) {
             return reinterpret_cast<GJSearchObject*(__fastcall*)(SearchType)>(

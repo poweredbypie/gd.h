@@ -6,9 +6,18 @@
 namespace gd {
     class GJAccountManager : public cocos2d::CCNode {
         protected:
-            PAD(0x4)
+            cocos2d::CCDictionary *m_pDLObject;
             std::string m_sPassword;
             std::string m_sUsername;
+            int m_nPlayerAccountID;
+            int m_nPlayerAccountIDSeed;
+            int m_nPlayerAccountIDRand;
+            GJAccountRegisterDelegate *m_pRegisterAccountDelegate;
+            GJAccountLoginDelegate *m_pLoginAccountDelegate;
+            GJAccountDelegate *m_pAccountDelegate;
+            GJAccountBackupDelegate *m_pBackupAccountDelegate;
+            GJAccountSyncDelegate *m_pSyncAccountDelegate;
+            GJAccountSettingsDelegate *m_pAccountSettingsDelegate;
 
         public:
             static GJAccountManager* sharedState() {

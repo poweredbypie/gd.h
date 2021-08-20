@@ -20,7 +20,6 @@ namespace gd {
         bool m_bIsUnloaded;
         bool m_bIsVerified;
         bool m_bIsBlocked;
-        char PAD[1];
         int m_nSongPriority;
         LevelSettingsObject *m_pLevelSettings;
     };

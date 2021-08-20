@@ -30,7 +30,7 @@ namespace gd {
     kGJSearchTypeFavouriteLevels = 100
 };
     
-    enum GJDifficulty {
+ enum GJDifficulty {
     kGJDifficultyAuto = 0,
     kGJDifficultyEasy = 1,
     kGJDifficultyNormal = 2,

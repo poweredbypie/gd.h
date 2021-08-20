@@ -125,6 +125,7 @@ enum FMOD_RESULT;
 #include "sprite_nodes/SimplePlayer.h"
 #include "sprite_nodes/HardStreak.h"
 #include "sprite_nodes/ColorChannelSprite.h"
+#include "sprite_nodes/TeleportPortalObject.h"
 
 #include "trigger_popups/SetupPickupTriggerPopup.h"
 

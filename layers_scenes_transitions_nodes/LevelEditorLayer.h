@@ -123,6 +123,12 @@ namespace gd {
                 base + 0x15fcc0
             )(this);
         }
+
+        void updateEditorMode() {
+            reinterpret_cast<void(__thiscall*)(LevelEditorLayer*)>(
+                base + 0x1652b0
+            )(this);
+        }
     
         void addSpecial(GameObject* obj) {
             reinterpret_cast<void(__thiscall*)(LevelEditorLayer*, GameObject*)>(

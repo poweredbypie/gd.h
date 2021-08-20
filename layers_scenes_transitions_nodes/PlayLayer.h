@@ -29,10 +29,10 @@ namespace gd {
 
 	class PlayLayer : public GJBaseGameLayer, public CCCircleWaveDelegate {
 		public:
-			PAD(12);
+			PAD(8);
 			unsigned int unk2D8;
 			bool unk2DC;
-			bool m_hasCheated; // 0x2DD by taking less than 30s to beat lvl
+			bool m_bHasCheated; // 0x2DD by taking less than 30s to beat lvl
 			int unk2E0; // random value between 0 and 100 + unk2E8
 			int unk2E4; // random value between 0 and 100
 			int unk2E8;

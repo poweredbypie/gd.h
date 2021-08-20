@@ -144,7 +144,7 @@ namespace gd {
 		int m_nZLayer; //0x3B8
 		int m_nGameZOrder; //0x3BC
 		std::string m_unk3C0;
-		bool m_unk3D8;
+		bool m_bShowGamemodeBorders;
 		bool m_unk3D9;
 		bool m_bIsSelected; //0x3DA
 		PAD(1);

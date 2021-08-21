@@ -6,29 +6,38 @@
 namespace gd {
     class InfoAlertButton : public CCMenuItemSpriteExtra {
         public:
-            static InfoAlertButton* create(const char* title, const char* text, float scale) {
+            bool init(std::string const& title, std::string const& text, float scale) {
+                __asm movss xmm1, scale
+
+                return reinterpret_cast<InfoAlertButton*(__thiscall*)(
+                    InfoAlertButton*, std::string, std::string
+                )>(
+                    base + 0x14ef50
+                )(
+                    this, title, text
+                );
+            }
+
+            virtual void activate() override {
+                reinterpret_cast<InfoAlertButton*(__thiscall*)(InfoAlertButton*)>(
+                    base + 0x14f050
+                )(this);
+            }
+
+            InfoAlertButton() {
+                reinterpret_cast<InfoAlertButton*(__thiscall*)(InfoAlertButton*)>(
+                    base + 0x14ef50
+                )(this);
+            }
+
+            // can't get the gd function to work,
+            // so just gonna recreate it instead
+            static InfoAlertButton* create(std::string const& title, std::string const& text, float scale) {
                 __asm movss xmm0, scale
-                
-                using skip_t = char;
 
-                if (strlen(title) > 15) {
-                    auto ret = reinterpret_cast<InfoAlertButton*(__cdecl*)(
-                        char*, skip_t[0xa], int, int, const char*, int, int
-                    )>( base + 0x1450b0 )(
-                        const_cast<char*>(title), 0, strlen(title), strlen(title), text, strlen(text), strlen(text)
-                    );
-
-                    __asm add esp, 0x30
-
-                    return ret;
-                }
-
-                char buf[16];
-                strcpy_s(buf, title);
-
-                auto ret = reinterpret_cast<InfoAlertButton*(__cdecl*)(char[16], int, int, const char*, int, int)>(
+                auto ret = reinterpret_cast<InfoAlertButton*(__cdecl*)(std::string const&, std::string const&)>(
                     base + 0x14ed20
-                )(buf, strlen(title), 15, text, strlen(text), strlen(text));
+                )(title, text);
 
                 __asm add esp, 0x30
 

@@ -41,6 +41,14 @@ namespace gd {
 			);
 		}
 
+		CCMenuItemSpriteExtra() {
+			reinterpret_cast<CCMenuItemSpriteExtra*(__thiscall*)(
+				CCMenuItemSpriteExtra*
+			)>(
+				base + 0x18db0
+			)(this);
+		}
+
 		virtual void activate() {
 			reinterpret_cast<void(__fastcall*)(
 				CCMenuItemSpriteExtra*

@@ -196,6 +196,43 @@ namespace gd {
     class CCCircleWaveDelegate {
         void circleWaveWillBeRemoved(CCCircleWave*) {}
     };
+
+    enum AccountError {
+        kAccountErrorUnknown = 0,
+    };
+
+    enum BackupAccountError {
+        kBackupAccountErrorUnknown = 0,
+    };
+
+    struct GJAccountRegisterDelegate {
+        virtual void registerAccountFailed(AccountError error);
+        virtual void registerAccountFinished(void);
+    };
+
+    struct GJAccountLoginDelegate {
+        virtual void loginAccountFailed(AccountError error);
+        virtual void loginAccountFinished(int, int);
+    };
+
+    struct GJAccountDelegate {
+        virtual void accountStatusChanged(void);
+    };
+
+    struct GJAccountBackupDelegate {
+        virtual void backupAccountFailed(BackupAccountError);
+        virtual void backupAccountFinished(void);
+    };
+    
+    struct GJAccountSyncDelegate {
+        virtual void syncAccountFailed(BackupAccountError);
+        virtual void syncAccountFinished(void);
+    };
+
+    struct GJAccountSettingsDelegate {
+        virtual void updateSettingsFailed(void);
+        virtual void updateSettingsFinished(void);
+    };
 }
 
 #endif

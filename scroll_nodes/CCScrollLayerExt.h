@@ -53,6 +53,12 @@ namespace gd {
 				)(this, index);
 			}
 	};
+	
+	class LevelCell /* 0x184 */ : public TableViewCell /* 0x17c */ {
+		public:
+			GJGameLevel* m_pLevel;  // 0x17c
+			PAD(4)
+	};
 
 	class CCScrollLayerExt : public cocos2d::CCLayer {
 		public:

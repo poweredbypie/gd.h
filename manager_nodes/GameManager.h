@@ -52,73 +52,73 @@ namespace gd {
 		PAD(16);
 		double m_dUnknown2;
 		PAD(8);
-		bool m_bLoaded; //?
-		std::string m_sUnknown;
-		PlayLayer* m_pPlayLayer;
-		LevelEditorLayer* m_pLevelEditorLayer;
+		bool m_bLoaded; // 0x148
+		std::string m_sUnknown;	// 0x14c
+		PlayLayer* m_pPlayLayer;	// 0x164
+		LevelEditorLayer* m_pLevelEditorLayer;	// 0x168
 		PAD(20);
-		std::string m_sPlayerUDID;
-		std::string m_sPlayerName;
-		bool m_bCommentsEnabled;
-		int m_nPlayerUserIDRand1;
-		int m_nPlayerUserIDRand2;
-		int m_nPlayerUserID;
-		float m_fBackgroundMusicVolume;
-		float m_fEffectsVolume;
-		int m_nTimeOffset;
+		std::string m_sPlayerUDID;	// 0x180
+		std::string m_sPlayerName;	// 0x198
+		bool m_bCommentsEnabled;	// 0x1b0
+		int m_nPlayerUserIDRand1;	// 0x1b4
+		int m_nPlayerUserIDRand2;	// 0x1b8
+		int m_nPlayerUserID;		// 0x1bc
+		float m_fBackgroundMusicVolume;	// 0x1c0
+		float m_fEffectsVolume;			// 0x1c4
+		int m_nTimeOffset;			// 0x1c8
 		PAD(28);
-		int m_nPlayerFrameRand1;
-		int m_nPlayerFrameRand2;
-		int m_nPlayerFrame;
-		int m_nPlayerShipRand1;
-		int m_nPlayerShipRand2;
-		int m_nPlayerShip;
-		int m_nPlayerBallRand1;
-		int m_nPlayerBallRand2;
-		int m_nPlayerBall;
-		int m_nPlayerBirdRand1;
-		int m_nPlayerBirdRand2;
-		int m_nPlayerBird;
-		int m_nPlayerDartRand1;
-		int m_nPlayerDartRand2;
-		int m_nPlayerDart;
-		int m_nPlayerRobotRand1;
-		int m_nPlayerRobotRand2;
-		int m_nPlayerRobot;
-		int m_nPlayerSpiderRand1;
-		int m_nPlayerSpiderRand2;
-		int m_nPlayerSpider;
-		int m_nPlayerColorRand1;
-		int m_nPlayerColorRand2;
-		int m_nPlayerColor;
-		int m_nPlayerColor2Rand1;
-		int m_nPlayerColor2Rand2;
-		int m_nPlayerColor2;
-		int m_nPlayerStreakRand1;
-		int m_nPlayerStreakRand2;
-		int m_nPlayerStreak;
-		int m_nPlayerDeathEffectRand1;
-		int m_nPlayerDeathEffectRand2;
-		int m_nPlayerDeathEffect;
+		int m_nPlayerFrameRand1;	// 0x1e8
+		int m_nPlayerFrameRand2;	// 0x1ec
+		int m_nPlayerFrame;			// 0x1f0
+		int m_nPlayerShipRand1;		// 0x1f4
+		int m_nPlayerShipRand2;		// 0x1f8
+		int m_nPlayerShip;			// 0x1fc
+		int m_nPlayerBallRand1;		// 0x200
+		int m_nPlayerBallRand2;		// 0x204
+		int m_nPlayerBall;			// 0x208
+		int m_nPlayerBirdRand1;		// 0x20c
+		int m_nPlayerBirdRand2;		// 0x210
+		int m_nPlayerBird;			// 0x214
+		int m_nPlayerDartRand1;		// 0x218
+		int m_nPlayerDartRand2;		// 0x21c
+		int m_nPlayerDart;			// 0x220
+		int m_nPlayerRobotRand1;	// 0x224
+		int m_nPlayerRobotRand2;	// 0x228
+		int m_nPlayerRobot;			// 0x22c
+		int m_nPlayerSpiderRand1;	// 0x230
+		int m_nPlayerSpiderRand2;	// 0x234
+		int m_nPlayerSpider;		// 0x238
+		int m_nPlayerColorRand1;	// 0x23c
+		int m_nPlayerColorRand2;	// 0x240
+		int m_nPlayerColor;			// 0x244
+		int m_nPlayerColor2Rand1;	// 0x248
+		int m_nPlayerColor2Rand2;	// 0x24c
+		int m_nPlayerColor2;		// 0x250
+		int m_nPlayerStreakRand1;	// 0x254
+		int m_nPlayerStreakRand2;	// 0x258
+		int m_nPlayerStreak;		// 0x25c
+		int m_nPlayerDeathEffectRand1;	// 0x260
+		int m_nPlayerDeathEffectRand2;	// 0x264
+		int m_nPlayerDeathEffect;		// 0x268
 		PAD(8);
-		int m_nSecretNumberRand1; //? may be named differently
-		int m_nSecretNumberRand2;
-		bool m_bPlayerGlow;
-		IconType m_nPlayerIconType;
-		bool m_bUnknown2;
-		bool m_bShowSongMarkers;
-		bool m_bShowBPMMarkers;
-		bool m_bRecordGameplay;
-		bool m_bShowProgressBar;
-		bool m_bPerformanceMode;
-		bool m_bClickedGarage;
-		bool m_bClickedEditor;
-		bool m_bClickedName;
-		bool m_bClickedPractice;
-		bool m_bShowedEditorGuide;
-		bool m_bShowedRateDiffDialog;
-		bool m_bShowedRateStarDialog;
-		bool m_bShowedLowDetailDialog;
+		int m_nSecretNumberRand1;	// 0x270
+		int m_nSecretNumberRand2;	// 0x274
+		bool m_bPlayerGlow;			// 0x278
+		IconType m_nPlayerIconType;	// 0x27c
+		bool m_bUnknown2;			// 0x280
+		bool m_bShowSongMarkers;	// 0x281
+		bool m_bShowBPMMarkers;		// 0x282
+		bool m_bRecordGameplay;		// 0x283
+		bool m_bShowProgressBar;	// 0x284
+		bool m_bPerformanceMode;	// 0x285
+		bool m_bClickedGarage;		// 0x286
+		bool m_bClickedEditor;		// 0x287
+		bool m_bClickedName;		// 0x288
+		bool m_bClickedPractice;	// 0x289
+		bool m_bShowedEditorGuide;	// 0x28a
+		bool m_bShowedRateDiffDialog;	// 0x28b
+		bool m_bShowedRateStarDialog;	// 0x28c
+		bool m_bShowedLowDetailDialog;	// 0x291
 		PAD(48);
 		int m_nBootups;
 		bool m_bHasRatedGame;

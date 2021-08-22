@@ -18,7 +18,7 @@ enum SpecialRewardItem
   kSpecialRewardItemCustomItem = 0x9,
 };  
   
- enum UnlockType
+enum UnlockType
 {
   kItemTypeCube = 0x1,
   kItemTypeCol1 = 0x2,
@@ -33,16 +33,15 @@ enum SpecialRewardItem
   kItemTypeDeath = 0xB,
   kItemTypeGJItem = 0xC,
 };
-
-  
+    
 class GJRewardObject : public cocos2d::CCObject
 {
-  SpecialRewardItem m_eSpecialRewardItem;
-  UnlockType m_eUnlockType;
-  int m_nItemID;
-  int m_nTotal;
-};
-
+  public:
+    SpecialRewardItem m_eSpecialRewardItem;
+    UnlockType m_eUnlockType;
+    int m_nItemID;
+    int m_nTotal;
+ };
 }
 
 #endif

@@ -88,6 +88,11 @@ namespace gd {
 				base + 0x224B0
 				)(this);
 		}
+		~FLAlertLayer() {
+			reinterpret_cast<void(__thiscall*)(FLAlertLayer*)>(
+				base + 0x225c0
+			)(this);
+		}
 
 		void onBtn1(cocos2d::CCObject* btn) {
 			return reinterpret_cast<void(__thiscall*)(FLAlertLayer*, cocos2d::CCObject*)>(

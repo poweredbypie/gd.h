@@ -192,11 +192,15 @@ class EditorUI : public cocos2d::CCLayer,
         EditButtonBar* m_pButtonBar; // 0x134
         PAD(0x4)
         cocos2d::CCArray* m_pUnknownArray; // 0x13c
-        PAD(0x28)
+        PAD(0x20)
+        int m_nRotationTouchID; // 0x15c
+        int m_nScaleTouchID; // 0x160
         int m_nTouchID; // 0x164
         cocos2d::CCLabelBMFont* m_pObjectInfoLabel; // 0x168
         GJRotationControl* m_pRotationControl; // 0x16c
-        PAD(0xc)
+        PAD(0x8)
+        bool m_bTouchDown; // 0x178
+        PAD(3)
         GJScaleControl* m_pScaleControl; // 0x17c
         cocos2d::CCDictionary* m_pUnknownDict; // 0x180
         EditButtonBar* m_pCreateButtonBar; // 0x184
@@ -497,6 +501,18 @@ class EditorUI : public cocos2d::CCLayer,
             reinterpret_cast<void(__thiscall*)(EditorUI*, bool)>(
                 base + 0x87180
             )(this, show);
+        }
+
+        void editObject(cocos2d::CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x8ca50
+            )(this, pSender);
+        }
+
+        void editGroup(cocos2d::CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x8d720
+            )(this, pSender);
         }
     };
 

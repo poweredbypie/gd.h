@@ -181,6 +181,33 @@ class CCMenuItemToggler;
 class Slider;
 class GameObject;
 
+enum EditCommand {
+    kEditCommandSmallLeft   = 1,
+    kEditCommandSmallRight  = 2,
+    kEditCommandSmallUp     = 3,
+    kEditCommandSmallDown   = 4,
+
+    kEditCommandLeft        = 5,
+    kEditCommandRight       = 6,
+    kEditCommandUp          = 7,
+    kEditCommandDown        = 8,
+
+    kEditCommandBigLeft     = 9,
+    kEditCommandBigRight    = 10,
+    kEditCommandBigUp       = 11,
+    kEditCommandBigDown     = 12,
+
+    kEditCommandTinyLeft    = 13,
+    kEditCommandTinyRight   = 14,
+    kEditCommandTinyUp      = 15,
+    kEditCommandTinyDown    = 16,
+
+    kEditCommandFlipX       = 17,
+    kEditCommandFlipY       = 18,
+    kEditCommandRotateCW    = 19,
+    kEditCommandRotateCCW   = 20,
+};
+
 class EditorUI : public cocos2d::CCLayer,
     public gd::FLAlertLayerProtocol,
     public gd::ColorSelectDelegate,
@@ -509,9 +536,45 @@ class EditorUI : public cocos2d::CCLayer,
             )(this, pSender);
         }
 
+        void editObject2(cocos2d::CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x8d1b0
+            )(this, pSender);
+        }
+
         void editGroup(cocos2d::CCObject* pSender) {
             reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
                 base + 0x8d720
+            )(this, pSender);
+        }
+
+        void moveObjectCall(EditCommand command) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, EditCommand)>(
+                base + 0x8db50
+            )(this, command);
+        }
+
+        void transformObjectCall(EditCommand command) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, EditCommand)>(
+                base + 0x8df10
+            )(this, command);
+        }
+
+        void onDeleteSelected(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x7bf50
+            )(this, pSender);
+        }
+
+        void undoLastAction(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x87070
+            )(this, pSender);
+        }
+
+        void redoLastAction(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x870f0
             )(this, pSender);
         }
     };

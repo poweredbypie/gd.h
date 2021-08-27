@@ -27,6 +27,9 @@ namespace gd {
 				)(fade1, fade2);
 		}
 		void setColor(cocos2d::ccColor3B color) { m_cColor = color; }
+		void followObject(cocos2d::CCNode* obj, bool unk) {
+			reinterpret_cast<void(__thiscall*)(CCCircleWave*, CCNode*, bool)>(base + 0x16f20)(this, obj, unk);
+		}
 	};
 	#pragma runtime_checks("s", restore)
 }

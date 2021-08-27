@@ -9,7 +9,7 @@ namespace gd {
 
 	#pragma runtime_checks("s", off)
 	class GJDropDownLayer : public cocos2d::CCLayerColor {
-	protected:
+	public:
 		cocos2d::CCPoint m_obEndPosition;
 		cocos2d::CCPoint m_obStartPosition;
 		cocos2d::CCMenu* m_pButtonMenu;

@@ -20,6 +20,18 @@ namespace gd {
 					base + 0x1E5570
 					)(this, callback, on, menu, caption, pos);
 		}
+
+		void musicSliderChanged(cocos2d::CCObject* pSender) {
+			reinterpret_cast<void(__thiscall*)(PauseLayer*, cocos2d::CCObject*)>(
+				base + 0x1e5ce0
+			)(this, pSender);
+		}
+
+		void sfxSliderChanged(cocos2d::CCObject* pSender) {
+			reinterpret_cast<void(__thiscall*)(PauseLayer*, cocos2d::CCObject*)>(
+				base + 0x1ddfa0
+			)(this, pSender);
+		}
 	};
 }
 

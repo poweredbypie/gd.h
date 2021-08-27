@@ -24,6 +24,12 @@ namespace gd {
 			__asm add esp, 0x20
 			return pRet;
 		}
+
+		void colorAllCharactersTo(cocos2d::ccColor3B color) {
+			reinterpret_cast<void(__thiscall*)(
+				TextArea*, cocos2d::ccColor3B
+			)>(base + 0x33830)(this, color);
+		}
 	};
 	#pragma runtime_checks("s", restore)
 }

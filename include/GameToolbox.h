@@ -34,7 +34,7 @@ namespace gd {
                 sIdk, bIdk, nTag, pToggleArray, sText, obPosition, obLabelOffset
             );
 
-            __asm add esp, 0x48
+            __asm add esp, 0x50
 
             return pRet;
         }

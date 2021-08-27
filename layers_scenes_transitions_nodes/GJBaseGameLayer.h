@@ -119,6 +119,17 @@ namespace gd {
 		cocos2d::CCLayer* getObjectLayer() { return m_pObjectLayer; }
 
 		cocos2d::CCArray* getAllObjects() { return this->m_pObjects; }
+
+		void pushButton(int uk, bool btn2) {
+			reinterpret_cast<void(__thiscall*)(GJBaseGameLayer*, int, bool)>(
+				base + 0x111500
+			)(this, uk, btn2);
+		}
+		void releaseButton(int uk, bool btn2) {
+			reinterpret_cast<void(__thiscall*)(GJBaseGameLayer*, int, bool)>(
+				base + 0x111660
+			)(this, uk, btn2);
+		}
 	};
 }
 

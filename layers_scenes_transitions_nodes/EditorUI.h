@@ -299,8 +299,8 @@ class EditorUI : public cocos2d::CCLayer,
         cocos2d::CCPoint m_obSwipeEnd;      // 0x29c
         PAD(0x20)
         GameObject* m_pSelectedObject;  // 0x2c4
-        PAD(0x30)
-        int m_nSelectedTab; // 0x2f4
+        PAD(0x28)
+        int m_nSelectedTab; // 0x2f0
 
         static constexpr const int Mode_Create = 2;
         static constexpr const int Mode_Delete = 1;
@@ -575,6 +575,90 @@ class EditorUI : public cocos2d::CCLayer,
         void redoLastAction(CCObject* pSender) {
             reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
                 base + 0x870f0
+            )(this, pSender);
+        }
+
+        void onCopy(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x87fb0
+            )(this, pSender);
+        }
+
+        void onPaste(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x880c0
+            )(this, pSender);
+        }
+
+        void onDuplicate(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x87d20
+            )(this, pSender);
+        }
+
+        void toggleEnableRotate(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x860d0
+            )(this, pSender);
+        }
+
+        void toggleFreeMove(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x85eb0
+            )(this, pSender);
+        }
+
+        void toggleSwipe(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x85dd0
+            )(this, pSender);
+        }
+
+        void toggleSnap(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x85fa0
+            )(this, pSender);
+        }
+
+        void onPlayback(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x87340
+            )(this, pSender);
+        }
+
+        void onPlaytest(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x87600
+            )(this, pSender);
+        }
+
+        void onStopPlaytest(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x876e0
+            )(this, pSender);
+        }
+
+        void onGroupUp(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x8d780
+            )(this, pSender);
+        }
+
+        void onGroupDown(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x8d7e0
+            )(this, pSender);
+        }
+
+        void selectBuildTab(int tab) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, int)>(
+                base + 0x88810
+            )(this, tab);
+        }
+
+        void onPause(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x78020
             )(this, pSender);
         }
     };

@@ -22,8 +22,27 @@ namespace gd {
 			}
 	};
 	class GJGameLevel;
-	// class UILayer;
-	using UILayer = cocos2d::CCLayerColor;
+	class UILayer : public cocos2d::CCLayerColor {
+		public:
+			void onCheck(CCObject* pSender) {
+				reinterpret_cast<void(__thiscall*)(UILayer*, CCObject*)>(
+					base + 0x25fb60
+				)(this, pSender);
+			}
+
+			void onDeleteCheck(CCObject* pSender) {
+				reinterpret_cast<void(__thiscall*)(UILayer*, CCObject*)>(
+					base + 0x25fc90
+				)(this, pSender);
+			}
+
+			void onPause(CCObject* pSender) {
+				reinterpret_cast<void(__thiscall*)(UILayer*, CCObject*)>(
+					base + 0x25fad0
+				)(this, pSender);
+			}
+	};
+
 	using StartPosObject = gd::GameObject;
 	class CheckpointObject;
 

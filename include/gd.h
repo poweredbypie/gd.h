@@ -99,6 +99,7 @@ enum FMOD_RESULT;
 #include "layers_scenes_transitions_nodes/SetupPulsePopup.h"
 #include "layers_scenes_transitions_nodes/ColorSelectPopup.h"
 #include "layers_scenes_transitions_nodes/MoreOptionsLayer.h"
+#include "layers_scenes_transitions_nodes/KeybindingsLayer.h"
 
 #include "audio_nodes/FMODAudioEngine.h"
 #include "audio_nodes/FMODSound.h"

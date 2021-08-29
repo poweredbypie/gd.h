@@ -32,7 +32,7 @@ namespace gd {
 	};
 
 	class BoomListView : public cocos2d::CCLayer, public TableViewDelegate, public TableViewDataSource {
-	protected:
+	public:
 		TableView* m_pTableView;		// 0x124
 		cocos2d::CCArray* m_pEntries;	// 0x128
 		BoomListType m_eType; 			// 0x12c

@@ -355,6 +355,12 @@ class EditorUI : public cocos2d::CCLayer,
             )(this);
         }
 
+        void selectAllWithDirection(bool left) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, bool)>(
+                base + 0x86d80
+            )(this, left);
+        }
+
         cocos2d::CCArray* getSelectedObjects() {
             return reinterpret_cast<cocos2d::CCArray*(__thiscall*)(EditorUI*)>(
                 base + 0x86900
@@ -469,13 +475,17 @@ class EditorUI : public cocos2d::CCLayer,
 
         // i cant get these to not crash
 
-        // void zoomIn() {
-        //     reinterpret_cast<void(__thiscall*)(EditorUI*)>(base + 0x877c0)(this);
-        // }
+        void zoomIn(cocos2d::CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x877c0
+            )(this, pSender);
+        }
 
-        // void zoomOut() {
-        //     reinterpret_cast<void(__thiscall*)(EditorUI*)>(base + 0x87830)(this);
-        // }
+        void zoomOut(cocos2d::CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x87830
+            )(this, pSender);
+        }
 
         void updateZoom(float amt) {
             __asm movss xmm1, amt

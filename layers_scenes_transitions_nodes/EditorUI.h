@@ -167,6 +167,12 @@ class EditorPauseLayer : public gd::CCBlockLayer {
             )(this, pSender);
         }
 
+        void uncheckAllPortals(cocos2d::CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorPauseLayer*, cocos2d::CCObject*)>(
+                base + 0x74760
+            )(this, pSender);
+        }
+
         void saveLevel() {
             reinterpret_cast<void(__fastcall*)(EditorPauseLayer*)>(
                 base + 0x75010
@@ -206,6 +212,10 @@ enum EditCommand {
     kEditCommandFlipY       = 18,
     kEditCommandRotateCW    = 19,
     kEditCommandRotateCCW   = 20,
+    kEditCommandRotateCW45  = 21,
+    kEditCommandRotateCCW45 = 22,
+    kEditCommandRotateFree  = 23,
+    kEditCommandRotateSnap  = 24,
 };
 
 class EditorUI : public cocos2d::CCLayer,
@@ -673,6 +683,97 @@ class EditorUI : public cocos2d::CCLayer,
         void onPause(CCObject* pSender) {
             reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
                 base + 0x78020
+            )(this, pSender);
+        }
+    
+        void onSettings(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x77fe0
+            )(this, pSender);
+        }
+    
+        void activateRotationControl(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x8fe70
+            )(this, pSender);
+        }
+    
+        void activateScaleControl(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x889b0
+            )(this, pSender);
+        }
+
+        // aka Build Helper
+        void dynamicGroupUpdate(bool idk) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, bool)>(
+                base + 0x8ad10
+            )(this, idk);
+        }
+
+        void createRockOutline() {
+            reinterpret_cast<void(__fastcall*)(EditorUI*)>(
+                base + 0x89c10
+            )(this);
+        }
+
+        void createRockEdges() {
+            reinterpret_cast<void(__fastcall*)(EditorUI*)>(
+                base + 0x88ec0
+            )(this);
+        }
+
+        void createRockBase() {
+            reinterpret_cast<void(__fastcall*)(EditorUI*)>(
+                base + 0x8a2c0
+            )(this);
+        }
+    
+        void onCopyState(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x88490
+            )(this, pSender);
+        }
+    
+        void onPasteColor(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x88580
+            )(this, pSender);
+        }
+    
+        void onPasteState(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x884c0
+            )(this, pSender);
+        }
+    
+        void onGroupSticky(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x87a80
+            )(this, pSender);
+        }
+    
+        void onUngroupSticky(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x87ac0
+            )(this, pSender);
+        }
+   
+        void onGoToLayer(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x886b0
+            )(this, pSender);
+        }
+
+        void onGoToBaseLayer(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x88790
+            )(this, pSender);
+        }
+    
+        void editColor(CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x8d3c0
             )(this, pSender);
         }
     };

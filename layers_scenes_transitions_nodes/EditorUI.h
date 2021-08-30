@@ -218,7 +218,7 @@ class EditorUI : public cocos2d::CCLayer,
     public:
         EditButtonBar* m_pButtonBar; // 0x134
         PAD(0x4)
-        cocos2d::CCArray* m_pUnknownArray; // 0x13c
+        cocos2d::CCArray* m_pHideableUIElementArray; // 0x13c
         PAD(0xc)
         bool m_bMoveModifier; // 0x14c
         PAD(19)

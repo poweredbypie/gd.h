@@ -71,7 +71,7 @@ namespace gd {
 			PAD(2)
 			cocos2d::CCLayerColor* m_pVerticalScrollbar;	// 0x13c
 			cocos2d::CCLayerColor* m_pHorizontalScrollbar;	// 0x140
-			PAD(4)
+			CCScrollLayerExtDelegate* m_pDelete;	// 0x144
 			CCContentLayer* m_pContentLayer;	// 0x148
 			bool m_bCutContent; // 0x14c
 			bool m_bVScrollbarVisible;	// 0x14d
@@ -89,6 +89,12 @@ namespace gd {
 				reinterpret_cast<void(__thiscall*)(CCScrollLayerExt*, cocos2d::CCRect)>(
 					base + 0x1B020
 				)(this, rect);
+			}
+
+			virtual void registerWithTouchDispatcher() override {
+				return reinterpret_cast<void(__thiscall*)(CCScrollLayerExt*)>(
+					base + 0x1b980
+				)(this);
 			}
 
 			//own vtable
@@ -140,6 +146,16 @@ namespace gd {
 				)(this);
 			}
 
+			float getMinY() {
+				return this->getContentSize().height -
+					this->m_pContentLayer->getContentSize().height -
+					this->m_fScrollLimitTop;
+			}
+
+			float getMaxY() {
+				return this->m_fScrollLimitBottom;
+			}
+
 			void addItem(CCNode* cell, bool addToTop = false) {
 				float height = 0.0f;
 				CCObject* obj;
@@ -167,17 +183,6 @@ namespace gd {
 					cell->getScaledContentSize().width, height
 				});
 			}
-	};
-
-	class CCScrollLayerExtDelegate {
-		public:
-			//lol nice typo rob
-			virtual void scrllViewWillBeginDecelerating(CCScrollLayerExt*) {}
-			virtual void scrollViewDidEndDecelerating(CCScrollLayerExt*) {}
-			virtual void scrollViewTouchMoving(CCScrollLayerExt*) {}
-			virtual void scrollViewDidEndMoving(CCScrollLayerExt*) {}
-			virtual void scrollViewTouchBegin(CCScrollLayerExt*) {}
-			virtual void scrollViewTouchEnd(CCScrollLayerExt*) {}
 	};
 }
 

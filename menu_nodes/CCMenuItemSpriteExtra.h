@@ -11,14 +11,18 @@ namespace gd {
 
 	#pragma runtime_checks("s", off)
 	class CCMenuItemSpriteExtra : public cocos2d::CCMenuItemSprite {
-	protected:
+	public:
 		float m_fScaleMultiplier;	// 0x118
 		float m_fBaseScale;			// 0x11c
-		PAD(0x3c)
-		cocos2d::CCPoint m_obDestPosition;
-		cocos2d::CCPoint m_obOffset;
-		MenuAnimationType m_nAnimationType = kMenuAnimationTypeScale;
-		cocos2d::CCPoint m_obStartPosition;
+		bool m_bAnimationEnabled;	// 0x120
+		bool m_bColorEnabled;		// 0x121
+		PAD(2)
+		PAD(52)
+		float m_fColorDip;			// 0x158
+		cocos2d::CCPoint m_obDestPosition;	// 0x15c
+		cocos2d::CCPoint m_obOffset;	// 0x164
+		MenuAnimationType m_nAnimationType = kMenuAnimationTypeScale;	// 0x16c
+		cocos2d::CCPoint m_obStartPosition;	// 0x170
 		PAD(0xc)
 
 		bool init(cocos2d::CCNode* spr) {

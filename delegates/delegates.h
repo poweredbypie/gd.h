@@ -16,6 +16,7 @@ namespace gd {
     class ListButtonBar;
     class DialogLayer;
     class CCCircleWave;
+    class CCScrollLayerExt;
 
     enum GJSongError {
         kGJSongErrorUnknown_not_REd = 0,
@@ -232,6 +233,21 @@ namespace gd {
     struct GJAccountSettingsDelegate {
         virtual void updateSettingsFailed(void);
         virtual void updateSettingsFinished(void);
+    };
+
+	class CCScrollLayerExtDelegate {
+		public:
+			//lol nice typo rob
+			virtual void scrllViewWillBeginDecelerating(CCScrollLayerExt*) {}
+			virtual void scrollViewDidEndDecelerating(CCScrollLayerExt*) {}
+			virtual void scrollViewTouchMoving(CCScrollLayerExt*) {}
+			virtual void scrollViewDidEndMoving(CCScrollLayerExt*) {}
+			virtual void scrollViewTouchBegin(CCScrollLayerExt*) {}
+			virtual void scrollViewTouchEnd(CCScrollLayerExt*) {}
+	};
+
+    struct DynamicScrollDelegate {
+        void updatePageWithObject(cocos2d::CCObject*, cocos2d::CCObject*);
     };
 }
 

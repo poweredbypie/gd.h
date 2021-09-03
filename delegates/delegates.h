@@ -245,6 +245,10 @@ namespace gd {
 			virtual void scrollViewTouchBegin(CCScrollLayerExt*) {}
 			virtual void scrollViewTouchEnd(CCScrollLayerExt*) {}
 	};
+
+    struct DynamicScrollDelegate {
+        void updatePageWithObject(cocos2d::CCObject*, cocos2d::CCObject*);
+    };
 }
 
 #endif

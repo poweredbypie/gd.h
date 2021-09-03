@@ -11,8 +11,21 @@ class ExtendedLayer : public cocos2d::CCLayer {
 
 class BoomScrollLayer : public cocos2d::CCLayer {
     public:
-        PAD(68)
+        cocos2d::CCArray* m_pDots;  // 0x11c
+        PAD(64)
         ExtendedLayer* m_pLayer;    // 0x160
+
+        void instantMoveToPage(int page) {
+            reinterpret_cast<void(__thiscall*)(BoomScrollLayer*, int)>(
+                base + 0x12330
+            )(this, page);
+        }
+
+        void moveToPage(int page) {
+            reinterpret_cast<void(__thiscall*)(BoomScrollLayer*, int)>(
+                base + 0x12400
+            )(this, page);
+        }
 };
 
 class GameManager;

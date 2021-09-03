@@ -789,6 +789,12 @@ class EditorUI : public cocos2d::CCLayer,
                 base + 0x8d3c0
             )(this, pSender);
         }
+    
+        void alignObjects(cocos2d::CCArray* objs, bool alignY) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCArray*, bool)>(
+                base + 0x8f320
+            )(this, objs, alignY);
+        }
     };
 
 }

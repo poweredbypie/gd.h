@@ -11,6 +11,9 @@ namespace gd {
     class CustomSongWidget : public cocos2d::CCNode, MusicDownloadDelegate, FLAlertLayerProtocol {
     public:
         SongInfoObject* m_songInfo;
+        PAD(0x1C);
+        CCMenuItemSpriteExtra *m_pDownloadBtn;
+        PAD(0x30);
 
         void updateSongObject(SongInfoObject* song) {
             reinterpret_cast<void(__thiscall*)(CustomSongWidget*, SongInfoObject*)>(base + 0x69280)(this, song);

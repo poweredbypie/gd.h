@@ -242,9 +242,9 @@ class EditorUI : public cocos2d::CCLayer,
         EditButtonBar* m_pButtonBar; // 0x134
         PAD(0x4)
         cocos2d::CCArray* m_pHideableUIElementArray; // 0x13c
-        PAD(0xc)
-        bool m_bMoveModifier; // 0x14c
-        PAD(19)
+        PAD(28)
+        bool m_bMoveModifier; // 0x158
+        PAD(3)
         int m_nRotationTouchID; // 0x15c
         int m_nScaleTouchID; // 0x160
         int m_nTouchID; // 0x164
@@ -326,8 +326,8 @@ class EditorUI : public cocos2d::CCLayer,
         GameObject* m_pSelectedObject;  // 0x2c4
         PAD(0x28)
         int m_nSelectedTab; // 0x2f0
-        PAD(0x18)
-        bool m_bSpaceKeyPressed; // 0x30c
+        PAD(36)
+        bool m_bSpaceKeyPressed; // 0x318
 
         static constexpr const int Mode_Create = 2;
         static constexpr const int Mode_Delete = 1;

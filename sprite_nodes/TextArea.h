@@ -10,9 +10,9 @@ namespace gd {
 		PAD(0x58);
 
 	public:
-		static TextArea* create(const char* font, bool unknown,
+		static TextArea* create(const char* font, bool disableColor,
 			std::string caption, float scale, float width, float height,
-			cocos2d::CCPoint const& unkPos) {
+			cocos2d::CCPoint const& anchorPos) {
 			__asm {
 				movss xmm1, scale
 				movss xmm2, width
@@ -21,7 +21,7 @@ namespace gd {
 			auto pRet = reinterpret_cast<TextArea* (__fastcall*)(const char*,
 				bool, std::string, cocos2d::CCPoint)>(
 					base + 0x33270
-					)(font, unknown, caption, unkPos);
+					)(font, disableColor, caption, anchorPos);
 			__asm add esp, 0x20
 			return pRet;
 		}

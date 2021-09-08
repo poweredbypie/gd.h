@@ -61,6 +61,10 @@ namespace gd {
 				base + 0x10E70
 			)(reinterpret_cast<char*>(this) + 0x120, path, view);
 		}
+
+		virtual ~BoomListView() {
+			CC_SAFE_RELEASE(m_pEntries);
+		}
 		
 		bool init(cocos2d::CCArray* entries, BoomListType btype, float width, float height) {
 			__asm {

@@ -110,6 +110,7 @@ enum FMOD_RESULT;
 #include "level_nodes/LevelSettingsObject.h"
 #include "level_nodes/SongInfoObject.h"
 #include "level_nodes/ColorAction.h"
+#include "level_nodes/GJMapPack.h"
 
 #include "sprite_nodes/CCSpritePlus.h"
 #include "sprite_nodes/ColorActionSprite.h"

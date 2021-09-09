@@ -63,6 +63,7 @@ namespace gd {
 		}
 
 		virtual ~BoomListView() {
+			std::cout << "~BoomListView\n";
 			CC_SAFE_RELEASE(m_pEntries);
 		}
 		

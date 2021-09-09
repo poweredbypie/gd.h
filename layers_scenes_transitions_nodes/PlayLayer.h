@@ -24,6 +24,9 @@ namespace gd {
 	class GJGameLevel;
 	class UILayer : public cocos2d::CCLayerColor {
 		public:
+			PAD(8)
+			cocos2d::CCMenu* m_pCheckPointMenu;		// 0x1a0
+
 			void onCheck(CCObject* pSender) {
 				reinterpret_cast<void(__thiscall*)(UILayer*, CCObject*)>(
 					base + 0x25fb60

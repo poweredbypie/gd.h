@@ -4,7 +4,7 @@ Windows headers for Geometry Dash. Originally copied from pie's textureldr.
 
 # Usage
 
- * These require cocos2d-x headers. You can use [CappucinoSDK](https://github.com/andrenih/cappuccinoSDK/), the cocos2d-x headers from [textureldr](https://github.com/poweredbypie/textureldr), or your own.
+ * This fork is dependant on [cocos-headers](https://github.com/HJfod/cocos-headers). CappuccinoSDK is **too outdated & incomplete** to be compatible with this fork of GD.h.
 
  * Certain compile settings can and will mess up some of these headers. **Recommended compile settings are:** 
     - 32-bit

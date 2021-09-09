@@ -14,11 +14,11 @@ namespace gd {
 
 	class PlayerObject : public GameObject, public AnimatedSpriteDelegate {
 	public:
-		PAD(20);
+		PAD(24);
 		bool unk480;
 		cocos2d::CCNode* unk484;
-		cocos2d::CCDictionary* unk488;
-		cocos2d::CCDictionary* unk48C;
+		cocos2d::CCDictionary* m_pCollisionLog; // 0x488
+		cocos2d::CCDictionary* m_pCollisionLog1; // 0x48C
 		PAD(32);
 		bool unk4B0;
 		cocos2d::CCSprite* unk4B4;
@@ -29,15 +29,15 @@ namespace gd {
 		bool m_isHidden; // 0x4DD
 		int m_hasGhostTrail; // 0x4E0
 		GhostTrailEffect* m_ghostTrail; // 0x4E4
-		cocos2d::CCSprite* unk4E8;
-		cocos2d::CCSprite* unk4EC;
-		cocos2d::CCSprite* unk4F0;
-		cocos2d::CCSprite* unk4F4;
-		cocos2d::CCSprite* unk4F8;
-		cocos2d::CCSprite* unk4FC;
+		cocos2d::CCSprite* m_pIconSprite;
+		cocos2d::CCSprite* m_pIconSpriteSecondary;
+		cocos2d::CCSprite* m_pIconSpriteWhitener;
+		cocos2d::CCSprite* m_pIconGlow;
+		cocos2d::CCSprite* m_pVehicleSprite;
+		cocos2d::CCSprite* m_pVehicleSpriteSecondary;
 		cocos2d::CCSprite* unk500;
-		cocos2d::CCSprite* unk504;
-		cocos2d::CCSprite* unk508;
+		cocos2d::CCSprite* m_pVehicleSpriteWhitener;
+		cocos2d::CCSprite* m_pVehicleGlow;
 		cocos2d::CCSprite* unk50C;
 		cocos2d::CCMotionStreak* m_regularTrail; // 0x510
 		HardStreak* m_waveTrail; // 0x514
@@ -61,8 +61,8 @@ namespace gd {
 		PAD(20);
 		GameObject* unk59C;
 		PAD(8);
-		GJRobotSprite* unk5A8;
-		GJSpiderSprite* unk5AC;
+		GJRobotSprite* m_pRobot; //0x5A8
+		GJSpiderSprite* m_pSpider; //0x5AC
 		bool unk5B0;
 		cocos2d::CCParticleSystemQuad* unk5B4;
 		cocos2d::CCParticleSystemQuad* unk5B8;

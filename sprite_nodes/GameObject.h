@@ -36,6 +36,7 @@ namespace gd {
 		kGameObjectTypeWavePortal = 26,
 		kGameObjectTypeRobotPortal = 27,
 		kGameObjectTypeTeleportPortal = 28,
+		kGameObjectTypeGreenRing = 29,
 		kGameObjectTypeCollectible = 30,
 		kGameObjectTypeUserCoin = 31,
 		kGameObjectTypeDropRing = 32,

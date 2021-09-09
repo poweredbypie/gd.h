@@ -5,7 +5,7 @@
 
 namespace gd {
     
-class GJRewardObject : public cocos2d::CCObject
+class DialogObject : public cocos2d::CCObject
 {
   public:
     std::string m_sText;

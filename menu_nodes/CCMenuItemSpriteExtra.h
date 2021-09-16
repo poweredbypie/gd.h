@@ -35,7 +35,7 @@ namespace gd {
 			);
 		}
 
-		virtual CCMenuItemSpriteExtra* release(bool rel) {
+		CCMenuItemSpriteExtra* destructor(bool rel) {
 			return reinterpret_cast<CCMenuItemSpriteExtra*(__thiscall*)(
 				CCMenuItemSpriteExtra*, bool
 			)>(

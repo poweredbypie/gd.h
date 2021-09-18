@@ -81,6 +81,12 @@ class EditButtonBar : public cocos2d::CCNode {
             return ret;
         }
 
+        ~EditButtonBar() {
+            // free up memory
+            CC_SAFE_RELEASE(this->m_pPagesArray);
+            CC_SAFE_RELEASE(this->m_pButtonArray);
+        }
+
         void loadFromItems(cocos2d::CCArray* buttons, int rowCount, int columnCount, bool idk) {
             reinterpret_cast<void(__thiscall*)(
                 EditButtonBar*, cocos2d::CCArray*, int, int, bool
@@ -229,6 +235,8 @@ enum EditCommand {
     kEditCommandRotateCCW45 = 22,
     kEditCommandRotateFree  = 23,
     kEditCommandRotateSnap  = 24,
+    
+    kEditCommandScale       = 25,
 };
 
 class EditorUI : public cocos2d::CCLayer,
@@ -254,7 +262,7 @@ class EditorUI : public cocos2d::CCLayer,
         bool m_bTouchDown; // 0x178
         PAD(3)
         GJScaleControl* m_pScaleControl; // 0x17c
-        cocos2d::CCDictionary* m_pUnknownDict; // 0x180
+        cocos2d::CCDictionary* m_pEditButtonDict; // 0x180
         EditButtonBar* m_pCreateButtonBar; // 0x184
         EditButtonBar* m_pEditButtonBar; // 0x188
         Slider* m_pPositionSlider; // 0x18c
@@ -324,7 +332,9 @@ class EditorUI : public cocos2d::CCLayer,
         cocos2d::CCPoint m_obSwipeEnd;      // 0x29c
         PAD(0x20)
         GameObject* m_pSelectedObject;  // 0x2c4
-        PAD(0x28)
+        PAD(8)
+        std::string m_sClipboard;   // 0x2d0
+        PAD(8)
         int m_nSelectedTab; // 0x2f0
         PAD(36)
         bool m_bSpaceKeyPressed; // 0x318
@@ -585,10 +595,22 @@ class EditorUI : public cocos2d::CCLayer,
             )(this, pSender);
         }
 
+        void moveObjectCall(cocos2d::CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x8db30
+            )(this, pSender);
+        }
+
         void moveObjectCall(EditCommand command) {
             reinterpret_cast<void(__thiscall*)(EditorUI*, EditCommand)>(
                 base + 0x8db50
             )(this, command);
+        }
+
+        void transformObjectCall(cocos2d::CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorUI*, cocos2d::CCObject*)>(
+                base + 0x8def0
+            )(this, pSender);
         }
 
         void transformObjectCall(EditCommand command) {

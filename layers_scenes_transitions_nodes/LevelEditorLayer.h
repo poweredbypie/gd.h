@@ -10,6 +10,14 @@ namespace gd {
     class GameObject;
     class GJGroundLayer;
 
+    GDH_ADD(
+    enum PlaybackMode {
+        kPlaybackModeNot        = 0,
+        kPlaybackModePlaying    = 1,
+        kPlaybackModePaused     = 2,
+    };
+    );
+
     class LevelEditorLayer : public GJBaseGameLayer {
     public:
         PAD(4)
@@ -36,8 +44,8 @@ namespace gd {
         cocos2d::CCArray* m_pUndoObjects;   // 0x388
         cocos2d::CCArray* m_pSomeArray; // 0x38c
         PAD(0x1c)
-        bool m_bIsPlaybackMode;
-        PAD(0x17)
+        PlaybackMode m_ePlaybackMode;
+        PAD(0x14)
         GJGroundLayer* m_pGroundLayer;  // 0x3c4
 
     public:

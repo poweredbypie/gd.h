@@ -141,8 +141,8 @@ namespace gd {
 		GJSpriteColor* m_pBaseColor; //0x3A8
 		GJSpriteColor* m_pDetailColor; //0x3AC
 		PAD(4);
-		int m_nDefaultZLayer; // 0x03B4
-		int m_nZLayer; //0x3B8
+		ZLayer m_nDefaultZLayer; // 0x03B4
+		ZLayer m_nZLayer; //0x3B8
 		int m_nGameZOrder; //0x3BC
 		std::string m_unk3C0;
 		bool m_bShowGamemodeBorders;
@@ -150,8 +150,9 @@ namespace gd {
 		bool m_bIsSelected; //0x3DA
 		PAD(1);
 		int m_nGlobalClickCounter; //0x3DC i have no idea what this is for
-		PAD(12);
-		float m_fMultiScaleMultiplier;
+		PAD(8)
+		bool m_bUnknownLayerRelated;	// 0x3e8
+		float m_fMultiScaleMultiplier;	// 0x3ec
 		bool m_bIsGroupParent; //0x3F0
 		PAD(3);
 		short* m_pGroups; //0x3F4

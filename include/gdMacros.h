@@ -15,6 +15,18 @@
 */
 #define PAD(size) char __STR_CAT__(__, __STR_CAT__(pad, __LINE__))[size] = {};
 
+/** GDH_ADD
+* This class/enum/type does not exist
+* in GD itself, however it has been
+* added for better code readability
+* & maintainability.
+*
+* Variadic arguments used due to
+* enums otherwise not expanding
+* correctly.
+*/
+#define GDH_ADD(...) __VA_ARGS__
+
 /** __WARN_DEBUG__
 * Set this macro to 0 to disable warnings when compiling in debug.
 */

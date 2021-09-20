@@ -48,33 +48,28 @@ namespace gd {
     class EffectGameObject : public GameObject {
         public:
             cocos2d::ccColor3B m_colColor; // 0x468
-            PAD(1)
             float m_fDuration; // 0x46c - Also Move Time, Duration etc.
             float m_fOpacity; // 0x470
             int m_nTargetGroupID; // 0x0474
             int m_nCenterGroupID; // 0x0478
             float m_fShakeStrength; //0x047C
             float m_fShakeInterval; //0x0480
-            PAD(1)
+	        bool m_bTintGround;
             bool m_bPlayerColor1; //0x0485
             bool m_bPlayerColor2; //0x0486
             bool m_bBlending; //0x0487
-            float m_fMoveX; //0x0488 - Multiplied by 3
-            float m_fMoveY; //0x048C - Multiplied by 3
+	        cocos2d::CCPoint m_obMove; // multiplied by 3
             EasingType m_nEasingType; //0x0490
             float m_fEasingRate; //0x0494
             bool m_bLockToPlayerX; //0x0498
             bool m_bLockToPlayerY; //0x0499
             bool m_bUseTarget; //0x049A
-            PAD(1)
             MoveTargetType m_nMoveTargetType; //0x049C
             int m_nRotateDegrees; //0x04A0
             int m_nTimes360; //0x04A4
             bool m_bLockObjectRotation; //0x04A8
-            PAD(3)
-            float m_fFollowXMod; //0x04AC
-            float m_fFollowYMod; //0x04B0
-            PAD(4)
+	        cocos2d::CCPoint m_obFollowMod
+	        bool UndocuementedLevelProperty74;
             float m_fFollowYSpeed; //0x04B8
             float m_fFollowYDelay; //0x04BC
             int m_nFollowYOffset; //0x04C0 - Multiplied by 3
@@ -83,15 +78,12 @@ namespace gd {
             float m_fHoldTime; //0x04CC
             float m_fFadeOutTime; //0x04D0
             bool m_bPulseHSVMode; //0x04D4
-            PAD(3)
             bool m_bPulseGroupMode; //0x04D8
-            PAD(3)
             float m_fColorHue;
             float m_fColorSaturation;
             float m_fColorBrightness;
             bool m_bAbsoluteSaturation;
             bool m_bAbsoluteBrightness;
-            PAD(2)
             int m_nCopyColorID; //0x04EC
             bool m_bCopyOpacity; //0x04F0
             bool m_bPulseMainOnly; //0x04F1
@@ -99,27 +91,23 @@ namespace gd {
             bool m_bPulseExclusive; //0x04F3
             bool m_bActivateGroup; //0x04F4
             bool m_bTouchHoldMode; //0x04F5
-            PAD(2)
             TouchToggleMode m_nTouchToggleMode; //0x04F8
             bool m_bTouchDualMode; //0x04FC
-            PAD(3)
             int m_nAnimationID; //0x0500
             float m_fSpawnDelay; //0x0504
-            PAD(8)
+	        cocos2d::CCPoint m_obSpawnPosition;
             bool m_bMultiTrigger; //0x0510
             bool m_bEditorDisabled; //0x0511
-            PAD(2)
             int m_nTargetCount; //0x0514
-            PAD(4)
+	        bool m_bSubtractCount;
             ComparisonType m_nComparisonType; //0x051C
             bool m_bMultiActivate; //0x0520
             bool m_bTriggerOnExit; //0x0521
-            PAD(2)
             int m_nBlockBID; //0x0524
             bool m_bDynamicBlock; //0x0528
-            PAD(3)
             int m_nTargetItemID; //0x052C
-            PAD(40)
+        	int m_ePickupMode;
+            PAD(36)
 
             static EffectGameObject* create(const char* sprName) {
                 return reinterpret_cast<EffectGameObject*(__fastcall*)(const char*)>(

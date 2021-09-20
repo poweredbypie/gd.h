@@ -68,8 +68,8 @@ namespace gd {
             int m_nRotateDegrees; //0x04A0
             int m_nTimes360; //0x04A4
             bool m_bLockObjectRotation; //0x04A8
-	        cocos2d::CCPoint m_obFollowMod
-	        bool UndocuementedLevelProperty74;
+	        cocos2d::CCPoint m_obFollowMod; // 0x04AC
+	        bool UndocuementedLevelProperty74;  // 0x04B4
             float m_fFollowYSpeed; //0x04B8
             float m_fFollowYDelay; //0x04BC
             int m_nFollowYOffset; //0x04C0 - Multiplied by 3

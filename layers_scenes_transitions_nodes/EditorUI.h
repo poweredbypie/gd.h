@@ -35,9 +35,9 @@ class EditButtonBar : public cocos2d::CCNode {
         cocos2d::CCPoint m_obPosition;
         int m_nUnknown;
         bool m_bUnknown;
-        cocos2d::CCArray* m_pButtonArray;
-        BoomScrollLayer* m_pScrollLayer;
-        cocos2d::CCArray* m_pPagesArray;
+        cocos2d::CCArray* m_pButtonArray = nullptr;
+        BoomScrollLayer* m_pScrollLayer = nullptr;
+        cocos2d::CCArray* m_pPagesArray = nullptr;
 
         virtual EditButtonBar* release(bool rel) {
             return reinterpret_cast<EditButtonBar*(__thiscall*)(

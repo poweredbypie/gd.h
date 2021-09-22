@@ -9,6 +9,7 @@ namespace gd {
     class EditorUI;
     class GameObject;
     class GJGroundLayer;
+    class DrawGridLayer;
 
     GDH_ADD(
     enum PlaybackMode {
@@ -43,8 +44,10 @@ namespace gd {
         PAD(4)
         cocos2d::CCArray* m_pUndoObjects;   // 0x388
         cocos2d::CCArray* m_pSomeArray; // 0x38c
-        PAD(0x1c)
-        PlaybackMode m_ePlaybackMode;
+        PAD(0x14)
+        DrawGridLayer* m_pDrawGridLayer;    // 0x3a4
+        PAD(4)
+        PlaybackMode m_ePlaybackMode;   // 0x3a8
         PAD(0x14)
         GJGroundLayer* m_pGroundLayer;  // 0x3c4
 

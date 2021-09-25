@@ -108,6 +108,20 @@ namespace gd {
             return reinterpret_cast<GameObject*(__thiscall*)(LevelEditorLayer*, std::string)>(base + 0x160c80)(this, str);
         }
 
+        GameObject* objectAtPosition(cocos2d::CCPoint const& pos) {
+            return reinterpret_cast<GameObject*(__thiscall*)(
+                LevelEditorLayer*, cocos2d::CCPoint
+            )>(base + 0x161300)(this, pos);
+        }
+
+        cocos2d::CCRect getObjectRect(GameObject* obj, bool unk) {
+            cocos2d::CCRect res;
+            reinterpret_cast<cocos2d::CCRect*(__thiscall*)(
+                LevelEditorLayer*, cocos2d::CCRect*, GameObject*, bool
+            )>(base + 0x1616b0)(this, &res, obj, unk);
+            return res;
+        }
+
         // yes it's misspelled in GD aswell
         void pasteAtributeState(GameObject* obj, cocos2d::CCArray* objs) {
             reinterpret_cast<void(__thiscall*)(LevelEditorLayer*, GameObject*, cocos2d::CCArray*)>(

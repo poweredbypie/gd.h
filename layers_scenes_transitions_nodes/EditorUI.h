@@ -258,7 +258,7 @@ class EditorUI : public cocos2d::CCLayer,
         int m_nTouchID; // 0x164
         cocos2d::CCLabelBMFont* m_pObjectInfoLabel; // 0x168
         GJRotationControl* m_pRotationControl; // 0x16c
-        PAD(0x8)
+        cocos2d::CCPoint m_obScalePos;  // 0x170
         bool m_bTouchDown; // 0x178
         PAD(3)
         GJScaleControl* m_pScaleControl; // 0x17c
@@ -344,6 +344,14 @@ class EditorUI : public cocos2d::CCLayer,
         static constexpr const int Mode_Edit = 3;
     
     public:
+        GDH_ADD(
+            static EditorUI* get() {
+                auto lel = LevelEditorLayer::get();
+                if (!lel) return nullptr;
+                return lel->m_pEditorUI;
+            }
+        );
+
         cocos2d::CCArray* pasteObjects(std::string const& _str) {
             auto ret = reinterpret_cast<cocos2d::CCArray*(__thiscall*)(
                 EditorUI*, std::string
@@ -478,6 +486,14 @@ class EditorUI : public cocos2d::CCLayer,
             return res;
         }
 
+        cocos2d::CCPoint offsetForKey(int objID) {
+            cocos2d::CCPoint res;
+            reinterpret_cast<cocos2d::CCPoint*(__thiscall*)(
+                cocos2d::CCPoint*, int
+            )>(base + 0x92310)(&res, objID - 9u);
+            return res;
+        }
+
         void updateButtons() {
             reinterpret_cast<void(__fastcall*)(
                 EditorUI*
@@ -529,6 +545,13 @@ class EditorUI : public cocos2d::CCLayer,
             reinterpret_cast<void(__fastcall*)(EditorUI*)>(
                 base + 0x78f10
             )(this);
+        }
+
+        void rotateObjects(cocos2d::CCArray* objects, float angle, cocos2d::CCPoint center) {
+            __asm movss xmm2, angle;
+            reinterpret_cast<void(__thiscall*)(
+                EditorUI*, cocos2d::CCArray*, cocos2d::CCPoint
+            )>(base + 0x8ee80)(this, objects, center);
         }
 
         void scaleObjects(cocos2d::CCArray* objects, float scale, cocos2d::CCPoint center) {

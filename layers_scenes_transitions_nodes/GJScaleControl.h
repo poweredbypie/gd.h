@@ -23,6 +23,16 @@ namespace gd {
                     base + 0x94990
                 )(this);
             }
+
+            void loadValues(GameObject* obj, cocos2d::CCArray* objs) {
+                reinterpret_cast<void(__thiscall*)(
+                    GJScaleControl*, GameObject*, cocos2d::CCArray*
+                )>(
+                    base + 0x94590
+                )(
+                    this, obj, objs
+                );
+            }
     };
 
 }

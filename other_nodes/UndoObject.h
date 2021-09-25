@@ -8,6 +8,7 @@ namespace gd {
         kUndoCommandNew = 2,
         kUndoCommandPaste = 3,
         kUndoCommandDelete = 4,
+        kUndoCommandTransform = 5,
     };
 
     class UndoObject /* 0x30 */ : public cocos2d::CCObject /* 0x20 */ {

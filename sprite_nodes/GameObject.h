@@ -59,39 +59,61 @@ namespace gd {
 	class GJEffectManager;
 
 	#pragma runtime_checks("s", off)
-	class GameObject : public CCSpritePlus {
+	class GameObject : public CCSpritePlus /* 0x1f0 */ {
 	public:
-		PAD(44);
-		bool m_unk21C;
-		bool m_bSomethingSawRelated; // 0x21D
-		bool m_unk21E;
-		PAD(13);
+		bool m_bUnk3;				// 0x1f0
+		bool m_bIsBlueMaybe;		// 0x1f1
+		float m_fUnk2;				// 0x1f4
+		float m_fUnk;				// 0x1f8
+		float m_fUnk3;				// 0x1fc
+		float m_fUnk4;				// 0x200
+		bool m_bUnk;				// 0x204
+		float m_fAnimSpeed2;		// 0x208
+		bool m_bIsEffectObject;		// 0x20c
+		bool m_bRandomisedAnimStart;// 0x20d
+		float m_fAnimSpeed;			// 0x210
+		bool m_bBlackChild;			// 0x214
+		bool m_bUnkOutlineMaybe;	// 0x215
+		float m_fBlackChildOpacity;	// 0x218
+		bool field_21C;	// 0x21c
+		bool m_bEditor;	// 0x21d
+		bool m_bGroupDisabled;	// 0x21e
+		bool m_bColourOnTop;	// 0x21f
+		GJSpriteColor* m_pMainColourMode;		// 0x220
+		GJSpriteColor* m_pSecondaryColourMode;	// 0x224
+		bool m_bCol1;	// 0x228
+		bool m_bCol2;	// 0x229
 		cocos2d::CCPoint m_obStartPosOffset; //0x22C
-		PAD(4);
-		bool m_unk238;
-		bool m_isFlippedX; //0x239
-		bool m_isFlippedY; //0x23A
-		PAD(1);
+		float m_fUnkRotationField;	// 0x234
+		bool m_bTintTrigger;	// 0x238
+		bool m_bIsFlippedX; 	//0x239
+		bool m_bIsFlippedY; 	//0x23A
 		cocos2d::CCPoint m_obBoxOffset; //0x23C
-		bool m_isOriented; //0x244 idek what this is
-		PAD(3);
-		cocos2d::CCPoint m_unk248; // related to box offset
-		PAD(4);
-		bool m_unk254;
-		PAD(11);
+		bool m_bIsOriented; //0x244
+		cocos2d::CCPoint m_obBoxOffset2; // 0x248
+		OBB2D* m_pObjectOBB2D;	// 0x250
+		bool m_bOriented;	// 0x254
+		cocos2d::CCSprite* m_pGlowSprite;	// 0x258
+		bool m_bNotEditor;	// 0x25c
 		cocos2d::CCAction* m_pMyAction; //0x260
-		PAD(4);
+		bool m_bUnk1;	//0x264
+		bool m_bRunActionWithTag;	//0x265
+		bool m_bObjectPoweredOn;	//0x266
 		cocos2d::CCSize m_obObjectSize; //0x268
-		bool m_unk270;
-		bool m_unk271;
-		bool m_unk272;
-		PAD(1);
-		cocos2d::CCParticleSystemQuad* m_pParticleSystem;
-		std::string m_sEffectPlistName; //0x278
-		PAD(32);
-		bool m_unk2B0; // has custom scale or moved idfk
-		PAD(7);
-		cocos2d::CCRect m_objectRect2; //0x2B8
+		bool m_bTrigger;	// 0x270
+		bool m_bActive; 	// 0x271
+		bool m_bAnimationFinished;	// 0x272
+		cocos2d::CCParticleSystemQuad* m_pParticleSystem;	// 0x274
+		std::string m_sEffectPlistName; // 0x278
+		bool m_bParticleAdded;	// 0x290
+		bool m_bHasParticles;	// 0x291
+		bool m_bUnkCustomRing;	// 0x292
+		cocos2d::CCPoint m_obPortalPosition;	// 0x294
+		bool m_bUnkParticleSystem;	// 0x29c
+		cocos2d::CCRect m_obObjectTextureRect;	// 0x2a0
+		bool m_bTextureRectDirty;	// 0x2b0
+		float m_fRectXCenterMaybe;	// 0x2b4
+		cocos2d::CCRect m_obObjectRect2; //0x2B8
 		bool m_bIsObjectRectDirty; //0x2C8
 		bool m_bIsOrientedRectDirty; //0x2C9
 		bool m_bHasBeenActivated; //0x2CA
@@ -268,6 +290,12 @@ namespace gd {
 			);
 		}
 
+		cocos2d::CCPoint getBoxOffset() {
+			return *reinterpret_cast<cocos2d::CCPoint*(__thiscall*)(
+				GameObject*
+			)>(base + 0xef350)(this);
+		}
+
 		cocos2d::CCPoint getStartPosition() { return m_obStartPosition; }
 		void setStartPosition(cocos2d::CCPoint const& p) { m_obStartPosition = p; }
 		
@@ -301,7 +329,7 @@ namespace gd {
 		void setObjectColor(const cocos2d::ccColor3B& color) {
 			reinterpret_cast<void(__thiscall*)(GameObject*, const cocos2d::ccColor3B&)>(base + 0xee620)(this, color);
 		}
-		void selectObject(const cocos2d::ccColor3B color) {
+		void selectObject(const cocos2d::ccColor3B& color = { 0, 255, 0 }) {
 			reinterpret_cast<void(__thiscall*)(GameObject*, const cocos2d::ccColor3B)>(base + 0xee960)(this, color);
 		}
 

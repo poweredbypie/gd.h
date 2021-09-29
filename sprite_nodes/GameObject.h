@@ -290,6 +290,16 @@ namespace gd {
 			);
 		}
 
+		void removeFromGroup(int id) {
+			reinterpret_cast<void(__thiscall*)(
+				GameObject*, int
+			)>(
+				base + 0xeb930
+			)(
+				this, id
+			);
+		}
+
 		cocos2d::CCPoint getBoxOffset() {
 			return *reinterpret_cast<cocos2d::CCPoint*(__thiscall*)(
 				GameObject*

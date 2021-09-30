@@ -115,6 +115,18 @@ namespace gd {
                 )(sprName);
             }
 
+            std::string getSaveString() {
+                std::string ret;
+
+                reinterpret_cast<void(__thiscall*)(EffectGameObject*, std::string*)>(
+                    base + 0x257560
+                )(
+                    this, &ret
+                );
+
+                return ret;
+            }
+
             void updateLabel() {
                 auto label = reinterpret_cast<cocos2d::CCLabelBMFont*>(this->getChildByTag(999));
 

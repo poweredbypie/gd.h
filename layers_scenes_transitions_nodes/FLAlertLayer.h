@@ -28,6 +28,11 @@ namespace gd {
 		bool m_bScrollable; // 0x1c8
 		bool m_bNoAction; //?
 
+		virtual ~FLAlertLayer() {
+			// recreate destructor
+			cocos2d::CCDirector::sharedDirector()->getTouchDispatcher()->decrementForcePrio(2);
+		}
+
 	public:
 		//CCNode vtable
 		virtual void onEnter() {

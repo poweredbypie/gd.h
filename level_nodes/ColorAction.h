@@ -18,11 +18,7 @@ namespace gd {
         int m_unk10C;
         float m_opacity; //0x0110
         float m_unk114;
-        float m_copyHue;
-        float m_copySaturation;
-        float m_copyBrightness;
-        bool m_saturationChecked;
-        bool m_brightnessChecked;
+        cocos2d::ccHSVValue m_obCopyHSV;
         int m_copyID; // 0x128 color that youre copying
         PAD(1);
         bool m_copyOpacity;

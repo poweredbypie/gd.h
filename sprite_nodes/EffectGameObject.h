@@ -78,12 +78,10 @@ namespace gd {
             float m_fHoldTime; //0x04CC
             float m_fFadeOutTime; //0x04D0
             bool m_bPulseHSVMode; //0x04D4
+            PAD(3)
             bool m_bPulseGroupMode; //0x04D8
-            float m_fColorHue;
-            float m_fColorSaturation;
-            float m_fColorBrightness;
-            bool m_bAbsoluteSaturation;
-            bool m_bAbsoluteBrightness;
+            PAD(3)
+            cocos2d::ccHSVValue m_obHSVValue; // 0x04dc
             int m_nCopyColorID; //0x04EC
             bool m_bCopyOpacity; //0x04F0
             bool m_bPulseMainOnly; //0x04F1

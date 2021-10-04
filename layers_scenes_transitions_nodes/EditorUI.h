@@ -186,6 +186,30 @@ class EditorPauseLayer : public gd::CCBlockLayer {
             )(this, pSender);
         }
 
+        void onSaveAndPlay(cocos2d::CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorPauseLayer*, cocos2d::CCObject*)>(
+                base + 0x753d0
+            )(this, pSender);
+        }
+
+        void onSaveAndExit(cocos2d::CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorPauseLayer*, cocos2d::CCObject*)>(
+                base + 0x75620
+            )(this, pSender);
+        }
+
+        void onSave(cocos2d::CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorPauseLayer*, cocos2d::CCObject*)>(
+                base + 0x755a0
+            )(this, pSender);
+        }
+
+        void onExitNoSave(cocos2d::CCObject* pSender) {
+            reinterpret_cast<void(__thiscall*)(EditorPauseLayer*, cocos2d::CCObject*)>(
+                base + 0x75700
+            )(this, pSender);
+        }
+
         void uncheckAllPortals(cocos2d::CCObject* pSender) {
             reinterpret_cast<void(__thiscall*)(EditorPauseLayer*, cocos2d::CCObject*)>(
                 base + 0x74760

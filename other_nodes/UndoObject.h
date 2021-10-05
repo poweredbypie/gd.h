@@ -8,6 +8,7 @@ namespace gd {
         kUndoCommandDelete = 1,
         kUndoCommandNew = 2,
         kUndoCommandPaste = 3,
+        kUndoCommandDeleteMulti = 4,
         kUndoCommandTransform = 5,
         kUndoCommandSelect = 6,
     };

@@ -5,18 +5,19 @@
 
 namespace gd {
     enum UndoCommand {
+        kUndoCommandDelete = 1,
         kUndoCommandNew = 2,
         kUndoCommandPaste = 3,
-        kUndoCommandDelete = 4,
         kUndoCommandTransform = 5,
+        kUndoCommandSelect = 6,
     };
 
     class UndoObject /* 0x30 */ : public cocos2d::CCObject /* 0x20 */ {
         public:
             GameObject* m_pGameObject;      // 0x20
-            UndoCommand m_nCommand;         // 0x24
+            UndoCommand m_eCommand;         // 0x24
             cocos2d::CCArray* m_pObjects;   // 0x28
-            int m_nUnknown;                 // 0x2c
+            bool m_bRedo;                   // 0x2c
 
             static UndoObject* create(GameObject* pObject, UndoCommand nCommand) {
                 return reinterpret_cast<UndoObject*(__fastcall*)(GameObject*, UndoCommand)>(

@@ -52,6 +52,7 @@ enum FMOD_RESULT;
 #include "manager_nodes/GJEffectManager.h"
 #include "manager_nodes/MusicDownloadManager.h"
 #include "manager_nodes/ObjectToolbox.h"
+#include "manager_nodes/LocalLevelManager.h"
 
 #include "scroll_nodes/CCContentLayer.h"
 #include "scroll_nodes/CCIndexPath.h"

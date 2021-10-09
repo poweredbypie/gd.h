@@ -39,7 +39,7 @@ namespace gd {
         int m_nObjectCount_rand;// 0x1d0
         int m_nObjectCount_seed;// 0x1d4
         int m_nObjectCount;     // 0x1d8
-        int m_nAverageDifficulty;// 0x1dc
+        int m_nLevelIndex;      // 0x1dc
         int m_nRatings;         // 0x1e0
         int m_nRatingsSum;      // 0x1e4
         int m_nDownloads;       // 0x1e8

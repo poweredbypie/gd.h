@@ -14,190 +14,155 @@ namespace gd {
 
     class GJGameLevel : public cocos2d::CCNode {
     public:
-        cocos2d::CCDictionary *lastBuildSave;   // 0xec
+        cocos2d::CCDictionary* m_pLastBuildSave;   // 0xec
+        int m_nLevelID_rand; // 0xf0
+        int m_nLevelID_seed; // 0xf4 
+        int m_nLevelID;      // 0xf8
+        std::string m_sLevelName;       // 0xfc
+        std::string m_sLevelDesc;       // 0x114
+        std::string m_sLevelString;     // 0x12c
+        std::string m_sCreatorName;     // 0x144
+        std::string m_sRecordString;    // 0x15c
+        std::string m_sUploadDate; // 0x174
+        std::string m_sUpdateDate; // 0x18c
+        int m_nUserID_rand;     // 0x1a4
+        int m_nUserID_seed;     // 0x1a8
+        int m_nUserID;          // 0x1ac
+        int m_nAccountID_rand;  // 0x1b0
+        int m_nAccountID_seed;  // 0x1b4
+        int m_nAccountID;       // 0x1b8
+        int m_nDifficulty;      // 0x1bc
+        int m_nAudioTrack;      // 0x1c0
+        int m_nSongID;          // 0x1c4
+        int m_nLevelRev;        // 0x1c8
+        bool m_bUnlisted;       // 0x1cc
+        int m_nObjectCount_rand;// 0x1d0
+        int m_nObjectCount_seed;// 0x1d4
+        int m_nObjectCount;     // 0x1d8
+        int m_nAverageDifficulty;// 0x1dc
+        int m_nRatings;         // 0x1e0
+        int m_nRatingsSum;      // 0x1e4
+        int m_nDownloads;       // 0x1e8
+        bool m_bIsEditable;     // 0x1ec
+        bool m_bGauntletLevel;  // 0x1ed
+        bool m_bGauntletLevel2; // 0x1ee
+        int m_nWorkingTime;     // 0x1f0
+        int m_nWorkingTime2;    // 0x1f4
+        bool m_bLowDetailMode;  // 0x1f8
+        bool m_bLowDetailModeToggled;   // 0x1f9
+        int m_nIsVerified_rand; // 0x1fc
+        int m_nIsVerified_seed; // 0x200
+        bool m_bIsVerified;     // 0x201
+        bool m_bIsUploaded;     // 0x202
+        bool m_bHasBeenModified;// 0x203
+        int m_nLevelVersion;
+        int m_nGameVersion;
+        int m_nAttempts_rand;
+        int m_nAttempts_seed;
+        int m_nAttempts;
+        int m_nJumps_rand;
+        int m_nJumps_seed;
+        int m_nJumps;
+        int m_nClicks_rand;
+        int m_nClicks_seed;
+        int m_nClicks;
+        int m_nAttemptTime_rand;
+        int m_nAttemptTime_seed;
+        int m_nAttemptTime;
+        int m_nChk;
+        bool m_bIsChkValid;
+        bool m_bIsCompletionLegitimate;
+        int m_nNormalPercent; // yes, it is out of order
+        int m_nNormalPercent_seed;
+        int m_nNormalPercent_rand;
+        int m_nOrbCompletion_rand;
+        int m_nOrbCompletion_seed;
+        int m_nOrbCompletion;
+        int m_nNewNormalPercent2_rand;
+        int m_nNewNormalPercent2_seed;
+        int m_nNewNormalPercent2;
+        int m_nPracticePercent;
+        int m_nLikes;
+        int m_nDislikes;
+        int m_nLevelLength;
+        int m_nFeatured;
+        bool m_bIsEpic;
+        bool m_bLevelFavorited;
+        int m_nLevelFolder;
+        int m_nDailyID_rand;
+        int m_nDailyID_seed;
+        int m_nDailyID;
+        int m_nDemon_rand;
+        int m_nDemon_seed;
+        int m_nDemon;
+        int m_nDemonDifficulty;
+        int m_nStars_rand;
+        int m_nStars_seed;
+        int m_nStars;
+        bool m_bAutoLevel;
+        int m_nCoins;
+        int m_nCoinsVerified_rand;
+        int m_nCoinsVerified_seed;
+        int m_nCoinsVerified;
+        int m_nPassword_rand;
+        int m_nPassword_seed;
+        int m_nOriginalLevel_rand;
+        int m_nOriginalLevel_seed;
+        int m_nOriginalLevel;
+        bool m_bTwoPlayerMode;
+        int m_nFailedPasswordAttempts;
+        int m_nFirstCoinVerified_rand;
+        int m_nFirstCoinVerified_seed;
+        int m_nFirstCoinVerified;
+        int m_nSecondCoinVerified_rand;
+        int m_nSecondCoinVerified_seed;
+        int m_nSecondCoinVerified;
+        int m_nThirdCoinVerified_rand;
+        int m_nThirdCoinVerified_seed;
+        int m_nThirdCoinVerified;
+        int m_nStarsRequested;
+        bool m_bShowedSongWarning;
+        int m_nStarRatings;
+        int m_nStarRatingsSum;
+        int m_nMaxStarRatings;
+        int m_nMinStarRatings;
+        int m_nDemonVotes;
+        int m_nRateStars;
+        int m_nRateFeature;
+        std::string m_sRateUser;
+        bool m_bDontSave;
+        bool m_bLevelNotDownloaded;
+        int m_nRequiredCoins;
+        bool m_bIsUnlocked;
+        cocos2d::CCPoint m_obLastCameraPos;
+        float m_fLastEditorZoom;
+        int m_nLastBuildTab;
+        int m_nLastBuildPage;
+        int m_nLastBuildGroupID;
+        GJLevelType m_eLevelType;
+        int m_nM_ID;
+        std::string m_sTempName;
+        std::string m_sCapacityString;
+        bool m_bHighObjectsEnabled;
+        std::string m_sPersonalBests;
 
-        int levelID_rand; // 0xf0
-        int levelID_seed; // 0xf4 
-        int levelID;      // 0xf8
-
-        std::string levelName;  // 0xfc
-        std::string levelDesc;  // 0x114
-        std::string levelString; // 0x12c
-        std::string userName;   // 0x144
-        std::string recordString;   // 0x15c
-
-        std::string uploadDate; // 0x174
-        std::string updateDate; // 0x18c
-
-        int userID_rand;    // 0x1a4
-        int userID_seed;    // 0x1a8
-        int userID;         // 0x1ac
-
-        int accountID_rand; // 0x1b0
-        int accountID_seed; // 0x1b4
-        int accountID;      // 0x1b8
-
-        int difficulty; // 0x1bc
-        int audioTrack; // 0x1c0
-        int songID;     // 0x1c4
-
-        int levelRev;   // 0x1c8
-
-        bool unlisted;  // 0x1c9
-
-        int objectCount_rand;
-        int objectCount_seed;
-        int objectCount;
-        int averageDifficulty;
-        int ratings;
-        int ratingsSum;
-
-        int downloads;
-
-        bool isEditable;
-        bool gauntletLevel;
-        bool gauntletLevel2;
-
-        int workingTime;
-        int workingTime2;
-
-        bool lowDetailMode;
-        bool lowDetailModeToggled;
-
-        int isVerified_rand;
-        int isVerified_seed;
-        bool isVerified;
-        bool isUploaded;
-        bool hasBeenModified;
-
-        int levelVersion;
-        int gameVersion;
-
-        int attempts_rand;
-        int attempts_seed;
-        int attempts;
-
-        int jumps_rand;
-        int jumps_seed;
-        int jumps;
-
-        int clicks_rand;
-        int clicks_seed;
-        int clicks;
-
-        int attemptTime_rand;
-        int attemptTime_seed;
-        int attemptTime;
-
-        int chk;
-
-        bool isChkValid;
-        bool isCompletionLegitimate;
-
-        int normalPercent; // yes, it is out of order
-        int normalPercent_seed;
-        int normalPercent_rand;
-
-        int orbCompletion_rand;
-        int orbCompletion_seed;
-        int orbCompletion;
-
-        int newNormalPercent2_rand;
-        int newNormalPercent2_seed;
-        int newNormalPercent2;
-
-        int practicePercent;
-
-        int likes;
-        int dislikes;
-        int levelLength;
-        int featured;
-
-        bool isEpic;
-        bool levelFavorited;
-        int levelFolder;
-
-        int dailyID_rand;
-        int dailyID_seed;
-        int dailyID;
-
-        int demon_rand;
-        int demon_seed;
-        int demon;
-        int demonDifficulty;
-        int stars_rand;
-        int stars_seed;
-        int stars;
-
-        bool autoLevel;
-        int coins;
-        int coinsVerified_rand;
-        int coinsVerified_seed;
-        int coinsVerified;
-
-        int password_rand;
-        int password_seed;
-
-        int originalLevel_rand;
-        int originalLevel_seed;
-        int originalLevel;
-
-        bool twoPlayerMode;
-
-        int failedPasswordAttempts;
-
-        int firstCoinVerified_rand;
-        int firstCoinVerified_seed;
-        int firstCoinVerified;
-
-        int secondCoinVerified_rand;
-        int secondCoinVerified_seed;
-        int secondCoinVerified;
-
-        int thirdCoinVerified_rand;
-        int thirdCoinVerified_seed;
-        int thirdCoinVerified;
-
-        int starsRequested;
-
-        bool showedSongWarning;
-        int starRatings;
-        int starRatingsSum;
-        int maxStarRatings;
-        int minStarRatings;
-        int demonVotes;
-        int rateStars;
-        int rateFeature;
-
-        std::string rateUser;
-
-        bool dontSave;
-        bool levelNotDownloaded;
-
-        int requiredCoins;
-        bool isUnlocked;
-
-        cocos2d::CCPoint lastCameraPos;
-
-        float lastEditorZoom;
-        int lastBuildTab;
-        int lastBuildPage;
-        int lastBuildGroupID;
-
-        GJLevelType levelType;
-
-        int M_ID;
-        std::string tempName;
-        std::string capacityString;
-
-        bool highObjectsEnabled;
-        std::string personalBests;
+        void dataLoaded(DS_Dictionary* dict) {
+            return reinterpret_cast<void(__thiscall*)(
+                GJGameLevel*, DS_Dictionary*
+            )>( base + 0xbded0 )(this, dict);
+        }
 
         // this function is inlined on pc builds
-        static GJGameLevel *create() {
+        static GJGameLevel* create() {
             return reinterpret_cast<GJGameLevel*(__stdcall*)()>(
                 base + 0xbd2b0
             )();
+        }
+
+        static GJGameLevel* createWithCoder(DS_Dictionary* dict) {
+            auto ret = GJGameLevel::create();
+            ret->dataLoaded(dict);
+            return ret;
         }
 
         std::string getAudioFileName() {

@@ -37,6 +37,11 @@ namespace gd {
         PAD(4)
             bool m_bUpdateSelector;
 
+            static GJGarageLayer* create() {
+                return reinterpret_cast<GJGarageLayer*(__fastcall*)()>(
+                    base + 0x125220
+                )();
+            }
 
             void onSelectTab(cocos2d::CCObject* pSender) {
                 reinterpret_cast<void(__thiscall*)(

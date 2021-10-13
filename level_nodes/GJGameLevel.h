@@ -12,6 +12,19 @@ namespace gd {
         kGJLevelTypeSaved = 3
     };
 
+    enum GJDifficulty {
+        kGJDifficultyAuto = 0,
+        kGJDifficultyEasy = 1,
+        kGJDifficultyNormal = 2,
+        kGJDifficultyHard = 3,
+        kGJDifficultyHarder = 4,
+        kGJDifficultyInsane = 5,
+        kGJDifficultyDemon = 6,
+        kGJDifficultyDemonEasy = 7,
+        kGJDifficultyDemonMedium = 8,
+        kGJDifficultyDemonInsane = 9,
+        kGJDifficultyDemonExtreme = 10
+    };
     class GJGameLevel /* 0x3bc */ : public cocos2d::CCNode {
     public:
         cocos2d::CCDictionary* m_pLastBuildSave;   // 0xec
@@ -31,7 +44,7 @@ namespace gd {
         int m_nAccountID_rand;  // 0x1b0
         int m_nAccountID_seed;  // 0x1b4
         int m_nAccountID;       // 0x1b8
-        int m_nDifficulty;      // 0x1bc
+        GJDifficulty m_eDifficulty;      // 0x1bc
         int m_nAudioTrack;      // 0x1c0
         int m_nSongID;          // 0x1c4
         int m_nLevelRev;        // 0x1c8
@@ -197,6 +210,12 @@ namespace gd {
 
         void setLevelData(std::string const& data) {
             this->setLevelData(data.c_str());
+        }
+
+        GJDifficulty getAverageDifficulty() {
+            return reinterpret_cast<GJDifficulty(__thiscall*)(
+                GJGameLevel*
+            )>( base + 0xbd9b0 )(this);
         }
 };
 

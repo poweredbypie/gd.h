@@ -71,6 +71,12 @@ namespace gd {
             PAD(0x4)
         
         public:
+            static LevelInfoLayer* create(gd::GJGameLevel* level) {
+                return reinterpret_cast<LevelInfoLayer*(__fastcall*)(gd::GJGameLevel*)>(
+                    base + 0x175d50
+                )(level);
+            }
+
             void onGarage(cocos2d::CCObject* pSender) {
                 reinterpret_cast<void(__thiscall*)(LevelInfoLayer*, cocos2d::CCObject*)>(
                     base + 0x177c10

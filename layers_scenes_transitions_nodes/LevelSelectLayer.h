@@ -4,8 +4,11 @@
 #include <gd.h>
 
 namespace gd {
-    class LevelSelectLayer : public CCLayer {
+    class LevelSelectLayer : public cocos2d::CCLayer {
         public:
+            PAD(16)
+            BoomScrollLayer* m_pScrollLayer;    // 0x130
+
             static LevelSelectLayer* create(int lvl) {
                 return reinterpret_cast<LevelSelectLayer*(__fastcall*)(int)>(
                     base + 0x185500
@@ -13,3 +16,5 @@ namespace gd {
             }
     };
 }
+
+#endif

@@ -5,7 +5,7 @@
 
 namespace gd {
     class GJAccountManager : public cocos2d::CCNode {
-        protected:
+        public:
             cocos2d::CCDictionary* m_pDLObject; // 0xec
             std::string m_sPassword;    // 0xf0
             std::string m_sUsername;    // 0x108

@@ -183,6 +183,18 @@ namespace gd {
 
 			static PlayLayer* get() { return GameManager::sharedState()->getPlayLayer(); }
 
+			static PlayLayer* create(GJGameLevel* lvl) {
+				return reinterpret_cast<PlayLayer*(__fastcall*)(GJGameLevel*)>(
+					base + 0x1fb6d0
+				)(lvl);
+			}
+
+			static cocos2d::CCScene* scene(GJGameLevel* lvl) {
+				return reinterpret_cast<cocos2d::CCScene*(__fastcall*)(GJGameLevel*)>(
+					base + 0x1fb690
+				)(lvl);
+			}
+
 			void togglePracticeMode(bool on) {
 				reinterpret_cast<void(__thiscall*)(PlayLayer*, bool)>(
 					base + 0x20d0d0

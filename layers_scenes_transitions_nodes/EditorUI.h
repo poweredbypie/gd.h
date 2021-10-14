@@ -14,6 +14,8 @@ class BoomScrollLayer : public cocos2d::CCLayer {
         cocos2d::CCArray* m_pDots;  // 0x11c
         PAD(64)
         ExtendedLayer* m_pLayer;    // 0x160
+        PAD(72)
+        int m_nPage;    // 0x1ac
 
         void instantMoveToPage(int page) {
             reinterpret_cast<void(__thiscall*)(BoomScrollLayer*, int)>(

@@ -105,6 +105,8 @@ enum FMOD_RESULT;
 #include "layers_scenes_transitions_nodes/CreatorLayer.h"
 #include "layers_scenes_transitions_nodes/LevelSearchLayer.h"
 #include "layers_scenes_transitions_nodes/LevelSelectLayer.h"
+#include "layers_scenes_transitions_nodes/OptionsLayer.h"
+#include "layers_scenes_transitions_nodes/DailyLevelPage.h"
 
 #include "audio_nodes/FMODAudioEngine.h"
 #include "audio_nodes/FMODSound.h"

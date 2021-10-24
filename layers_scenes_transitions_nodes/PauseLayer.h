@@ -7,7 +7,7 @@ namespace gd {
 
 	class CCBlockLayer;
 
-	class PauseLayer : public CCBlockLayer {
+	class GDH_DLL PauseLayer : public CCBlockLayer {
 	protected:
 		bool m_bUnknown;
 		bool m_bUnknown2;

@@ -8,7 +8,7 @@ namespace gd {
     class FLAlertLayerProtocol;
     class SongInfoObject;
 
-    class CustomSongWidget : public cocos2d::CCNode, MusicDownloadDelegate, FLAlertLayerProtocol {
+    class GDH_DLL CustomSongWidget : public cocos2d::CCNode, MusicDownloadDelegate, FLAlertLayerProtocol {
     public:
         SongInfoObject* m_songInfo;
         PAD(0x1C);
@@ -19,9 +19,9 @@ namespace gd {
             reinterpret_cast<void(__thiscall*)(CustomSongWidget*, SongInfoObject*)>(base + 0x69280)(this, song);
         }
 
-        virtual void FLAlert_Clicked(FLAlertLayer*, bool);
+        virtual void FLAlert_Clicked(FLAlertLayer*, bool) {}
         // too lazy to type out all of them
-        virtual void loadSongInfoFinished(SongInfoObject*);
+        virtual void loadSongInfoFinished(SongInfoObject*) {}
     };
 }
 

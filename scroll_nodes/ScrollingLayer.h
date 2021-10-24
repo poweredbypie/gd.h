@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-	class ScrollingLayer : public cocos2d::CCLayerColor {
+	class GDH_DLL ScrollingLayer : public cocos2d::CCLayerColor {
 		public:
 			PAD(0x28)
 			float m_fLayerHeight;

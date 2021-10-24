@@ -16,7 +16,7 @@ namespace gd {
     class ConfigureHSVWidget;
     class CCMenuItemToggler;
 
-    class ColorSelectPopup : public FLAlertLayer, ColorPickerDelegate, TextInputDelegate, GJSpecialColorSelectDelegate {
+    class GDH_DLL ColorSelectPopup : public FLAlertLayer, ColorPickerDelegate, TextInputDelegate, GJSpecialColorSelectDelegate {
     public:
         // TODO: actually figure out most of this stuff, this is a mess
         cocos2d::extension::CCControlColourPicker* m_colorPicker; // 0x01D8
@@ -68,10 +68,13 @@ namespace gd {
         bool copyColor; // 0x027A
         PAD(1);
 
-        virtual void keyDown(int key);
-        virtual void colorValueChanged(cocos2d::ccColor3B color);
-        virtual void idfk();
-        virtual void idfk2();
+        virtual void colorValueChanged(cocos2d::ccColor3B color) {
+            reinterpret_cast<void(__thiscall*)(ColorSelectPopup*, cocos2d::ccColor3B)>(
+                base + 0x46ee0
+            )(this, color);
+        }
+        virtual void idfk() {}
+        virtual void idfk2() {}
 
         auto getAlertLayer() { return m_pLayer; }
         auto getPickerColor() { return *reinterpret_cast<cocos2d::ccColor3B*>(reinterpret_cast<uintptr_t>(m_colorPicker) + 0x144); }

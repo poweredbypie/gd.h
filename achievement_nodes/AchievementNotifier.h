@@ -7,7 +7,7 @@ namespace gd {
 
 	class AchievementBar;
 
-	class AchievementNotifier : public cocos2d::CCNode {
+	class GDH_DLL AchievementNotifier : public cocos2d::CCNode {
 	protected:
 		cocos2d::CCScene* m_pCurrentScene;
 		cocos2d::CCArray* m_pQueue;

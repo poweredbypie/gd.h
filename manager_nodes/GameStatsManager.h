@@ -1,6 +1,6 @@
 #include <gd.h>
 namespace gd {
-	class GameStatsManager : cocos2d::CCNode
+	class GDH_DLL GameStatsManager : cocos2d::CCNode
 	{
 	public:
 		PAD(40);

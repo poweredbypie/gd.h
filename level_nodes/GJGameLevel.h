@@ -25,7 +25,7 @@ namespace gd {
         kGJDifficultyDemonInsane = 9,
         kGJDifficultyDemonExtreme = 10
     };
-    class GJGameLevel /* 0x3bc */ : public cocos2d::CCNode {
+    class GDH_DLL GJGameLevel /* 0x3bc */ : public cocos2d::CCNode {
     public:
         cocos2d::CCDictionary* m_pLastBuildSave;   // 0xec
         int m_nLevelID_rand; // 0xf0

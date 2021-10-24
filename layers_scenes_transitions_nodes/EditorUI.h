@@ -5,11 +5,11 @@
 
 namespace gd {
 
-class ExtendedLayer : public cocos2d::CCLayer {
+class GDH_DLL ExtendedLayer : public cocos2d::CCLayer {
     // todo
 };
 
-class BoomScrollLayer : public cocos2d::CCLayer {
+class GDH_DLL BoomScrollLayer : public cocos2d::CCLayer {
     public:
         cocos2d::CCArray* m_pDots;  // 0x11c
         PAD(64)
@@ -32,7 +32,7 @@ class BoomScrollLayer : public cocos2d::CCLayer {
 
 class GameManager;
 
-class EditButtonBar : public cocos2d::CCNode {
+class GDH_DLL EditButtonBar : public cocos2d::CCNode {
     public:
         cocos2d::CCPoint m_obPosition;
         int m_nUnknown;
@@ -133,7 +133,7 @@ class EditButtonBar : public cocos2d::CCNode {
         }
 };
 
-class CreateMenuItem : public CCMenuItemSpriteExtra {
+class GDH_DLL CreateMenuItem : public CCMenuItemSpriteExtra {
     public:
         PAD(0x18)
         int m_nObjectID;
@@ -141,7 +141,7 @@ class CreateMenuItem : public CCMenuItemSpriteExtra {
         int m_nBuildTab;
 };
 
-class EditorPauseLayer : public gd::CCBlockLayer {
+class GDH_DLL EditorPauseLayer : public gd::CCBlockLayer {
     public:
         PAD(0x8)
         gd::CCMenuItemSpriteExtra* m_pButton0;  // 0x1a4
@@ -265,7 +265,7 @@ enum EditCommand {
     kEditCommandScale       = 25,
 };
 
-class EditorUI : public cocos2d::CCLayer,
+class GDH_DLL EditorUI : public cocos2d::CCLayer,
     public gd::FLAlertLayerProtocol,
     public gd::ColorSelectDelegate,
     public gd::GJRotationControlDelegate,

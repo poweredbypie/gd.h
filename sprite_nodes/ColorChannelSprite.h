@@ -6,7 +6,7 @@
 namespace gd {
     class ColorAction;
 
-    class ColorChannelSprite : public cocos2d::CCSprite {
+    class GDH_DLL ColorChannelSprite : public cocos2d::CCSprite {
         public:
             cocos2d::CCLabelBMFont* m_pCopyLabel;    // 0x1e4
             cocos2d::CCLabelBMFont* m_pOpacityLabel; // 0x1e8

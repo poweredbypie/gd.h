@@ -6,7 +6,7 @@
 namespace gd {
     class TableViewCell;
 
-    class GJComment : public cocos2d::CCNode {
+    class GDH_DLL GJComment : public cocos2d::CCNode {
         public:
             std::string m_sCommentString;
             PAD(0x18)
@@ -24,7 +24,7 @@ namespace gd {
             }
     };
 
-    class CommentCell : public gd::TableViewCell {
+    class GDH_DLL CommentCell : public gd::TableViewCell {
         public:
             PAD(0x4);
             cocos2d::CCSprite* m_pIconSprite;

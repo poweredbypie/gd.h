@@ -13,7 +13,7 @@ namespace gd {
         kUndoCommandSelect = 6,
     };
 
-    class UndoObject /* 0x30 */ : public cocos2d::CCObject /* 0x20 */ {
+    class GDH_DLL UndoObject /* 0x30 */ : public cocos2d::CCObject /* 0x20 */ {
         public:
             GameObject* m_pGameObject;      // 0x20
             UndoCommand m_eCommand;         // 0x24

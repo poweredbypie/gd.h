@@ -12,7 +12,7 @@ namespace gd {
 	class PlayerObject;
 	class GameObject;
 
-	class GJBaseGameLayer : public cocos2d::CCLayer {
+	class GDH_DLL GJBaseGameLayer : public cocos2d::CCLayer {
 	public:
 		PAD(4);
 		OBB2D* m_pBoundingBox; // 0x120 

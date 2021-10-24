@@ -7,7 +7,7 @@ namespace gd {
 
 class GJGameLevel;
 
-    class GameLevelManager : public cocos2d::CCNode {
+    class GDH_DLL GameLevelManager : public cocos2d::CCNode {
     public:
         // thanks to wylie for most of these!
 

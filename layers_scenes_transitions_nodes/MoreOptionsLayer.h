@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class MoreOptionsLayer : public FLAlertLayer {
+    class GDH_DLL MoreOptionsLayer : public FLAlertLayer {
         public:
             static MoreOptionsLayer* create() {
                 return reinterpret_cast<MoreOptionsLayer*(__fastcall*)()>(

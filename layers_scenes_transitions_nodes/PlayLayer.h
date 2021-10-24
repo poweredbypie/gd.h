@@ -13,7 +13,7 @@ namespace gd {
 	// class AudioEffectsLayer;
 	using AudioEffectsLayer = cocos2d::CCLayerColor;
 	// class GJGroundLayer;
-	class GJGroundLayer : public cocos2d::CCLayer {
+	class GDH_DLL GJGroundLayer : public cocos2d::CCLayer {
 		public:
 			void updateGroundWidth() {
 				reinterpret_cast<void(__thiscall*)(GJGroundLayer*)>(
@@ -22,7 +22,7 @@ namespace gd {
 			}
 	};
 	class GJGameLevel;
-	class UILayer : public cocos2d::CCLayerColor {
+	class GDH_DLL UILayer : public cocos2d::CCLayerColor {
 		public:
 			PAD(8)
 			cocos2d::CCMenu* m_pCheckPointMenu;		// 0x1a0
@@ -49,7 +49,7 @@ namespace gd {
 	using StartPosObject = gd::GameObject;
 	class CheckpointObject;
 
-	class PlayLayer : public GJBaseGameLayer, public CCCircleWaveDelegate {
+	class GDH_DLL PlayLayer : public GJBaseGameLayer, public CCCircleWaveDelegate {
 		public:
 			PAD(8);
 			unsigned int unk2D8;

@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class CreateGuidelinesLayer : public FLAlertLayer, FLAlertLayerProtocol {
+    class GDH_DLL CreateGuidelinesLayer : public FLAlertLayer, FLAlertLayerProtocol {
         public:
             PAD(36)
             std::string m_sGuidelineString;

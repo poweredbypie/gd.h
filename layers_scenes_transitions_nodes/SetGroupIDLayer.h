@@ -18,7 +18,7 @@ namespace gd {
 	};
     );
 
-    class SetGroupIDLayer : public gd::FLAlertLayer, public gd::TextInputDelegate {
+    class GDH_DLL SetGroupIDLayer : public gd::FLAlertLayer, public gd::TextInputDelegate {
         public:
             gd::GameObject* m_pObj;         // 0x1d0
             cocos2d::CCArray* m_pObjs;      // 0x1d4

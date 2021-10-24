@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class ConfigureHSVWidget : public cocos2d::CCNode {
+    class GDH_DLL ConfigureHSVWidget : public cocos2d::CCNode {
         public:
             cocos2d::CCLabelBMFont* m_pHueLabel;
             cocos2d::CCLabelBMFont* m_pSaturationLabel;
@@ -17,7 +17,7 @@ namespace gd {
             cocos2d::ccHSVValue m_obValue;
     };
 
-    class HSVWidgetPopup : public gd::FLAlertLayer {
+    class GDH_DLL HSVWidgetPopup : public gd::FLAlertLayer {
         public:
             ConfigureHSVWidget* m_pConfigureWidget;
             HSVWidgetPopupDelegate* m_pDelegate;

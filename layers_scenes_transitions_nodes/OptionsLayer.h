@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class OptionsLayer : public GJDropDownLayer {
+    class GDH_DLL OptionsLayer : public GJDropDownLayer {
         public:
             static OptionsLayer* create() {
                 return reinterpret_cast<OptionsLayer*(__fastcall*)()>(

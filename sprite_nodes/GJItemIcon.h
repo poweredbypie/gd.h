@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class GJItemIcon : public cocos2d::CCSprite {
+    class GDH_DLL GJItemIcon : public cocos2d::CCSprite {
         public:
             static GJItemIcon* create(
                 UnlockType _type,

@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class PlayerCheckpoint : public cocos2d::CCNode {
+    class GDH_DLL PlayerCheckpoint : public cocos2d::CCNode {
     public:
         cocos2d::CCPoint m_position;
         float m_yAccel; // 0x0F4 

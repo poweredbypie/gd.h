@@ -5,7 +5,7 @@
 
 namespace gd {
 	//credit to zmx (https://github.com/kyurime)
-	class CCSpritePlus : public cocos2d::CCSprite {
+	class GDH_DLL CCSpritePlus : public cocos2d::CCSprite {
 	protected:
 		cocos2d::CCArray* m_pFollowers;
 		CCSpritePlus* m_pFollowing;

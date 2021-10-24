@@ -8,7 +8,7 @@ namespace gd {
     class GameObject;
     class PlayerCheckpoint;
     
-    class CheckpointObject : public cocos2d::CCNode {
+    class GDH_DLL CheckpointObject : public cocos2d::CCNode {
     protected:
         CheckpointObject() {
             reinterpret_cast<void*(__thiscall*)(CheckpointObject*)>(base + 0x1fb0c0)(this);

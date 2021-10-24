@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class MusicDownloadManager : public cocos2d::CCNode {
+    class GDH_DLL MusicDownloadManager : public cocos2d::CCNode {
     public:
         PAD(4);
         cocos2d::CCDictionary* m_unknownDict;

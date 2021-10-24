@@ -5,7 +5,7 @@
 
 namespace gd {
     
-class DialogObject : public cocos2d::CCObject
+class GDH_DLL DialogObject : public cocos2d::CCObject
 {
   public:
     std::string m_sText;

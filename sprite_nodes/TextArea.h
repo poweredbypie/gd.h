@@ -5,7 +5,7 @@
 
 namespace gd {
 	#pragma runtime_checks("s", off)
-	class TextArea : public cocos2d::CCSprite {
+	class GDH_DLL TextArea : public cocos2d::CCSprite {
 	protected:
 		PAD(0x58);
 

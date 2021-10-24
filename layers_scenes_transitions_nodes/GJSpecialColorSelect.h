@@ -5,7 +5,7 @@
 
 namespace gd {
 
-    class GJSpecialColorSelect : public gd::FLAlertLayer {
+    class GDH_DLL GJSpecialColorSelect : public gd::FLAlertLayer {
         // todo
 
         public:

@@ -31,7 +31,7 @@ namespace gd {
 };
     
 
-    class GJSearchObject : public cocos2d::CCNode {
+    class GDH_DLL GJSearchObject : public cocos2d::CCNode {
     public:
             SearchType m_nScreenID;
             std::string m_sSearchQuery;

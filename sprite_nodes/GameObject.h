@@ -59,7 +59,7 @@ namespace gd {
 	class GJEffectManager;
 
 	#pragma runtime_checks("s", off)
-	class GameObject : public CCSpritePlus /* 0x1f0 */ {
+	class GDH_DLL GameObject : public CCSpritePlus /* 0x1f0 */ {
 	public:
 		bool m_bUnk3;				// 0x1f0
 		bool m_bIsBlueMaybe;		// 0x1f1

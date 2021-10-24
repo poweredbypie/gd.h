@@ -5,7 +5,7 @@
 
 namespace gd {
 
-    class KeybindingsLayer : public FLAlertLayer {
+    class GDH_DLL KeybindingsLayer : public FLAlertLayer {
         public:
             int m_nCurrentPage;
             int m_nItemCount;

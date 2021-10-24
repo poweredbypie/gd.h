@@ -7,7 +7,7 @@ namespace gd {
 
 	class FLAlertLayer;
 
-	class FLAlertLayerProtocol {
+	class GDH_DLL FLAlertLayerProtocol {
 	public:
 		virtual void FLAlert_Clicked(gd::FLAlertLayer*, bool btn2) {};
 	};

@@ -11,7 +11,7 @@ namespace cocos2d {
 
 namespace gd {
 	#pragma runtime_checks("s", off)
-	class ButtonSprite : public cocos2d::CCSprite {
+	class GDH_DLL ButtonSprite : public cocos2d::CCSprite {
 		public:
 			PAD(24)
 			cocos2d::CCLabelBMFont* m_pLabel; // 0x1fc

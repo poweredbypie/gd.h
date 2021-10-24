@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class ColorActionSprite : public cocos2d::CCNode {
+    class GDH_DLL ColorActionSprite : public cocos2d::CCNode {
 
     };
 }

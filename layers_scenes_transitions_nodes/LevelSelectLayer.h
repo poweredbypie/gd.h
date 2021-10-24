@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class LevelSelectLayer : public cocos2d::CCLayer {
+    class GDH_DLL LevelSelectLayer : public cocos2d::CCLayer {
         public:
             PAD(16)
             BoomScrollLayer* m_pScrollLayer;    // 0x130

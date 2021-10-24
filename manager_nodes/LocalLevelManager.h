@@ -5,7 +5,7 @@
 
 namespace gd {
 
-    class LocalLevelManager /* 0x114 */ : public cocos2d::CCNode {
+    class GDH_DLL LocalLevelManager /* 0x114 */ : public cocos2d::CCNode {
         public:
             PAD(0x1C);
             cocos2d::CCDictionary* m_pLoadData; // 0x108, seems to be just LoadData.plist

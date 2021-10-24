@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class SetupPickupTriggerPopup : public FLAlertLayer, public TextInputDelegate {
+    class GDH_DLL SetupPickupTriggerPopup : public FLAlertLayer, public TextInputDelegate {
         public:
             PAD(0xc)
             CCTextInputNode* m_pCountInput; // 0x1dc

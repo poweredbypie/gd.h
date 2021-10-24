@@ -8,7 +8,7 @@ namespace gd {
 	class CCContentLayer;
 	class TableView;
 
-	class TableViewCell : public cocos2d::CCLayer {
+	class GDH_DLL TableViewCell : public cocos2d::CCLayer {
 		public:
 			bool m_bUnknown;	// 0x11c
 			PAD(3)
@@ -45,7 +45,7 @@ namespace gd {
 			}
 	};
 
-	class StatsCell : public TableViewCell {
+	class GDH_DLL StatsCell : public TableViewCell {
 		public:
 			void updateBGColor(unsigned int index) {
 				reinterpret_cast<void(__thiscall*)(StatsCell*, unsigned int)>(
@@ -54,13 +54,13 @@ namespace gd {
 			}
 	};
 	
-	class LevelCell /* 0x184 */ : public TableViewCell /* 0x17c */ {
+	class GDH_DLL LevelCell /* 0x184 */ : public TableViewCell /* 0x17c */ {
 		public:
 			GJGameLevel* m_pLevel;  // 0x17c
 			PAD(4)
 	};
 
-	class CCScrollLayerExt : public cocos2d::CCLayer {
+	class GDH_DLL CCScrollLayerExt : public cocos2d::CCLayer {
 		public:
 			cocos2d::CCTouch* m_pTouch;	// 0x11c
 			cocos2d::CCPoint m_obTouchPosition;		 // 0x120

@@ -13,7 +13,9 @@
 *
 * Based on line number, to be standard C / C++ compatible.
 */
+#ifndef PAD
 #define PAD(size) char __STR_CAT__(__, __STR_CAT__(pad, __LINE__))[size] = {};
+#endif
 
 /** GDH_ADD
 * This class/enum/type does not exist
@@ -26,6 +28,26 @@
 * correctly.
 */
 #define GDH_ADD(...) __VA_ARGS__
+
+/** GDH_DLL
+* This class/enum/type does not exist
+* in GD itself, however it has been
+* added for better code readability
+* & maintainability.
+*
+* Variadic arguments used due to
+* enums otherwise not expanding
+* correctly.
+*/
+#ifdef GDH_IS_DLL
+    #ifdef _EXPORTING
+        #define GDH_DLL __declspec(dllexport)
+    #else
+        #define GDH_DLL __declspec(dllimport)
+    #endif
+#else
+    #define GDH_DLL
+#endif
 
 /** __WARN_DEBUG__
 * Set this macro to 0 to disable warnings when compiling in debug.

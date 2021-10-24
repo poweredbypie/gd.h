@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class ObjectToolbox : public cocos2d::CCNode {
+    class GDH_DLL ObjectToolbox : public cocos2d::CCNode {
     public:
         cocos2d::CCDictionary* m_frameToKey;
         cocos2d::CCDictionary* m_keyToFrame;

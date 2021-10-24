@@ -37,7 +37,7 @@ namespace gd {
 	class PlayLayer;
 	class LevelEditorLayer;
 
-	class GameManager : public GManager {
+	class GDH_DLL GameManager : public GManager {
 	public:
 		bool m_bSwitchModes;
 		bool m_bToFullscreen;

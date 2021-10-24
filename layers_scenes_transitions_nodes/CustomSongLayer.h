@@ -14,7 +14,7 @@ namespace gd {
     class LevelSettingsLayer;
     class SongInfoObject;
 
-    class CustomSongLayer : public FLAlertLayer, FLAlertLayerProtocol, TextInputDelegate, GJDropDownLayerDelegate {
+    class GDH_DLL CustomSongLayer : public FLAlertLayer, FLAlertLayerProtocol, TextInputDelegate, GJDropDownLayerDelegate {
     public:
         LevelSettingsObject* m_levelSettings;
         CCTextInputNode* m_songIDInput;

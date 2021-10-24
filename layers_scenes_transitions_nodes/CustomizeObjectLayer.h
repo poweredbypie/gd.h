@@ -13,7 +13,7 @@ namespace gd {
     class EffectGameObject;
     class ColorChannelSprite;
     
-    class CustomizeObjectLayer :
+    class GDH_DLL CustomizeObjectLayer :
         public FLAlertLayer,
         public TextInputDelegate,
         public HSVWidgetPopupDelegate,

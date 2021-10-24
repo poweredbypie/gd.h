@@ -19,7 +19,7 @@ namespace gd {
     };
     );
 
-    class LevelEditorLayer : public GJBaseGameLayer {
+    class GDH_DLL LevelEditorLayer : public GJBaseGameLayer {
     public:
         PAD(4)
         bool m_unk2d0;   // 0x2d0
@@ -137,10 +137,10 @@ namespace gd {
                 base + 0x167290
             )(this);
 
-            float ret;
-            __asm { movss ret, xmm0 }
+            float retVal;
+            __asm { movss retVal, xmm0 }
 
-            return ret;
+            return retVal;
         }
     
         void updateOptions() {

@@ -5,7 +5,7 @@
 
 namespace gd {
 	#pragma runtime_checks("s", off)
-	class AchievementBar : public cocos2d::CCNodeRGBA {
+	class GDH_DLL AchievementBar : public cocos2d::CCNodeRGBA {
 	protected:
 		PAD(0x24);
 

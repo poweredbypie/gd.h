@@ -25,7 +25,7 @@ namespace gd {
         kSpeedFastest = 4,
     };
 
-    class LevelSettingsObject : public cocos2d::CCNode {
+    class GDH_DLL LevelSettingsObject : public cocos2d::CCNode {
         public:
             GJEffectManager* m_pEffectManager;  // 0xec
             Gamemode m_gamemode; // 0xf0

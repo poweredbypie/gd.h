@@ -6,11 +6,11 @@
 namespace gd {
     class BoomScrollLayer;
 
-    class ListButtonPage : public cocos2d::CCLayer {
+    class GDH_DLL ListButtonPage : public cocos2d::CCLayer {
         // todo
     };
 
-    class ListButtonBar : public cocos2d::CCNode {
+    class GDH_DLL ListButtonBar : public cocos2d::CCNode {
         public:
             BoomScrollLayer* m_pScrollLayer;    // 0xec
     };

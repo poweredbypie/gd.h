@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-  class GJMapPack : public cocos2d::CCNode
+  class GDH_DLL GJMapPack : public cocos2d::CCNode
   {
   public:
 	  cocos2d::CCArray* m_pLevels;

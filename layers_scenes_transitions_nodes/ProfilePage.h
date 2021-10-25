@@ -6,7 +6,7 @@
 namespace gd {
     class FLAlertLayer;
 
-    class ProfilePage : public FLAlertLayer,
+    class GDH_DLL ProfilePage : public FLAlertLayer,
         FLAlertLayerProtocol,
         LevelCommentDelegate,
         CommentUploadDelegate,

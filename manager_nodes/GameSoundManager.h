@@ -5,7 +5,7 @@
 #include <filesystem>
 
 namespace gd {
-	class GameSoundManager : public cocos2d::CCNode {
+	class GDH_DLL GameSoundManager : public cocos2d::CCNode {
 	protected:
 		cocos2d::CCDictionary* m_pDictionary1;
 		cocos2d::CCDictionary* m_pDictionary2;

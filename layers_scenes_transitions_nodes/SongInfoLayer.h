@@ -6,7 +6,7 @@
 namespace gd {
     class FLAlertLayer;
 
-    class SongInfoLayer : public FLAlertLayer {
+    class GDH_DLL SongInfoLayer : public FLAlertLayer {
     public:
         std::string m_downloadLink;
         std::string m_artistNewgrounds;

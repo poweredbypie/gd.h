@@ -6,7 +6,7 @@
 namespace gd {
     class ColorActionSprite;
     
-    class ColorAction : public cocos2d::CCNode {
+    class GDH_DLL ColorAction : public cocos2d::CCNode {
     public:
         PAD(12);
         cocos2d::ccColor3B m_color;

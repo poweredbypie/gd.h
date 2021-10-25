@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class DailyLevelPage : public FLAlertLayer {
+    class GDH_DLL DailyLevelPage : public FLAlertLayer {
         public:
             static DailyLevelPage* create(bool weekly) {
                 return reinterpret_cast<DailyLevelPage*(__fastcall*)(bool)>(

@@ -6,7 +6,7 @@
 namespace gd {
     class TextInputDelegate;
 
-    class SetIDPopup : public FLAlertLayer, public TextInputDelegate {
+    class GDH_DLL SetIDPopup : public FLAlertLayer, public TextInputDelegate {
         // todo
     };
 }

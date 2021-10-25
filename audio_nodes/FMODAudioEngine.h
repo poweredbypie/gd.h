@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-	class FMODAudioEngine : public cocos2d::CCNode {
+	class GDH_DLL FMODAudioEngine : public cocos2d::CCNode {
 	public:
 		cocos2d::CCDictionary* m_pDictionary;
 		std::string m_sFilePath;

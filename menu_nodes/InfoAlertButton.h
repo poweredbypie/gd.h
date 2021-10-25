@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class InfoAlertButton : public CCMenuItemSpriteExtra {
+    class GDH_DLL InfoAlertButton : public CCMenuItemSpriteExtra {
         public:
             bool init(std::string const& title, std::string const& text, float scale) {
                 __asm movss xmm1, scale

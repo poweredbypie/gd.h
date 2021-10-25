@@ -10,7 +10,7 @@ namespace gd {
 	class ScrollingLayer;
 
 	#pragma runtime_checks("s", off)
-	class FLAlertLayer : public cocos2d::CCLayerColor {
+	class GDH_DLL FLAlertLayer : public cocos2d::CCLayerColor {
 	public:
 		cocos2d::CCMenu* m_pButtonMenu;	// 0x198
 		int m_nControlConnected; //?

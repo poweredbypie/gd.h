@@ -6,7 +6,7 @@
 namespace gd {
     class GJGarageLayer;
 
-    class GaragePage : public cocos2d::CCLayer, ListButtonBarDelegate {
+    class GDH_DLL GaragePage : public cocos2d::CCLayer, ListButtonBarDelegate {
         public:
             GJGarageLayer* m_pGarage;
             cocos2d::SEL_MenuHandler m_pHandler;

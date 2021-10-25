@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class VideoOptionsLayer : public FLAlertLayer {
+    class GDH_DLL VideoOptionsLayer : public FLAlertLayer {
         public:
             PAD(24)
             cocos2d::CCArray* m_pResolutions;   // 0x1e4

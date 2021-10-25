@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-	class AchievementManager : public cocos2d::CCNode {
+	class GDH_DLL AchievementManager : public cocos2d::CCNode {
 	protected:
 		PAD(16);
 		cocos2d::CCDictionary* m_pAchievements;

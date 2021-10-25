@@ -10,7 +10,7 @@ namespace gd {
 	};
 
 	#pragma runtime_checks("s", off)
-	class CCMenuItemSpriteExtra : public cocos2d::CCMenuItemSprite {
+	class GDH_DLL CCMenuItemSpriteExtra : public cocos2d::CCMenuItemSprite {
 	public:
 		float m_fScaleMultiplier;	// 0x118
 		float m_fBaseScale;			// 0x11c

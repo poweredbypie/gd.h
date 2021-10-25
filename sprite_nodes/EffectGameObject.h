@@ -45,7 +45,7 @@ namespace gd {
         kTouchToggleModeToggleOff = 2,
     };
 
-    class EffectGameObject : public GameObject {
+    class GDH_DLL EffectGameObject : public GameObject {
         public:
             cocos2d::ccColor3B m_colColor; // 0x468
             float m_fDuration; // 0x46c - Also Move Time, Duration etc.

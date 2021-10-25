@@ -7,7 +7,7 @@ namespace gd {
 	class TextInputDelegate;
 
 	#pragma runtime_checks("s", off)
-	class CCTextInputNode : public cocos2d::CCLayer, public cocos2d::CCIMEDelegate, public cocos2d::CCTextFieldDelegate {
+	class GDH_DLL CCTextInputNode : public cocos2d::CCLayer, public cocos2d::CCIMEDelegate, public cocos2d::CCTextFieldDelegate {
 		public:
 			int m_nUnknown0;
 			std::string m_sCaption;

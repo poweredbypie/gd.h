@@ -9,7 +9,7 @@ namespace gd {
     class CCMenuItemToggler;
     class TextArea;
 
-    class EditLevelLayer :
+    class GDH_DLL EditLevelLayer :
         public cocos2d::CCLayer,
         public TextInputDelegate,
         public FLAlertLayerProtocol,
@@ -41,7 +41,7 @@ namespace gd {
             }
     };
 
-    class LevelInfoLayer : public cocos2d::CCLayer,
+    class GDH_DLL LevelInfoLayer : public cocos2d::CCLayer,
         LevelDownloadDelegate,
         LevelUpdateDelegate,
         RateLevelDelegate,

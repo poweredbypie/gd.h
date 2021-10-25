@@ -5,7 +5,7 @@
 
 namespace gd {
 
-    class GJRotationControl : public cocos2d::CCLayer {
+    class GDH_DLL GJRotationControl : public cocos2d::CCLayer {
         public:
             float m_nUnknown0;
             float m_nUnknown1;

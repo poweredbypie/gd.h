@@ -8,7 +8,7 @@ namespace gd {
 	class CCMenuItemSpriteExtra;
 
 	#pragma runtime_checks("s", off)
-	class CCMenuItemToggler : public cocos2d::CCMenuItem {
+	class GDH_DLL CCMenuItemToggler : public cocos2d::CCMenuItem {
 	public:
 		CCMenuItemSpriteExtra* m_pOnButton;		// 0x10c
 		CCMenuItemSpriteExtra* m_pOffButton;	// 0x110

@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-	class CCIndexPath : public cocos2d::CCObject {
+	class GDH_DLL CCIndexPath : public cocos2d::CCObject {
 		public:
 			int m_nPosition; // 0x20
 			int m_nUnknown2; // 0x24

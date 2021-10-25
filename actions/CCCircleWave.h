@@ -5,7 +5,7 @@
 
 namespace gd {
 	#pragma runtime_checks("s", off)
-	class CCCircleWave : public cocos2d::CCNode {
+	class GDH_DLL CCCircleWave : public cocos2d::CCNode {
 	protected:
 		cocos2d::CCArray* m_pArray; //idk what this is tho
 		PAD(4);

@@ -31,7 +31,7 @@ namespace gd {
 		kBoomListTypeArtist		    = 0x14,
 	};
 
-	class BoomListView : public cocos2d::CCLayer, public TableViewDelegate, public TableViewDataSource {
+	class GDH_DLL BoomListView : public cocos2d::CCLayer, public TableViewDelegate, public TableViewDataSource {
 	public:
 		TableView* m_pTableView;		// 0x124
 		cocos2d::CCArray* m_pEntries;	// 0x128

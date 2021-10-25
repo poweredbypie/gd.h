@@ -5,7 +5,7 @@
 
 namespace gd {
 
-    class DrawGridLayer : public cocos2d::CCLayer {
+    class GDH_DLL DrawGridLayer : public cocos2d::CCLayer {
         public:
             void* m_pCommonLines;       // 0x11c
             void* m_pYellowGuidelines;  // 0x120

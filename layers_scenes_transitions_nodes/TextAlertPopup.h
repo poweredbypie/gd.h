@@ -5,7 +5,7 @@
 
 #define __cdecl
 namespace gd {
-    class TextAlertPopup : public cocos2d::CCNode {
+    class GDH_DLL TextAlertPopup : public cocos2d::CCNode {
         public:
             static TextAlertPopup* create(const char* _text, float _time, float _scale) {
                 __asm {

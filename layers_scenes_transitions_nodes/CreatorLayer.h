@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class CreatorLayer : public cocos2d::CCLayer {
+    class GDH_DLL CreatorLayer : public cocos2d::CCLayer {
         public:
             static CreatorLayer* create() {
                 return reinterpret_cast<CreatorLayer*(__fastcall*)()>(

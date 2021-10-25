@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class DialogLayer : public cocos2d::CCLayerColor {
+    class GDH_DLL DialogLayer : public cocos2d::CCLayerColor {
         public:
             char pad1[0x8];
             cocos2d::CCLayer *m_pLayer;

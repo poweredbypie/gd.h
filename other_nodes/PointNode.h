@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class PointNode : public cocos2d::CCObject {
+    class GDH_DLL PointNode : public cocos2d::CCObject {
     public:
         cocos2d::CCPoint m_obPoint;
 

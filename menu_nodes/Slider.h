@@ -7,7 +7,7 @@ namespace gd {
 
     class Slider;
 
-    class SliderThumb : public cocos2d::CCMenuItemImage {
+    class GDH_DLL SliderThumb : public cocos2d::CCMenuItemImage {
         public:
             float m_fLength;
             bool m_bVertical;
@@ -32,7 +32,7 @@ namespace gd {
             }
     };
 
-    class SliderTouchLogic : public cocos2d::CCMenu {
+    class GDH_DLL SliderTouchLogic : public cocos2d::CCMenu {
         public:
             PAD(0x4)
             float m_fLength;
@@ -46,7 +46,7 @@ namespace gd {
             SliderThumb* getThumb() const { return m_pThumb; }
     };
 
-    class Slider : public cocos2d::CCLayer {
+    class GDH_DLL Slider : public cocos2d::CCLayer {
         public:
             SliderTouchLogic* m_pTouchLogic;
             cocos2d::CCSprite* m_pSliderBar;

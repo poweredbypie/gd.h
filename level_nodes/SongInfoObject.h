@@ -7,7 +7,7 @@
 namespace gd {
     class LevelSettingsObject;
 
-    class SongInfoObject : public cocos2d::CCNode {
+    class GDH_DLL SongInfoObject : public cocos2d::CCNode {
     public:
         int m_nSongID;
         std::string m_sSongName;

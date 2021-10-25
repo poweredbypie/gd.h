@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class LevelSearchLayer : public cocos2d::CCLayer {
+    class GDH_DLL LevelSearchLayer : public cocos2d::CCLayer {
         public:
             static LevelSearchLayer* create() {
                 return reinterpret_cast<LevelSearchLayer*(__fastcall*)()>(

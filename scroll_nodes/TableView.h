@@ -14,7 +14,7 @@ namespace gd {
 		//idk what goes here
 	} TableViewCellEditingStyle;
 
-	class TableViewDelegate {
+	class GDH_DLL TableViewDelegate {
 	public:
 		virtual void willTweenToIndexPath(CCIndexPath&, TableViewCell*, TableView*) {}
 		virtual void didEndTweenToIndexPath(CCIndexPath&, TableView*) {}
@@ -25,7 +25,7 @@ namespace gd {
 		virtual void didSelectRowAtIndexPath(CCIndexPath&, TableView*) = 0;
 	};
 
-	class TableViewDataSource {
+	class GDH_DLL TableViewDataSource {
 	public:
 		virtual unsigned int numberOfRowsInSection(unsigned int, TableView*) = 0;
 		virtual unsigned int numberOfSectionsInTableView(TableView*) { return 1; }
@@ -33,7 +33,7 @@ namespace gd {
 		virtual TableViewCell* cellForRowAtIndexPath(CCIndexPath&, TableView*) = 0;
 	};
 
-	class TableView : public CCScrollLayerExt, public CCScrollLayerExtDelegate {
+	class GDH_DLL TableView : public CCScrollLayerExt, public CCScrollLayerExtDelegate {
 		public:
 			bool m_bTouchDown2;
 			PAD(4)

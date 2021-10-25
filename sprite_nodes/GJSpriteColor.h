@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class GJSpriteColor : public cocos2d::CCNode {
+    class GDH_DLL GJSpriteColor : public cocos2d::CCNode {
     public:
         int colorID; //0x00EC
         int defaultColorID; //0x00F0

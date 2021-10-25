@@ -7,7 +7,7 @@ namespace gd {
     class Slider;
     class GJScaleControlDelegate;
 
-    class GJScaleControl : public cocos2d::CCLayer {
+    class GDH_DLL GJScaleControl : public cocos2d::CCLayer {
         public:
             gd::Slider* m_pSlider;
             unsigned int m_nTouchID;

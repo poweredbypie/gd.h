@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-    class HardStreak : public cocos2d::CCDrawNode {
+    class GDH_DLL HardStreak : public cocos2d::CCDrawNode {
         public:
             cocos2d::CCArray* m_pointsArr; // 0x011C
             cocos2d::CCPoint m_currentPoint; // 0x0120 where the wave is at rn

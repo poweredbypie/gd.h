@@ -8,7 +8,7 @@ namespace gd {
 	class BoomListView;
 
 	#pragma runtime_checks("s", off)
-	class CustomListView : public BoomListView {
+	class GDH_DLL CustomListView : public BoomListView {
 			//no members
 		protected:
 			CustomListView() {

@@ -7,7 +7,7 @@ class DS_Dictionary;
 
 namespace gd {
 
-	class GManager : public cocos2d::CCNode {
+	class GDH_DLL GManager : public cocos2d::CCNode {
 		protected:
 			std::string m_sFileName; // 0xec
 			bool m_bSetup;			 // 0x104

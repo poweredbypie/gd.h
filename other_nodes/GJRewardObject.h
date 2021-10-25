@@ -34,7 +34,7 @@ enum UnlockType
   kItemTypeGJItem = 0xC,
 };
     
-class GJRewardObject : public cocos2d::CCObject
+class GDH_DLL GJRewardObject : public cocos2d::CCObject
 {
   public:
     SpecialRewardItem m_eSpecialRewardItem;

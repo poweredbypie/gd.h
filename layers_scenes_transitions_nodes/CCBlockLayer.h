@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-	class CCBlockLayer : public cocos2d::CCLayerColor {
+	class GDH_DLL CCBlockLayer : public cocos2d::CCLayerColor {
 		protected:
 			bool m_bUnknown;
 			bool m_bUnknown2;

@@ -8,6 +8,9 @@ namespace gd {
 
     class GDH_DLL LevelBrowserLayer : public cocos2d::CCLayer {
         public:
+            PAD(24)
+            GJListLayer* m_pList;   // 0x134
+
             static LevelBrowserLayer* create(gd::GJSearchObject* pSearch) {
                 return reinterpret_cast<LevelBrowserLayer*(__fastcall*)(
                     gd::GJSearchObject*

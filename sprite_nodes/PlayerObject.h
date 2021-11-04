@@ -44,7 +44,7 @@ namespace gd {
 		double m_xAccel; // 0x518
 		double m_jumpAccel; // 0x520
 		double m_gravity; // 0x528
-		PAD(8);
+		PAD(16);
 		bool unk538;
 		bool unk539;
 		bool unk53A;

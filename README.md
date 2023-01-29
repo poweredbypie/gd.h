@@ -1,3 +1,7 @@
+# Deprecated
+
+This library has been deprecated in favor of [Geode](https://github.com/geode-sdk/geode), a framework that bundles GD headers along with Cocos2d and lots of other modding utilities. All of my mods will be ported over to Geode, and any new ones will be built on it; and I would highly recommend you do so too, as Geode's main purpose is fixing mod incompatabilities, and mods made with gd.h are not going to work alongside Geode mods. More info about Geode is at <https://geode-sdk.org>.
+
 # gd.h
 
 Windows headers for Geometry Dash. Originally copied from pie's textureldr.

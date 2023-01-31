@@ -4,8 +4,8 @@
 #include <gd.h>
 
 namespace gd {
-	class FMODAudioEngine : public cocos2d::CCNode {
-	protected:
+	class GDH_DLL FMODAudioEngine : public cocos2d::CCNode {
+	public:
 		cocos2d::CCDictionary* m_pDictionary;
 		std::string m_sFilePath;
 		float m_fBackgroundMusicVolume;
@@ -18,13 +18,14 @@ namespace gd {
 		bool m_bFading;
 		bool m_bFadeIn;
 		float m_fFadeInDuration;
-		void* /*FMOD::Sound*/ m_pSound;
-		void* /*FMOD::ChannelGroup*/ m_pChannelGroup;
-		bool m_bPaused;
-		bool* m_pbBackgroundMusicPlaying;
-		void* /*FMOD::FMOD_DSP_METERING_INFO*/ m_pMeteringInfo;
-		int /*FMOD::FMOD_RESULT*/ m_eLastResult;
-		PAD(0x8);
+		FMOD::System* m_pSystem;
+		FMOD::Sound* m_pSound;
+		FMOD::Channel* m_pCurrentSoundChannel;
+		FMOD::Channel* m_pGlobalChannel;
+		FMOD::DSP* m_pDSP;
+		FMOD_RESULT m_eLastResult;
+		int m_nVersion;
+		void* m_pExtraDriverData;
 		int m_nMusicOffset;
 
 	public:
@@ -38,6 +39,8 @@ namespace gd {
 				base + 0x24240
 				)(this, filename);
 		}
+		float getMusicVolume() { return m_fBackgroundMusicVolume; }
+		float getSFXVolume() { return m_fEffectsVolume; }
 		//my own function
 		void reloadEffects() {
 			using namespace std::filesystem;
@@ -52,6 +55,21 @@ namespace gd {
 				m_pDictionary->removeObjectForKey(ogg);
 				this->preloadEffect(ogg);
 			}
+		}
+		// inlined on windows
+		bool isBackgroundMusicPlaying() {
+			const auto addr = GetProcAddress(GetModuleHandleA("fmod.dll"), "?isPlaying@ChannelControl@FMOD@@QAG?AW4FMOD_RESULT@@PA_N@Z");
+			bool ret;
+			reinterpret_cast<int(__stdcall*)(void*, bool*)>(addr)(this->m_pGlobalChannel, &ret);
+			return ret;
+		}
+		void playBackgroundMusic(std::string const& path, bool idk0, bool idk1) {
+			reinterpret_cast<void(__thiscall*)(FMODAudioEngine*, bool, bool, std::string)>(
+				base + 0x23d80
+			)(this, idk0, idk1, path);
+		}
+		bool isBackgroundMusicPlaying(const std::string& path) {
+			return path == m_sFilePath && isBackgroundMusicPlaying();
 		}
 	};
 }

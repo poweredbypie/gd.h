@@ -5,7 +5,7 @@
 
 namespace gd {
 	//credit to zmx (https://github.com/kyurime)
-	class CCSpritePlus : public cocos2d::CCSprite {
+	class GDH_DLL CCSpritePlus : public cocos2d::CCSprite {
 	protected:
 		cocos2d::CCArray* m_pFollowers;
 		CCSpritePlus* m_pFollowing;
@@ -62,6 +62,12 @@ namespace gd {
 				base + 0x1C3A0
 				)(this, flip);
 		}
+		CCSpritePlus* getFollowingSprite() { return m_pFollowing; }
+
+		// note: this is not an actual gd function.
+		// this should really not be used. it's just
+		// because camden314 has it.
+		void setFollowingSprite(CCSpritePlus* spr) { this->m_pFollowing = spr; }
 
 		static CCSpritePlus* createWithSpriteFrame(cocos2d::CCSpriteFrame* frame) {
 			return reinterpret_cast<CCSpritePlus* (__fastcall*)(cocos2d::CCSpriteFrame*)>(

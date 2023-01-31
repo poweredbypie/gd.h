@@ -4,7 +4,7 @@
 #include <gd.h>
 
 namespace gd {
-	class LoadingCircle : public cocos2d::CCLayerColor {
+	class GDH_DLL LoadingCircle : public cocos2d::CCLayerColor {
 	protected:
 		cocos2d::CCSprite* m_pSprite;
 		cocos2d::CCLayer* m_pParentLayer;
